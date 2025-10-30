@@ -56,6 +56,66 @@ document.addEventListener("DOMContentLoaded", () => {
     "thanks": "You’re welcome!  MikrodTech is always happy to help.",
     "bye": "Goodbye!  Have a great day — from MikrodTech.",
     "who are you": "I’m the MikrodTech Assistant 🤖 — here to help you learn about our services, projects, and tech solutions.",
+
+    // ⚙️ Services
+"what services do you offer": `
+Here are our main services:
+- Computer installations and sales
+- Network setup and configuration
+- Printer installation and maintenance
+- CCTV and security systems setup
+- POS systems and software integration
+- Gaming gear and accessories
+- Productivity tools and IT consultancy
+`,
+
+"do you install cctv": `
+Yes! We install CCTV systems including:
+1. HD and IP cameras
+2. DVR/NVR setup
+3. Remote monitoring configuration
+4. Maintenance and support services
+`,
+
+"do you offer networking services": `
+Yes — we handle complete networking solutions:
+- Wired and wireless setup
+- Router and switch configuration
+- Wi-Fi optimization
+- Server setup and cabling
+`,
+
+"do you offer cybersecurity services": `
+Yes — MikrodTech provides:
+1. Vulnerability scanning
+2. Threat detection and prevention
+3. Device and network protection
+4. Security audits for schools and businesses
+`,
+
+"do you create software": `
+Yes, we develop custom software solutions such as:
+- School progress tracking systems
+- Management and record systems
+- Productivity and workflow tools
+- Web-based and desktop applications
+`,
+
+"how do i request a service": `
+To request a service:
+1. Describe your needs in this chat or on our website form
+2. We’ll review your request
+3. Our team will contact you for consultation and quote
+`,
+
+"how can i get a quote": `
+You can request a quote easily:
+- Use our website contact form
+- Send us your requirements here
+- We'll respond promptly with a tailored price
+`,
+
+
   };
 
   /* ----------------------------
@@ -215,12 +275,19 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typingDiv) typingDiv.remove();
   }
 
-  function formatBotMessage(text) {
-    text = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-    text = text.replace(/\*(.*?)\*/g, "<em>$1</em>");
-    text = text.replace(/(\d+)\. /g, "<br>$1. ");
-    text = text.replace(/^- /gm, "<br>&bull; ");
-    text = text.replace(/\n/g, "<br>");
+function formatBotMessage(text) {
+  // If the reply already contains HTML list tags, return it as-is
+  if (text.includes("<ul>") || text.includes("<li>")) {
     return text;
   }
+
+  // Otherwise, format as plain text with enhancements
+  text = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+  text = text.replace(/\*(.*?)\*/g, "<em>$1</em>");
+  text = text.replace(/(\d+)\. /g, "<br>$1. ");
+  text = text.replace(/^- /gm, "<br>&bull; ");
+  text = text.replace(/\n/g, "<br>");
+  return text;
+}
+
 });
