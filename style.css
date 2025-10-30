@@ -1,0 +1,3112 @@
+/* ============================
+   MikrodTech Stylesheet
+   Theme: White, Blue, Black only
+   ============================ */
+
+/* Base Reset */
+.section-title {
+  font-size: rem;       /* reduced size */
+  font-weight: 400;
+  text-align: center;      /* centers the text */
+  margin: 0 auto 1.5rem;   /* ensures it's centered in container */
+  color: #0077cc;          /* MikrodTech blue */
+  display: block;          /* ensures text-align works properly */
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 40px;             /* slightly shorter underline */
+  height: 2px;             /* thinner line */
+  background: #0077cc;
+  margin: 6px auto 0;      /* centers underline */
+  border-radius: 1px;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 19px;   /
+  line-height: 1.6;  
+  color: #222;
+}
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .container {
+    width: 94%;
+    max-width: 1400px;
+    margin: auto;
+  }
+  
+  /* Header */
+  .site-header {
+    background: #000000;
+    color: #ffffff;
+    padding: 0.5rem 0;
+  }
+  
+  .nav-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .brand img {
+    height: 40px;
+  }
+  
+  .main-nav {
+    display: flex;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-list a {
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-list a:hover {
+    color: #0066cc;
+  }
+  
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+  
+  /* Hero */
+  .hero {
+    background: #0066cc;
+    color: #ffffff;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+/* Hero Section */
+.hero .company-name {
+  font-size: 3rem;              /* Professional large but not overwhelming */
+  font-weight: 200;             /* Light weight */
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  line-height: 1.1;
+  transition: all 0.3s ease;
+}
+
+.hero .tagline {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.full-width-lead {
+  width: 100vw;         /* full viewport width */
+  margin: 0;            /* remove default p margin */
+  padding: 0;           /* remove padding */
+  text-align: left;     /* align left so it stretches naturally */
+  font-size: 1.2rem;    /* adjust as needed */
+}
+  
+  .btn-primary {
+    background: #000000;
+    color: #ffffff;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background: #333333;
+  }
+  
+  /* About */
+  .about {
+    padding: 3rem 0;
+    text-align: center;
+  }
+  
+  .about h2 {
+    margin-bottom: 1rem;
+    color: #0066cc;
+  }
+  
+  /* Services */
+  .services {
+    padding: 3rem 0;
+  }
+  
+  
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .service-card {
+    border: 1px solid #dddddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-card h3 {
+    margin-bottom: 0.5rem;
+    color: #000000;
+  }
+  
+  /* Contact */
+  .contact {
+    padding: 3rem 0;
+  }
+  
+  .contact h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #0066cc;
+  }
+  
+  .contact-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 1rem auto 2rem auto;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .contact-form button {
+    border: none;
+  }
+  
+  .contact-details {
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none;
+      flex-direction: column;
+      background: #000000;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+  
+    .main-nav.active {
+      display: flex;
+    }
+  
+    .nav-toggle {
+      display: block;
+    }
+  }
+
+  .service-detail.hidden {
+    display: none;
+  }
+  
+  .service-detail {
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    border-left: 3px solid #0077cc; /* MikrodTech blue */
+    background: #f9f9f9;
+    border-radius: 6px;
+  }
+  .service-toggle {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0077cc;
+    cursor: pointer;
+  }
+  .service-toggle:hover {
+    text-decoration: underline;
+  }
+  
+
+  .contact-actions {
+    margin: 1rem 0;
+    text-align: center;
+  }
+  
+  .btn-primary {
+    background-color: #0077cc;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .btn-primary:hover {
+    background-color: #005fa3;
+  }
+  
+  .btn-secondary {
+    background-color: #0077cc; /* MikrodTech blue */
+    color: #ffffff;            /* White text */
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #005fa3; /* Darker blue on hover */
+  }
+  
+  
+  .hidden {
+    display: none;
+  }
+  
+  .callback-form {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-left: 3px solid #0077cc;
+    border-radius: 6px;
+  }
+
+  #callbackMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  #callbackMessage.success { color: green; }
+  #callbackMessage.error { color: red; }
+  
+
+  .testimonials {
+  margin: 4rem auto;
+  text-align: center;
+}
+
+
+.testimonial-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.testimonial-card {
+  max-width: 90%;       /* allow card to use most of the container width */
+  margin: 0 auto;       /* center each card */
+  padding: 1.5rem;
+  box-sizing: border-box; /* ensures padding doesn't break width */
+  text-align: center;   /* optional, keeps text centered */
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: #0077cc; /* MikrodTech theme blue */
+}
+/* Import Merriweather font */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+
+.testimonials {
+  margin: 4rem auto;
+  text-align: center;
+  font-family: 'Merriweather', serif; /* New font only for testimonials */
+}
+
+.testimonials h2 {
+  font-size: 1.5rem;                /* same as Services & Products */
+  font-weight: 600;                  /* more bold */
+  color: #000000;                    /* black */
+  font-family: 'Arial', sans-serif;  /* professional font */
+  text-align: center;                /* center heading */
+  margin-bottom: 1.5rem;             /* spacing below */
+}
+
+
+.testimonial-slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  display: none;
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  font-style: italic;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.testimonial-card.active {
+  display: block;
+}
+
+.testimonial-author {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #0077cc;
+  font-style: normal;
+}
+
+.testimonial-controls {
+  margin-top: 1rem;
+}
+
+.testimonial-controls button {
+  background: #0077cc;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.4s;
+}
+
+.testimonial-controls button:hover {
+  background: #005fa3;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Service Toggles Styling --- */
+.service-toggle {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0072ce; /* theme blue */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.service-toggle:hover {
+  color: #005fa3;
+  text-decoration: underline;
+}
+
+.chevron {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.service-toggle.active .chevron {
+  transform: rotate(180deg);
+}
+
+/* Headings (product/service titles) */
+.menu-item .menu-text {
+  font-size: 16px;  /* default on laptop/desktop */
+  line-height: 1.3; /* keeps wrapped lines readable */
+}
+
+/* Description under the headings */
+.menu-item .menu-description {
+  font-size: 14px;  /* slightly smaller for clarity */
+  line-height: 1.4;
+  color: #555;      /* optional, makes description lighter */
+}
+
+/* Optional: Responsive adjustments for phones */
+@media (max-width: 768px) {
+  .menu-item .menu-text {
+    font-size: 14px;  /* smaller for mobile */
+  }
+
+  .menu-item .menu-description {
+    font-size: 12px;
+  }
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.service-title {
+  font-size: 18px;       /* keep current size */
+  font-weight: 500;      /* slightly bold, medium weight */
+  color: #0077cc;        /* MikrodTech blue */
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+/* Center the chevron */
+.service-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #007bff;
+  padding: 5px 0;
+  align-self: center;  /* centers within the flex column */
+}
+
+.service-toggle .chevron {
+  transition: transform 0.3s;
+}
+
+.service-toggle.active .chevron {
+  transform: rotate(180deg);
+}
+
+.service-detail.hidden {
+  display: none;
+}
+
+
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers headline and chevron */
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;    /* centers headline + description text */
+}
+
+
+/* Short description */
+.service-card p {
+  font-size: 16px;       /* back to initial size */
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Chevron button */
+.service-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;       /* slightly bigger arrow */
+  color: #007bff;
+  padding: 5px 0;
+  align-self: center;    /* centers the chevron */
+}
+
+.service-toggle .chevron {
+  transition: transform 0.3s;
+}
+
+.service-toggle.active .chevron {
+  transform: rotate(180deg);
+}
+
+/* Hidden details */
+.service-detail.hidden {
+  display: none;
+}
+
+.service-card h3 .service-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  color: #007bff;    /* headline stays blue */
+  text-align: center;
+}
+
+.testimonial-text {
+  font-family: 'Arial', sans-serif;   /* clean, professional */
+  font-size: 1rem;                     /* readable */
+  line-height: 1.5;
+  color: #333333;                      /* dark gray for easy reading */
+  margin-bottom: 0.8rem;
+}
+
+.testimonial-author {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.85rem;        /* smaller than testimonial text */
+  font-weight: 600;           /* slightly bold for distinction */
+  color: #0077cc;             /* accent color */
+  margin-top: 0;
+}
+
+
+/* Slider controls (arrows) */
+.testimonial-controls button {
+  background: #0077cc;
+  border: none;
+  color: white;
+  font-size: 1rem;       /* smaller than before */
+  margin: 0 0.3rem;
+  padding: 0.3rem 0.6rem;  /* reduced padding */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.testimonial-controls button:hover {
+  background: #005fa3;
+}
+
+/* Section heading */
+.contact h2.section-title {
+  font-size: 2rem;           /* same as Services & Testimonials */
+  font-weight: 400;             /* slightly bold */
+  color: #0077cc;               /* accent color */
+  text-align: top;           /* center heading */
+  margin-bottom: 1.5rem;
+}
+
+/* Intro text centered & professional */
+.contact-intro {
+  font-size: 0.8rem;              /* consistent with testimonial text */
+  font-weight: 300;             /* normal weight */
+  text-align: center;           /* center */
+  margin-bottom: 1.5rem;
+  color: #333333;               /* dark gray for readability */
+}
+
+/* Call-to-action buttons */
+.contact-actions {
+  display: flex;
+  justify-content: center;      /* center buttons horizontally */
+  gap: 1rem;                    /* space between buttons */
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.contact-actions .btn {
+  font-size: 1rem;              /* same as testimonial text */
+  padding: 0.6rem 1.2rem;       /* proportional to text */
+}
+
+/* Callback form */
+.callback-form {
+  max-width: 400px;             /* smaller width for alignment */
+  margin: 1rem auto 2rem auto;  /* centered */
+  padding: 1rem;
+  background: #f9f9f9;
+  border-left: 3px solid #0077cc;
+  border-radius: 6px;
+}
+
+/* Form elements */
+.callback-form input,
+.callback-form button {
+  font-size: 0.95rem;           /* smaller and consistent */
+  padding: 0.5rem 0.75rem;
+}
+
+.callback-form button {
+  width: 100%;                  /* full width button for consistency */
+  margin-top: 0.75rem;
+}
+
+.contact-email {
+  text-align: center;          /* center the text */
+  font-size: 1rem;             /* matches intro text */
+  font-weight: 400;            /* normal weight */
+  color: #333333;              /* professional dark gray */
+  margin-top: 1rem;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center; /* centers icons horizontally */
+  gap: 20px; /* spacing between icons */
+  margin-top: 1rem; /* space above the icons */
+}
+
+.contact-icons a img {
+  width: 32px; /* uniform icon size */
+  height: 32px;
+  transition: transform 0.3s;
+}
+
+.contact-icons a img:hover {
+  transform: scale(1.1); /* subtle hover effect */
+}
+
+.callback-form {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-left: 3px solid #0077cc;
+  border-radius: 6px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.95rem; /* slightly smaller font */
+}
+
+.callback-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #333333;
+}
+
+.callback-form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+
+.callback-form button {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+}
+
+/* Style for the success/error message inside the callback form */
+.callback-message {
+  font-size: 0.85rem;       /* smaller font than form inputs */
+  color: green;             /* default for success */
+  margin-top: 0.5rem;
+  text-align: center;       /* centered below the form */
+}
+
+/* Optional: red for error */
+.callback-message.error {
+  color: red;
+}
+
+.callback-message {
+  font-size: 0.85rem; 
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.callback-message.success {
+  color: green;
+}
+
+.callback-message.error {
+  color: red;
+}
+
+.callback-message {
+  font-size: 0.85rem; 
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.callback-message.success {
+  color: green;
+}
+
+.callback-message.error {
+  color: red;
+}
+.name-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.name-row input {
+  flex: 1;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+  display: block;
+}
+
+.success {
+  color: green;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.callback-message {
+  display: block;               /* Makes margin auto work */
+  width: fit-content;           /* Message width matches content */
+  margin: 4px auto 0;           /* Very small gap above, centered horizontally */
+  font-size: 0.9rem;            /* Slightly smaller text than button */
+  text-align: center;            /* Centers the text inside */
+}
+
+.callback-message.success {
+  color: #28a745;               /* Green for success */
+}
+
+.callback-message.error {
+  color: #dc3545;               /* Red for errors */
+}
+
+.input-error {
+  border: 1px solid red;
+  color: red;
+}
+
+/* Increase size of service descriptions */
+.service-card p,
+.service-detail p {
+  font-size: 1.1rem; 
+  line-height: 1.6;   /* makes it less cramped */
+  color: #222;        /* slightly darker text for readability */
+}
+
+/* Optional: slightly larger titles */
+.service-card h3 .service-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Navigation */
+.nav-list a {
+  font-size: 1rem;   /* 16px -> can bump to 17/18px */
+  font-weight: 500;
+}
+/* Hero section */
+.hero .company-name {
+  font-size: 3.5rem;      /* Main heading */
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.hero .tagline {
+  font-size: 1.5rem;
+  font-weight: 350;
+  margin-bottom: 1.5rem;
+  
+}
+
+
+.hero .lead {
+  margin-bottom: 1.4rem;
+  margin: 0 auto 2rem auto;  /* center horizontally */
+  padding: 0 1rem;
+  text-align: center;
+  line-height: 1;
+  font-size: 1.5rem;         /* slightly smaller for balance */
+  font-weight: 300;
+  color: #fff;          /* softer white */
+}
+
+/* Darker Explore Services button */
+.hero .btn-primary {
+  background-color: #045bbe;   /* Dark navy */
+  border: none;
+  color: #fff;
+  padding: 0.9rem 2.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.hero .btn-primary:hover {
+  background-color: #024eac;   /* even darker on hover */
+  transform: translateY(-2px);
+}
+
+
+/* Service cards */
+.service-card h3 .service-title {
+  font-size: 1.25rem;
+}
+
+.service-card p,
+.service-detail p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+
+
+/* Testimonials */
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* Contact form labels & inputs */
+.contact-form label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 1rem;
+  padding: 0.6rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  .hero .company-name {
+    font-size: 2.3rem;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===== Global Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px; /* Increase base scale */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem; /* ~21px */
+  line-height: 1.8;
+  color: #222;
+  background-color: #fff;
+}
+
+/* ===== Container ===== */
+.container {
+  width: 95%;
+  max-width: 1600px; /* Increased width */
+  margin: auto;
+}
+
+/* ===== Header ===== */
+header {
+  padding: 2rem 0;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+header p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+
+
+
+/* ===== Content Blocks ===== */
+p {
+  font-size: 1.4rem; /* ~25px */
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.service-card p,
+.service-detail p,
+.testimonial-text {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+.testimonial-author {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* ===== Buttons ===== */
+button,
+a.button {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  background: #0077b6;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+button:hover,
+a.button:hover {
+  background: #005f87;
+}
+
+
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  html { font-size: 16px; } /* Normal on small screens */
+
+  .hero .company-name { font-size: 2.8rem; }
+  .hero .tagline { font-size: 1.6rem; }
+  .hero .lead { font-size: 1.2rem; }
+
+  .section-title { font-size: 2rem; }
+}
+
+/* ===== Global Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px; /* Base size */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem; /* ~21px */
+  line-height: 1.8;
+  color: #222;
+  background-color: #fff;
+}
+
+/* ===== Container ===== */
+.container {
+  width: 95%;
+  max-width: 1600px; /* Wider content */
+  margin: auto;
+}
+
+/* ===== Header ===== */
+header {
+  padding: 2rem 0;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header .logo img {
+  height: 80px; /* Bigger logo */
+  width: auto;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  font-size: 1.3rem; /* Bigger menu items */
+  font-weight: 600;
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #0077b6;
+}
+
+
+/* ===== Section Titles ===== */
+.section-title,
+.about h2,
+.services h2,
+.testimonials h2,
+.contact h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 3rem 0 2rem;
+  color: #111;
+}
+
+/* ===== Services ===== */
+.service-card {
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.service-card p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+/* ===== Testimonials ===== */
+.testimonial {
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  border-left: 6px solid #0077b6;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.testimonial-text {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+.testimonial-author {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #444;
+}
+
+/* ===== Contact Section ===== */
+.contact form {
+  max-width: 800px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact label {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.contact input,
+.contact textarea {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: border 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #0077b6;
+  outline: none;
+}
+
+/* ===== Buttons ===== */
+button,
+a.button {
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 1.2rem 2.4rem;
+  border-radius: 8px;
+  background: #0077b6;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+button:hover,
+a.button:hover {
+  background: #005f87;
+}
+
+/* ===== Header ===== */
+header {
+  padding: 2rem 0;
+  background: #0072ce; /* MikrodTech brand blue */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* ===== Contact Section ===== */
+.contact {
+  padding: 5rem 2rem;
+  background: #f9f9f9;
+}
+
+.contact-intro {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.contact-form,
+.callback-form {
+  max-width: 900px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  font-size: 1.3rem;
+}
+
+/* Labels */
+.contact-form label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Inputs & Textareas */
+.contact-form input,
+.contact-form textarea,
+.callback-form input {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.2rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.callback-form input:focus {
+  border-color: #0072ce;
+  box-shadow: 0 0 4px rgba(0, 114, 206, 0.4);
+  outline: none;
+}
+
+/* Buttons */
+.contact-form button,
+.callback-form button,
+.contact-actions .btn {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.6rem 2.2rem;
+  border-radius: 8px;
+  background: #0072ce;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover,
+.callback-form button:hover,
+.contact-actions .btn:hover {
+  background: #005fa3;
+}
+
+/* Contact icons */
+.contact-icons {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.contact-icons img:hover {
+  transform: scale(1.15);
+}
+
+/* Contact feedback & error messages */
+.contact-feedback,
+.error,
+.input-error-message {
+  font-size: 1.1rem;
+  color: red;
+}
+
+/* Prefer email text */
+.contact-email {
+  text-align: center;
+  font-size: 1.4rem;      /* larger for visibility */
+  font-weight: 500;
+  color: #333333;
+  margin-top: 2rem;
+}
+
+/* Callback form (hidden by default) */
+.callback-form {
+  display: none;          /* hidden until button is clicked */
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-left: 4px solid #0072ce;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+/* Contact icons at bottom */
+.contact-icons a img {
+  width: 48px;      /* increased from 32px */
+  height: 48px;     /* increased from 32px */
+  transition: transform 0.3s;
+}
+
+.contact-icons a img:hover {
+  transform: scale(1.15); /* slightly larger on hover */
+}
+
+/* ===== Header Styles for your current HTML ===== */
+.site-header {
+  background: #000000;           /* black background */
+  padding: 1rem 2rem;            /* reasonable header padding */
+}
+
+.site-header .nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.site-header .brand img {
+  height: 60px;                 /* balanced logo size */
+  width: auto;
+  transition: height 0.3s ease;
+}
+
+/* Navigation menu */
+.site-header .main-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;                     /* spacing between menu items */
+  margin: 0;
+  padding: 0;
+}
+
+.site-header .main-nav .nav-list li a {
+  font-size: 1.2rem;             /* readable menu text */
+  font-weight: 600;
+  color: #ffffff;                /* white text */
+  transition: color 0.3s ease;
+}
+
+.site-header .main-nav .nav-list li a:hover {
+  color: #0072ce;                /* MikrodTech blue on hover */
+}
+
+/* Hamburger menu (mobile) */
+.site-header .nav-toggle {
+  display: none;                 /* only show on mobile */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.site-header .hamburger,
+.site-header .hamburger::before,
+.site-header .hamburger::after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #ffffff;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .site-header .nav-wrap {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .site-header .brand img {
+    height: 50px;                 /* smaller logo on mobile */
+  }
+
+  .site-header .main-nav .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .site-header .main-nav .nav-list li a {
+    font-size: 1rem;             /* smaller menu font on mobile */
+  }
+
+  .site-header .nav-toggle {
+    display: block;
+  }
+}
+/* ===== Testimonials Slider Fix ===== */
+.testimonials {
+  position: relative;
+}
+
+.testimonial-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card {
+  max-width: 90%;       /* allow card to use most of the container width */
+  margin: 0 auto;       /* center each card */
+  padding: 1.5rem;
+  box-sizing: border-box; /* ensures padding doesn't break width */
+  text-align: center;   /* optional, keeps text centered */
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.testimonial-card.active {
+  display: block;          /* show only the active one */
+}
+
+
+.testimonial-dots .dot {
+  height: 8px;
+  width: 8px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.testimonial-dots .dot.active {
+  background-color: #0072ce;  /* MikrodTech blue */
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.testimonial-controls {
+  display: flex;
+  justify-content: center; /* center buttons */
+  gap: 3rem;               /* space between prev/next */
+  margin-top: 1rem;      /* space between dots and buttons */
+}
+
+.testimonial-controls button {
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem; /* can adjust size here */
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.testimonial-controls button:hover {
+  background: #0072ce;
+}
+
+.testimonials {
+  max-width: 1200px;   /* expand container width */
+  margin: 0 auto;       /* center horizontally */
+  padding: 0 1rem;      /* optional side padding */
+}
+.testimonial-card {
+  max-width: 800px;   /* optional: keeps readability on huge screens */
+}
+
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    max-width: 95%;  /* smaller screens use almost full width */
+    font-size: 1rem; /* reduce font slightly */
+  }
+}
+
+/* Expand the main testimonial container */
+.testimonials {
+  width: 100%;          /* full width of viewport */
+  max-width: 1200px;    /* optional: keeps it from being too wide on huge screens */
+  margin: 0 auto;
+  padding: 0 2rem;      /* optional side padding */
+}
+
+/* Expand the slider inside testimonials */
+.testimonial-slider {
+  width: 100%;          /* make slider full width */
+  max-width: 1000px;    /* optional: limit if needed */
+  margin: 0 auto;
+}
+
+/* Make individual testimonial cards use full width */
+.testimonial-card {
+  width: 100%;           /* fill slider width */
+  max-width: 1000px;     /* optional max-width for readability */
+  margin: 0 auto;
+  padding: 2rem 2rem;    /* enough padding so text doesn’t touch edges */
+  box-sizing: border-box;
+  white-space: normal;   /* allow normal line wrapping */
+}
+
+/* Optional: increase text size */
+.testimonial-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+}
+
+html {
+  font-size: 16px; /* base size for mobile */
+}
+
+body {
+  font-size: 1rem; /* scalable */
+  line-height: 1.6;
+}
+.container {
+  width: 95%;
+  max-width: 1600px; /* on phone, this is still too big */
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;  /* fill the screen */
+    padding: 0 1rem;  /* add some side spacing */
+  }
+}
+@media (max-width: 768px) {
+  .hero .company-name {
+    font-size: 2.2rem;  /* smaller for phone */
+  }
+  
+  .hero .tagline,
+  .hero .lead {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .service-card p,
+  .service-detail p,
+  .testimonial-text {
+    font-size: 1rem;   /* more readable on mobile */
+  }
+
+  .contact-intro {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .callback-form input {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  button, a.button {
+    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
+  }
+}
+@media (max-width: 768px) {
+  .service-grid {
+    grid-template-columns: 1fr; /* single column on mobile */
+    gap: 1rem;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .name-row {
+    flex-direction: column; /* stack inputs */
+    gap: 0.5rem;
+  }
+
+  .contact-actions {
+    flex-direction: column; /* stack buttons */
+    gap: 0.8rem;
+  }
+}
+@media (max-width: 768px) {
+  .contact-icons img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero img {
+    max-width: 100%; 
+    height: auto;
+  }
+}
+.hero .company-name {
+  font-size: clamp(2rem, 5vw, 3.5rem); /* min 2rem, max 3.5rem, scales with viewport */
+}
+
+.service-card p {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+}
+
+.contact-container {
+  max-width: 500px;  /* Limits the width on larger screens */
+  margin: 0 auto;    /* Centers the container */
+  padding: 0 15px;   /* Adds space from the edges on small screens */
+  box-sizing: border-box;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;       /* Inputs fill container but not full screen */
+  box-sizing: border-box;
+}
+@media (max-width: 600px) {
+  .contact-form label {
+    font-size: 14px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .btn {
+    padding: 10px 15px;
+  }
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;   /* Center the icons */
+  gap: 15px;                 /* Space between icons */
+  margin-top: 20px;
+  flex-wrap: wrap;           /* Wrap if screen is too small */
+}
+
+.contact-icons a img {
+  width: 40px;               /* Base size for desktop */
+  height: 40px;
+  transition: transform 0.2s;
+}
+
+.contact-icons a img:hover {
+  transform: scale(1.1);     /* Slight enlarge on hover */
+}
+
+/* Smaller screens */
+@media (max-width: 600px) {
+  .contact-icons a img {
+    width: 30px;             /* Smaller size on phones */
+    height: 30px;
+  }
+}
+
+
+
+.contact-emails-small {
+  text-align: center;            /* centers the text inside */
+  margin: 1rem auto 2rem auto;   /* auto left/right to center the block */
+  padding: 1rem 1.2rem;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  display: inline-block;         /* shrink to content width but still center via margin auto */
+}
+
+.contact-emails-small h1 {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+  color: #0072ce;
+}
+
+.contact-emails-small p {
+  font-size: 18px;
+  margin: 0.3rem 0;
+  color: #333;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .contact-emails-small {
+    padding: 0.8rem 1rem;
+  }
+
+  .contact-emails-small h1 {
+    font-size: 20px;
+  }
+
+  .contact-emails-small p {
+    font-size: 16px;
+  }
+}
+
+
+.contact-emails-small {
+  display: block;          /* ensure it's treated as a block */
+  text-align: center;      /* center the text inside */
+  width: fit-content;      /* shrink-wrap to content */
+  margin: 1rem auto 2rem;  /* top auto bottom spacing, auto centers horizontally */
+  padding: 1rem 1.2rem;    /* optional padding */
+  background-color: #f9f9f9; /* optional light background */
+  border-radius: 6px;
+}
+.site-footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 10px;   /* slightly smaller padding */
+  background-color: #000;
+  color: #fff;
+  font-size: 10px;      /* adjust font size for default */
+  line-height: 1rem;     /* keeps text spacing balanced */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  .site-footer  {
+    padding: 5px 5px;    
+    margin-top: 20px;
+  }
+  .site-footer p{
+     font-size: 0.9rem; 
+  }
+}
+.site-header {
+  width: 100%;
+  text-align: center;
+  padding: 30px 20px;   /* default padding */
+  background-color: #111; 
+  color: #fff;
+  font-size: 24px;       /* default font size */
+  line-height: 1.2;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  .site-header {
+    padding: 15px 10px;   /* reduce padding on phones */
+    font-size: 18px;      /* smaller, readable text */
+  }
+}
+
+/* Optional: adjust site logo if present */
+.site-header img {
+  max-width: 200px;        /* default logo size */
+}
+
+@media (max-width: 480px) {
+  .site-header img {
+    max-width: 120px;       /* smaller logo on phones */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Paragraphs shrink on smaller screens */
+  .about p,
+  .service-card p,
+  .service-detail p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Section headers shrink */
+  .about h2,
+  .services h2,
+  .testimonials h2,
+  .contact h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about p,
+  .service-card p,
+  .service-detail p {
+    font-size: 0.9rem;
+  }
+
+  .about h2,
+  .services h2,
+  .testimonials h2,
+  .contact h2 {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 768px) {
+  .testimonial-author {
+    font-size: 1rem;   /* adjust for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-author {
+    font-size: 0.9rem; /* smaller for small phones */
+  }
+}
+
+/* General error message style */
+.error {
+  color: #dc2626;       /* red text */
+  font-weight: normal;  /* not bold */
+  font-size: clamp(0.85rem, 2.5vw, 1rem); /* scales with screen */
+  line-height: 1.4;
+}
+
+/* Only target the callback form message */
+#callbackMessage.error {
+  text-align: left;     /* or center if you prefer */
+  margin-top: 0.5rem;
+}
+
+/* ===== Knowledge Hub Section ===== */
+.knowledge {
+  padding: 1rem;
+  background: #f8f9fa;
+  text-align: center;
+  color: #222; /* consistent font color for the section */
+}
+
+.knowledge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.knowledge-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.knowledge-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.knowledge-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.knowledge-card h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #045dbb;
+  font-size: 1.1rem; /* keep large on desktop */
+}
+
+.knowledge-card p {
+  color: #333232;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+.read-more {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.center-btn {
+  margin-top: 30px;
+}
+
+.section-intro {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #444;
+  line-height: 1.6;
+  font-size: 1.4rem;
+  
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 480px) {
+  .knowledge {
+    padding: 15px 15px;
+  }
+
+  .knowledge-card {
+    padding: 15px;
+  }
+
+  .knowledge-card h3 {
+    font-size: 1rem; /* slightly smaller on phones */
+  }
+
+  .knowledge-card p {
+    font-size: 1rem;
+  }
+
+  .section-intro {
+    font-size: 1rem;
+  }
+}
+
+/* ===== Free Tools & Resources Section ===== */
+.tools {
+  padding: 60px 20px;
+  background: #fff; /* White background */
+  color: #333;
+  text-align: center;
+}
+
+.tools .section-title {
+  color: #101010;
+  font-weight: 450;
+}
+
+.tools .section-intro {
+  color: #262626;
+  max-width: 650px;
+  margin: 10px auto 30px;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.tool-card {
+  background: #f8f9fa; /* Light gray card background */
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tool-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.tool-card h3 {
+  color: #045dbb;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.tool-card p {
+  color: #333232;
+  font-size: 1.3rem;
+  margin: 10px 0 20px;
+  line-height: 1.5;
+}
+
+.tools .btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.tools .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive font adjustments for small screens */
+@media (max-width: 480px) {
+
+  .tools p,
+  .tool-card p {
+    font-size: 1rem;
+  }
+  .tools .section-intro {
+    font-size: 1rem;
+  }
+  .tools {
+    padding: 40px 15px;
+  }
+}
+
+
+
+/* === Chatbot Button === */
+#chatbot-btn, .chatbot-btn {
+  position: fixed;
+  bottom: 300px; /* slightly above bottom for easier access */
+  right: 25px;
+  background: linear-gradient(135deg, #007bff, #004aad);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+  z-index: 10000;
+}
+
+#chatbot-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* space between icon and text */
+  padding: 0 12px;
+  border-radius: 30px; /* slightly pill-shaped */
+  width: auto; /* allows the text to fit */
+  height: 60px;
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+#chatbot-btn .chat-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  opacity: 0.9;
+}
+
+#chatbot-btn:hover {
+  transform: scale(1.1);
+}
+
+
+#chatbot-btn:hover, .chatbot-btn:hover {
+  transform: scale(1.1);
+}
+
+/* === Chatbot Box === */
+#chatbot-box, .chatbot-box {
+  position: fixed;
+  bottom: 300px;         /* just above the button */
+  right: 25px;           /* aligned with button horizontally */
+  width: 700px;
+  height: 800px;
+  background: rgba(79, 126, 227, 0.75); /* semi-transparent dark blue */
+  backdrop-filter: blur(10px);        /* frosted glass effect */
+  border-radius: 15px;
+  box-shadow: 1px 5px 25px rgba(36, 24, 206, 0.25);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+/* header */
+.chatbot-header {
+  display: flex;
+  justify-content: space-between; /* H4 left, X right */
+  align-items: center;            /* vertically aligned */
+  width: 100%;
+  padding: 0 10px;
+  background: rgba(1, 25, 65, 0.9);
+  color: white;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+}
+
+.chatbot-header h4 {
+  margin: 0;
+  font-weight: 500;
+
+}
+
+.chatbot-header .close-btn {
+  font-size: 1.5rem;
+  line-height: 1;
+  border: none;
+  background: none;
+  color: white;
+  cursor: pointer;
+  flex-shrink: 0;  /* ensures button doesn’t shrink */
+  position: static; /* ✅ Important: remove any absolute positioning */
+}
+
+
+
+
+#close-chat, .close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#chatbot-messages, .chatbot-messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  overflow-y: auto;       /* allows scrolling */
+  scroll-behavior: smooth;
+  gap: 10px;
+  background: transparent;
+  min-height: 0;          /* ensures proper flex scrolling */
+}
+
+/* Inner wrapper to push messages to bottom */
+#chatbot-messages-inner {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto; /* pushes messages to the bottom */
+  gap: 10px;
+}
+
+
+.message {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 19px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* User Message */
+.message.user {
+  background: #051fc7; /* solid color for clarity */
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+
+/* Bot Message */
+.message.bot {
+  background: #e9ecef; /* solid white-gray for contrast */
+  color: #333;
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+
+/* === Input Section === */
+#chatbot-input, .chatbot-input {
+  display: flex;
+  border-top: 2px solid #1644da;
+  background: rgba(4, 34, 86, 0.9); /* nearly solid input bar */
+}
+
+#user-input, .chatbot-input input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  color: white;
+  background: transparent;
+}
+
+#send-btn, .chatbot-input button {
+  background: rgba(4, 56, 215, 0.9);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* === Typing Dots Animation === */
+.typing-dots {
+  display: inline-flex;
+  align-items: center;   /* keeps them on one horizontal line */
+  gap: 4px;              /* small, even spacing between dots */
+  line-height: 1;        /* prevents vertical wrapping */
+}
+
+.typing-dots span {
+  width: 6px;
+  height: 6px;
+  background-color: #060947;
+  border-radius: 50%;
+  animation: blink 1.4s infinite;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.3; }
+  40% { opacity: 1; }
+}
+
+/* === Responsive Design === */
+@media (max-width: 480px) {
+  #chatbot-box, .chatbot-box {
+    width: 92%;
+    height: 65%;
+    right: 4%;
+    bottom: 80px;
+    top: auto;
+    transform: none;
+  }
+
+  #chatbot-btn, .chatbot-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+    bottom: 25px;
+  }
+
+  .message {
+    font-size: 0.9rem;
+  }
+
+  #chatbot-header, .chatbot-header {
+    font-size: 15px;
+}
+#user-input, .chatbot-input input {
+  font-size: 1.2rem;
+}
+
+  #chatbot-input, .chatbot-input {
+    flex-direction: row;
+  }
+
+  #user-input, .chatbot-input input {
+    font-size: 1rem;      /* slightly smaller */
+    padding: 10px;
+  }
+
+  #send-btn, .chatbot-input button {
+    padding: 10px 12px;   /* smaller padding to fit */
+    font-size: 14px;      /* smaller font */
+    flex-shrink: 0;       /* ensure button doesn’t shrink too much */
+  }
+}
+/* ====== Base Layout ====== */
+.speedtest-container {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  max-width: 600px;
+  margin: 4rem auto;
+  background: linear-gradient(135deg, rgba(0,119,255,0.05), rgba(0,209,255,0.08));
+  border: 1px solid rgba(0,119,255,0.2);
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(0,119,255,0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* ====== Title ====== */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0077ff;
+  text-shadow: 0 0 10px rgba(0,119,255,0.2);
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+/* ====== Speed Display ====== */
+.speed-display {
+  background: linear-gradient(135deg, rgba(0,119,255,0.12), rgba(0,209,255,0.15));
+  border: 1px solid rgba(0,119,255,0.25);
+  border-radius: 24px;
+  padding: 2.5rem 1rem;
+  margin-bottom: 2rem;
+  box-shadow: inset 0 0 20px rgba(0,119,255,0.15);
+}
+
+.speed-heading {
+  font-size: 1.2rem;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.speed-value {
+  font-size: 3.7rem;
+  font-weight: 500;
+  color: #0077ff;
+  text-shadow: 0 0 20px rgba(0,119,255,0.4);
+}
+
+.unit {
+  font-size: 1.1rem;
+  color: #6b7280;
+}
+
+/* ====== Details Section ====== */
+.speed-details {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.detail {
+  background: rgba(0,119,255,0.06);
+  border: 1px solid rgba(0,119,255,0.15);
+  border-radius: 18px;
+  padding: 1rem 1.5rem;
+  min-width: 160px;
+  transition: all 0.3s ease;
+}
+
+.detail:hover {
+  border-color: rgba(0,119,255,0.4);
+  background: rgba(0,119,255,0.1);
+  transform: translateY(-4px);
+}
+
+.detail h3 {
+  color: #0077ff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.detail p {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+/* ====== Start Button ====== */
+.speedtest-btn {
+  background: linear-gradient(90deg, #0077ff, #00d1ff);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 25px rgba(0,119,255,0.3);
+}
+
+.speedtest-btn:hover {
+  background: linear-gradient(90deg, #00d1ff, #0077ff);
+  box-shadow: 0 0 40px rgba(0,119,255,0.5);
+  transform: translateY(-3px);
+}
+
+/* ====== Loader ====== */
+.loader {
+  width: 45px;
+  height: 45px;
+  border: 4px solid rgba(0,119,255,0.2);
+  border-top-color: #0077ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 1.5rem auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .speed-value {
+    font-size: 3.5rem;
+  }
+  .speed-details {
+    gap: 1rem;
+  }
+  .detail {
+    min-width: 130px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .speedtest-container {
+    padding: 1.3rem 1rem;
+    margin: 2rem auto;
+    max-width: 95%; /* almost full width on mobile */
+    border-radius: 16px;
+    max-height: 70%;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .speed-display {
+    padding: 1rem 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .speed-heading {
+    font-size: 1rem;
+  }
+
+  .speed-value {
+    font-size: 2.2rem;
+  }
+
+  .unit {
+    font-size: 0.95rem;
+  }
+
+  .speed-details {
+    flex-direction: column; /* stack details vertically */
+    gap: 1rem;
+  }
+
+  .detail {
+    min-width: auto;
+    padding: 0.8rem 1rem;
+    margin-bottom: -4px;
+  }
+
+  .detail h3 {
+    font-size: 0.95rem;
+  }
+
+  .detail p {
+    font-size: 1rem;
+  }
+
+  .speedtest-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    margin-top: -20px;
+  }
+
+  .loader {
+    width: 35px;
+    height: 35px;
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Compress detail boxes */
+  .detail {
+    padding: 0.6rem 0.8rem; /* less padding inside each box */
+    min-width: auto;         /* allow them to shrink */
+    border-radius: 12px;
+    margin-top: 2px;
+  }
+
+  .detail h3 {
+    font-size: 0.85rem;      /* smaller heading */
+    margin-bottom: 0.3rem;
+  }
+
+  .detail p {
+    font-size: 0.95rem;      /* smaller value */
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .speed-details {
+    flex-direction: column;  /* stack vertically for small screens */
+    gap: 0.8rem;             /* smaller gap */
+  }
+}
+
+
+
+/* ====== Speedtest Hint Popup ====== */
+.speedtest-hint {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #0077ff, #00d1ff);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,119,255,0.3);
+  z-index: 9999;
+  display: none;
+  max-width: 260px;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.speedtest-hint p {
+  margin: 0 0 0.7rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.speedtest-hint button {
+  background: #fff;
+  color: #0077ff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.speedtest-hint button:hover {
+  background: #f0f8ff;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ===== Modal Styles ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 650px;
+  text-align: left;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  animation: popIn 0.3s ease;
+  position: relative;
+}
+
+.modal-content h2 {
+  color: #045dbb;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.modal-content ul {
+  margin: 10px 0 10px 20px;
+}
+
+.modal-content p, .modal-content li {
+  color: #333;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #045dbb;
+}
+
+/* Animation */
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive modal for phones */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .modal-content p, .modal-content li {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* ===== Knowledge Hub Section ===== */
+.knowledge {
+  padding: 60px 20px;
+  background: #f8f9fa;
+  text-align: center;
+  color: #222;
+}
+
+.knowledge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.knowledge-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.knowledge-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.knowledge-card img {
+  width: 100%;
+  border-radius: 12px;
+  height: 160px;
+  object-fit: cover;
+}
+
+.knowledge-card h3 {
+  margin-top: 10px;
+  color: #045dbb;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.knowledge-card p {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.read-more {
+  background: none;
+  color: #045dbb;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: color 0.3s ease;
+}
+
+.read-more:hover {
+  color: #003b7a;
+  text-decoration: underline;
+}
+
+/* ===== Modal Styles (Enhanced for MikrodTech) ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 40px 45px;
+  border-radius: 18px;
+  width: 90%;
+  max-width: 1000px; /* ⬅️ Wider modal for high-end presentation */
+  max-height: 85vh; /* keeps modal within view height */
+  overflow-y: auto; /* enable scrolling for long content */
+  text-align: left;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  animation: popIn 0.3s ease;
+  position: relative;
+}
+
+/* Header */
+.modal-content h2 {
+  color: #045dbb;
+  margin-bottom: 18px;
+  font-size: 1.8rem; /* ⬆️ Bigger title */
+  font-weight: 500;
+  text-align: center;
+  border-bottom: 2px solid rgba(4, 93, 187, 0.15);
+  padding-bottom: 10px;
+}
+
+/* Body content */
+.modal-content ul {
+  margin: 12px 0 12px 25px;
+}
+
+.modal-content p, 
+.modal-content li {
+  color: #222;
+  line-height: 1.7;
+  font-size: 1.5rem; /* ⬆️ Slightly larger font for readability */
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.25s ease;
+}
+
+.close-btn:hover {
+  color: #045dbb;
+  transform: scale(1.1);
+}
+
+/* Scrollbar style (for elegance) */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: rgba(4, 93, 187, 0.5);
+  border-radius: 8px;
+}
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Animation */
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===== Responsive modal for phones ===== */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 90%;
+    padding: 25px 20px;
+    border-radius: 14px;
+    max-height: 80vh;
+  }
+
+  .modal-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .modal-content p, 
+  .modal-content li {
+    font-size: 1rem;
+  }
+
+  .close-btn {
+    top: 12px;
+    right: 18px;
+    font-size: 1.2rem;
+  }
+}
+
+
+/* ===== Fix right drift on mobile screens ===== */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .knowledge,
+  .tools {
+    margin: 0 auto !important;
+    padding: 20px 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .knowledge-grid,
+  .tools-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden;
+  }
+
+  .knowledge-card,
+  .tool-card {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .knowledge-card h3 {
+    font-size: 1rem; /* slightly smaller on phones */
+  }
+}
+
+#speedtest-hint {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.4s ease;
+  z-index: 9999;
+  max-width: 300px;
+}
+
+/* Fade-in animation when visible */
+#speedtest-hint.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments for phones */
+@media (max-width: 480px) {
+  #speedtest-hint {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    max-width: 220px;
+  }
+
+  #hint-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+#speedtest-hint {
+  transform: translateY(20px); /* start slightly below */
+}
+
+#speedtest-hint.show {
+  transform: translateY(0);    /* slide into place */
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+#pwInput, #pwName {
+  font-size: 1.2rem; /* default */
+}
+
+@media (max-width: 480px) {
+  #pwInput, #pwName {
+    font-size: 1rem; /* smaller on phones */
+  }
+}
+
+
+/* Default style for desktop */
+#togglePw {
+  font-size: 1.1rem;
+  padding: 0 10px;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+}
+
+/* On small screens (phones) */
+@media screen and (max-width: 480px) {
+  #togglePw {
+    font-size: 0.9rem; /* smaller font */
+    padding: 0 6px;
+  }
+
+  #pwInput {
+    font-size: 1rem; /* slightly smaller input text */
+  }
+}
+
+/* Optional input default */
+.pw-optional-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 1.1rem; /* desktop default */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+
+/* Responsive adjustment for phone screens */
+@media screen and (max-width: 480px) {
+  .pw-optional-input {
+    font-size: 0.95rem; /* smaller on phones */
+    padding: 6px;
+  }
+}
+
+/* Password input default */
+.pw-input {
+  width: 100%;
+  padding: 10px 50px 10px 10px;
+  font-size: 1.3rem; /* desktop default */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* Responsive for phones */
+@media screen and (max-width: 480px) {
+  .pw-input {
+    font-size: 1rem; /* smaller on phones */
+    padding: 8px 45px 8px 8px;
+  }
+}
+
+/* ===== Cybersecurity Section ===== */
+.cybersecurity-section {
+  background: #e6f0ff; /* soft MikrodTech blue to stand out */
+  color: #0a0a0a;
+  padding: 6rem 1rem;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 74, 173, 0.15);
+}
+
+.cybersecurity-section .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #004aad; /* MDT primary blue */
+  margin-bottom: 1rem;
+}
+
+.cybersecurity-section .section-intro {
+  font-size: 1.2rem;
+  color: #0a0a0a; /* dark for contrast */
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.cyber-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.cyber-card {
+  background: #ffffff; /* standout white card */
+  border: 2px solid #004aad; /* MDT blue border for branding */
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 74, 173, 0.2);
+}
+
+.cyber-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 74, 173, 0.35);
+}
+
+.cyber-card h3 {
+  font-size: 1.5rem;
+  color: #004aad; /* MDT blue */
+  margin-bottom: 0.5rem;
+}
+
+.cyber-card p {
+  font-size: 1rem;
+  color: #0a0a0a; /* dark text for readability */
+  margin-bottom: 1rem;
+}
+
+.cyber-card .coming-soon {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #ffffff;
+  background: #00d8ff; /* MDT cyan */
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.cyber-footer p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #0a0a0a;
+}
+
+.cyber-footer .btn {
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #00d8ff, #004aad); /* MDT gradient */
+  border: none;
+  border-radius: 8px;
+  color: white;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cyber-footer .btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #004aad, #00d8ff);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cybersecurity-section .section-title {
+    font-size: 2rem;
+  }
+
+  .cybersecurity-section .section-intro {
+    font-size: 1rem;
+  }
+
+  .cyber-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .cyber-card p {
+    font-size: 0.95rem;
+  }
+}
+

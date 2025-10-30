@@ -1,0 +1,640 @@
+<!-- Force Netlify to update -->
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Content Security Policy allowing Google Analytics + local API (for chatbot + Cloudflare Speedtest) -->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
+  connect-src 'self' http://localhost:3000 https://mikrodtech-backend.onrender.com https://www.google-analytics.com https://ipapi.co https://speed.cloudflare.com;
+  img-src 'self' https://www.google-analytics.com data:;
+  style-src 'self' 'unsafe-inline';
+  font-src 'self';
+">
+
+
+    <!-- Google tag (gtag.js) -->
+<script defer src="ga.js"></script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MikrodTech — Networking & Tech Solutions</title>
+  <!-- Link to external stylesheet and JS (will create next) -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Standard favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- Apple devices -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Android / Chrome -->
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+
+<!-- Manifest for PWA -->
+<link rel="manifest" href="/site.webmanifest">
+ 
+
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home">
+        <!-- Logo: place logo.png in the same folder as this index.html -->
+        <img id="logo" src="logo.png" alt="MikrodTech logo" />
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+
+<nav class="main-nav">
+  <ul class="nav-list">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#speedtest">Speed Test</a></li>
+    <li><a href="#knowledge">Knowledge Hub</a></li>
+    <li><a href="#tools">Free Tools</a></li>
+    <li><a href="#cybersecurity">Cybersecurity</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <button id="installAppBtn" class="btn btn-primary" style="display:none; position:fixed; bottom:20px; right:20px; z-index:1000;">
+  📲 Install MikrodTech App
+</button>
+
+  </ul>
+</nav>
+
+      
+    </div>
+  </header>
+
+<!-- ===== Hero Section ===== -->
+<section class="hero">
+  <div class="container">
+    <h1 class="company-name">MikrodTech</h1>
+    <p class="tagline">Smart Solutions. Trusted Tech.</p>
+    <p class="lead">
+      Expert consultation, structured planning, and technology supply — with seamless installation and support for homes, offices, and institutions.
+    </p>
+    <a href="#services" class="btn btn-primary explore-btn">Explore Services</a>
+  </div>
+</section>
+
+
+    <!-- About -->
+    <section id="about" class="about container">
+      <h2>About Us</h2>
+      <p>
+        MikrodTech provides professional networking services and supplies quality technology products. We install and support computers, networking equipment, CCTV/security systems, printers, power backups (UPS), POS systems, and gaming & productivity gear. Our focus is dependable installations, fast service, and premium products tailored for institutions and businesses.
+      </p>
+    </section>
+
+    <!-- Services -->
+<section id="services" class="services container">
+ <h2 class="section-title">Services & Products</h2>
+  <div class="service-grid">
+    
+    <article class="service-card">
+      <h3>
+        <button class="service-toggle" data-target="network-detail">
+        <span class="service-title">Network Installations</span>
+        </button>
+      </h3>
+      <p>
+        Wired & wireless networks, structured cabling, switches, routers, 
+        and Wi-Fi planning for offices and campuses.
+      </p>
+      
+      <!-- Chevron centered below description -->
+      <button class="service-toggle" data-target="network-detail">
+        <span class="chevron">▼</span>
+      </button>
+    
+      <div id="network-detail" class="service-detail hidden">
+        <p>
+          MikrodTech designs and installs secure wired & wireless networks. We handle 
+          structured cabling (Cat6/Cat7), routers, switches, and Wi-Fi planning 
+          tailored for schools, offices, and institutions. Our focus is speed, reliability, 
+          and scalability for future growth.
+        </p>
+      </div>
+    </article>
+        
+    <article class="service-card">
+      <h3>
+        <button class="service-toggle" data-target="computers-detail">
+        <span class="service-title">Computers & Workstations  </span>
+        </button>
+      </h3>
+      <p>Desktops, laptops, and workstations for productivity and education — sales, setup, and maintenance.</p>
+      <button class="service-toggle" data-target="computers-detail">
+        <span class="chevron">▼</span>
+      </button>
+
+      <div id="computers-detail" class="service-detail hidden">
+        <p>
+          We supply, install, and maintain desktops, laptops, and workstations for 
+          businesses and schools. Our team handles OS setup, software configuration, 
+          upgrades, and ongoing support to keep your teams productive.
+        </p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <h3>
+        <button class="service-toggle" data-target="cctv-detail">
+        <span class="service-title">CCTV & Security Systems  </span>
+        </button>
+      </h3>
+      <p>Camera systems, DVR/NVR setup, remote viewing, and secure installations for facilities.</p>
+
+      <button class="service-toggle" data-target="cctv-detail">
+        <span class="chevron">▼</span>
+      </button>
+      <div id="cctv-detail" class="service-detail hidden">
+        <p>
+          MikrodTech installs CCTV surveillance systems with DVR/NVR integration. 
+          We provide remote monitoring, secure setup, and reliable maintenance to 
+          protect your facilities, schools, and businesses.
+        </p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <h3>
+        <button class="service-toggle" data-target="printers-detail">
+        <span class="service-title">Printers & POS Systems </span>
+        </button>
+      </h3>
+      <p>Printer supply & maintenance, POS hardware setup and integration for retail or school environments.</p>
+
+      <button class="service-toggle" data-target="printers-detail">
+        <span class="chevron">▼</span>
+      </button>
+      <div id="printers-detail" class="service-detail hidden">
+        <p>
+          From printers and photocopiers to POS hardware, we supply, install, and 
+          maintain solutions tailored to schools, offices, and retail businesses. 
+          Our team ensures smooth integration and reliable operation.
+        </p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <h3>
+        <button class="service-toggle" data-target="power-detail">
+        <span class="service-title">Power Backups (UPS)</span>
+        </button>
+      </h3>
+      <p>Power continuity solutions to keep critical systems running during outages.</p>
+
+      <button class="service-toggle" data-target="power-detail">
+        <span class="chevron">▼</span>
+      </button>
+      <div id="power-detail" class="service-detail hidden">
+        <p>
+          We provide UPS systems and backup power solutions that protect against 
+          downtime and data loss. MikrodTech ensures your critical infrastructure 
+          stays online even during outages.
+        </p>
+      </div>
+    </article>
+
+    <article class="service-card">
+      <h3>
+        <button class="service-toggle" data-target="gaming-detail ">
+          <span class="service-title">Gaming & Productivity Gear</span>
+        </button>
+      </h3>
+      <p>High-performance peripherals and components for gaming labs and productivity suites.</p>
+
+      <button class="service-toggle" data-target="gaming-detail">
+        <span class="chevron">▼</span>
+      </button>
+      <div id="gaming-detail" class="service-detail hidden">
+        <p>
+          We supply and install high-performance keyboards, mice, monitors, and 
+          components for gaming labs, eSports setups, and productivity environments. 
+          Built for speed, comfort, and performance.
+        </p>
+      </div>
+    </article>
+
+  </div>
+<section id="speedtest" class="speedtest-container">
+  <h2 class="section-title">Internet Speed Test</h2>
+
+  <div class="speed-display">
+    <p class="speed-heading">Your Internet speed is</p>
+    <p id="download-speed" class="speed-value"><div id="loader" class="loader" style="display:none;"></div></p>
+    <p class="unit">Mbps</p>
+  </div>
+
+  <div class="speed-details">
+    <div class="detail">
+      <h3>Upload</h3>
+      <p><span id="upload-speed">--</span> Mbps</p>
+    </div>
+
+    <div class="detail">
+      <h3>Ping</h3>
+      <p><span id="ping-speed">--</span> ms</p>
+    </div>
+  </div>
+
+  <button id="start-speedtest" class="speedtest-btn">Start Test</button>
+</section>
+
+
+
+<!-- Knowledge Hub -->
+<section id="knowledge" class="knowledge container">
+  <h2 class="section-title">Knowledge Hub</h2>
+  <p class="section-intro">
+    Learn, explore, and stay ahead with MikrodTech — your go-to hub for tech guides, cybersecurity insights, and software tips.
+  </p>
+
+  <div class="knowledge-grid">
+    <article class="knowledge-card">
+      <img src="networking-guide.jpg" alt="Networking Guide">
+      <h3>How to Secure Your Wi-Fi</h3>
+      <p>Simple steps to protect your home or office network from cyber threats.</p>
+      <a href="#" class="read-more">Read More →</a>
+    </article>
+
+    <article class="knowledge-card">
+      <img src="cyber-tools.jpg" alt="Cybersecurity Tools">
+      <h3>Top Free Tools for Network Analysis</h3>
+      <p>Discover open-source tools that help analyze and secure your network.</p>
+      <a href="#" class="read-more">Read More →</a>
+    </article>
+
+    <article class="knowledge-card">
+      <img src="pc-tips.jpg" alt="PC Maintenance Tips">
+      <h3>5 Ways to Speed Up Your PC</h3>
+      <p>Boost performance with simple maintenance and configuration steps.</p>
+      <a href="#" class="read-more">Read More →</a>
+    </article>
+  </div>
+
+  <div class="center-btn">
+    <a href="#" class="btn btn-secondary">Explore All Articles</a>
+  </div>
+</section>
+
+
+<!-- ===== Free Tools & Resources ===== -->
+<section id="tools" class="tools container">
+  <h2 class="section-title">Free Tools & Resources</h2>
+  <p class="section-intro">
+    Explore free, trusted tools and resources by MikrodTech — built to make your tech life easier.
+  </p>
+
+  <div class="tools-grid">
+    <article class="tool-card">
+      <img src="tool-iplookup.png" alt="IP Lookup Tool">
+      <h3>IP Address Lookup</h3>
+      <p>Find your public IP and location details instantly.</p>
+      <a href="#" class="btn btn-secondary tool-btn" data-tool="iplookup">Open Tool</a>
+    </article>
+
+    <article class="tool-card">
+      <img src="tool-password.png" alt="Password Strength Checker">
+      <h3>Password Strength Checker</h3>
+      <p>Test how strong your password is and learn how to improve it.</p>
+      <a href="#" class="btn btn-secondary tool-btn" data-tool="password">Try Now</a>
+    </article>
+
+    <article class="tool-card">
+      <img src="tool-ping.png" alt="Ping & Network Test">
+      <h3>Ping & Network Test</h3>
+      <p>Check your connection latency and server response times.</p>
+      <a href="#" class="btn btn-secondary tool-btn" data-tool="ping">Start Test</a>
+    </article>
+
+    <article class="tool-card">
+      <img src="tool-downloads.png" alt="Software Downloads">
+      <h3>Free Software Downloads</h3>
+      <p>Access curated tools for security, networking, and productivity.</p>
+      <a href="#" class="btn btn-secondary tool-btn" data-tool="downloads">View List</a>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===== Cybersecurity Section ===== -->
+<section id="cybersecurity" class="cybersecurity-section container">
+  <h2 class="section-title">MDT Cybersecurity</h2>
+  <p class="section-intro">
+    One of the backbones of MikrodTech — our next-generation cybersecurity solutions will ensure your networks, devices, and data are fully protected. Stay tuned for what's coming!
+  </p>
+
+  <div class="cyber-grid">
+    <div class="cyber-card">
+      <div class="cyber-card-inner">
+        <h3>Network Defense</h3>
+        <p>Advanced protection for wired & wireless networks to prevent breaches and ensure uptime.</p>
+        <span class="coming-soon">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="cyber-card">
+      <div class="cyber-card-inner">
+        <h3>Endpoint Security</h3>
+        <p>Protect devices against malware, ransomware, and unauthorized access.</p>
+        <span class="coming-soon">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="cyber-card">
+      <div class="cyber-card-inner">
+        <h3>Cloud Security</h3>
+        <p>Secure cloud applications and storage with MDT’s upcoming advanced monitoring.</p>
+        <span class="coming-soon">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="cyber-card">
+      <div class="cyber-card-inner">
+        <h3>Threat Intelligence</h3>
+        <p>Real-time threat detection and alerts to proactively defend your organization.</p>
+        <span class="coming-soon">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cyber-footer">
+    <p>MDT Cybersecurity is coming soon — stay tuned for exclusive previews and early access!</p>
+    <a href="#contact" class="btn">Notify Me</a>
+  </div>
+</section>
+
+
+
+
+</section><section id="testimonials" class="testimonials">
+  <h2 class="section-title">What Our Clients Say</h2>
+
+  <!-- Testimonial slider -->
+  <div class="testimonial-slider">
+    <div class="testimonial-card active">
+      <p class="testimonial-text">
+        “MikrodTech expertly handled our computer installation, networking setup, technology consultations, and CCTV installation with professionalism and efficiency.”
+      </p>
+      <p class="testimonial-author">— Val Mutua, Eastfield Security Services</p>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        “Their team delivered structured computer planning, organized networking, remote CCTV access, and high-performance Wi-Fi installation seamlessly.”
+      </p>
+      <p class="testimonial-author">— Lyzz Cheryl, Riverbend Academy</p>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        “From consultation to purchase and installation of Starlink internet, MikrodTech integrated smart devices flawlessly for complete remote control at home.”
+      </p>
+      <p class="testimonial-author">— Bishop Michael Simati</p>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        “We needed a full network upgrade for our campus. MikrodTech’s team was efficient, knowledgeable, and very reliable.”
+      </p>
+      <p class="testimonial-author">— John Mbugua, Greenwood Academy</p>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        “Installation of UPS systems and CCTV by MikrodTech went smoothly. Their team explained everything clearly and ensured our systems work perfectly.”
+      </p>
+      <p class="testimonial-author">— Emmanuel Kirt, Wiphan School</p>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        “MikrodTech supplied and configured our computers and networking gear for the new office. Everything was delivered on time and works flawlessly.”
+      </p>
+      <p class="testimonial-author">— Marygorety Achieng, Hillcrest Learning Center</p>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        “They helped set up our home office with high-speed Wi-Fi, smart devices, and proper networking. Very professional and patient throughout.”
+      </p>
+      <p class="testimonial-author">— Isaac Juma, Private Residence</p>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        “MikrodTech’s installation of POS systems and printers was smooth and well-organized. Support has been excellent ever since.”
+      </p>
+      <p class="testimonial-author">— Leroy James , Sunrise Learning Hub</p>
+    </div>
+  </div>
+
+  <!-- Dot indicators -->
+  <div class="testimonial-dots">
+    <span class="dot active" data-index="0"></span>
+    <span class="dot" data-index="1"></span>
+    <span class="dot" data-index="2"></span>
+    <span class="dot" data-index="3"></span>
+    <span class="dot" data-index="4"></span>
+    <span class="dot" data-index="5"></span>
+    <span class="dot" data-index="6"></span>
+    <span class="dot" data-index="7"></span>
+  </div>
+
+    <!-- Slider controls -->
+  <div class="testimonial-controls">
+    <button id="prevTestimonial" aria-label="Previous testimonial">❮</button>
+    <button id="nextTestimonial" aria-label="Next testimonial">❯</button>
+  </div>
+
+</section>
+
+
+<!-- Contact -->
+<section id="contact" class="contact container">
+  <h2 class="section-title">Contact Us</h2>
+
+  <p class="contact-intro">
+    The fastest way to get started is by phone. Call us now or request a callback.
+  </p>
+
+  <!-- Call to Action -->
+  <div class="contact-actions">
+    <a href="tel:0769329029" class="btn btn-primary">📞 Call Us Now</a>
+    <button id="callbackBtn" class="btn btn-secondary">📲 Request a Callback</button>
+  </div>
+
+<!-- Request a Callback Form (hidden by default) -->
+<div id="callbackForm" class="callback-form hidden">
+  <form id="requestCallback" method="POST" novalidate>
+    <!-- Hidden fields for FormSubmit -->
+    <input type="hidden" name="_subject" value="New Callback Request from MikrodTech Website">
+    <input type="hidden" name="_captcha" value="false">
+
+    <div class="form-row">
+      <div>
+        <input id="callback-firstname" name="firstname" type="text" placeholder="First name" required>
+        <span class="error hidden" id="fnameError">⚠️ First name is required</span>
+      </div>
+      <div>
+        <input id="callback-surname" name="surname" type="text" placeholder="Surname" required>
+        <span class="error hidden" id="snameError">⚠️ Surname is required</span>
+      </div>
+    </div>
+
+    <div>
+      <input id="callback-altphone" name="altphone" type="tel" placeholder="Phone number">
+      <span class="error hidden" id="altPhoneError">⚠️ Enter a valid phone number</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Request Callback</button>
+  </form>
+
+  <!-- Success / error message -->
+  <p id="callbackMessage" class="hidden"></p>
+</div>
+
+</section>
+
+<p class="contact-email">Prefer email for follow-ups?</p>
+
+<div class="contact-container">
+<form name="contact" method="POST" action="https://formsubmit.co/info@mikrodtech.co.ke" class="contact-form">
+  <input type="hidden" name="_subject" value="New Contact Form Submission from Website">
+  <input type="hidden" name="_captcha" value="false">
+
+  <label for="name">Name</label>
+  <input id="name" name="name" type="text" placeholder="Your name" />
+  <span class="input-error-message hidden" id="nameError">⚠️ Name is required</span>
+
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" placeholder="you@example.com" />
+  <span class="input-error-message hidden" id="emailError"> Enter a valid email</span>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="5" placeholder="Tell us about your project"></textarea>
+  <span class="input-error-message hidden" id="messageError"> Message is required</span>
+
+  <button type="submit" class="btn btn-secondary">Send Message</button>
+
+  <p id="contactMessage" class="contact-feedback hidden"></p>
+</form>
+
+<!-- Contact Emails Block -->
+  <div class="contact-emails-small">
+    <h1>Contact Us via Email</h1>
+    <p>For inquiries: 
+      <a href="mailto:info@mikrodtech.co.ke?subject=General%20Inquiry&body=Hello%20MikrodTech%20Team,">
+        info@mikrodtech.co.ke
+      </a>
+    </p>
+    <p>For sales: 
+      <a href="mailto:sales@mikrodtech.co.ke?subject=Sales%20Request&body=Hello%20MikrodTech%20Sales%20Team,">
+        sales@mikrodtech.co.ke
+      </a>
+    </p>
+    <p>For support: 
+      <a href="mailto:support@mikrodtech.co.ke?subject=Support%20Request&body=Hello%20MikrodTech%20Support,">
+        support@mikrodtech.co.ke
+      </a>
+    </p>
+  </div>
+
+</div>
+
+<div class="contact-icons">
+  <a href="tel:0769329029" title="Call Us">
+    <img src="phone.png" alt="Phone" />
+  </a>
+  
+  <a href="mailto:info@mikrodtech.co.ke" title="Email Us">
+    <img src="mail.png" alt="Email" />
+  </a>
+  
+  <a href="https://www.linkedin.com/company/mikrodtech" title="LinkedIn" target="_blank">
+    <img src="linkedin.png" alt="LinkedIn" />
+  </a>
+  
+  <a href="https://www.instagram.com/mikrodtech" title="Instagram" target="_blank">
+    <img src="instagram.png" alt="Instagram" />
+  </a>
+</div>
+
+</section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> MikrodTech. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Small inline script to set the copyright year (won't conflict with app.js)
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!--
+    Notes for you:
+    - Place this file (index.html), style.css and app.js in the same folder as your logo (logo.png).
+    - I'll create style.css next with your white / blue / black theme and a simple responsive layout.
+    - If you want different section copy (phone, email, LinkedIn URL), tell me and I'll update the files.
+  -->
+
+  
+<!-- Chatbot Section -->
+<div id="chatbot-container">
+  <button id="chatbot-btn" class="chatbot-btn">💬<span class="chat-label">Chat</span></button>
+
+  <div id="chatbot-box" class="chatbot-box">
+    <div class="chatbot-header">
+      <h4>MikrodTech Assistant</h4>
+      <button id="close-chat" class="close-btn">&times;</button>
+    </div>
+    <div class="chatbot-messages" id="chatbot-messages">
+       <div id="chatbot-messages-inner">
+      <div class="message bot">Hello, how can I assist you today?</div>
+       </div>
+    </div>
+    <div class="chatbot-input">
+      <input type="text" id="user-input" placeholder="Type your message..." />
+      <button id="send-btn">➤</button>
+    </div>
+  </div>
+</div>
+
+<!-- Chatbot Script -->
+<script src="chatbot.js" defer></script>
+
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js").then(() => {
+      console.log("✅ Service worker registered");
+    });
+  }
+</script>
+
+  <script src="app.js"></script>
+
+<!-- Speedtest Hint Popup -->
+<div id="speedtest-hint" class="speedtest-hint">
+  <p>🚀 Want to check your internet speed? Try our built-in <strong>Speed Test</strong> below!</p>
+  <button id="hint-btn">Take me there</button>
+</div>
+
+
+</body>
+</html>
+
