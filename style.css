@@ -3949,4 +3949,29 @@ html {
   background-color: #095bb5;
 }
 
+.install-btn {
+  background-color: var(--primary-color, #0078ff);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+.install-btn:hover {
+  background-color: #005fcc;
+}
+
+.dark-mode .install-btn {
+  background-color: #0a84ff;
+  color: #fff;
+}
+
+.dark-mode .install-btn:hover {
+  background-color: #006edc;
+}
+
+
 /* etc., for all sections */

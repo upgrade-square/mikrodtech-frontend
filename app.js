@@ -1340,3 +1340,30 @@ window.addEventListener('beforeinstallprompt', (e) => {
     }
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const installBtn = document.getElementById("install-btn");
+  installBtn.style.display = "inline-block"; // always visible
+
+  let deferredPrompt;
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+  });
+
+  installBtn.addEventListener("click", async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const choice = await deferredPrompt.userChoice;
+      if (choice.outcome === "accepted") {
+        installBtn.textContent = "Installed";
+        installBtn.disabled = true;
+      }
+      deferredPrompt = null;
+    } else {
+      alert("Installation not supported or already installed.");
+    }
+  });
+});
