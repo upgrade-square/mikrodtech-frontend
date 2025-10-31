@@ -1252,3 +1252,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// ==============================
+// 📊 Track Page Visit
+// ==============================
+window.addEventListener("load", () => {
+  fetch("https://mikrodtech-backend.onrender.com/api/visits")
+    .catch(err => console.error("Counter error:", err));
+});
