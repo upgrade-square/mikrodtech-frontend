@@ -1259,3 +1259,63 @@ window.addEventListener("load", () => {
   fetch("https://mikrodtech-backend.onrender.com/api/visits")
     .catch(err => console.error("Counter error:", err));
 });
+
+// Ask for admin password before loading analytics
+const pass = prompt("Enter admin password:");
+if (pass !== "MikrodSecure") {
+  document.body.innerHTML = "<h2 style='text-align:center;margin-top:20%;color:red;'>Access Denied</h2>";
+  throw new Error("Access denied");
+}
+
+// Wait for DOM
+document.addEventListener("DOMContentLoaded", () => {
+  const visitCountEl = document.getElementById("visitCount");
+  const chartCanvas = document.getElementById("visitChart");
+
+  // Fetch visit stats from backend
+  fetch("https://mikrodtech-backend.onrender.com/api/visits?key=MySecret123")
+    .then(res => res.json())
+    .then(data => {
+      // Expecting JSON:
+      // { total: 120, daily: { "2025-10-27": 15, "2025-10-28": 20, ... } }
+
+      // 1️⃣ Update total visits
+      visitCountEl.textContent = data.total || 0;
+
+      // 2️⃣ Prepare chart data
+      const labels = Object.keys(data.daily || {});
+      const values = Object.values(data.daily || {});
+
+      // 3️⃣ Create Chart.js bar chart
+      new Chart(chartCanvas, {
+        type: "bar",
+        data: {
+          labels,
+          datasets: [{
+            label: "Daily Visits",
+            data: values,
+            backgroundColor: "#0099cc",
+            borderRadius: 10
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            title: {
+              display: true,
+              text: "Daily Page Visits (Last 7 Days)",
+              font: { size: 16 }
+            }
+          },
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+    })
+    .catch(err => {
+      console.error("Analytics error:", err);
+      visitCountEl.textContent = "Error loading data";
+    });
+});

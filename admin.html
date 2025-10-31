@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MikrodTech | Page Analytics</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #e8f0ff, #f4f8ff);
+      color: #0a0a0a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1rem;
+    }
+
+    .dashboard {
+      background: white;
+      padding: 2.5rem 3rem;
+      border-radius: 25px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      width: 95%;
+      max-width: 650px;
+      transition: all 0.3s ease;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      color: #003399;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .count {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #0099cc;
+      margin-bottom: 1.2rem;
+    }
+
+    canvas {
+      margin-top: 1.5rem;
+      max-width: 100%;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    .error {
+      color: #d9534f;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h1>Website Page Visits</h1>
+    <p class="subtitle">Real-time traffic insights for MikrodTech</p>
+
+    <div class="count" id="visitCount">Loading...</div>
+    <canvas id="visitChart" height="200"></canvas>
+
+    <p id="errorMsg" class="error"></p>
+    <div class="footer">MikrodTech Analytics Dashboard</div>
+  </div>
+
+  <script>
+    // 🔐 Admin Access
+    const pass = prompt("Enter admin password:");
+    if (pass !== "MikrodSecure") {
+      document.body.innerHTML = "<h2 style='text-align:center;margin-top:20%;color:red;'>Access Denied</h2>";
+      throw new Error("Access denied");
+    }
+
+    // 🎯 Fetch and display analytics data
+    fetch("https://mikrodtech-backend.onrender.com/api/visits?key=MySecret123")
+      .then(res => res.json())
+      .then(data => {
+        const visitCountEl = document.getElementById("visitCount");
+        const errorMsg = document.getElementById("errorMsg");
+
+        if (!data || !data.total) {
+          visitCountEl.textContent = "0";
+          errorMsg.textContent = "No data available.";
+          return;
+        }
+
+        // Display total visits
+        visitCountEl.textContent = data.total.toLocaleString();
+
+        // Prepare chart data
+        const labels = Object.keys(data.daily || {});
+        const values = Object.values(data.daily || {});
+
+        const ctx = document.getElementById("visitChart").getContext("2d");
+        new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels,
+            datasets: [{
+              label: "Daily Visits",
+              data: values,
+              backgroundColor: "rgba(0, 153, 204, 0.7)",
+              borderColor: "#007acc",
+              borderWidth: 1.5,
+              borderRadius: 8
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: "Daily Visits (Last 7 Days)",
+                color: "#003366",
+                font: { size: 16 }
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: { color: "#333" },
+                grid: { color: "rgba(0,0,0,0.05)" }
+              },
+              x: {
+                ticks: { color: "#555" },
+                grid: { display: false }
+              }
+            }
+          }
+        });
+      })
+      .catch(err => {
+        console.error("Analytics error:", err);
+        document.getElementById("errorMsg").textContent = "Error loading analytics data.";
+        document.getElementById("visitCount").textContent = "—";
+      });
+  </script>
+</body>
+</html>
