@@ -194,10 +194,19 @@ Would you like me to explain these services in more detail?
     chatbotBtn.style.display = "block";
   });
 
-  sendBtn.addEventListener("click", sendMessage);
-  userInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") sendMessage();
-  });
+ sendBtn.addEventListener("click", () => {
+  const userText = userInput.value.trim();
+  if (userText !== "") {
+    addMessage("user", userText);
+    userInput.value = "";
+    getBotResponse(userText);
+
+    // ✅ Keep keyboard open on mobile
+    setTimeout(() => {
+      userInput.focus();
+    }, 100);
+  }
+});
 
   function sendMessage() {
     const text = userInput.value.trim();

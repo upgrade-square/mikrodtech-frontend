@@ -2247,12 +2247,14 @@ body {
 /* === Responsive Design === */
 @media (max-width: 480px) {
   #chatbot-box, .chatbot-box {
-    width: 80%;
-    height: 65%;
-    right: 4%;
+    width: 92%;
+    height: 80%;
+    position: fixed;
+    left: 50%;
     bottom: 80px;
     top: auto;
-    transform: none;
+    transform: translateX(-50%); /* centers it horizontally */
+    right: auto; /* removes the previous right offset */
   }
 
   #chatbot-btn, .chatbot-btn {
@@ -2267,7 +2269,8 @@ body {
   }
 
   #chatbot-header, .chatbot-header {
-    font-size: 15px;
+    font-size: 0.9rem;
+     padding: 0 5px;
 }
 #user-input, .chatbot-input input {
   font-size: 1.2rem;
@@ -2287,6 +2290,13 @@ body {
     font-size: 14px;      /* smaller font */
     flex-shrink: 0;       /* ensure button doesn’t shrink too much */
   }
+
+  #close-chat, .close-btn {
+  font-size: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 }
 /* ====== Base Layout ====== */
 .speedtest-container {
@@ -3914,13 +3924,13 @@ html {
 
 /* Chatbot dark mode customization */
 .dark-mode {
-  --chat-bot-bg: #000;         /* black background for bot replies */
+  --chat-bot-bg: #130b57;         /* black background for bot replies */
   --chat-bot-text: #fff;       /* white text for contrast */
 }
 
 /* Or directly */
 .dark-mode .message.bot {
-  background: #000;             /* black background */
+  background: #232b82;             /* black background */
   color: #fff;                  /* white text */
 }
 

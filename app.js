@@ -500,46 +500,14 @@ window.addEventListener("load", () => {
 
 
 
-// ====== PWA INSTALL BUTTON HANDLER ======
-let deferredPrompt;
-const installBtn = document.getElementById("installAppBtn");
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  // Prevent automatic prompt
-  e.preventDefault();
-  deferredPrompt = e;
-
-  // Show custom install button
-  installBtn.style.display = "block";
-
-  installBtn.addEventListener("click", async () => {
-    installBtn.disabled = true;
-    installBtn.textContent = "Installing...";
-
-    // Show native browser prompt
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-
-    if (outcome === "accepted") {
-      console.log("User accepted the install prompt");
-      installBtn.textContent = "Installed ";
-      setTimeout(() => (installBtn.style.display = "none"), 2000);
-    } else {
-      console.log("User dismissed the install prompt");
-      installBtn.textContent = "Install MikrodTech App";
-      installBtn.disabled = false;
-    }
-
-    deferredPrompt = null;
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/service-worker.js')
+      .then(() => console.log('SW registered'))
+      .catch((err) => console.error('SW failed:', err));
   });
-});
-
-// Hide install button once app is installed
-window.addEventListener("appinstalled", () => {
-  console.log("MikrodTech App installed successfully!");
-  installBtn.style.display = "none";
-});
-
+}
 
 
 
@@ -1315,16 +1283,32 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  let deferredPrompt;
-  const installBtn = document.getElementById("installAppBtn");
+ let deferredPrompt;
 
-  // Listen for PWA install availability
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault(); // Prevent default browser prompt
-    deferredPrompt = e;  // Save the event
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
 
-    if (installBtn) installBtn.style.display = "inline-block"; // show button
+  const installBtn = document.getElementById('install-btn');
+  if (installBtn) installBtn.style.display = 'block';
+
+  installBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const choice = await deferredPrompt.userChoice;
+
+    if (choice.outcome === 'accepted') {
+      console.log('✅ User accepted install');
+      installBtn.textContent = 'Installed';
+      installBtn.disabled = true;
+    } else {
+      console.log('❌ User dismissed install');
+    }
+
+    deferredPrompt = null;
   });
+});
+
 
   if (installBtn) {
     installBtn.addEventListener("click", async () => {
