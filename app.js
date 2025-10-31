@@ -1282,88 +1282,93 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
- let deferredPrompt;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-
-  const installBtn = document.getElementById('install-btn');
-  if (installBtn) installBtn.style.display = 'block';
-
-  installBtn.addEventListener('click', async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    const choice = await deferredPrompt.userChoice;
-
-    if (choice.outcome === 'accepted') {
-      console.log('✅ User accepted install');
-      installBtn.textContent = 'Installed';
-      installBtn.disabled = true;
-    } else {
-      console.log('❌ User dismissed install');
-    }
-
-    deferredPrompt = null;
-  });
-});
 
 
-  if (installBtn) {
-    installBtn.addEventListener("click", async () => {
-      if (!deferredPrompt) return;
+  // Show button always
+  installBtn.style.display = "inline-block";
 
-      installBtn.textContent = "Installing…"; // Show loading
-      installBtn.disabled = true;
-
-      // Show the install prompt
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-
-      if (outcome === 'accepted') {
-        installBtn.textContent = "Installed";
-      } else {
-        installBtn.textContent = "Install App"; // revert if user cancels
-        installBtn.disabled = false;
-      }
-
-      deferredPrompt = null; // Clear the prompt
-    });
-  }
-
-  // Optional: when app is installed, update the button automatically
-  window.addEventListener('appinstalled', () => {
-    if (installBtn) {
-      installBtn.textContent = "Installed";
-      installBtn.disabled = true;
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const installBtn = document.getElementById("install-btn");
-  installBtn.style.display = "inline-block"; // always visible
-
-  let deferredPrompt;
-
+  // Listen for install availability
   window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
     deferredPrompt = e;
   });
 
+  // Attempt install on click
   installBtn.addEventListener("click", async () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      const choice = await deferredPrompt.userChoice;
-      if (choice.outcome === "accepted") {
-        installBtn.textContent = "Installed";
-        installBtn.disabled = true;
+    try {
+      // If browser has cached the install prompt
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const choice = await deferredPrompt.userChoice;
+        if (choice.outcome === "accepted") {
+          installBtn.textContent = "Installed";
+          installBtn.disabled = true;
+        }
+        deferredPrompt = null;
+      } else {
+        // Try direct install (will open browser's add-to-home if supported)
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+          installBtn.textContent = "Installed";
+          installBtn.disabled = true;
+        } else {
+          // Open browser menu fallback for unsupported cases
+          alert("To install manually: tap your browser menu → 'Add to Home Screen'.");
+        }
       }
-      deferredPrompt = null;
-    } else {
-      alert("Installation not supported or already installed.");
+    } catch (error) {
+      console.error("Install failed:", error);
     }
+  });
+
+  // Detect already installed app
+  window.addEventListener("appinstalled", () => {
+    installBtn.textContent = "Installed";
+    installBtn.disabled = true;
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const installBtn = document.getElementById("install-btn");
+  let deferredPrompt;
+
+  // Show button always
+  installBtn.style.display = "inline-block";
+
+  // Listen for install availability
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+  });
+
+  // Attempt install on click
+  installBtn.addEventListener("click", async () => {
+    try {
+      // If browser has cached the install prompt
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const choice = await deferredPrompt.userChoice;
+        if (choice.outcome === "accepted") {
+          installBtn.textContent = "Installed";
+          installBtn.disabled = true;
+        }
+        deferredPrompt = null;
+      } else {
+        // Try direct install (will open browser's add-to-home if supported)
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+          installBtn.textContent = "Installed";
+          installBtn.disabled = true;
+        } else {
+          // Open browser menu fallback for unsupported cases
+          alert("To install manually: tap your browser menu → 'Add to Home Screen'.");
+        }
+      }
+    } catch (error) {
+      console.error("Install failed:", error);
+    }
+  });
+
+  // Detect already installed app
+  window.addEventListener("appinstalled", () => {
+    installBtn.textContent = "Installed";
+    installBtn.disabled = true;
   });
 });
