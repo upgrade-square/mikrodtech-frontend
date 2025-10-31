@@ -1435,6 +1435,13 @@ window.addEventListener("appinstalled", () => {
   }
 });
 
+
+
+
+let installBtn = document.getElementById('installBtn'); // first, get the element
+
+installBtn.addEventListener('click', () => {
+    //
 let deferredPrompt;
 
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -1452,3 +1459,6 @@ installBtn.addEventListener('click', async () => {
     deferredPrompt = null;            // Reset the saved event
   }
 });
+
+});
+
