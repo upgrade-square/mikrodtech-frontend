@@ -500,17 +500,6 @@ window.addEventListener("load", () => {
 
 
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker
-      .register('/service-worker.js')
-      .then(() => console.log('SW registered'))
-      .catch((err) => console.error('SW failed:', err));
-  });
-}
-
-
-
 // ===== Knowledge Hub Modal Logic =====
 
 // Knowledge article content database
@@ -1373,45 +1362,93 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ============================
-// PWA INSTALL BUTTON LOGIC
-// ============================
-let deferredPrompt; // store the install event
-const installBtn = document.getElementById('installAppBtn'); // your install button id
+document.addEventListener("DOMContentLoaded", () => {
+  const sendBtn = document.getElementById("send-btn");
+  const userInput = document.getElementById("user-input");
+  const messages = document.getElementById("chatbot-messages");
 
-// Listen for beforeinstallprompt (fires when app can be installed)
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault(); // stop the default mini-infobar
-  deferredPrompt = e;
-  console.log('✅ PWA install prompt saved');
-  if (installBtn) installBtn.style.display = 'inline-block'; // show install button
-});
+  if (!sendBtn || !userInput || !messages) return;
 
-// When the install button is clicked
-if (installBtn) {
-  installBtn.addEventListener('click', async () => {
-    if (!deferredPrompt) {
-      alert("❌ App not installable yet or already installed.");
-      return;
-    }
+  // Function to append messages
+  function appendMessage(sender, text) {
+    const msg = document.createElement("div");
+    msg.className = `chatbot-message ${sender}`; // user or bot
+    msg.textContent = text;
+    messages.appendChild(msg);
+    messages.scrollTop = messages.scrollHeight; // auto-scroll
+  }
 
-    deferredPrompt.prompt(); // show install prompt
-    const { outcome } = await deferredPrompt.userChoice;
-    console.log(`User choice: ${outcome}`);
+  // Function to send user message
+  function sendMessage() {
+    const text = userInput.value.trim();
+    if (!text) return;
+    appendMessage("user", text);
+    userInput.value = "";
 
-    // Reset deferredPrompt after the prompt is shown
-    deferredPrompt = null;
+    // Simulated bot response (replace with API if needed)
+    setTimeout(() => {
+      appendMessage("bot", "🤖 Sorry, I cannot respond yet."); 
+    }, 500);
+  }
 
-    // Hide button if installed
-    if (outcome === 'accepted') {
-      installBtn.style.display = 'none';
+  // Send button click
+  sendBtn.addEventListener("click", sendMessage);
+
+  // Enter key also sends message
+  userInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault(); // prevent new line
+      sendMessage();
     }
   });
-}
-
-// Hide install button when app is installed
-window.addEventListener('appinstalled', () => {
-  console.log('✅ App installed successfully');
-  if (installBtn) installBtn.style.display = 'none';
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+
+const userInput = document.getElementById("user-input"); // your chatbot input
+const sendBtn = document.getElementById("send-btn");     // your send button
+
+// Pressing Enter triggers the Send button
+userInput.addEventListener("keydown", function(e) {
+  if (e.key === "Enter" && !e.shiftKey) { // ignore Shift+Enter
+    e.preventDefault(); // prevent new line in input
+    sendBtn.click();    // simulate Send button click
+  }
+});
+
+
+  });
+  userInput.addEventListener("keydown", function(e) {
+  console.log("Key pressed:", e.key);
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();
+    sendBtn.click();
+  }
+});
+
+// Optional: Hide button if app is already installed
+window.addEventListener("appinstalled", () => {
+  const installBtn = document.getElementById("installAppBtn");
+  if (installBtn) {
+    installBtn.textContent = "✅ Installed";
+    installBtn.disabled = true;
+  }
+});
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault(); // Stop automatic prompt
+  deferredPrompt = e; // Save the event for later
+});
+
+// Install button
+const installBtn = document.getElementById('install-btn');
+
+installBtn.addEventListener('click', async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();          // Show the install prompt
+    await deferredPrompt.userChoice;  // Wait for user choice
+    deferredPrompt = null;            // Reset the saved event
+  }
+});

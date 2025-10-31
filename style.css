@@ -3924,9 +3924,10 @@ html {
 
 /* Chatbot dark mode customization */
 .dark-mode {
-  --chat-bot-bg: #130b57;         /* black background for bot replies */
-  --chat-bot-text: #fff;       /* white text for contrast */
+  --chat-bot-bg: #0a1f44;   /* deep dark blue, easy on eyes */
+  --chat-bot-text: #fff;     /* white text for contrast */
 }
+
 
 /* Or directly */
 .dark-mode .message.bot {
@@ -3971,6 +3972,21 @@ html {
 
 .dark-mode .install-btn:hover {
   background-color: #006edc;
+}
+
+/* 🌞 Light Mode */
+.bot-reply strong {
+  color: #0078ff; /* MikrodTech blue tone */
+}
+
+/* 🌙 Dark Mode */
+.dark-mode {
+  --chat-bot-bg: #130b57; /* deep blue background */
+  --chat-bot-text: #ffffff; /* white text */
+}
+
+.dark-mode .bot-reply strong {
+  color: #66b3ff; /* bright sky-blue for readability */
 }
 
 

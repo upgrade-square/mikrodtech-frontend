@@ -194,23 +194,17 @@ Would you like me to explain these services in more detail?
     chatbotBtn.style.display = "block";
   });
 
-  // ✅ Send button listener
+  
+
 sendBtn.addEventListener("click", () => {
-  sendMessage();
-  setTimeout(() => userInput.focus(), 100); // Keep keyboard open on mobile
+  sendMessage(); // Calls your properly defined sendMessage() function
 });
 
- sendBtn.addEventListener("click", () => {
-  const userText = userInput.value.trim();
-  if (userText !== "") {
-    addMessage("user", userText);
-    userInput.value = "";
-    getBotResponse(userText);
-
-    // ✅ Keep keyboard open on mobile
-    setTimeout(() => {
-      userInput.focus();
-    }, 100);
+// Allow Enter key to send message
+userInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) { // Enter without Shift
+    e.preventDefault(); // Prevent new line in input
+    sendMessage();       // Call your existing sendMessage() function
   }
 });
 
