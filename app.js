@@ -521,11 +521,11 @@ window.addEventListener("beforeinstallprompt", (e) => {
     const { outcome } = await deferredPrompt.userChoice;
 
     if (outcome === "accepted") {
-      console.log("✅ User accepted the install prompt");
-      installBtn.textContent = "Installed ✅";
+      console.log("User accepted the install prompt");
+      installBtn.textContent = "Installed ";
       setTimeout(() => (installBtn.style.display = "none"), 2000);
     } else {
-      console.log("❌ User dismissed the install prompt");
+      console.log("User dismissed the install prompt");
       installBtn.textContent = "Install MikrodTech App";
       installBtn.disabled = false;
     }
@@ -536,9 +536,10 @@ window.addEventListener("beforeinstallprompt", (e) => {
 
 // Hide install button once app is installed
 window.addEventListener("appinstalled", () => {
-  console.log("✅ MikrodTech App installed successfully!");
+  console.log("MikrodTech App installed successfully!");
   installBtn.style.display = "none";
 });
+
 
 
 
@@ -1313,3 +1314,45 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  let deferredPrompt;
+  const installBtn = document.getElementById("installAppBtn");
+
+  // Listen for PWA install availability
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault(); // Prevent default browser prompt
+    deferredPrompt = e;  // Save the event
+
+    if (installBtn) installBtn.style.display = "inline-block"; // show button
+  });
+
+  if (installBtn) {
+    installBtn.addEventListener("click", async () => {
+      if (!deferredPrompt) return;
+
+      installBtn.textContent = "Installing…"; // Show loading
+      installBtn.disabled = true;
+
+      // Show the install prompt
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+
+      if (outcome === 'accepted') {
+        installBtn.textContent = "Installed";
+      } else {
+        installBtn.textContent = "Install App"; // revert if user cancels
+        installBtn.disabled = false;
+      }
+
+      deferredPrompt = null; // Clear the prompt
+    });
+  }
+
+  // Optional: when app is installed, update the button automatically
+  window.addEventListener('appinstalled', () => {
+    if (installBtn) {
+      installBtn.textContent = "Installed";
+      installBtn.disabled = true;
+    }
+  });
+});

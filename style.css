@@ -3924,5 +3924,19 @@ html {
   color: #fff;                  /* white text */
 }
 
+.theme-toggle {
+  font-size: 1rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #0a74da;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #095bb5;
+}
 
 /* etc., for all sections */
