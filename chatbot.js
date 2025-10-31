@@ -18,16 +18,62 @@ document.addEventListener("DOMContentLoaded", () => {
     "when was mikrodtech founded": "MikrodTech began as a passion project for secure and reliable technology solutions, later evolving into a professional brand serving schools, offices, and businesses.",
     "what does mikrodtech mean": "MikrodTech combines 'Mike' and 'Rod' — the founder’s names — with 'Tech' to represent modern, reliable, and personal technology services.",
 
-    // ⚙️ Services
-    "what services do you offer": "We provide a wide range of IT solutions — including computer installations and sales, network setup, printers, CCTV and security systems, POS systems, gaming gear, and productivity tools.",
-    "do you install cctv": "Yes! MikrodTech installs high-quality CCTV and surveillance systems for homes, schools, and businesses.",
-    "do you fix computers": "Yes, we handle computer repairs, maintenance, software installation, and performance optimization.",
-    "do you offer networking services": "Yes — we design, install, and configure wired and wireless networks, including routers, switches, and servers.",
-    "do you sell computers": "Yes, we sell high-quality computers, printers, and accessories at competitive prices.",
-    "do you offer cybersecurity services": "Yes, MikrodTech provides cybersecurity assessments, device protection, and network security solutions.",
-    "do you do installations": "Yes, we handle installations for computers, networking systems, printers, and CCTV setups.",
-    "do you build websites": "Absolutely! MikrodTech develops responsive, secure, and professional websites for schools, organizations, and businesses.",
-    "do you create software": "Yes, we develop custom software solutions — including school progress tracking systems, management tools, and more.",
+
+    "what services do you offer": `
+**MikrodTech Services**
+
+MikrodTech provides expert technology solutions in the following areas:
+
+ *Computers & Hardware*
+
+• Computer sales and installations  
+• Hardware and software maintenance  
+• Printer setup and troubleshooting  
+• Operating system installation and optimization  
+• Productivity software installation  
+• Gaming gear and accessories setup  
+
+ *Networking & Internet*
+
+• Network design, setup, and configuration  
+• Device discovery and vulnerability scanning  
+• Network monitoring and troubleshooting  
+• Wi-Fi setup and access point management  
+• LAN/WAN installations  
+
+ **Security & Surveillance**
+• CCTV and IP camera installations  
+• Access control systems  
+• Cybersecurity audits and protection  
+• Intrusion detection and prevention systems (IDS/IPS)  
+
+⚡ **Power & Backup**
+• UPS and inverter installation  
+• Power backup system configuration and maintenance  
+
+ **Business & POS**
+• POS system setup and configuration  
+
+Would you like me to explain these services in more detail?  
+`,
+
+
+"do you install cctv": "Yes! MikrodTech installs high-quality CCTV and surveillance systems for homes and businesses, including setup and remote monitoring.",
+
+"do you fix computers": "Yes, we handle computer repairs, maintenance, software installation, and performance optimization for desktops and laptops.",
+
+"do you offer networking services": "Absolutely! We design, install, and configure wired and wireless networks, including routers, switches, servers, and Wi-Fi optimization.",
+
+"do you sell computers": "Yes, we supply high-quality computers, printers, and accessories with installation and warranty support.",
+
+"do you offer cybersecurity services": "Yes, MikrodTech provides cybersecurity assessments, threat monitoring, network protection, and device security solutions for organizations and individuals.",
+
+"do you do installations": "Yes, we handle installations for computers, networking systems, printers, CCTV setups, access control systems, and POS systems.",
+
+"do you build websites": "Yes! We develop responsive, secure, and professional websites for organizations and businesses.",
+
+"do you create software": "Yes, we develop custom software solutions, including management tools and tailored applications for businesses.",
+
 
     // 🧰 Support & Contact
     "how can i contact mikrodtech": "You can reach us through our website contact form, LinkedIn page, or by email. Visit <strong>mikrodtech.co.ke</strong> for details.",
@@ -56,66 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "thanks": "You’re welcome!  MikrodTech is always happy to help.",
     "bye": "Goodbye!  Have a great day — from MikrodTech.",
     "who are you": "I’m the MikrodTech Assistant 🤖 — here to help you learn about our services, projects, and tech solutions.",
-
-    // ⚙️ Services
-"what services do you offer": `
-Here are our main services:
-- Computer installations and sales
-- Network setup and configuration
-- Printer installation and maintenance
-- CCTV and security systems setup
-- POS systems and software integration
-- Gaming gear and accessories
-- Productivity tools and IT consultancy
-`,
-
-"do you install cctv": `
-Yes! We install CCTV systems including:
-1. HD and IP cameras
-2. DVR/NVR setup
-3. Remote monitoring configuration
-4. Maintenance and support services
-`,
-
-"do you offer networking services": `
-Yes — we handle complete networking solutions:
-- Wired and wireless setup
-- Router and switch configuration
-- Wi-Fi optimization
-- Server setup and cabling
-`,
-
-"do you offer cybersecurity services": `
-Yes — MikrodTech provides:
-1. Vulnerability scanning
-2. Threat detection and prevention
-3. Device and network protection
-4. Security audits for schools and businesses
-`,
-
-"do you create software": `
-Yes, we develop custom software solutions such as:
-- School progress tracking systems
-- Management and record systems
-- Productivity and workflow tools
-- Web-based and desktop applications
-`,
-
-"how do i request a service": `
-To request a service:
-1. Describe your needs in this chat or on our website form
-2. We’ll review your request
-3. Our team will contact you for consultation and quote
-`,
-
-"how can i get a quote": `
-You can request a quote easily:
-- Use our website contact form
-- Send us your requirements here
-- We'll respond promptly with a tailored price
-`,
-
-
   };
 
   /* ----------------------------
@@ -130,6 +116,15 @@ You can request a quote easily:
     }
     return null;
   }
+
+  function removeIrrelevantWords(text) {
+  // Remove "Student" if it appears on its own line
+  return text
+    .split("\n")
+    .filter(line => line.trim().toLowerCase() !== "student")
+    .join("\n");
+}
+
 
   /* ============================
      🗣️ MULTI-TURN CONTEXT ENGINE
@@ -160,9 +155,12 @@ You can request a quote easily:
       return `Besides ${lastTopic}, we also handle computers, printers, CCTV, networking, cybersecurity, and POS systems — basically everything tech under one roof.`;
     }
 
+
     if (lower.includes("thanks") || lower.includes("thank you")) {
       return "You're welcome!  Anything else you'd like to know about MikrodTech or our services?";
     }
+
+
 
     // Check KB
     const kbAnswer = searchKnowledgeBase(lower);
@@ -210,13 +208,6 @@ You can request a quote easily:
     userInput.value = "";
     showTyping();
 
-    const contextReply = getContextualReply(text);
-    if (contextReply) {
-      hideTyping();
-      appendMessage("bot", contextReply);
-      saveMessage("bot", contextReply);
-      return;
-    }
 
     const isLocalhost =
       window.location.hostname === "localhost" ||
@@ -274,20 +265,49 @@ You can request a quote easily:
   function hideTyping() {
     if (typingDiv) typingDiv.remove();
   }
-
 function formatBotMessage(text) {
-  // If the reply already contains HTML list tags, return it as-is
-  if (text.includes("<ul>") || text.includes("<li>")) {
-    return text;
-  }
+  // ✅ Clean unwanted spaces and leftover characters
+  text = text.trim();
 
-  // Otherwise, format as plain text with enhancements
-  text = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-  text = text.replace(/\*(.*?)\*/g, "<em>$1</em>");
-  text = text.replace(/(\d+)\. /g, "<br>$1. ");
-  text = text.replace(/^- /gm, "<br>&bull; ");
-  text = text.replace(/\n/g, "<br>");
-  return text;
+  // ✅ Preserve bullet characters and ensure proper line breaks
+  text = text
+    .replace(/\r\n/g, "\n")                       // Normalize newlines
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Bold
+    .replace(/\*(.*?)\*/g, "<em>$1</em>")             // Italic
+    .replace(/^(\s*[•\-–>]+\s*)/gm, "• ")             // Normalize bullets
+    .replace(/\n\s*\n/g, "<br><br>")                  // Paragraph spacing
+    .replace(/\n/g, "<br>");                          // Regular line breaks
+
+  // ✅ Wrap content in a styled container for better readability
+  return `<div class="bot-reply">${text}</div>`;
+}
+
+
+async function generateResponse(userInput) {
+  const systemInstruction = `
+    You are MikrodTech’s professional AI assistant.
+    - When asked for lists (services, steps, items), always:
+      1. Provide a short, context-relevant heading or sentence introducing the list.
+      2. Categorize items if possible into logical groups (e.g., Computers, Networking, Cybersecurity).
+      3. Use bullet points for items.
+    - Do NOT include unrelated words such as "student" unless the user explicitly asks about education.
+    - Keep tone professional and concise.
+  `;
+
+  const response = await fetch('/api/chat', {
+    method: 'POST',
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      role: "system",
+      content: systemInstruction,
+      userInput: userInput
+    })
+  });
+
+  const data = await response.json();
+
+  // Clean the AI response before returning
+  return cleanResponse(data.output);
 }
 
 });

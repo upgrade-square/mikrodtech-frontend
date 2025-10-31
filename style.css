@@ -152,7 +152,7 @@ body {
   
   .btn-primary {
     background: #000000;
-    color: #ffffff;
+    color: #0072ce;
     transition: background 0.3s ease;
   }
   
@@ -257,6 +257,10 @@ body {
     .nav-toggle {
       display: block;
     }
+   
+    
+
+
   }
 
   .service-detail.hidden {
@@ -1713,10 +1717,13 @@ body {
 @media (max-width: 768px) {
   .contact-emails-small {
     padding: 0.8rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
   }
 
   .contact-emails-small h1 {
     font-size: 20px;
+    font-weight: 400;
   }
 
   .contact-emails-small p {
@@ -1813,7 +1820,7 @@ body {
   .services h2,
   .testimonials h2,
   .contact h2 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 @media (max-width: 768px) {
@@ -2247,7 +2254,7 @@ body {
 @media (max-width: 480px) {
   #chatbot-box, .chatbot-box {
     width: 92%;
-    height: 65%;
+    height: 80%;
     right: 4%;
     bottom: 80px;
     top: auto;
@@ -3003,17 +3010,17 @@ html {
 /* ===== Cybersecurity Section ===== */
 .cybersecurity-section {
   background: #e6f0ff; /* soft MikrodTech blue to stand out */
-  color: #0a0a0a;
+  color: #070f23;
   padding: 6rem 1rem;
   text-align: center;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 74, 173, 0.15);
+  box-shadow: 0 10px 25px rgba(13, 108, 232, 0.15);
 }
 
 .cybersecurity-section .section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #004aad; /* MDT primary blue */
+  font-size: 2.3rem;
+  font-weight: 500;
+  color: #0072ce; /* MDT primary blue */
   margin-bottom: 1rem;
 }
 
@@ -3063,7 +3070,7 @@ html {
   display: inline-block;
   font-size: 0.85rem;
   color: #ffffff;
-  background: #00d8ff; /* MDT cyan */
+  background: #0072ce; /* MDT cyan */
   padding: 0.25rem 0.6rem;
   border-radius: 6px;
   font-weight: 600;
@@ -3094,7 +3101,7 @@ html {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .cybersecurity-section .section-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .cybersecurity-section .section-intro {
@@ -3103,10 +3110,812 @@ html {
 
   .cyber-card h3 {
     font-size: 1.3rem;
+    font-weight: 400;
   }
 
   .cyber-card p {
     font-size: 0.95rem;
   }
 }
+.cyber-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
 
+/* Center cards on small screens without shrinking */
+@media (max-width: 600px) {
+  .cyber-grid {
+    grid-template-columns: 1fr; /* single column layout */
+    justify-items: center;      /* center cards horizontally */
+  }
+
+  .cyber-card {
+    width: auto; /* let the card keep its normal width */
+    max-width: none; /* remove any restriction */
+    margin: 0; /* remove extra offsets */
+  }
+}
+
+
+
+.bot-reply {
+  line-height: 1.6;
+  white-space: normal;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.bot-reply strong {
+  color: #004aad;
+  font-weight: 400;
+}
+
+.bot-reply em {
+  color: #007bff;
+}
+
+.bot-reply br + br {
+  margin-bottom: 6px;
+  display: block;
+  content: "";
+}
+
+/* ===== Responsive adjustments for mobile ===== */
+@media (max-width: 600px) {
+  .bot-reply {
+    font-size: 0.95rem; /* smaller font for mobile */
+    line-height: 1.4;
+  }
+
+  .bot-reply strong {
+    font-weight: 500; /* slightly bolder for readability */
+  }
+
+  .bot-reply em {
+  color: #007bff;
+}
+
+  .bot-reply br + br {
+    margin-bottom: 4px;
+  }
+}
+
+
+/* === Theme Toggle (Next to Contact Link) === */
+.theme-toggle {
+  background: #0077ce; /* MikrodTech brand blue */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover + click effects */
+.theme-toggle:hover {
+  background: #0089f0;
+}
+
+.theme-toggle:active {
+  transform: scale(0.96);
+}
+
+/* Optional subtle glow when dark mode is active */
+.dark-mode .theme-toggle {
+  box-shadow: 0 0 8px rgba(0, 119, 206, 0.6);
+}
+
+
+
+/* ===== Dark Theme Variables ===== */
+:root {
+  /* General background/text */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+
+  /* Knowledge Hub & Tools */
+  --card-bg: #1e1e1e;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --card-title: #64a0ff;
+  --card-text: #e0e0e0;
+  --link-color: #80bfff;
+  --link-hover: #a0d0ff;
+
+  /* Cybersecurity Section */
+  --cyber-bg: #1a1a2e;
+  --cyber-card-bg: #22223b;
+  --cyber-card-border: #64a0ff;
+  --cyber-card-title: #80bfff;
+  --cyber-card-text: #e0e0e0;
+  --cyber-btn-bg: linear-gradient(135deg, #0066aa, #004080);
+  --cyber-btn-hover: linear-gradient(135deg, #004080, #0066aa);
+
+  /* Speedtest Section */
+  --speed-bg: #1a1a1a;
+  --speed-card-bg: #222;
+  --speed-value: #64a0ff;
+  --speed-details-bg: rgba(64,128,255,0.1);
+  --speed-btn-bg: linear-gradient(90deg, #0066aa, #004080);
+  --speed-btn-hover: linear-gradient(90deg, #004080, #0066aa);
+
+  /* Modal */
+  --modal-bg: #1f1f1f;
+  --modal-text: #e0e0e0;
+  --modal-header: #64a0ff;
+  --modal-close: #aaa;
+  --modal-close-hover: #80bfff;
+
+  /* Chatbot */
+  --chatbox-bg: rgba(25, 25, 50, 0.85);
+  --chat-header-bg: #111133;
+  --chat-user-bg: #0077ff;
+  --chat-user-text: #fff;
+  --chat-bot-bg: #333;
+  --chat-bot-text: #e0e0e0;
+  --chat-input-bg: #111133;
+  --chat-btn-bg: #0077ff;
+  --chat-btn-hover: #0056aa;
+
+  /* Password Input */
+  --input-bg: #222;
+  --input-text: #e0e0e0;
+  --input-border: #444;
+  --toggle-color: #64a0ff;
+
+  /* Buttons */
+  --btn-primary-bg: #0077ff;
+  --btn-primary-hover: #0056aa;
+  --btn-text: #fff;
+}
+
+/* ===== Dark Mode Overrides ===== */
+.dark-mode {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Knowledge Hub & Tools */
+.dark-mode .knowledge,
+.dark-mode .tools {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.dark-mode .knowledge-card,
+.dark-mode .tool-card {
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 14px var(--card-shadow);
+}
+
+.dark-mode .knowledge-card h3,
+.dark-mode .tool-card h3 {
+  color: var(--card-title);
+}
+
+.dark-mode .knowledge-card p,
+.dark-mode .tool-card p {
+  color: var(--card-text);
+}
+
+.dark-mode .read-more {
+  color: var(--link-color);
+}
+
+.dark-mode .read-more:hover {
+  color: var(--link-hover);
+}
+
+/* Cybersecurity Section */
+.dark-mode .cybersecurity-section {
+  background-color: var(--cyber-bg);
+  color: var(--text-primary);
+}
+
+.dark-mode .cyber-card {
+  background-color: var(--cyber-card-bg);
+  border-color: var(--cyber-card-border);
+  color: var(--cyber-card-text);
+}
+
+.dark-mode .cyber-card h3 {
+  color: var(--cyber-card-title);
+}
+
+.dark-mode .cyber-footer .btn {
+  background: var(--cyber-btn-bg);
+  color: var(--btn-text);
+}
+
+.dark-mode .cyber-footer .btn:hover {
+  background: var(--cyber-btn-hover);
+}
+
+/* Speedtest Section */
+.dark-mode .speedtest-container {
+  background: var(--speed-bg);
+  border-color: rgba(64,128,255,0.3);
+}
+
+.dark-mode .speed-display {
+  background: var(--speed-card-bg);
+}
+
+.dark-mode .speed-value {
+  color: var(--speed-value);
+}
+
+.dark-mode .speed-details .detail {
+  background: var(--speed-details-bg);
+  border-color: rgba(64,128,255,0.2);
+}
+
+/* Buttons */
+.dark-mode .speedtest-btn {
+  background: var(--speed-btn-bg);
+}
+
+.dark-mode .speedtest-btn:hover {
+  background: var(--speed-btn-hover);
+}
+
+/* Modal */
+.dark-mode .modal-content {
+  background-color: var(--modal-bg);
+  color: var(--modal-text);
+}
+
+.dark-mode .modal-content h2 {
+  color: var(--modal-header);
+}
+
+.dark-mode .close-btn {
+  color: var(--modal-close);
+}
+
+.dark-mode .close-btn:hover {
+  color: var(--modal-close-hover);
+}
+
+/* Chatbot */
+.dark-mode #chatbot-box {
+  background: var(--chatbox-bg);
+}
+
+.dark-mode .chatbot-header {
+  background: var(--chat-header-bg);
+}
+
+.dark-mode .message.user {
+  background: var(--chat-user-bg);
+  color: var(--chat-user-text);
+}
+
+.dark-mode .message.bot {
+  background: var(--chat-bot-bg);
+  color: var(--chat-bot-text);
+}
+
+.dark-mode #chatbot-input {
+  background: var(--chat-input-bg);
+}
+
+.dark-mode #send-btn {
+  background: var(--chat-btn-bg);
+}
+
+.dark-mode #send-btn:hover {
+  background: var(--chat-btn-hover);
+}
+
+/* Password Input */
+.dark-mode .pw-input,
+.dark-mode .pw-optional-input {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border-color: var(--input-border);
+}
+
+.dark-mode #togglePw {
+  color: var(--toggle-color);
+}
+
+/* Theme Toggle Button */
+.dark-mode .theme-toggle {
+  background: #1e1e1e;
+  color: #64a0ff;
+  box-shadow: 0 0 8px rgba(100, 160, 255, 0.6);
+}
+
+.dark-mode .theme-toggle:hover {
+  background: #2c2c2c;
+}
+
+
+.dark-mode {
+  background-color: #0a0a0a;
+  color: #f1f1f1;
+}
+
+.dark-mode .knowledge-card,
+.dark-mode .tool-card {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+.dark-mode .cyber-card {
+  background-color: #1f1f2a;
+  border-color: #00d8ff;
+  color: #e0e0e0;
+}
+
+.dark-mode .section-title {
+  color: #ffffff; /* pure white */
+  text-shadow: 0 0 8px rgba(255,255,255,0.2); /* soft glow */
+}
+
+/* Dark mode for About Us heading */
+.dark-mode #about h2 {
+  color: #ffffff; /* white text for readability */
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.2); /* subtle glow */
+}
+
+/* Dark mode for Speedtest section */
+.dark-mode .speedtest-container {
+  background: #1a1a2e; /* dark bluish background */
+  border: 1px solid #333;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .speed-display {
+  background: #0d0d1a; /* slightly lighter dark for the display box */
+  border: 1px solid #444;
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .speed-heading {
+  color: #a0c4ff; /* soft light blue for readability */
+}
+
+.dark-mode .speed-value .unit {
+  color: #89aaff; /* slightly softer for units */
+}
+
+.dark-mode .detail {
+  background: #111126; 
+  border: 1px solid #333366;
+}
+
+.dark-mode .detail h3 {
+  color: #a0c4ff;
+}
+
+.dark-mode .detail p {
+  color: #d0d4ff;
+}
+
+.dark-mode .speedtest-btn {
+  background: linear-gradient(90deg, #004aad, #00a3ff);
+  color: #fff;
+}
+
+/* Dark mode for Testimonial slider */
+.dark-mode .testimonial-slider {
+  background: #12121f; /* dark background for the slider area */
+  padding: 2rem 1rem;
+}
+
+.dark-mode .testimonial-card {
+  background: #1f1f33; /* darker card background */
+  border: 1px solid #333366; /* subtle border for definition */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  color: #e0e0ff; /* light text color for readability */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .testimonial-card.active {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+.dark-mode .testimonial-text {
+  color: #c8c8ff; /* slightly softer light color for text */
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Smaller font size for screens 600px or less (phones) */
+@media (max-width: 600px) {
+  .dark-mode .testimonial-text {
+    font-size: 1.1rem; /* adjust as needed */
+  }
+}
+
+
+.dark-mode .testimonial-author {
+  color: #a0a0ff; /* distinguish author names */
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* Dark mode for Cybersecurity cards */
+.dark-mode .cyber-card {
+  background: #1b1b2f; /* dark card background */
+  border: 2px solid #004aad; /* keep branding border */
+  box-shadow: 0 6px 20px rgba(0, 74, 173, 0.5); /* slightly stronger shadow */
+}
+
+.dark-mode .cyber-card h3 {
+  color: #00d8ff; /* brighter heading color for contrast */
+}
+
+.dark-mode .cyber-card p {
+  color: #d0d0ff; /* lighter text for readability */
+  margin-bottom: 1rem;
+}
+
+.dark-mode .cyber-card .coming-soon {
+  background: #0072ce; /* you can keep this same or brighten slightly */
+  color: #ffffff;
+}
+
+/* Dark mode for Knowledge Hub intro */
+.dark-mode .knowledge {
+  background: #1a1a2e; /* dark background for the section */
+  color: #e0e0ff;      /* default text color for section */
+}
+
+.dark-mode .knowledge .section-title {
+  color: #00d8ff; /* bright title for contrast */
+}
+
+.dark-mode .knowledge .section-intro {
+  color: #d0d0ff; /* lighter text for readability */
+}
+
+/* Dark mode for Free Tools & Resources section */
+.dark-mode .tools {
+  background: #1a1a2e; /* dark background */
+  color: #e0e0ff;      /* default text color */
+}
+
+.dark-mode .tools .section-title {
+  color: #00d8ff; /* bright title for contrast */
+}
+
+.dark-mode .tools .section-intro {
+  color: #d0d0ff; /* lighter text for readability */
+}
+
+/* Dark mode for Cybersecurity Section */
+.dark-mode .cybersecurity-section {
+  background: #12152a; /* dark background */
+  color: #e0e0ff;      /* default text color */
+}
+
+.dark-mode .cybersecurity-section .section-title {
+  color: #00d8ff; /* bright title for contrast */
+}
+
+.dark-mode .cybersecurity-section .section-intro {
+  color: #d0d0ff; /* lighter text for readability */
+}
+
+/* Dark mode for Cybersecurity Footer */
+.dark-mode .cyber-footer p {
+  color: #cfcfff; /* lighter text for contrast */
+}
+
+.dark-mode .cyber-footer .btn {
+  background: linear-gradient(135deg, #004aad, #00d8ff); /* maintain gradient for dark mode */
+  color: #fff;
+}
+
+
+/* Dark mode for Contact Section */
+.dark-mode #contact {
+  background: #12152a;  /* dark background */
+  color: #e0e0ff;       /* default text color */
+}
+
+.dark-mode #contact .section-title {
+  color: #00d8ff;       /* bright title */
+}
+
+.dark-mode #contact .contact-intro,
+.dark-mode #contact .contact-email,
+.dark-mode #contact p,
+.dark-mode #contact .contact-feedback {
+  color: #d0d0ff;       /* lighter text for readability */
+}
+
+/* Buttons */
+.dark-mode #contact .btn {
+  background: linear-gradient(135deg, #004aad, #00d8ff);
+  color: #fff;
+}
+
+/* Form labels & inputs */
+.dark-mode #contact label {
+  color: #cfdcff;       /* readable label color */
+}
+
+.dark-mode #contact input,
+.dark-mode #contact textarea {
+  background: #1c1f3a;
+  color: #e0e0ff;
+  border: 1px solid #444877;
+}
+
+.dark-mode #contact input::placeholder,
+.dark-mode #contact textarea::placeholder {
+  color: #aab0ff;       /* lighter placeholder */
+}
+
+/* Form error messages */
+.dark-mode #contact .error,
+.dark-mode #contact .input-error-message {
+  color: #ff6b6b;       /* visible error color */
+}
+
+/* Email links */
+.dark-mode #contact a {
+  color: #00d8ff;       /* link stands out */
+  text-decoration: underline;
+}
+
+/* Dark mode for Contact Emails Block */
+.dark-mode .contact-emails-small {
+  background: #1a1d35;   /* slightly darker block */
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.dark-mode .contact-emails-small h1 {
+  color: #00d8ff;        /* bright heading */
+}
+
+.dark-mode .contact-emails-small p {
+  color: #d0d0ff;        /* lighter paragraph text */
+  margin-bottom: 0.8rem;
+}
+
+.dark-mode .contact-emails-small a {
+  color: #00ffff;        /* stand-out links */
+  text-decoration: underline;
+}
+
+.dark-mode .contact-emails-small a:hover {
+  color: #80ffff;        /* subtle hover effect */
+}
+
+/* Dark mode for contact form and container */
+.dark-mode .contact-email {
+  color: #d0d0ff; /* lighter text for contrast */
+}
+
+.dark-mode .contact-container {
+  background: #1a1d35; /* dark background for the form block */
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.dark-mode .contact-container label {
+  color: #00d8ff; /* labels stand out */
+}
+
+.dark-mode .contact-container input,
+.dark-mode .contact-container textarea {
+  background: #2a2f4a; /* darker input fields */
+  color: #e0e0ff;      /* input text */
+  border: 1px solid #444; /* subtle border for visibility */
+}
+
+.dark-mode .contact-container input::placeholder,
+.dark-mode .contact-container textarea::placeholder {
+  color: #aaaaff; /* lighter placeholder text */
+}
+
+.dark-mode .contact-container .input-error-message {
+  color: #ff6b6b; /* errors in red for contrast */
+}
+
+.dark-mode .contact-container button.btn {
+  background: #00d8ff;
+  color: #1a1d35;
+  border: none;
+}
+
+.dark-mode .contact-container button.btn:hover {
+  background: #80ffff;
+}
+
+/* Dark mode for callback form */
+.dark-mode #callbackForm {
+  background: #1a1d35; /* dark background for the form */
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.dark-mode #callbackForm input,
+.dark-mode #callbackForm textarea {
+  background: #2a2f4a; /* darker input fields */
+  color: #e0e0ff;      /* input text */
+  border: 1px solid #444; /* subtle border for visibility */
+}
+
+.dark-mode #callbackForm input::placeholder,
+.dark-mode #callbackForm textarea::placeholder {
+  color: #aaaaff; /* lighter placeholder text */
+}
+
+.dark-mode #callbackForm .error {
+  color: #ff6b6b; /* red error messages */
+}
+
+.dark-mode #callbackForm button {
+  background: #00d8ff;
+  color: #1a1d35;
+  border: none;
+}
+
+.dark-mode #callbackForm button:hover {
+  background: #80ffff;
+}
+
+.dark-mode #callbackMessage {
+  color: #ff6b6b; /* callback form messages in red */
+}
+
+/* Dark mode for Services & Products section */
+.dark-mode .services {
+  background: #121426; /* dark section background */
+  color: #e0e0ff;      /* light text for contrast */
+}
+
+.dark-mode .services .section-title {
+  color: #ffffff; /* bright title */
+}
+
+.dark-mode .service-card {
+  background: #1a1d35;  /* card background */
+  border: 1px solid #333; /* subtle border for separation */
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.dark-mode .service-card h3,
+.dark-mode .service-card .service-title {
+  color: #f0f0ff; /* card headings */
+}
+
+.dark-mode .service-card p {
+  color: #d0d0ff; /* card descriptions */
+}
+
+.dark-mode .service-toggle {
+  background: #2a2f4a; /* button background */
+  color: #ffffff;       /* button text */
+  border: 1px solid #555;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dark-mode .service-toggle:hover {
+  background: #3a3f6a;
+}
+
+.dark-mode .chevron {
+  color: #00d8ff; /* bright chevron */
+}
+
+.dark-mode .service-detail {
+  background: #222541; /* detail expansion background */
+  color: #d0d0ff;      /* text inside details */
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+/* Dark mode for modals */
+.dark-mode .modal-container,
+.dark-mode .modal-content {
+  background-color: #1a1c2b; /* dark background */
+  color: #e0e0ff;            /* light text for readability */
+  border: 1px solid #333;    /* subtle border for definition */
+}
+
+.dark-mode .modal-content p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.dark-mode .modal-content a {
+  color: #00d8ff;            /* links in bright cyan */
+  text-decoration: underline;
+}
+
+.dark-mode .modal-title {
+  color: #ffffff;             /* modal titles stand out */
+}
+
+
+/* Dark mode for Knowledge Hub articles */
+.dark-mode #knowledge p,
+.dark-mode #knowledge li,
+.dark-mode #knowledge strong {
+  color: #dadae5; /* light text for readability */
+}
+
+.dark-mode #knowledge ul {
+  background-color: #1a1c2b; /* subtle dark background for lists */
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  list-style-type: disc;
+  list-style-position: inside;
+  color: #ffffff;
+}
+
+.dark-mode #knowledge li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.dark-mode #knowledge a {
+  color: #00d8ff; /* links in bright cyan for contrast */
+  text-decoration: underline;
+}
+
+/* ===== Password Utilities Dark Mode ===== */
+.dark-mode #pwSuggestions ul {
+  background-color: #1a1c2b; /* subtle dark container */
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.dark-mode #pwSuggestions ul li {
+  color: #ffffff; /* white text for readability */
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* ===== Dark Mode for Cyber Resilience Tips List ===== */
+.dark-mode #resilienceTips ul li span {
+  color: #ffffff !important; /* overrides inline black color */
+  font-weight: 500;
+}
+
+.dark-mode #resilienceTips ul li {
+  color: #ffffff; /* ensures the rest of the li text is visible */
+}
+
+/* Dark mode for dynamically injected Knowledge Hub modal content */
+.dark-mode #article-modal ul li {
+  color: #ffffff; /* White text for readability */
+}
+
+/* Optional: adjust <p> inside modal for dark mode */
+.dark-mode #article-modal p {
+  color: #f0f0f0; /* Light gray for readability */
+}
+
+/* Optional: modal background in dark mode */
+.dark-mode #article-modal .modal-content {
+  background-color: #1a1a1a; /* Dark background */
+  color: #ffffff;
+}
+
+
+/* etc., for all sections */
