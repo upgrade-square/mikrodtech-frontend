@@ -2247,8 +2247,8 @@ body {
 /* === Responsive Design === */
 @media (max-width: 480px) {
   #chatbot-box, .chatbot-box {
-    width: 92%;
-    height: 80%;
+    width: 80%;
+    height: 65%;
     right: 4%;
     bottom: 80px;
     top: auto;
@@ -3910,6 +3910,18 @@ html {
 .dark-mode #article-modal .modal-content {
   background-color: #1a1a1a; /* Dark background */
   color: #ffffff;
+}
+
+/* Chatbot dark mode customization */
+.dark-mode {
+  --chat-bot-bg: #000;         /* black background for bot replies */
+  --chat-bot-text: #fff;       /* white text for contrast */
+}
+
+/* Or directly */
+.dark-mode .message.bot {
+  background: #000;             /* black background */
+  color: #fff;                  /* white text */
 }
 
 
