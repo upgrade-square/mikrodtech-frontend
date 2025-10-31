@@ -1892,12 +1892,6 @@ body {
   font-size: 1.1rem; /* keep large on desktop */
 }
 
-.knowledge-card p {
-  color: #333232;
-  font-size: 1.3rem;
-  line-height: 1.6;
-}
-
 .read-more {
   color: #007BFF;
   text-decoration: none;
@@ -2699,9 +2693,10 @@ body {
 }
 
 .knowledge-card p {
-  color: #444;
-  font-size: 1rem;
-  line-height: 1.6;
+  color: #333232;
+  font-size: 1.3rem;
+  margin: 10px 0 20px;
+  line-height: 1.5;
 }
 
 .read-more {

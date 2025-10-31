@@ -1195,7 +1195,7 @@ modalUpdateUI();
           `
             <p>🚀 Coming Soon!</p>
             <p>Our curated collection of free software for security, networking, and productivity is being prepared for you.</p>
-            <p>Get ready to download essential tools with ease. 🔧</p>
+            <p>Get ready to download essential tools with ease. </p>
           `
         );
         break;
