@@ -1372,3 +1372,46 @@ document.addEventListener("DOMContentLoaded", () => {
     installBtn.disabled = true;
   });
 });
+
+// ============================
+// PWA INSTALL BUTTON LOGIC
+// ============================
+let deferredPrompt; // store the install event
+const installBtn = document.getElementById('installAppBtn'); // your install button id
+
+// Listen for beforeinstallprompt (fires when app can be installed)
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault(); // stop the default mini-infobar
+  deferredPrompt = e;
+  console.log('✅ PWA install prompt saved');
+  if (installBtn) installBtn.style.display = 'inline-block'; // show install button
+});
+
+// When the install button is clicked
+if (installBtn) {
+  installBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) {
+      alert("❌ App not installable yet or already installed.");
+      return;
+    }
+
+    deferredPrompt.prompt(); // show install prompt
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(`User choice: ${outcome}`);
+
+    // Reset deferredPrompt after the prompt is shown
+    deferredPrompt = null;
+
+    // Hide button if installed
+    if (outcome === 'accepted') {
+      installBtn.style.display = 'none';
+    }
+  });
+}
+
+// Hide install button when app is installed
+window.addEventListener('appinstalled', () => {
+  console.log('✅ App installed successfully');
+  if (installBtn) installBtn.style.display = 'none';
+});
+
