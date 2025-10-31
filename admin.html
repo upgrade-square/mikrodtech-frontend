@@ -86,7 +86,11 @@
   </div>
 
  <script>
-  // 🎯 Fetch and display analytics data
+  // 1️⃣ Increment page visit
+  fetch("https://mikrodtech-backend.onrender.com/api/visits")
+    .catch(err => console.error("Visit increment error:", err));
+
+  // 2️⃣ Fetch and display analytics
   fetch("https://mikrodtech-backend.onrender.com/api/visits?key=MySecret123")
     .then(res => res.json())
     .then(data => {
@@ -99,10 +103,8 @@
         return;
       }
 
-      // Display total visits
       visitCountEl.textContent = data.total.toLocaleString();
 
-      // Prepare chart data
       const labels = Object.keys(data.daily || {}).sort();
       const values = labels.map(day => data.daily[day]);
 
@@ -132,15 +134,8 @@
             }
           },
           scales: {
-            y: {
-              beginAtZero: true,
-              ticks: { color: "#333" },
-              grid: { color: "rgba(0,0,0,0.05)" }
-            },
-            x: {
-              ticks: { color: "#555" },
-              grid: { display: false }
-            }
+            y: { beginAtZero: true, ticks: { color: "#333" }, grid: { color: "rgba(0,0,0,0.05)" } },
+            x: { ticks: { color: "#555" }, grid: { display: false } }
           }
         }
       });
@@ -150,4 +145,65 @@
       document.getElementById("errorMsg").textContent = "Error loading analytics data.";
       document.getElementById("visitCount").textContent = "—";
     });
+
+    // Increment visit on load
+fetch("https://mikrodtech-backend.onrender.com/api/visits")
+  .catch(err => console.error("Counter increment error:", err));
+
+// Function to fetch and update stats
+function updateStats() {
+  fetch("https://mikrodtech-backend.onrender.com/api/visits?key=MySecret123")
+    .then(res => res.json())
+    .then(data => {
+      const visitCountEl = document.getElementById("visitCount");
+      visitCountEl.textContent = data.total?.toLocaleString() || 0;
+
+      const labels = Object.keys(data.daily || {});
+      const values = Object.values(data.daily || {});
+
+      const ctx = document.getElementById("visitChart").getContext("2d");
+
+      if (window.visitChart) {
+        // Update chart data
+        window.visitChart.data.labels = labels;
+        window.visitChart.data.datasets[0].data = values;
+        window.visitChart.update();
+      } else {
+        // Create chart first time
+        window.visitChart = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels,
+            datasets: [{
+              label: "Daily Visits",
+              data: values,
+              backgroundColor: "rgba(0,153,204,0.7)",
+              borderColor: "#007acc",
+              borderWidth: 1.5,
+              borderRadius: 8
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { display: false },
+              title: { display: true, text: "Daily Visits (Last 7 Days)" }
+            },
+            scales: {
+              y: { beginAtZero: true },
+              x: { grid: { display: false } }
+            }
+          }
+        });
+      }
+    })
+    .catch(err => console.error("Analytics fetch error:", err));
+}
+
+// Initial fetch
+updateStats();
+
+// Poll every 5 seconds
+setInterval(updateStats, 5000);
+
 </script>
