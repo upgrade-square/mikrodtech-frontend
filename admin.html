@@ -85,78 +85,69 @@
     <div class="footer">MikrodTech Analytics Dashboard</div>
   </div>
 
-  <script>
-    // 🔐 Admin Access
-    const pass = prompt("Enter admin password:");
-    if (pass !== "MikrodSecure") {
-      document.body.innerHTML = "<h2 style='text-align:center;margin-top:20%;color:red;'>Access Denied</h2>";
-      throw new Error("Access denied");
-    }
+ <script>
+  // 🎯 Fetch and display analytics data
+  fetch("https://mikrodtech-backend.onrender.com/api/visits?key=MySecret123")
+    .then(res => res.json())
+    .then(data => {
+      const visitCountEl = document.getElementById("visitCount");
+      const errorMsg = document.getElementById("errorMsg");
 
-    // 🎯 Fetch and display analytics data
-    fetch("https://mikrodtech-backend.onrender.com/api/visits?key=MySecret123")
-      .then(res => res.json())
-      .then(data => {
-        const visitCountEl = document.getElementById("visitCount");
-        const errorMsg = document.getElementById("errorMsg");
+      if (!data || !data.total) {
+        visitCountEl.textContent = "0";
+        errorMsg.textContent = "No data available.";
+        return;
+      }
 
-        if (!data || !data.total) {
-          visitCountEl.textContent = "0";
-          errorMsg.textContent = "No data available.";
-          return;
-        }
+      // Display total visits
+      visitCountEl.textContent = data.total.toLocaleString();
 
-        // Display total visits
-        visitCountEl.textContent = data.total.toLocaleString();
+      // Prepare chart data
+      const labels = Object.keys(data.daily || {}).sort();
+      const values = labels.map(day => data.daily[day]);
 
-        // Prepare chart data
-        const labels = Object.keys(data.daily || {});
-        const values = Object.values(data.daily || {});
-
-        const ctx = document.getElementById("visitChart").getContext("2d");
-        new Chart(ctx, {
-          type: "bar",
-          data: {
-            labels,
-            datasets: [{
-              label: "Daily Visits",
-              data: values,
-              backgroundColor: "rgba(0, 153, 204, 0.7)",
-              borderColor: "#007acc",
-              borderWidth: 1.5,
-              borderRadius: 8
-            }]
+      const ctx = document.getElementById("visitChart").getContext("2d");
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels,
+          datasets: [{
+            label: "Daily Visits",
+            data: values,
+            backgroundColor: "rgba(0, 153, 204, 0.7)",
+            borderColor: "#007acc",
+            borderWidth: 1.5,
+            borderRadius: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            title: {
+              display: true,
+              text: "Daily Visits (Last 7 Days)",
+              color: "#003366",
+              font: { size: 16 }
+            }
           },
-          options: {
-            responsive: true,
-            plugins: {
-              legend: { display: false },
-              title: {
-                display: true,
-                text: "Daily Visits (Last 7 Days)",
-                color: "#003366",
-                font: { size: 16 }
-              }
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: { color: "#333" },
+              grid: { color: "rgba(0,0,0,0.05)" }
             },
-            scales: {
-              y: {
-                beginAtZero: true,
-                ticks: { color: "#333" },
-                grid: { color: "rgba(0,0,0,0.05)" }
-              },
-              x: {
-                ticks: { color: "#555" },
-                grid: { display: false }
-              }
+            x: {
+              ticks: { color: "#555" },
+              grid: { display: false }
             }
           }
-        });
-      })
-      .catch(err => {
-        console.error("Analytics error:", err);
-        document.getElementById("errorMsg").textContent = "Error loading analytics data.";
-        document.getElementById("visitCount").textContent = "—";
+        }
       });
-  </script>
-</body>
-</html>
+    })
+    .catch(err => {
+      console.error("Analytics error:", err);
+      document.getElementById("errorMsg").textContent = "Error loading analytics data.";
+      document.getElementById("visitCount").textContent = "—";
+    });
+</script>

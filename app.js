@@ -1260,13 +1260,6 @@ window.addEventListener("load", () => {
     .catch(err => console.error("Counter error:", err));
 });
 
-// Ask for admin password before loading analytics
-const pass = prompt("Enter admin password:");
-if (pass !== "MikrodSecure") {
-  document.body.innerHTML = "<h2 style='text-align:center;margin-top:20%;color:red;'>Access Denied</h2>";
-  throw new Error("Access denied");
-}
-
 // Wait for DOM
 document.addEventListener("DOMContentLoaded", () => {
   const visitCountEl = document.getElementById("visitCount");
@@ -1319,3 +1312,4 @@ document.addEventListener("DOMContentLoaded", () => {
       visitCountEl.textContent = "Error loading data";
     });
 });
+
