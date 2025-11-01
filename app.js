@@ -852,35 +852,77 @@ case "iplookup": {
       let geo = await geoResp.json();
 
       // Build the HTML to show
-      const lat = geo.latitude ?? geo.lat ?? geo.latitude;
-      const lon = geo.longitude ?? geo.lon ?? geo.longitude;
-      const mapLink = lat && lon ? `https://www.google.com/maps/@${lat},${lon},10z` : null;
+     // after fetching ip and geo
+let lat = geo.latitude ?? geo.lat ?? geo.latitude;
+let lon = geo.longitude ?? geo.lon ?? geo.longitude;
 
-      const privateNote = isPrivateHostname(window.location.hostname)
-        ? `<p style="font-size:0.9em;color:#666">Note: Your browser is loaded from <code>${window.location.hostname}</code>. The public IP shown below belongs to the network your browser is using (your router / ISP), not necessarily your local machine.</p>`
-        : "";
+const privateNote = isPrivateHostname(window.location.hostname)
+  ? `<p style="font-size:0.9em;color:#666">Note: Your browser is loaded from <code>${window.location.hostname}</code>. The public IP shown below belongs to the network your browser is using (your router / ISP), not necessarily your local machine.</p>`
+  : "";
 
-      const html = `
-        <div style="line-height:1.4">
-          <p><strong>Public IP:</strong> <span id="ip-address">${ip}</span>
-            <button id="copy-ip" style="margin-left:8px;padding:4px 8px;cursor:pointer">Copy</button>
-          </p>
+// first render a base modal (fast)
+render(`
+  <div style="line-height:1.4">
+    <p><strong>Public IP:</strong> <span id="ip-address">${ip}</span>
+      <button id="copy-ip" style="margin-left:8px;padding:4px 8px;cursor:pointer">Copy</button>
+    </p>
+    ${geo.city || geo.region || geo.country_name ? `
+      <p><strong>Location:</strong> ${(geo.city ?? "") + (geo.region ? ", " + geo.region : "") + (geo.country_name ? " — " + geo.country_name : "")}</p>
+    ` : `<p><strong>Location:</strong> Not available</p>`}
+    <p id="local-ips-placeholder"><em>Detecting device local IP(s)…</em></p>
+    ${privateNote}
+    <p style="font-size:0.9em;color:#666;margin-top:8px">Data from <a href="https://ipify.org" target="_blank" rel="noopener">ipify</a> and <a href="https://ipapi.co" target="_blank" rel="noopener">ipapi.co</a>.</p>
+  </div>
+`);
 
-          ${geo.city || geo.region || geo.country_name ? `
-            <p><strong>Location:</strong> ${(geo.city ?? "") + (geo.region ? ", " + geo.region : "") + (geo.country_name ? " — " + geo.country_name : "")}</p>
-          ` : `<p><strong>Location:</strong> Not available</p>`}
+// now fetch local IPs and update the modal
+getLocalIPs(1200).then((localIps) => {
+  let localHtml;
+  if (!localIps || localIps.length === 0) {
+    localHtml = `<p><strong>Device local IPs:</strong> Not available (browser blocked or none found)</p>`;
+  } else {
+    // Format each entry nicely
+    const list = localIps.map((it) => {
+      if (it.type === "mDNS/obfuscated") {
+        return `<li>${it.ip} <small>(mDNS / obfuscated - browser protected)</small></li>`;
+      } else {
+        return `<li>${it.ip} <small>(${it.type})</small></li>`;
+      }
+    }).join("");
+    localHtml = `<p><strong>Device local IP(s):</strong></p><ul style="margin-top:6px">${list}</ul>`;
+  }
 
-          ${lat && lon ? `<p><strong>Coordinates:</strong> ${lat}, ${lon} ${mapLink ? `(<a id="open-map" href="${mapLink}" target="_blank" rel="noopener">Open map</a>)` : ""}</p>` : ""}
+  // Replace the placeholder
+  const updated = `
+    <div style="line-height:1.4">
+      <p><strong>Public IP:</strong> <span id="ip-address">${ip}</span>
+        <button id="copy-ip" style="margin-left:8px;padding:4px 8px;cursor:pointer">Copy</button>
+      </p>
+      ${geo.city || geo.region || geo.country_name ? `
+        <p><strong>Location:</strong> ${(geo.city ?? "") + (geo.region ? ", " + geo.region : "") + (geo.country_name ? " — " + geo.country_name : "")}</p>
+      ` : `<p><strong>Location:</strong> Not available</p>`}
+      ${lat && lon ? `<p><strong>Coordinates (IP-based):</strong> ${lat}, ${lon} ${lat && lon ? `(<a href="https://www.google.com/maps/@${lat},${lon},10z" target="_blank">Open map</a>)` : ""}</p>` : ""}
+      ${localHtml}
+      ${geo.org ? `<p><strong>ISP / Org:</strong> ${geo.org}</p>` : ""}
+      ${geo.timezone ? `<p><strong>Timezone:</strong> ${geo.timezone}</p>` : ""}
+      ${privateNote}
+      <p style="font-size:0.9em;color:#666;margin-top:8px">Data from <a href="https://ipify.org" target="_blank" rel="noopener">ipify</a> and <a href="https://ipapi.co" target="_blank" rel="noopener">ipapi.co</a>. Device local IPs discovered via WebRTC (may be obfuscated by browser privacy features).</p>
+    </div>
+  `;
+  render(updated);
 
-          ${geo.org || geo.org ? `<p><strong>ISP / Org:</strong> ${geo.org ?? geo.org}</p>` : ""}
-          ${geo.timezone ? `<p><strong>Timezone:</strong> ${geo.timezone}</p>` : ""}
-          ${geo.ip ? "" : ""}
+  // hook the copy button
+  const copyBtn = document.getElementById("copy-ip");
+  if (copyBtn) {
+    copyBtn.onclick = () => {
+      navigator.clipboard?.writeText(ip).then(() => {
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => (copyBtn.textContent = "Copy"), 1200);
+      }).catch(() => alert("Copy failed — try manually."));
+    };
+  }
+});
 
-          ${privateNote}
-
-          <p style="font-size:0.9em;color:#666;margin-top:8px">Data from <a href="https://ipify.org" target="_blank" rel="noopener">ipify</a> and <a href="https://ipapi.co" target="_blank" rel="noopener">ipapi.co</a>.</p>
-        </div>
-      `;
 
       render(html);
 
