@@ -1518,28 +1518,27 @@ const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatbotMessagesInner = document.getElementById("chatbot-messages-inner");
 
-// Handle sending a message
-sendBtn.addEventListener("click", (e) => {
-  e.preventDefault(); // Prevent default button behavior (important)
+// Use both touchstart (mobile) and click (desktop)
+["click", "touchstart"].forEach((evt) => {
+  sendBtn.addEventListener(evt, (e) => {
+    e.preventDefault(); // Prevent any default focus shift
 
-  const message = userInput.value.trim();
-  if (!message) return;
+    const message = userInput.value.trim();
+    if (!message) return;
 
-  // Add user's message to chat
-  const userMsgDiv = document.createElement("div");
-  userMsgDiv.className = "message user";
-  userMsgDiv.textContent = message;
-  chatbotMessagesInner.appendChild(userMsgDiv);
+    // Append user message
+    const userMsgDiv = document.createElement("div");
+    userMsgDiv.className = "message user";
+    userMsgDiv.textContent = message;
+    chatbotMessagesInner.appendChild(userMsgDiv);
 
-  // Scroll to bottom
-  chatbotMessagesInner.scrollTop = chatbotMessagesInner.scrollHeight;
+    // Scroll to bottom
+    chatbotMessagesInner.scrollTop = chatbotMessagesInner.scrollHeight;
 
-  // Clear input
-  userInput.value = "";
+    // Clear input
+    userInput.value = "";
 
-  // Keep focus on input so mobile keyboard stays open
-  userInput.focus();
-
-  // Optionally, here you can trigger bot response
-  // appendBotMessage("Your bot response here");
+    // Keep focus on input (keyboard stays open)
+    userInput.focus();
+  });
 });

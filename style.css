@@ -2075,6 +2075,11 @@ body {
   font-size: 22px;
   transition: all 0.3s ease;
 }
+#send-btn {
+  -webkit-user-select: none; /* Prevent text selection */
+  user-select: none;
+}
+
 
 #chatbot-btn .chat-label {
   font-size: 16px;
