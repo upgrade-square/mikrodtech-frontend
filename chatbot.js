@@ -196,9 +196,20 @@ Would you like me to explain these services in more detail?
 
   
 
-sendBtn.addEventListener("click", () => {
-  sendMessage(); // Calls your properly defined sendMessage() function
-});
+function handleSend(e) {
+  e.preventDefault();
+  sendMessage(); // Calls your existing sendMessage() function
+
+  // Keep keyboard open after message is sent
+  setTimeout(() => {
+    userInput.focus();
+  }, 80);
+}
+
+// Use both touch and click events for wider support
+sendBtn.addEventListener("touchend", handleSend);
+sendBtn.addEventListener("click", handleSend);
+
 
 // Allow Enter key to send message
 userInput.addEventListener("keydown", (e) => {
