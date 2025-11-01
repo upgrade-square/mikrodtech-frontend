@@ -196,19 +196,26 @@ Would you like me to explain these services in more detail?
 
   
 
+// --- Keep keyboard open on mobile after sending ---
 function handleSend(e) {
   e.preventDefault();
-  sendMessage(); // Calls your existing sendMessage() function
+  e.stopPropagation();
 
-  // Keep keyboard open after message is sent
-  setTimeout(() => {
-    userInput.focus();
-  }, 80);
+  // Immediately prevent blur (important for Android)
+  const wasFocused = document.activeElement === userInput;
+
+  sendMessage(); // your existing sendMessage() logic
+
+  // Re-focus after small delay (lets DOM updates finish)
+  if (wasFocused) {
+    setTimeout(() => {
+      userInput.focus();
+    }, 120);
+  }
 }
 
-// Use both touch and click events for wider support
-sendBtn.addEventListener("touchend", handleSend);
-sendBtn.addEventListener("click", handleSend);
+// Use pointerdown for instant reaction on touch devices
+sendBtn.addEventListener("pointerdown", handleSend);
 
 
 // Allow Enter key to send message

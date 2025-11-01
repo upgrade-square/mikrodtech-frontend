@@ -1518,9 +1518,7 @@ const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatbotMessagesInner = document.getElementById("chatbot-messages-inner");
 
-function sendMessage(e) {
-  e.preventDefault();
-
+function sendMessage() {
   const message = userInput.value.trim();
   if (!message) return;
 
@@ -1528,17 +1526,22 @@ function sendMessage(e) {
   userMsgDiv.className = "message user";
   userMsgDiv.textContent = message;
   chatbotMessagesInner.appendChild(userMsgDiv);
-
-  // Scroll to bottom
   chatbotMessagesInner.scrollTop = chatbotMessagesInner.scrollHeight;
-
-  // Clear input
   userInput.value = "";
-
-  // Keep focus
-  userInput.focus();
 }
 
-// Listen to touchstart (mobile) and click (desktop)
-sendBtn.addEventListener("touchstart", sendMessage);
-sendBtn.addEventListener("click", sendMessage);
+// Handle both mobile + desktop, keeping keyboard open
+function handleSend(e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  const wasFocused = document.activeElement === userInput;
+  sendMessage();
+
+  if (wasFocused) {
+    setTimeout(() => userInput.focus(), 120);
+  }
+}
+
+// Use pointerdown for instant mobile tap
+sendBtn.addEventListener("pointerdown", handleSend);
