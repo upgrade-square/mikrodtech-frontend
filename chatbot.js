@@ -337,4 +337,54 @@ async function generateResponse(userInput) {
   return cleanResponse(data.output);
 }
 
+/* ----------------------------
+    🖱️ MAKE CHATBOT BUTTON DRAGGABLE
+-----------------------------*/
+(function makeChatbotButtonDraggable() {
+  const btn = document.getElementById("chatbot-btn");
+  let isDragging = false;
+  let startX, startY, initialX, initialY;
+
+  const startDrag = (e) => {
+    e.preventDefault();
+    isDragging = true;
+    const touch = e.touches ? e.touches[0] : e;
+    startX = touch.clientX;
+    startY = touch.clientY;
+    const rect = btn.getBoundingClientRect();
+    initialX = rect.left;
+    initialY = rect.top;
+    btn.style.transition = "none"; // Disable smooth animation during drag
+  };
+
+  const duringDrag = (e) => {
+    if (!isDragging) return;
+    const touch = e.touches ? e.touches[0] : e;
+    const dx = touch.clientX - startX;
+    const dy = touch.clientY - startY;
+    btn.style.left = `${initialX + dx}px`;
+    btn.style.top = `${initialY + dy}px`;
+    btn.style.right = "auto";
+    btn.style.bottom = "auto";
+    btn.style.position = "fixed";
+  };
+
+  const stopDrag = () => {
+    if (!isDragging) return;
+    isDragging = false;
+    btn.style.transition = "all 0.25s ease"; // Re-enable smooth animation
+  };
+
+  // Desktop
+  btn.addEventListener("mousedown", startDrag);
+  document.addEventListener("mousemove", duringDrag);
+  document.addEventListener("mouseup", stopDrag);
+
+  // Mobile
+  btn.addEventListener("touchstart", startDrag, { passive: false });
+  document.addEventListener("touchmove", duringDrag, { passive: false });
+  document.addEventListener("touchend", stopDrag);
+})();
+
+
 });
