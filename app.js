@@ -1184,7 +1184,7 @@ modalUpdateUI();
           `
             <p>🚀 Coming Soon!</p>
             <p>We're working on a powerful network test feature to check your connection latency and server response times.</p>
-            <p>Stay tuned — your internet performance insights are on the way! ⚡</p>
+            <p>Stay tuned — your internet performance insights are on the way!</p>
           `
         );
         break;
@@ -1512,4 +1512,56 @@ installBtn.addEventListener("click", async () => {
 window.addEventListener("appinstalled", () => {
   console.log("✅ MikrodTech PWA installed successfully");
   installBtn.style.display = "none";
+});
+
+const btn = document.getElementById("chatbot-btn");
+
+let isDragging = false;
+let dragStartX, dragStartY, dragStartLeft, dragStartTop; // renamed to avoid conflicts
+
+// Helper to get current computed position
+function getCurrentPos() {
+  const rect = btn.getBoundingClientRect();
+  return { left: rect.left, top: rect.top };
+}
+
+// Touch start
+btn.addEventListener("touchstart", (e) => {
+  isDragging = true;
+  const touch = e.touches[0];
+
+  const pos = getCurrentPos();
+  dragStartX = touch.clientX;
+  dragStartY = touch.clientY;
+  dragStartLeft = pos.left;
+  dragStartTop = pos.top;
+
+  // Temporarily switch from bottom/right to top/left for dragging
+  btn.style.right = "auto";
+  btn.style.bottom = "auto";
+  btn.style.transition = "none"; // remove transition while dragging
+});
+
+// Touch move
+btn.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
+  const touch = e.touches[0];
+  let deltaX = touch.clientX - dragStartX;
+  let deltaY = touch.clientY - dragStartY;
+
+  let newLeft = dragStartLeft + deltaX;
+  let newTop = dragStartTop + deltaY;
+
+  // Keep button inside viewport
+  newLeft = Math.max(0, Math.min(newLeft, window.innerWidth - btn.offsetWidth));
+  newTop = Math.max(0, Math.min(newTop, window.innerHeight - btn.offsetHeight));
+
+  btn.style.left = newLeft + "px";
+  btn.style.top = newTop + "px";
+});
+
+// Touch end
+btn.addEventListener("touchend", () => {
+  isDragging = false;
+  btn.style.transition = "all 0.25s ease"; // restore transition
 });
