@@ -2076,8 +2076,9 @@ body {
   transition: all 0.3s ease;
 }
 #send-btn {
-  -webkit-user-select: none; /* Prevent text selection */
+  -webkit-user-select: none;
   user-select: none;
+  outline: none; /* prevent focus outline */
 }
 
 

@@ -1518,27 +1518,30 @@ const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
 const chatbotMessagesInner = document.getElementById("chatbot-messages-inner");
 
-// Use both touchstart (mobile) and click (desktop)
-["click", "touchstart"].forEach((evt) => {
-  sendBtn.addEventListener(evt, (e) => {
-    e.preventDefault(); // Prevent any default focus shift
+function sendMessage(e) {
+  e.preventDefault();
 
-    const message = userInput.value.trim();
-    if (!message) return;
+  const message = userInput.value.trim();
+  if (!message) return;
 
-    // Append user message
-    const userMsgDiv = document.createElement("div");
-    userMsgDiv.className = "message user";
-    userMsgDiv.textContent = message;
-    chatbotMessagesInner.appendChild(userMsgDiv);
+  // Add user message
+  const userMsgDiv = document.createElement("div");
+  userMsgDiv.className = "message user";
+  userMsgDiv.textContent = message;
+  chatbotMessagesInner.appendChild(userMsgDiv);
 
-    // Scroll to bottom
-    chatbotMessagesInner.scrollTop = chatbotMessagesInner.scrollHeight;
+  // Scroll to bottom
+  chatbotMessagesInner.scrollTop = chatbotMessagesInner.scrollHeight;
 
-    // Clear input
-    userInput.value = "";
+  // Clear input
+  userInput.value = "";
 
-    // Keep focus on input (keyboard stays open)
+  // Use setTimeout to ensure focus is applied after DOM update
+  setTimeout(() => {
     userInput.focus();
-  });
-});
+  }, 0);
+}
+
+// Add both click and touchstart events
+sendBtn.addEventListener("click", sendMessage);
+sendBtn.addEventListener("touchstart", sendMessage);
