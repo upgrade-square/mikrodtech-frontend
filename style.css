@@ -2075,10 +2075,11 @@ body {
   font-size: 22px;
   transition: all 0.3s ease;
 }
-#send-btn {
-  -webkit-user-select: none;
+.send-btn {
+  cursor: pointer;
   user-select: none;
-  outline: none; /* prevent focus outline */
+  -webkit-user-select: none;
+  outline: none;
 }
 
 

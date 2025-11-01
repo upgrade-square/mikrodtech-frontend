@@ -1524,7 +1524,6 @@ function sendMessage(e) {
   const message = userInput.value.trim();
   if (!message) return;
 
-  // Add user message
   const userMsgDiv = document.createElement("div");
   userMsgDiv.className = "message user";
   userMsgDiv.textContent = message;
@@ -1536,12 +1535,10 @@ function sendMessage(e) {
   // Clear input
   userInput.value = "";
 
-  // Use setTimeout to ensure focus is applied after DOM update
-  setTimeout(() => {
-    userInput.focus();
-  }, 0);
+  // Keep focus
+  userInput.focus();
 }
 
-// Add both click and touchstart events
-sendBtn.addEventListener("click", sendMessage);
+// Listen to touchstart (mobile) and click (desktop)
 sendBtn.addEventListener("touchstart", sendMessage);
+sendBtn.addEventListener("click", sendMessage);
