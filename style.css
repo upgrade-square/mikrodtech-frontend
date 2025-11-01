@@ -2266,9 +2266,9 @@ body {
   }
 
   #chatbot-btn, .chatbot-btn {
-    width: 50px;
+    width: 40px;
     height: 50px;
-    font-size: 0.8rem;
+    font-size: 0.4rem;
     bottom: 25px;
   }
 
