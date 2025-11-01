@@ -1426,39 +1426,48 @@ userInput.addEventListener("keydown", function(e) {
   }
 });
 
-// Optional: Hide button if app is already installed
-window.addEventListener("appinstalled", () => {
-  const installBtn = document.getElementById("installAppBtn");
-  if (installBtn) {
-    installBtn.textContent = "✅ Installed";
-    installBtn.disabled = true;
-  }
-});
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/sw.js")
+      .then(() => console.log("✅ Service Worker registered"))
+      .catch((err) => console.log("❌ Service Worker registration failed:", err));
+  });
+}
 
-
-
-
-let installBtn = document.getElementById('installBtn'); // first, get the element
-
-installBtn.addEventListener('click', () => {
-    //
+// --- PWA Install Button Logic ---
 let deferredPrompt;
+const installBtn = document.getElementById("install-btn");
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault(); // Stop automatic prompt
-  deferredPrompt = e; // Save the event for later
+// Hide the button initially
+installBtn.style.display = "none";
+
+// Listen for the install prompt event
+window.addEventListener("beforeinstallprompt", (e) => {
+  // Prevent Chrome's default mini-info bar
+  e.preventDefault();
+  deferredPrompt = e;
+
+  // Show your custom install button
+  installBtn.style.display = "inline-block";
 });
 
-// Install button
-const installBtn = document.getElementById('install-btn');
+// Handle button click to show the install prompt
+installBtn.addEventListener("click", async () => {
+  if (!deferredPrompt) return;
 
-installBtn.addEventListener('click', async () => {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();          // Show the install prompt
-    await deferredPrompt.userChoice;  // Wait for user choice
-    deferredPrompt = null;            // Reset the saved event
-  }
+  deferredPrompt.prompt(); // Show install dialog
+
+  const { outcome } = await deferredPrompt.userChoice;
+  console.log(`User choice: ${outcome}`);
+
+  // Reset prompt variable
+  deferredPrompt = null;
+  installBtn.style.display = "none";
 });
 
+// Hide the button once the app is installed
+window.addEventListener("appinstalled", () => {
+  console.log("✅ MikrodTech PWA installed successfully");
+  installBtn.style.display = "none";
 });
-

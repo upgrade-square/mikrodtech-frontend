@@ -934,6 +934,13 @@ html {
 }
 
 @media (max-width: 768px) {
+  .contact h2.section-title {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (max-width: 768px) {
   body {
     font-size: 16px;
   }
@@ -943,6 +950,7 @@ html {
   .section-title {
     font-size: 1.6rem;
   }
+
 }
 
 /* ===== Global Reset & Base ===== */
@@ -1042,7 +1050,7 @@ a.button:hover {
   .hero .tagline { font-size: 1.6rem; }
   .hero .lead { font-size: 1.2rem; }
 
-  .section-title { font-size: 2rem; }
+  .section-title { font-size: 1.4rem; }
 }
 
 /* ===== Global Reset & Base ===== */
@@ -2427,7 +2435,7 @@ body {
 /* ====== Responsive ====== */
 @media (max-width: 768px) {
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   .speed-value {
     font-size: 3.5rem;
@@ -2722,6 +2730,11 @@ body {
 .read-more:hover {
   color: #003b7a;
   text-decoration: underline;
+}
+@media (max-width: 480px) {
+  .knowledge-card p{
+    font-size: 1rem;
+  }
 }
 
 /* ===== Modal Styles (Enhanced for MikrodTech) ===== */
@@ -3106,7 +3119,7 @@ html {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .cybersecurity-section .section-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .cybersecurity-section .section-intro {
