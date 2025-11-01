@@ -338,52 +338,94 @@ async function generateResponse(userInput) {
 }
 
 /* ----------------------------
-    🖱️ MAKE CHATBOT BUTTON DRAGGABLE
+    🖱️ MAKE CHATBOT BUTTON DRAGGABLE (pointer events)
 -----------------------------*/
 (function makeChatbotButtonDraggable() {
   const btn = document.getElementById("chatbot-btn");
-  let isDragging = false;
-  let startX, startY, initialX, initialY;
+  if (!btn) return;
 
-  const startDrag = (e) => {
-    e.preventDefault();
-    isDragging = true;
-    const touch = e.touches ? e.touches[0] : e;
-    startX = touch.clientX;
-    startY = touch.clientY;
-    const rect = btn.getBoundingClientRect();
-    initialX = rect.left;
-    initialY = rect.top;
-    btn.style.transition = "none"; // Disable smooth animation during drag
-  };
+  // Ensure the button can accept pointer events and is above other elements
+  btn.style.touchAction = btn.style.touchAction || "none"; // fallback if CSS missing
+  btn.style.zIndex = btn.style.zIndex || 10000;
 
-  const duringDrag = (e) => {
-    if (!isDragging) return;
-    const touch = e.touches ? e.touches[0] : e;
-    const dx = touch.clientX - startX;
-    const dy = touch.clientY - startY;
-    btn.style.left = `${initialX + dx}px`;
-    btn.style.top = `${initialY + dy}px`;
+  // If element uses bottom/right in CSS, initialize left/top so pointer dragging works
+  const rect = btn.getBoundingClientRect();
+  if (!btn.style.left && !btn.style.top) {
+    // set inline left/top from computed position
+    btn.style.left = `${rect.left}px`;
+    btn.style.top = `${rect.top}px`;
+    // remove bottom/right so inline left/top takes precedence
     btn.style.right = "auto";
     btn.style.bottom = "auto";
     btn.style.position = "fixed";
-  };
+  }
 
-  const stopDrag = () => {
-    if (!isDragging) return;
-    isDragging = false;
-    btn.style.transition = "all 0.25s ease"; // Re-enable smooth animation
-  };
+  let dragging = false;
+  let originX = 0, originY = 0;
+  let startLeft = 0, startTop = 0;
 
-  // Desktop
-  btn.addEventListener("mousedown", startDrag);
-  document.addEventListener("mousemove", duringDrag);
-  document.addEventListener("mouseup", stopDrag);
+  function onPointerDown(e) {
+    // only left mouse or touch/pen
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    e.preventDefault();
+    btn.setPointerCapture?.(e.pointerId);
 
-  // Mobile
-  btn.addEventListener("touchstart", startDrag, { passive: false });
-  document.addEventListener("touchmove", duringDrag, { passive: false });
-  document.addEventListener("touchend", stopDrag);
+    dragging = true;
+    originX = e.clientX;
+    originY = e.clientY;
+
+    // parse current left/top (numbers)
+    startLeft = parseFloat(getComputedStyle(btn).left || 0);
+    startTop = parseFloat(getComputedStyle(btn).top || 0);
+
+    // disable transitions while dragging
+    btn.style.transition = "none";
+
+    // prevent page from selecting text while dragging
+    document.body.style.userSelect = "none";
+  }
+
+  function onPointerMove(e) {
+    if (!dragging) return;
+    e.preventDefault();
+
+    const dx = e.clientX - originX;
+    const dy = e.clientY - originY;
+
+    let newLeft = startLeft + dx;
+    let newTop = startTop + dy;
+
+    // keep inside viewport bounds
+    const winW = window.innerWidth;
+    const winH = window.innerHeight;
+    const btnW = btn.offsetWidth;
+    const btnH = btn.offsetHeight;
+
+    newLeft = Math.max(0, Math.min(newLeft, winW - btnW));
+    newTop = Math.max(0, Math.min(newTop, winH - btnH));
+
+    btn.style.left = `${newLeft}px`;
+    btn.style.top = `${newTop}px`;
+    btn.style.right = "auto";
+    btn.style.bottom = "auto";
+    btn.style.position = "fixed";
+  }
+
+  function onPointerUp(e) {
+    if (!dragging) return;
+    dragging = false;
+    btn.releasePointerCapture?.(e.pointerId);
+    btn.style.transition = "all 0.25s ease";
+    document.body.style.userSelect = ""; // restore
+  }
+
+  // Attach pointer event listeners
+  btn.addEventListener("pointerdown", onPointerDown);
+  window.addEventListener("pointermove", onPointerMove, { passive: false });
+  window.addEventListener("pointerup", onPointerUp);
+
+  // keep dragging working if pointer leaves window (safety)
+  window.addEventListener("pointercancel", onPointerUp);
 })();
 
 
