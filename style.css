@@ -2058,7 +2058,10 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   transition: all 0.25s ease;
   z-index: 10000;
+
+  touch-action: none; /* ADD THIS for proper mobile dragging */
 }
+
 
 #chatbot-btn {
   display: flex;
@@ -2305,7 +2308,7 @@ body {
   padding-bottom: 5px;
 }
 #chatbot-btn .chat-label {
-  font-size: 0.4rem;
+  font-size: 0.7rem;
   margin-left: -5px;
 }
 

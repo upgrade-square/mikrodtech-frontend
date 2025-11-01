@@ -1514,54 +1514,32 @@ window.addEventListener("appinstalled", () => {
   installBtn.style.display = "none";
 });
 
-const btn = document.getElementById("chatbot-btn");
+const sendBtn = document.getElementById("send-btn");
+const userInput = document.getElementById("user-input");
+const chatbotMessagesInner = document.getElementById("chatbot-messages-inner");
 
-let isDragging = false;
-let dragStartX, dragStartY, dragStartLeft, dragStartTop; // renamed to avoid conflicts
+// Handle sending a message
+sendBtn.addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent default button behavior (important)
 
-// Helper to get current computed position
-function getCurrentPos() {
-  const rect = btn.getBoundingClientRect();
-  return { left: rect.left, top: rect.top };
-}
+  const message = userInput.value.trim();
+  if (!message) return;
 
-// Touch start
-btn.addEventListener("touchstart", (e) => {
-  isDragging = true;
-  const touch = e.touches[0];
+  // Add user's message to chat
+  const userMsgDiv = document.createElement("div");
+  userMsgDiv.className = "message user";
+  userMsgDiv.textContent = message;
+  chatbotMessagesInner.appendChild(userMsgDiv);
 
-  const pos = getCurrentPos();
-  dragStartX = touch.clientX;
-  dragStartY = touch.clientY;
-  dragStartLeft = pos.left;
-  dragStartTop = pos.top;
+  // Scroll to bottom
+  chatbotMessagesInner.scrollTop = chatbotMessagesInner.scrollHeight;
 
-  // Temporarily switch from bottom/right to top/left for dragging
-  btn.style.right = "auto";
-  btn.style.bottom = "auto";
-  btn.style.transition = "none"; // remove transition while dragging
-});
+  // Clear input
+  userInput.value = "";
 
-// Touch move
-btn.addEventListener("touchmove", (e) => {
-  if (!isDragging) return;
-  const touch = e.touches[0];
-  let deltaX = touch.clientX - dragStartX;
-  let deltaY = touch.clientY - dragStartY;
+  // Keep focus on input so mobile keyboard stays open
+  userInput.focus();
 
-  let newLeft = dragStartLeft + deltaX;
-  let newTop = dragStartTop + deltaY;
-
-  // Keep button inside viewport
-  newLeft = Math.max(0, Math.min(newLeft, window.innerWidth - btn.offsetWidth));
-  newTop = Math.max(0, Math.min(newTop, window.innerHeight - btn.offsetHeight));
-
-  btn.style.left = newLeft + "px";
-  btn.style.top = newTop + "px";
-});
-
-// Touch end
-btn.addEventListener("touchend", () => {
-  isDragging = false;
-  btn.style.transition = "all 0.25s ease"; // restore transition
+  // Optionally, here you can trigger bot response
+  // appendBotMessage("Your bot response here");
 });
