@@ -2108,7 +2108,7 @@ body {
   width: 700px;
   height: 800px;
   background: rgba(79, 126, 227, 0.75); /* semi-transparent dark blue */
-  backdrop-filter: blur(10px);        /* frosted glass effect */
+  backdrop-filter: blur(10px);       
   border-radius: 15px;
   box-shadow: 1px 5px 25px rgba(36, 24, 206, 0.25);
   display: none;
@@ -2123,8 +2123,8 @@ body {
 /* header */
 .chatbot-header {
   display: flex;
-  justify-content: space-between; /* H4 left, X right */
-  align-items: center;            /* vertically aligned */
+  justify-content: space-between; 
+  align-items: center;            
   width: 100%;
   padding: 0 10px;
   background: rgba(1, 25, 65, 0.9);
@@ -2146,11 +2146,10 @@ body {
   background: none;
   color: white;
   cursor: pointer;
-  flex-shrink: 0;  /* ensures button doesn’t shrink */
-  position: static; /* ✅ Important: remove any absolute positioning */
+  flex-shrink: 0; 
+  position: static; 
+
 }
-
-
 
 
 #close-chat, .close-btn {
@@ -2166,18 +2165,18 @@ body {
   display: flex;
   flex-direction: column;
   padding: 14px;
-  overflow-y: auto;       /* allows scrolling */
+  overflow-y: auto;      
   scroll-behavior: smooth;
   gap: 10px;
   background: transparent;
-  min-height: 0;          /* ensures proper flex scrolling */
+  min-height: 0;        
 }
 
 /* Inner wrapper to push messages to bottom */
 #chatbot-messages-inner {
   display: flex;
   flex-direction: column;
-  margin-top: auto; /* pushes messages to the bottom */
+  margin-top: auto; 
   gap: 10px;
 }
 
@@ -2193,7 +2192,7 @@ body {
 
 /* User Message */
 .message.user {
-  background: #051fc7; /* solid color for clarity */
+  background: #051fc7; 
   color: #fff;
   align-self: flex-end;
   border-bottom-right-radius: 2px;
@@ -2201,7 +2200,7 @@ body {
 
 /* Bot Message */
 .message.bot {
-  background: #e9ecef; /* solid white-gray for contrast */
+  background: #e9ecef; 
   color: #333;
   align-self: flex-start;
   border-bottom-left-radius: 2px;
@@ -2211,7 +2210,7 @@ body {
 #chatbot-input, .chatbot-input {
   display: flex;
   border-top: 2px solid #1644da;
-  background: rgba(4, 34, 86, 0.9); /* nearly solid input bar */
+  background: rgba(4, 34, 86, 0.9); 
 }
 
 #user-input, .chatbot-input input {
@@ -2237,9 +2236,9 @@ body {
 /* === Typing Dots Animation === */
 .typing-dots {
   display: inline-flex;
-  align-items: center;   /* keeps them on one horizontal line */
-  gap: 4px;              /* small, even spacing between dots */
-  line-height: 1;        /* prevents vertical wrapping */
+  align-items: center;   
+  gap: 4px;              
+  line-height: 1;        
 }
 
 .typing-dots span {
@@ -2272,8 +2271,8 @@ body {
     left: 50%;
     bottom: 80px;
     top: auto;
-    transform: translateX(-50%); /* centers it horizontally */
-    right: auto; /* removes the previous right offset */
+    transform: translateX(-50%); 
+    right: auto; 
   }
 
   #chatbot-btn, .chatbot-btn {
@@ -2300,14 +2299,14 @@ body {
   }
 
   #user-input, .chatbot-input input {
-    font-size: 1rem;      /* slightly smaller */
+    font-size: 1rem;    
     padding: 10px;
   }
 
   #send-btn, .chatbot-input button {
-    padding: 10px 12px;   /* smaller padding to fit */
-    font-size: 14px;      /* smaller font */
-    flex-shrink: 0;       /* ensure button doesn’t shrink too much */
+    padding: 10px 12px;   
+    font-size: 14px;      
+    flex-shrink: 0;       
   }
 
   #close-chat, .close-btn {
@@ -2468,7 +2467,7 @@ body {
   .speedtest-container {
     padding: 1.3rem 1rem;
     margin: 2rem auto;
-    max-width: 95%; /* almost full width on mobile */
+    max-width: 95%; 
     border-radius: 16px;
     max-height: 70%;
   }
@@ -2496,7 +2495,7 @@ body {
   }
 
   .speed-details {
-    flex-direction: column; /* stack details vertically */
+    flex-direction: column; 
     gap: 1rem;
   }
 
@@ -2530,26 +2529,26 @@ body {
 @media (max-width: 480px) {
   /* Compress detail boxes */
   .detail {
-    padding: 0.6rem 0.8rem; /* less padding inside each box */
-    min-width: auto;         /* allow them to shrink */
+    padding: 0.6rem 0.8rem; 
+    min-width: auto;         
     border-radius: 12px;
     margin-top: 2px;
   }
 
   .detail h3 {
-    font-size: 0.85rem;      /* smaller heading */
+    font-size: 0.85rem;      
     margin-bottom: 0.3rem;
   }
 
   .detail p {
-    font-size: 0.95rem;      /* smaller value */
+    font-size: 0.95rem;     
     line-height: 1.2;
     margin: 0;
   }
 
   .speed-details {
-    flex-direction: column;  /* stack vertically for small screens */
-    gap: 0.8rem;             /* smaller gap */
+    flex-direction: column; 
+    gap: 0.8rem;             
   }
 }
 
@@ -2769,9 +2768,9 @@ body {
   padding: 40px 45px;
   border-radius: 18px;
   width: 90%;
-  max-width: 1000px; /* ⬅️ Wider modal for high-end presentation */
-  max-height: 85vh; /* keeps modal within view height */
-  overflow-y: auto; /* enable scrolling for long content */
+  max-width: 1000px; 
+  max-height: 85vh; 
+  overflow-y: auto; 
   text-align: left;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
   animation: popIn 0.3s ease;
@@ -2782,7 +2781,7 @@ body {
 .modal-content h2 {
   color: #045dbb;
   margin-bottom: 18px;
-  font-size: 1.8rem; /* ⬆️ Bigger title */
+  font-size: 1.8rem; 
   font-weight: 500;
   text-align: center;
   border-bottom: 2px solid rgba(4, 93, 187, 0.15);
@@ -2798,7 +2797,7 @@ body {
 .modal-content li {
   color: #222;
   line-height: 1.7;
-  font-size: 1.5rem; /* ⬆️ Slightly larger font for readability */
+  font-size: 1.5rem;
 }
 
 /* Close button */
@@ -2900,7 +2899,7 @@ body {
     margin: 0 auto !important;
   }
   .knowledge-card h3 {
-    font-size: 1rem; /* slightly smaller on phones */
+    font-size: 1rem; 
   }
 }
 
@@ -2942,11 +2941,11 @@ body {
 }
 
 #speedtest-hint {
-  transform: translateY(20px); /* start slightly below */
+  transform: translateY(20px);
 }
 
 #speedtest-hint.show {
-  transform: translateY(0);    /* slide into place */
+  transform: translateY(0);    
 }
 
 
@@ -2967,12 +2966,12 @@ html {
 
 
 #pwInput, #pwName {
-  font-size: 1.2rem; /* default */
+  font-size: 1.2rem; 
 }
 
 @media (max-width: 480px) {
   #pwInput, #pwName {
-    font-size: 1rem; /* smaller on phones */
+    font-size: 1rem; 
   }
 }
 
@@ -2994,12 +2993,12 @@ html {
 /* On small screens (phones) */
 @media screen and (max-width: 480px) {
   #togglePw {
-    font-size: 0.9rem; /* smaller font */
+    font-size: 0.9rem; 
     padding: 0 6px;
   }
 
   #pwInput {
-    font-size: 1rem; /* slightly smaller input text */
+    font-size: 1rem; 
   }
 }
 
@@ -3007,7 +3006,7 @@ html {
 .pw-optional-input {
   width: 100%;
   padding: 8px;
-  font-size: 1.1rem; /* desktop default */
+  font-size: 1.1rem; 
   border: 1px solid #ccc;
   border-radius: 6px;
   box-sizing: border-box;
@@ -3017,7 +3016,7 @@ html {
 /* Responsive adjustment for phone screens */
 @media screen and (max-width: 480px) {
   .pw-optional-input {
-    font-size: 0.95rem; /* smaller on phones */
+    font-size: 0.95rem;
     padding: 6px;
   }
 }
@@ -3026,7 +3025,7 @@ html {
 .pw-input {
   width: 100%;
   padding: 10px 50px 10px 10px;
-  font-size: 1.3rem; /* desktop default */
+  font-size: 1.3rem; 
   border: 1px solid #ccc;
   border-radius: 6px;
   box-sizing: border-box;
@@ -3035,14 +3034,14 @@ html {
 /* Responsive for phones */
 @media screen and (max-width: 480px) {
   .pw-input {
-    font-size: 1rem; /* smaller on phones */
+    font-size: 1rem; 
     padding: 8px 45px 8px 8px;
   }
 }
 
 /* ===== Cybersecurity Section ===== */
 .cybersecurity-section {
-  background: #e6f0ff; /* soft MikrodTech blue to stand out */
+  background: #e6f0ff; 
   color: #070f23;
   padding: 6rem 1rem;
   text-align: center;
@@ -3053,13 +3052,13 @@ html {
 .cybersecurity-section .section-title {
   font-size: 2.3rem;
   font-weight: 500;
-  color: #0072ce; /* MDT primary blue */
+  color: #0072ce; 
   margin-bottom: 1rem;
 }
 
 .cybersecurity-section .section-intro {
   font-size: 1.2rem;
-  color: #0a0a0a; /* dark for contrast */
+  color: #0a0a0a; 
   max-width: 800px;
   margin: 0 auto 3rem auto;
 }
@@ -3072,8 +3071,8 @@ html {
 }
 
 .cyber-card {
-  background: #ffffff; /* standout white card */
-  border: 2px solid #004aad; /* MDT blue border for branding */
+  background: #ffffff; 
+  border: 2px solid #004aad; 
   padding: 2rem 1.5rem;
   border-radius: 16px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -3089,13 +3088,13 @@ html {
 
 .cyber-card h3 {
   font-size: 1.5rem;
-  color: #004aad; /* MDT blue */
+  color: #004aad; 
   margin-bottom: 0.5rem;
 }
 
 .cyber-card p {
   font-size: 1rem;
-  color: #0a0a0a; /* dark text for readability */
+  color: #0a0a0a; 
   margin-bottom: 1rem;
 }
 
@@ -3103,7 +3102,7 @@ html {
   display: inline-block;
   font-size: 0.85rem;
   color: #ffffff;
-  background: #0072ce; /* MDT cyan */
+  background: #0072ce;
   padding: 0.25rem 0.6rem;
   border-radius: 6px;
   font-weight: 600;
@@ -3119,7 +3118,7 @@ html {
   font-weight: 600;
   padding: 0.8rem 2rem;
   font-size: 1rem;
-  background: linear-gradient(135deg, #00d8ff, #004aad); /* MDT gradient */
+  background: linear-gradient(135deg, #00d8ff, #004aad); 
   border: none;
   border-radius: 8px;
   color: white;
@@ -3160,14 +3159,14 @@ html {
 /* Center cards on small screens without shrinking */
 @media (max-width: 600px) {
   .cyber-grid {
-    grid-template-columns: 1fr; /* single column layout */
-    justify-items: center;      /* center cards horizontally */
+    grid-template-columns: 1fr; 
+    justify-items: center;      
   }
 
   .cyber-card {
-    width: auto; /* let the card keep its normal width */
-    max-width: none; /* remove any restriction */
-    margin: 0; /* remove extra offsets */
+    width: auto; 
+    max-width: none; 
+    margin: 0; 
   }
 }
 
@@ -3198,12 +3197,12 @@ html {
 /* ===== Responsive adjustments for mobile ===== */
 @media (max-width: 600px) {
   .bot-reply {
-    font-size: 0.95rem; /* smaller font for mobile */
+    font-size: 0.95rem; 
     line-height: 1.4;
   }
 
   .bot-reply strong {
-    font-weight: 500; /* slightly bolder for readability */
+    font-weight: 500; 
   }
 
   .bot-reply em {
@@ -3218,7 +3217,7 @@ html {
 
 /* === Theme Toggle (Next to Contact Link) === */
 .theme-toggle {
-  background: #0077ce; /* MikrodTech brand blue */
+  background: #0077ce; 
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -3489,35 +3488,35 @@ html {
 }
 
 .dark-mode .section-title {
-  color: #ffffff; /* pure white */
-  text-shadow: 0 0 8px rgba(255,255,255,0.2); /* soft glow */
+  color: #ffffff; 
+  text-shadow: 0 0 8px rgba(255,255,255,0.2); 
 }
 
 /* Dark mode for About Us heading */
 .dark-mode #about h2 {
-  color: #ffffff; /* white text for readability */
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.2); /* subtle glow */
+  color: #ffffff; 
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.2); 
 }
 
 /* Dark mode for Speedtest section */
 .dark-mode .speedtest-container {
-  background: #1a1a2e; /* dark bluish background */
+  background: #1a1a2e; 
   border: 1px solid #333;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 .dark-mode .speed-display {
-  background: #0d0d1a; /* slightly lighter dark for the display box */
+  background: #0d0d1a; 
   border: 1px solid #444;
   box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
 }
 
 .dark-mode .speed-heading {
-  color: #a0c4ff; /* soft light blue for readability */
+  color: #a0c4ff; 
 }
 
 .dark-mode .speed-value .unit {
-  color: #89aaff; /* slightly softer for units */
+  color: #89aaff;
 }
 
 .dark-mode .detail {
@@ -3540,15 +3539,15 @@ html {
 
 /* Dark mode for Testimonial slider */
 .dark-mode .testimonial-slider {
-  background: #12121f; /* dark background for the slider area */
+  background: #12121f;
   padding: 2rem 1rem;
 }
 
 .dark-mode .testimonial-card {
-  background: #1f1f33; /* darker card background */
-  border: 1px solid #333366; /* subtle border for definition */
+  background: #1f1f33; 
+  border: 1px solid #333366;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  color: #e0e0ff; /* light text color for readability */
+  color: #e0e0ff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -3558,7 +3557,7 @@ html {
 }
 
 .dark-mode .testimonial-text {
-  color: #c8c8ff; /* slightly softer light color for text */
+  color: #c8c8ff; 
   font-size: 1.5rem;
   line-height: 1.6;
 }
@@ -3566,106 +3565,106 @@ html {
 /* Smaller font size for screens 600px or less (phones) */
 @media (max-width: 600px) {
   .dark-mode .testimonial-text {
-    font-size: 1.1rem; /* adjust as needed */
+    font-size: 1.1rem; 
   }
 }
 
 
 .dark-mode .testimonial-author {
-  color: #a0a0ff; /* distinguish author names */
+  color: #a0a0ff;
   font-weight: 500;
   margin-top: 0.5rem;
 }
 
 /* Dark mode for Cybersecurity cards */
 .dark-mode .cyber-card {
-  background: #1b1b2f; /* dark card background */
-  border: 2px solid #004aad; /* keep branding border */
-  box-shadow: 0 6px 20px rgba(0, 74, 173, 0.5); /* slightly stronger shadow */
+  background: #1b1b2f; 
+  border: 2px solid #004aad;
+  box-shadow: 0 6px 20px rgba(0, 74, 173, 0.5); 
 }
 
 .dark-mode .cyber-card h3 {
-  color: #00d8ff; /* brighter heading color for contrast */
+  color: #00d8ff; 
 }
 
 .dark-mode .cyber-card p {
-  color: #d0d0ff; /* lighter text for readability */
+  color: #d0d0ff; 
   margin-bottom: 1rem;
 }
 
 .dark-mode .cyber-card .coming-soon {
-  background: #0072ce; /* you can keep this same or brighten slightly */
+  background: #0072ce;
   color: #ffffff;
 }
 
 /* Dark mode for Knowledge Hub intro */
 .dark-mode .knowledge {
-  background: #1a1a2e; /* dark background for the section */
-  color: #e0e0ff;      /* default text color for section */
+  background: #1a1a2e; 
+  color: #e0e0ff;      
 }
 
 .dark-mode .knowledge .section-title {
-  color: #00d8ff; /* bright title for contrast */
+  color: #00d8ff;
 }
 
 .dark-mode .knowledge .section-intro {
-  color: #d0d0ff; /* lighter text for readability */
+  color: #d0d0ff;
 }
 
 /* Dark mode for Free Tools & Resources section */
 .dark-mode .tools {
-  background: #1a1a2e; /* dark background */
-  color: #e0e0ff;      /* default text color */
+  background: #1a1a2e;
+  color: #e0e0ff;      
 }
 
 .dark-mode .tools .section-title {
-  color: #00d8ff; /* bright title for contrast */
+  color: #00d8ff;
 }
 
 .dark-mode .tools .section-intro {
-  color: #d0d0ff; /* lighter text for readability */
+  color: #d0d0ff;
 }
 
 /* Dark mode for Cybersecurity Section */
 .dark-mode .cybersecurity-section {
-  background: #12152a; /* dark background */
-  color: #e0e0ff;      /* default text color */
+  background: #12152a;
+  color: #e0e0ff;     
 }
 
 .dark-mode .cybersecurity-section .section-title {
-  color: #00d8ff; /* bright title for contrast */
+  color: #00d8ff; 
 }
 
 .dark-mode .cybersecurity-section .section-intro {
-  color: #d0d0ff; /* lighter text for readability */
+  color: #d0d0ff; 
 }
 
 /* Dark mode for Cybersecurity Footer */
 .dark-mode .cyber-footer p {
-  color: #cfcfff; /* lighter text for contrast */
+  color: #cfcfff;
 }
 
 .dark-mode .cyber-footer .btn {
-  background: linear-gradient(135deg, #004aad, #00d8ff); /* maintain gradient for dark mode */
+  background: linear-gradient(135deg, #004aad, #00d8ff); 
   color: #fff;
 }
 
 
 /* Dark mode for Contact Section */
 .dark-mode #contact {
-  background: #12152a;  /* dark background */
-  color: #e0e0ff;       /* default text color */
+  background: #12152a;  
+  color: #e0e0ff;      
 }
 
 .dark-mode #contact .section-title {
-  color: #00d8ff;       /* bright title */
+  color: #00d8ff;       
 }
 
 .dark-mode #contact .contact-intro,
 .dark-mode #contact .contact-email,
 .dark-mode #contact p,
 .dark-mode #contact .contact-feedback {
-  color: #d0d0ff;       /* lighter text for readability */
+  color: #d0d0ff;      
 }
 
 /* Buttons */
@@ -3676,7 +3675,7 @@ html {
 
 /* Form labels & inputs */
 .dark-mode #contact label {
-  color: #cfdcff;       /* readable label color */
+  color: #cfdcff;     
 }
 
 .dark-mode #contact input,
@@ -3688,75 +3687,75 @@ html {
 
 .dark-mode #contact input::placeholder,
 .dark-mode #contact textarea::placeholder {
-  color: #aab0ff;       /* lighter placeholder */
+  color: #aab0ff;      
 }
 
 /* Form error messages */
 .dark-mode #contact .error,
 .dark-mode #contact .input-error-message {
-  color: #ff6b6b;       /* visible error color */
+  color: #ff6b6b;       
 }
 
 /* Email links */
 .dark-mode #contact a {
-  color: #00d8ff;       /* link stands out */
+  color: #00d8ff;       
   text-decoration: underline;
 }
 
 /* Dark mode for Contact Emails Block */
 .dark-mode .contact-emails-small {
-  background: #1a1d35;   /* slightly darker block */
+  background: #1a1d35;  
   padding: 1.5rem;
   border-radius: 8px;
 }
 
 .dark-mode .contact-emails-small h1 {
-  color: #00d8ff;        /* bright heading */
+  color: #00d8ff;        
 }
 
 .dark-mode .contact-emails-small p {
-  color: #d0d0ff;        /* lighter paragraph text */
+  color: #d0d0ff;      
   margin-bottom: 0.8rem;
 }
 
 .dark-mode .contact-emails-small a {
-  color: #00ffff;        /* stand-out links */
+  color: #00ffff;       
   text-decoration: underline;
 }
 
 .dark-mode .contact-emails-small a:hover {
-  color: #80ffff;        /* subtle hover effect */
+  color: #80ffff;        
 }
 
 /* Dark mode for contact form and container */
 .dark-mode .contact-email {
-  color: #d0d0ff; /* lighter text for contrast */
+  color: #d0d0ff; 
 }
 
 .dark-mode .contact-container {
-  background: #1a1d35; /* dark background for the form block */
+  background: #1a1d35; 
   padding: 1.5rem;
   border-radius: 8px;
 }
 
 .dark-mode .contact-container label {
-  color: #00d8ff; /* labels stand out */
+  color: #00d8ff; 
 }
 
 .dark-mode .contact-container input,
 .dark-mode .contact-container textarea {
-  background: #2a2f4a; /* darker input fields */
-  color: #e0e0ff;      /* input text */
-  border: 1px solid #444; /* subtle border for visibility */
+  background: #2a2f4a;
+  color: #e0e0ff;      
+  border: 1px solid #444; 
 }
 
 .dark-mode .contact-container input::placeholder,
 .dark-mode .contact-container textarea::placeholder {
-  color: #aaaaff; /* lighter placeholder text */
+  color: #aaaaff;
 }
 
 .dark-mode .contact-container .input-error-message {
-  color: #ff6b6b; /* errors in red for contrast */
+  color: #ff6b6b; 
 }
 
 .dark-mode .contact-container button.btn {
@@ -3771,25 +3770,25 @@ html {
 
 /* Dark mode for callback form */
 .dark-mode #callbackForm {
-  background: #1a1d35; /* dark background for the form */
+  background: #1a1d35; 
   padding: 1.5rem;
   border-radius: 8px;
 }
 
 .dark-mode #callbackForm input,
 .dark-mode #callbackForm textarea {
-  background: #2a2f4a; /* darker input fields */
-  color: #e0e0ff;      /* input text */
-  border: 1px solid #444; /* subtle border for visibility */
+  background: #2a2f4a; 
+  color: #e0e0ff;      
+  border: 1px solid #444; 
 }
 
 .dark-mode #callbackForm input::placeholder,
 .dark-mode #callbackForm textarea::placeholder {
-  color: #aaaaff; /* lighter placeholder text */
+  color: #aaaaff; 
 }
 
 .dark-mode #callbackForm .error {
-  color: #ff6b6b; /* red error messages */
+  color: #ff6b6b; 
 }
 
 .dark-mode #callbackForm button {
@@ -3803,22 +3802,22 @@ html {
 }
 
 .dark-mode #callbackMessage {
-  color: #ff6b6b; /* callback form messages in red */
+  color: #ff6b6b;
 }
 
 /* Dark mode for Services & Products section */
 .dark-mode .services {
-  background: #121426; /* dark section background */
-  color: #e0e0ff;      /* light text for contrast */
+  background: #121426; 
+  color: #e0e0ff;      
 }
 
 .dark-mode .services .section-title {
-  color: #ffffff; /* bright title */
+  color: #ffffff; 
 }
 
 .dark-mode .service-card {
-  background: #1a1d35;  /* card background */
-  border: 1px solid #333; /* subtle border for separation */
+  background: #1a1d35; 
+  border: 1px solid #333; 
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 1rem;
@@ -3826,16 +3825,16 @@ html {
 
 .dark-mode .service-card h3,
 .dark-mode .service-card .service-title {
-  color: #f0f0ff; /* card headings */
+  color: #f0f0ff; 
 }
 
 .dark-mode .service-card p {
-  color: #d0d0ff; /* card descriptions */
+  color: #d0d0ff; 
 }
 
 .dark-mode .service-toggle {
-  background: #2a2f4a; /* button background */
-  color: #ffffff;       /* button text */
+  background: #2a2f4a; 
+  color: #ffffff;       
   border: 1px solid #555;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -3847,12 +3846,12 @@ html {
 }
 
 .dark-mode .chevron {
-  color: #00d8ff; /* bright chevron */
+  color: #00d8ff; 
 }
 
 .dark-mode .service-detail {
-  background: #222541; /* detail expansion background */
-  color: #d0d0ff;      /* text inside details */
+  background: #222541; 
+  color: #d0d0ff;     
   padding: 0.8rem 1rem;
   border-radius: 6px;
   margin-top: 0.5rem;
@@ -3861,9 +3860,9 @@ html {
 /* Dark mode for modals */
 .dark-mode .modal-container,
 .dark-mode .modal-content {
-  background-color: #1a1c2b; /* dark background */
-  color: #e0e0ff;            /* light text for readability */
-  border: 1px solid #333;    /* subtle border for definition */
+  background-color: #1a1c2b; 
+  color: #e0e0ff;            
+  border: 1px solid #333;   
 }
 
 .dark-mode .modal-content p {
@@ -3873,12 +3872,12 @@ html {
 }
 
 .dark-mode .modal-content a {
-  color: #00d8ff;            /* links in bright cyan */
+  color: #00d8ff;           
   text-decoration: underline;
 }
 
 .dark-mode .modal-title {
-  color: #ffffff;             /* modal titles stand out */
+  color: #ffffff;             
 }
 
 
@@ -3886,11 +3885,11 @@ html {
 .dark-mode #knowledge p,
 .dark-mode #knowledge li,
 .dark-mode #knowledge strong {
-  color: #dadae5; /* light text for readability */
+  color: #dadae5; 
 }
 
 .dark-mode #knowledge ul {
-  background-color: #1a1c2b; /* subtle dark background for lists */
+  background-color: #1a1c2b; 
   padding: 0.5rem 1rem;
   border-radius: 6px;
   list-style-type: disc;
@@ -3905,13 +3904,13 @@ html {
 }
 
 .dark-mode #knowledge a {
-  color: #00d8ff; /* links in bright cyan for contrast */
+  color: #00d8ff; 
   text-decoration: underline;
 }
 
 /* ===== Password Utilities Dark Mode ===== */
 .dark-mode #pwSuggestions ul {
-  background-color: #1a1c2b; /* subtle dark container */
+  background-color: #1a1c2b; 
   padding: 0.5rem 1rem;
   border-radius: 6px;
   list-style-type: disc;
@@ -3919,48 +3918,48 @@ html {
 }
 
 .dark-mode #pwSuggestions ul li {
-  color: #ffffff; /* white text for readability */
+  color: #ffffff; 
   margin-bottom: 0.5rem;
   line-height: 1.5;
 }
 
 /* ===== Dark Mode for Cyber Resilience Tips List ===== */
 .dark-mode #resilienceTips ul li span {
-  color: #ffffff !important; /* overrides inline black color */
+  color: #ffffff !important; 
   font-weight: 500;
 }
 
 .dark-mode #resilienceTips ul li {
-  color: #ffffff; /* ensures the rest of the li text is visible */
+  color: #ffffff; 
 }
 
 /* Dark mode for dynamically injected Knowledge Hub modal content */
 .dark-mode #article-modal ul li {
-  color: #ffffff; /* White text for readability */
+  color: #ffffff; 
 }
 
 /* Optional: adjust <p> inside modal for dark mode */
 .dark-mode #article-modal p {
-  color: #f0f0f0; /* Light gray for readability */
+  color: #f0f0f0; 
 }
 
 /* Optional: modal background in dark mode */
 .dark-mode #article-modal .modal-content {
-  background-color: #1a1a1a; /* Dark background */
+  background-color: #1a1a1a; 
   color: #ffffff;
 }
 
 /* Chatbot dark mode customization */
 .dark-mode {
-  --chat-bot-bg: #0a1f44;   /* deep dark blue, easy on eyes */
-  --chat-bot-text: #fff;     /* white text for contrast */
+  --chat-bot-bg: #0a1f44;   
+  --chat-bot-text: #fff;    
 }
 
 
 /* Or directly */
 .dark-mode .message.bot {
-  background: #232b82;             /* black background */
-  color: #fff;                  /* white text */
+  background: #232b82;            
+  color: #fff;                  
 }
 
 .theme-toggle {
@@ -4004,18 +4003,18 @@ html {
 
 /* 🌞 Light Mode */
 .bot-reply strong {
-  color: #0078ff; /* MikrodTech blue tone */
+  color: #0078ff;
 }
 
 /* 🌙 Dark Mode */
 .dark-mode {
-  --chat-bot-bg: #130b57; /* deep blue background */
-  --chat-bot-text: #ffffff; /* white text */
+  --chat-bot-bg: #130b57; 
+  --chat-bot-text: #ffffff; 
 }
 
 .dark-mode .bot-reply strong {
-  color: #66b3ff; /* bright sky-blue for readability */
+  color: #66b3ff; 
 }
 
 
-/* etc., for all sections */
+
