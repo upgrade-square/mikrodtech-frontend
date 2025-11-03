@@ -33,7 +33,7 @@
   
 body {
   font-family: 'Arial', sans-serif;
-  font-size: 19px;   /
+  font-size: 19px;   
   line-height: 1.6;  
   color: #222;
 }
@@ -2070,7 +2070,7 @@ body {
   gap: 6px; /* space between icon and text */
   padding: 0 12px;
   border-radius: 30px; /* slightly pill-shaped */
-  width: auto; /* allows the text to fit */
+  width: auto; 
   height: 60px;
   font-size: 22px;
   transition: all 0.3s ease;
@@ -2107,7 +2107,7 @@ body {
   right: 25px;           /* aligned with button horizontally */
   width: 700px;
   height: 800px;
-  background: rgba(79, 126, 227, 0.75); /* semi-transparent dark blue */
+  background: rgba(79, 126, 227, 0.75); 
   backdrop-filter: blur(10px);       
   border-radius: 15px;
   box-shadow: 1px 5px 25px rgba(36, 24, 206, 0.25);
