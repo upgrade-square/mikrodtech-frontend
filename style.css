@@ -4020,22 +4020,6 @@ html {
 
 .dark-mode .bot-reply strong {
   color: #66b3ff; 
-}
 
-:root {
-  --header-height: 88px;
-}
 
-.site-header {
-  height: var(--header-height);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
 }
-
-.hero {
-  padding-top: calc(var(--header-height) + 3rem);
-}
-

@@ -1332,5 +1332,5 @@ if ("serviceWorker" in navigator) {
       .catch((err) => console.log("❌ Service Worker registration failed:", err));
   });
 
+  
 }});
-
