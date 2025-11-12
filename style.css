@@ -4064,3 +4064,74 @@ html {
     margin-right: 0;
   }
 }
+
+
+/* Test Your Speed button */
+.hero .btn-speed {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #045bbe;
+  padding: 0.9rem 2.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  margin-right: 0.8rem;
+}
+
+.hero .btn-speed:hover {
+  background-color: #045bbe;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+
+/* Optional: Button container for alignment */
+.hero .btn {
+  margin: 0.4rem;
+}
+
+/* Responsive adjustments for hero section on small screens */
+@media (max-width: 600px) {
+  .hero {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+  }
+
+  .hero .company-name {
+    font-size: 24px;
+  }
+
+  .hero .tagline {
+    font-size: 14px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .hero p.lead {
+    font-size: 13.5px;
+    line-height: 1.4;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Smaller hero buttons for mobile */
+  .hero .btn {
+    display: block;
+    width: 70%;             /* slightly narrower for cleaner fit */
+    margin: 0.5rem auto;
+    padding: 0.6rem 1.2rem; /* smaller padding */
+    font-size: 0.9rem;      /* slightly smaller text */
+    border-radius: 5px;
+  }
+
+  /* Optional: reduce space between buttons */
+  .hero .btn + .btn {
+    margin-top: 0.4rem;
+  }
+}

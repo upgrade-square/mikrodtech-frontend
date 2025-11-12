@@ -88,10 +88,36 @@
     <p class="lead">
       Expert consultation, structured planning, and technology supply — with seamless installation and support for homes, offices, and institutions.
     </p>
+    <a href="#speedtest" id="test-speed-btn" class="btn btn-speed">Test Your Speed</a>
     <a href="#services" class="btn btn-primary explore-btn">Explore Services</a>
+
   </div>
 </section>
 
+
+<section id="speedtest" class="speedtest-container">
+  <h2 class="section-title">Internet Speed Test</h2>
+
+  <div class="speed-display">
+    <p class="speed-heading">Your Internet speed is</p>
+    <p id="download-speed" class="speed-value"><div id="loader" class="loader" style="display:none;"></div></p>
+    <p class="unit">Mbps</p>
+  </div>
+
+  <div class="speed-details">
+    <div class="detail">
+      <h3>Upload</h3>
+      <p><span id="upload-speed">--</span> Mbps</p>
+    </div>
+
+    <div class="detail">
+      <h3>Ping</h3>
+      <p><span id="ping-speed">--</span> ms</p>
+    </div>
+  </div>
+
+  <button id="start-speedtest" class="speedtest-btn">Start Test</button>
+</section>
 
     <!-- About -->
     <section id="about" class="about container">
@@ -233,29 +259,7 @@
     </article>
 
   </div>
-<section id="speedtest" class="speedtest-container">
-  <h2 class="section-title">Internet Speed Test</h2>
 
-  <div class="speed-display">
-    <p class="speed-heading">Your Internet speed is</p>
-    <p id="download-speed" class="speed-value"><div id="loader" class="loader" style="display:none;"></div></p>
-    <p class="unit">Mbps</p>
-  </div>
-
-  <div class="speed-details">
-    <div class="detail">
-      <h3>Upload</h3>
-      <p><span id="upload-speed">--</span> Mbps</p>
-    </div>
-
-    <div class="detail">
-      <h3>Ping</h3>
-      <p><span id="ping-speed">--</span> ms</p>
-    </div>
-  </div>
-
-  <button id="start-speedtest" class="speedtest-btn">Start Test</button>
-</section>
 
 
 
