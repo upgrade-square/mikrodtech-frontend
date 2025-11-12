@@ -114,6 +114,7 @@ body {
     transition: 0.3s;
   }
   
+  
   /* Hero */
   .hero {
     background: #0066cc;
@@ -1432,6 +1433,7 @@ header {
   .site-header .nav-toggle {
     display: block;
   }
+ 
 }
 /* ===== Testimonials Slider Fix ===== */
 .testimonials {
@@ -1610,6 +1612,8 @@ body {
   .service-grid {
     grid-template-columns: 1fr; /* single column on mobile */
     gap: 1rem;
+    max-width: 94%;
+    margin: 2rem auto;
   }
 
   .testimonial-grid {
@@ -1622,9 +1626,12 @@ body {
   }
 
   .contact-actions {
-    flex-direction: column; /* stack buttons */
+    flex-direction: column; 
     gap: 0.8rem;
+    max-width: 80%;
+    margin: auto;
   }
+  
 }
 @media (max-width: 768px) {
   .contact-icons img {
@@ -1667,6 +1674,10 @@ body {
   .contact-form textarea {
     font-size: 14px;
     padding: 10px;
+  }
+
+  .contact-container {
+    max-width: 88%;
   }
 
   .btn {
@@ -1789,19 +1800,18 @@ body {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 480px) {
   .site-header {
-    padding: 15px 10px;   /* reduce padding on phones */
-    font-size: 18px;      /* smaller, readable text */
+    padding: -10px 5px;   
+    font-size: 18px;   
+    max-height: 60px;   
   }
 }
 
-/* Optional: adjust site logo if present */
-.site-header img {
-  max-width: 200px;        /* default logo size */
-}
+
 
 @media (max-width: 480px) {
   .site-header img {
-    max-width: 120px;       /* smaller logo on phones */
+    max-width: 120px; 
+    max-height: 30px;   
   }
 }
 
@@ -1813,7 +1823,7 @@ body {
     font-size: 1rem;
     line-height: 1.6;
   }
-
+ 
   /* Section headers shrink */
   .about h2,
   .services h2,
@@ -2331,18 +2341,19 @@ body {
   text-align: center;
   padding: 3rem 1.5rem;
   max-width: 600px;
-  margin: 4rem auto;
+  margin: 2rem auto 2rem;
   background: linear-gradient(135deg, rgba(0,119,255,0.05), rgba(0,209,255,0.08));
   border: 1px solid rgba(0,119,255,0.2);
   border-radius: 28px;
   box-shadow: 0 10px 30px rgba(0,119,255,0.1);
   backdrop-filter: blur(10px);
+  margin-bottom: -3rem;
 }
 
 /* ====== Title ====== */
 .section-title {
   font-size: 2.2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #0077ff;
   text-shadow: 0 0 10px rgba(0,119,255,0.2);
   margin-bottom: 2rem;
@@ -2473,18 +2484,20 @@ body {
   .speedtest-container {
     padding: 1.3rem 1rem;
     margin: 2rem auto;
-    max-width: 95%; 
+    max-width: 80%; 
     border-radius: 16px;
-    max-height: 70%;
+    max-height: 40%;
   }
 
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
     margin-bottom: 1.5rem;
+    margin-top: 1rem;
   }
 
   .speed-display {
-    padding: 1rem 0.8rem;
+    padding: 1rem 0.7rem;
     margin-bottom: 6px;
   }
 
@@ -2493,7 +2506,8 @@ body {
   }
 
   .speed-value {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
+    font-weight: 400;
   }
 
   .unit {
@@ -3053,6 +3067,7 @@ html {
   text-align: center;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(13, 108, 232, 0.15);
+  margin-top: 30px;
 }
 
 .cybersecurity-section .section-title {
@@ -3139,7 +3154,7 @@ html {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .cybersecurity-section .section-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .cybersecurity-section .section-intro {
@@ -3638,7 +3653,7 @@ html {
 }
 
 .dark-mode .cybersecurity-section .section-title {
-  color: #00d8ff; 
+  color: #a3a8c1; 
 }
 
 .dark-mode .cybersecurity-section .section-intro {
@@ -3739,7 +3754,7 @@ html {
 }
 
 .dark-mode .contact-container {
-  background: #1a1d35; 
+  background: #0f111f; 
   padding: 1.5rem;
   border-radius: 8px;
 }
@@ -3765,7 +3780,7 @@ html {
 }
 
 .dark-mode .contact-container button.btn {
-  background: #00d8ff;
+  background: #0a7b90;
   color: #1a1d35;
   border: none;
 }
@@ -4066,72 +4081,5 @@ html {
 }
 
 
-/* Test Your Speed button */
-.hero .btn-speed {
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid #045bbe;
-  padding: 0.9rem 2.2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
-  margin-right: 0.8rem;
-}
-
-.hero .btn-speed:hover {
-  background-color: #045bbe;
-  color: #fff;
-  transform: translateY(-2px);
-}
 
 
-/* Optional: Button container for alignment */
-.hero .btn {
-  margin: 0.4rem;
-}
-
-/* Responsive adjustments for hero section on small screens */
-@media (max-width: 600px) {
-  .hero {
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: center;
-  }
-
-  .hero .company-name {
-    font-size: 24px;
-  }
-
-  .hero .tagline {
-    font-size: 14px;
-    line-height: 1.3;
-    margin-bottom: 8px;
-  }
-
-  .hero p.lead {
-    font-size: 13.5px;
-    line-height: 1.4;
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  /* Smaller hero buttons for mobile */
-  .hero .btn {
-    display: block;
-    width: 70%;             /* slightly narrower for cleaner fit */
-    margin: 0.5rem auto;
-    padding: 0.6rem 1.2rem; /* smaller padding */
-    font-size: 0.9rem;      /* slightly smaller text */
-    border-radius: 5px;
-  }
-
-  /* Optional: reduce space between buttons */
-  .hero .btn + .btn {
-    margin-top: 0.4rem;
-  }
-}

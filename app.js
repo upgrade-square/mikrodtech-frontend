@@ -464,39 +464,6 @@ document.getElementById("start-speedtest").addEventListener("click", async () =>
   }
 });
 
-window.addEventListener("load", () => {
-  const hint = document.getElementById("speedtest-hint");
-  const button = document.getElementById("hint-btn");
-  const speedtestSection = document.querySelector(".speedtest-container");
-
-  if (!hint || !button || !speedtestSection) return;
-
-  // Show hint automatically if not already shown
-  if (!sessionStorage.getItem("hintShown")) {
-    setTimeout(() => {
-      hint.style.display = "block"; // make sure it's visible
-      hint.classList.add("show");   // fade-in
-
-      setTimeout(() => {
-        hint.classList.remove("show"); // fade-out
-        setTimeout(() => {
-          hint.style.display = "none"; // hide after fade-out
-        }, 600);
-      }, 6000);
-    }, 5000);
-
-    sessionStorage.setItem("hintShown", "true");
-  }
-
-  // Button click hides hint and scrolls to speedtest
-  button.addEventListener("click", () => {
-    hint.classList.remove("show");
-    setTimeout(() => {
-      hint.style.display = "none";
-    }, 500);
-    speedtestSection.scrollIntoView({ behavior: "smooth", block: "center" });
-  });
-});
 
 
 
