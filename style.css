@@ -185,7 +185,7 @@ body {
   }
   
   .service-card {
-    border: 1px solid #dddddd;
+    border: 1px solid rgba(0,119,255,0.2);
     padding: 1.5rem;
     border-radius: 8px;
     background: #f9f9f9;
@@ -951,6 +951,9 @@ html {
   .section-title {
     font-size: 1.6rem;
   }
+  .service-card h3 .service-title {
+  font-size: 1rem;
+}
 
 }
 
@@ -1748,8 +1751,12 @@ body {
   }
 
   .contact-emails-small p {
-    font-size: 16px;
+    font-size: 0.9rem;
   }
+    .contact-form .btn-secondary {
+      font-size: 0.9rem;
+      padding: 12px 12px;
+    }
 }
 
 
@@ -1931,6 +1938,9 @@ body {
 .center-btn {
   margin-top: 30px;
 }
+.center-btn a {
+ font-size: 1rem;
+}
 
 .section-intro {
   max-width: 700px;
@@ -1961,6 +1971,9 @@ body {
 
   .section-intro {
     font-size: 1rem;
+  }
+  .center-btn .btn{
+    font-size: 0.8rem;
   }
 }
 
@@ -3070,10 +3083,11 @@ html {
   margin-top: 30px;
 }
 
+
 .cybersecurity-section .section-title {
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: 500;
-  color: #0072ce; 
+  color: #06111a; 
   margin-bottom: 1rem;
 }
 
@@ -3093,7 +3107,7 @@ html {
 
 .cyber-card {
   background: #ffffff; 
-  border: 2px solid #004aad; 
+  border: 2px solid rgba(0,119,255,0.2);
   padding: 2rem 1.5rem;
   border-radius: 16px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -3108,13 +3122,15 @@ html {
 }
 
 .cyber-card h3 {
-  font-size: 1.5rem;
-  color: #004aad; 
+  font-size: 1.2rem;
+  color: #007bff;    
   margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .cyber-card p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #0a0a0a; 
   margin-bottom: 1rem;
 }
@@ -3123,11 +3139,13 @@ html {
   display: inline-block;
   font-size: 0.85rem;
   color: #ffffff;
-  background: #0072ce;
+  background: linear-gradient(90deg, #0077ff, #00d1ff);
   padding: 0.25rem 0.6rem;
   border-radius: 6px;
-  font-weight: 600;
+  font-weight: 500;
 }
+
+
 
 .cyber-footer p {
   font-size: 1rem;
@@ -3162,8 +3180,8 @@ html {
   }
 
   .cyber-card h3 {
-    font-size: 1.3rem;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 500;
   }
 
   .cyber-card p {
@@ -3177,6 +3195,13 @@ html {
   margin-bottom: 3rem;
 }
 
+.cyber-card .tool-btn{
+  font-size: 0.8rem;
+}
+
+.cyber-card .btn-secondary{
+  font-size: 0.rem;
+}
 /* Center cards on small screens without shrinking */
 @media (max-width: 600px) {
   .cyber-grid {
@@ -3189,6 +3214,10 @@ html {
     max-width: none; 
     margin: 0; 
   }
+   .cyber-footer .btn {
+    font-size: 0.8rem;
+    padding: 10px 10px;
+   }
 }
 
 
@@ -4078,6 +4107,18 @@ html {
     margin-left: 0;
     margin-right: 0;
   }
+  .hero .explore-btn {
+    font-size: 0.8rem;
+    padding: 10px 10px;
+  }
+  .contact-form .btn-secondary {
+    font-size: 1rem;
+  }
+   .contact-actions .btn {
+    font-size: 0.9rem;
+
+   }
+    
 }
 
 

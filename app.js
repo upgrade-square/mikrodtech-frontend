@@ -1227,77 +1227,33 @@ window.addEventListener("load", () => {
     .catch(err => console.error("Counter error:", err));
 });
 
+
 document.addEventListener("DOMContentLoaded", () => {
-  const sendBtn = document.getElementById("send-btn");
   const userInput = document.getElementById("user-input");
-  const messages = document.getElementById("chatbot-messages");
+  const sendBtn = document.getElementById("send-btn");
 
-  if (!sendBtn || !userInput || !messages) return;
+  if (!userInput || !sendBtn) return;
 
-  // Function to append messages
-  function appendMessage(sender, text) {
-    const msg = document.createElement("div");
-    msg.className = `chatbot-message ${sender}`; // user or bot
-    msg.textContent = text;
-    messages.appendChild(msg);
-    messages.scrollTop = messages.scrollHeight; // auto-scroll
-  }
-
-  // Function to send user message
-  function sendMessage() {
-    const text = userInput.value.trim();
-    if (!text) return;
-    appendMessage("user", text);
-    userInput.value = "";
-
-    // Simulated bot response (replace with API if needed)
-    setTimeout(() => {
-      appendMessage("bot", "🤖 Sorry, I cannot respond yet."); 
-    }, 500);
-  }
-
-  // Send button click
-  sendBtn.addEventListener("click", sendMessage);
-
-  // Enter key also sends message
   userInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault(); // prevent new line
-      sendMessage();
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendBtn.click();
     }
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
 
-const userInput = document.getElementById("user-input"); // your chatbot input
-const sendBtn = document.getElementById("send-btn");     // your send button
-
-// Pressing Enter triggers the Send button
-userInput.addEventListener("keydown", function(e) {
-  if (e.key === "Enter" && !e.shiftKey) { // ignore Shift+Enter
-    e.preventDefault(); // prevent new line in input
-    sendBtn.click();    // simulate Send button click
-  }
-});
-
-
-
-  userInput.addEventListener("keydown", function(e) {
-  console.log("Key pressed:", e.key);
-  if (e.key === "Enter" && !e.shiftKey) {
-    e.preventDefault();
-    sendBtn.click();
-  }
-});
-
+// -----------------------------
+// Service Worker Registration
+// -----------------------------
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
       .register("/sw.js")
       .then(() => console.log("✅ Service Worker registered"))
-      .catch((err) => console.log("❌ Service Worker registration failed:", err));
+      .catch((err) =>
+        console.log("❌ Service Worker registration failed:", err)
+      );
   });
+}
 
-  
-}});

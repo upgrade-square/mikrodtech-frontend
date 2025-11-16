@@ -6,103 +6,144 @@ document.addEventListener("DOMContentLoaded", () => {
   const userInput = document.getElementById("user-input");
   const messages = document.getElementById("chatbot-messages");
   const innerMessages = document.getElementById("chatbot-messages-inner");
+/* ----------------------------
+    🧠 MIKRODTECH KNOWLEDGE BASE
+-----------------------------*/
+const mikrodTechKB = {
+  // 🏢 Company Info
+  "what is mikrodtech": "MikrodTech is a professional technology solutions provider offering modern, secure, and reliable tech services for individuals, schools, and businesses across Kenya.",
+  
+  "who owns mikrodtech": "MikrodTech was founded by Wabwile Simati Rodney Mike, a cybersecurity specialist and software developer passionate about building secure and innovative technology solutions.",
+  
+  "where is mikrodtech located": "MikrodTech operates in Kenya and serves clients countrywide through onsite and remote service delivery.",
+  
+  "when was mikrodtech founded": "MikrodTech began as a passion for secure and reliable technology, later evolving into a professional brand serving homes, offices, and institutions.",
+  
+  "what does mikrodtech mean": "MikrodTech combines 'Mike' and 'Rod' — the founder’s names — with 'Tech' to form a brand focused on smart, modern, and reliable technology.",
+  
+  "tell me more about mikrodtech": `
+MikrodTech is a technology solutions provider dedicated to delivering innovative, dependable, and secure tech services. 
+Our mission is to simplify technology for clients across Kenya, while our vision is to become a leading tech provider in East Africa — known for excellence, integrity, and trust.
 
-  /* ----------------------------
-      🧠 MIKRODTECH KNOWLEDGE BASE
-  -----------------------------*/
-  const mikrodTechKB = {
-    // 🏢 Company Info
-    "what is mikrodtech": "MikrodTech is a professional computer and network solutions company offering smart, trusted, and efficient tech services for individuals, schools, and businesses.",
-    "who owns mikrodtech": "MikrodTech was founded by Wabwile Simati Rodney Mike, a cybersecurity specialist and software developer passionate about secure, innovative technology solutions.",
-    "where is mikrodtech located": "MikrodTech operates in Kenya and serves clients across the country, providing both onsite and remote tech solutions.",
-    "when was mikrodtech founded": "MikrodTech began as a passion project for secure and reliable technology solutions, later evolving into a professional brand serving schools, offices, and businesses.",
-    "what does mikrodtech mean": "MikrodTech combines 'Mike' and 'Rod' — the founder’s names — with 'Tech' to represent modern, reliable, and personal technology services.",
+Our services cover:
+• Computers & Hardware  
+• Networking & Internet  
+• Security & Surveillance  
+• Power & Backup Solutions  
+• Business & POS
 
+For inquiries, contact us at +254769329029 or email: info@mikrodtech.co.ke.
+  `,
 
-    "what services do you offer": `
-**MikrodTech Services**
+ "mikrodtech ecosystem": `
+🌐 **MikrodTech Ecosystem (Upcoming)**
 
-MikrodTech provides expert technology solutions in the following areas:
+The MikrodTech Ecosystem is an integrated technology platform unifying all our products and services into a seamless, intelligent environment. It reflects our mission of simplifying technology, enhancing productivity, and maintaining trust and security in every solution we provide.
 
- *Computers & Hardware*
+**Key Sub-Ecosystems:**
+• **MikrodAI** – AI-driven solutions for businesses and individuals, including automation, analytics, and intelligent assistants.
+• **MikrodHome** – Smart home solutions integrating security, energy, and convenience for connected living.
+• **MikrodSecure** – Advanced cybersecurity and surveillance tools to protect people, devices, and networks.
+• **MikrodPower** – Reliable power backup, UPS, and smart energy management systems.
+• **MikrodBusiness** – POS, workflow automation, and productivity tools tailored for enterprises.
 
-• Computer sales and installations  
-• Hardware and software maintenance  
-• Printer setup and troubleshooting  
-• Operating system installation and optimization  
-• Productivity software installation  
-• Gaming gear and accessories setup  
-
- *Networking & Internet*
-
-• Network design, setup, and configuration  
-• Device discovery and vulnerability scanning  
-• Network monitoring and troubleshooting  
-• Wi-Fi setup and access point management  
-• LAN/WAN installations  
-
- **Security & Surveillance**
-• CCTV and IP camera installations  
-• Access control systems  
-• Cybersecurity audits and protection  
-• Intrusion detection and prevention systems (IDS/IPS)  
-
-⚡ **Power & Backup**
-• UPS and inverter installation  
-• Power backup system configuration and maintenance  
-
- **Business & POS**
-• POS system setup and configuration  
-
-Would you like me to explain these services in more detail?  
+📌 Keep watching — we will roll out updates and new features soon!
 `,
 
 
-"do you install cctv": "Yes! MikrodTech installs high-quality CCTV and surveillance systems for homes and businesses, including setup and remote monitoring.",
-
-"do you fix computers": "Yes, we handle computer repairs, maintenance, software installation, and performance optimization for desktops and laptops.",
-
-"do you offer networking services": "Absolutely! We design, install, and configure wired and wireless networks, including routers, switches, servers, and Wi-Fi optimization.",
-
-"do you sell computers": "Yes, we supply high-quality computers, printers, and accessories with installation and warranty support.",
-
-"do you offer cybersecurity services": "Yes, MikrodTech provides cybersecurity assessments, threat monitoring, network protection, and device security solutions for organizations and individuals.",
-
-"do you do installations": "Yes, we handle installations for computers, networking systems, printers, CCTV setups, access control systems, and POS systems.",
-
-"do you build websites": "Yes! We develop responsive, secure, and professional websites for organizations and businesses.",
-
-"do you create software": "Yes, we develop custom software solutions, including management tools and tailored applications for businesses.",
+  // 🛠️ Services
+  "what services do you offer": `
+**MikrodTech Services**
 
 
-    // 🧰 Support & Contact
-    "how can i contact mikrodtech": "You can reach us through our website contact form, LinkedIn page, or by email. Visit <strong>mikrodtech.co.ke</strong> for details.",
-    "what are your working hours": "We are available Monday to Saturday, 8:00 AM – 6:00 PM. For urgent or remote support, you can reach us anytime online.",
-    "how can i get a quote": "You can request a quote directly from our website or message us with your needs — we’ll respond promptly with tailored pricing.",
-    "how do i request a service": "Simply describe your needs in the chat or fill in the form on our website, and we’ll follow up with a consultation and quote.",
-    "do you offer remote support": "Yes, MikrodTech provides remote troubleshooting and system support for clients across Kenya.",
 
-    // 🏗️ Projects
-    "what projects have you done": "We’ve built websites for schools, created a student progress tracking system for orphan programs, and implemented secure networks for institutions.",
-    "do you make school systems": "Yes, we’ve created flexible systems that help schools and sponsors track student performance and progress efficiently.",
+*Computers & Hardware*
+• Computer sales & installation   
+• Printer setup & troubleshooting  
+• OS installation & optimization  
+• Productivity software setup  
+• Gaming accessories setup  
 
-    // 🌐 Social Media
-    "do you have social media": "Yes, we’re on LinkedIn — search for <strong>MikrodTech</strong>. We don’t use Facebook at the moment.",
-    "where can i find mikrodtech online": "Visit our website at <strong>mikrodtech.co.ke</strong> or follow us on LinkedIn for updates and projects.",
+*Networking & Internet*
+• Network design & configuration  
+• Device discovery & vulnerability scanning  
+• Wi-Fi setup & optimization  
+• LAN/WAN installations  
+• Network monitoring & troubleshooting  
 
-    // 💡 Brand & Vision
-    "what is your tagline": "Our tagline is <strong>Smart Solutions. Trusted Tech.</strong> — it reflects our focus on intelligent, reliable, and secure technology.",
-    "why choose mikrodtech": "Because we combine expertise, reliability, and personalized service. Our solutions are secure, affordable, and built for long-term performance.",
-    "what makes mikrodtech different": "We’re passionate about security, innovation, and precision. MikrodTech doesn’t just fix problems — we build reliable systems that prevent them.",
+*Security & Surveillance*
+• CCTV & IP camera installation  
+• Access control systems  
+• Cybersecurity audits & protection  
+• Intrusion detection & prevention (IDS/IPS)  
 
-    // 💬 Friendly / Small Talk
-    "hello": "Hello there! How can MikrodTech assist you today?",
-    "hi": "Hi!  Need help with computers, networking, or tech support?",
-    "how are you": "I’m great! Always ready to assist. How can MikrodTech help you today?",
-    "thanks": "You’re welcome!  MikrodTech is always happy to help.",
-    "bye": "Goodbye!  Have a great day — from MikrodTech.",
-    "who are you": "I’m the MikrodTech Assistant 🤖 — here to help you learn about our services, projects, and tech solutions.",
-  };
+⚡ *Power & Backup*
+• UPS & inverter installation  
+• Power backup system setup  
+
+*Business & POS*
+• POS system setup & configuration  
+
+Would you like details on a specific service?
+`,
+
+  "do you install cctv": "Yes! MikrodTech installs high-quality CCTV systems for homes, offices, and institutions — including setup, configuration, and remote monitoring.",
+  
+  "do you fix computers": "Yes, we repair, optimize, and maintain computers, including software installation and performance tuning.",
+  
+  "do you offer networking services": "Absolutely! We design, install, configure, and troubleshoot wired and wireless networks, including routers, switches, servers, and Wi-Fi systems.",
+  
+  "do you sell computers": "Yes, we supply quality computers, printers, accessories, and provide installation and warranty support.",
+  
+  "do you offer cybersecurity services": "Yes, MikrodTech offers cybersecurity audits, threat protection, device security, and network monitoring.",
+  
+  "do you do installations": "Yes, we install computers, networks, CCTV, access control, printers, POS systems, and more.",
+  
+  "do you build websites": "Yes! We design and develop professional, secure, and responsive websites for schools and businesses.",
+  
+  "do you create software": "Yes, we build custom software systems, including school management and business solutions.",
+
+
+  // 🧰 Support & Contact
+  "how can i contact mikrodtech": "You can reach us through our website, LinkedIn page, or by email at info@mikrodtech.co.ke.",
+  
+  "what are your working hours": "We are available Monday–Saturday, 8:00 AM – 6:00 PM. Remote support available anytime.",
+  
+  "how can i get a quote": "Request a quote on our website or describe your needs here — we’ll respond with personalized pricing.",
+  
+  "how do i request a service": "Simply tell us what you need or use the request form on our website. We’ll follow up with next steps.",
+  
+  "do you offer remote support": "Yes, MikrodTech provides fast remote troubleshooting and system support across Kenya.",
+
+
+  // 🏗️ Projects
+  "what projects have you done": "We have built school websites, developed a student progress tracking system for orphan programs, and installed secure networks and systems for institutions.",
+  
+  "do you make school systems": "Yes, we develop flexible school systems that help sponsors and institutions track student performance, records, and progress.",
+
+
+  // 🌐 Social Media
+  "do you have social media": "Yes — we are active on LinkedIn. Search for 'MikrodTech'. We do not use Facebook.",
+  
+  "where can i find mikrodtech online": "Visit our website at mikrodtech.co.ke or follow us on LinkedIn for updates and projects.",
+
+
+  // 💡 Brand & Vision
+  "what is your tagline": "Our tagline is 'Smart Solutions. Trusted Tech.'",
+  
+  "why choose mikrodtech": "We combine expertise, security, innovation, and reliability to deliver long-lasting solutions tailored to client needs.",
+  
+  "what makes mikrodtech different": "We focus on security, precision, and innovation — not just fixing problems, but preventing them with long-term, reliable solutions.",
+
+
+  // 💬 Friendly / Small Talk
+  "hello": "Hello! How can MikrodTech assist you today?",
+  "hi": "Hi! How can we help you with computers, networking, or tech services?",
+  "how are you": "I'm doing great and ready to assist! What can MikrodTech help you with?",
+  "thanks": "You're welcome! MikrodTech is always happy to serve.",
+  "bye": "Goodbye! Have a great day — from MikrodTech.",
+  "who are you": "I'm the MikrodTech Assistant 🤖 — here to help you explore our services, projects, and solutions."
+};
 
   /* ----------------------------
       🔎 LOCAL KNOWLEDGE SEARCH
@@ -293,21 +334,28 @@ userInput.addEventListener("keydown", (e) => {
     if (typingDiv) typingDiv.remove();
   }
 function formatBotMessage(text) {
-  // ✅ Clean unwanted spaces and leftover characters
-  text = text.trim();
+  // Remove leading spaces only, leave trailing intact
+  text = text.replace(/^\s+/, "");
 
-  // ✅ Preserve bullet characters and ensure proper line breaks
+  // Preserve bold and italics
   text = text
-    .replace(/\r\n/g, "\n")                       // Normalize newlines
-    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Bold
-    .replace(/\*(.*?)\*/g, "<em>$1</em>")             // Italic
-    .replace(/^(\s*[•\-–>]+\s*)/gm, "• ")             // Normalize bullets
-    .replace(/\n\s*\n/g, "<br><br>")                  // Paragraph spacing
-    .replace(/\n/g, "<br>");                          // Regular line breaks
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") 
+    .replace(/\*(.*?)\*/g, "<em>$1</em>");             
 
-  // ✅ Wrap content in a styled container for better readability
+  // Preserve bullets starting with •
+  text = text.replace(/^(\s*•\s*)/gm, "• ");
+
+  // Preserve numbered lists (1., 2., etc.)
+  text = text.replace(/^(\d+\.\s)/gm, "$1");
+
+  // Convert newlines to <br>, keeping paragraphs
+  text = text.replace(/\r\n/g, "\n")
+             .replace(/\n\s*\n/g, "<br><br>")
+             .replace(/\n/g, "<br>");
+
   return `<div class="bot-reply">${text}</div>`;
 }
+
 
 
 async function generateResponse(userInput) {
@@ -429,4 +477,16 @@ async function generateResponse(userInput) {
 })();
 
 
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const chatbotBtn = document.getElementById("chatbot-btn");
+  const chatbotNav = document.querySelector('a[href="#chatbot-btn"]');
+
+  if (chatbotNav && chatbotBtn) {
+    chatbotNav.addEventListener("click", (e) => {
+      e.preventDefault();
+      chatbotBtn.click();
+    });
+  }
 });
