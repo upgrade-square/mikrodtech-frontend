@@ -1744,17 +1744,17 @@ body {
 @media (max-width: 768px) {
   .contact-emails-small {
     padding: 0.8rem 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 400;
   }
 
   .contact-emails-small h1 {
-    font-size: 20px;
+    font-size: 1.1rem;
     font-weight: 400;
   }
 
   .contact-emails-small p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
     .contact-form .btn-secondary {
       font-size: 0.9rem;
