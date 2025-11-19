@@ -102,18 +102,7 @@ body {
     cursor: pointer;
   }
   
-  .hamburger,
-  .hamburger::before,
-  .hamburger::after {
-    content: "";
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: #ffffff;
-    margin: 5px 0;
-    transition: 0.3s;
-  }
-  
+
   
   /* Hero */
   .hero {
@@ -445,10 +434,6 @@ body {
 }
 
 
-html {
-  scroll-behavior: smooth;
-}
-
 /* --- Service Toggles Styling --- */
 .service-toggle {
   background: none;
@@ -747,9 +732,8 @@ html {
 
 /* Style for the success/error message inside the callback form */
 .callback-message {
-  font-size: 0.85rem;       /* smaller font than form inputs */
-  color: green;             /* default for success */
-  margin-top: 0.5rem;
+  font-size: 0.85rem;       
+  color: green;             
   text-align: center;       /* centered below the form */
 }
 
@@ -775,7 +759,6 @@ html {
 .callback-message {
   font-size: 0.85rem; 
   text-align: center;
-  margin-top: 0.5rem;
 }
 
 .callback-message.success {
@@ -813,8 +796,7 @@ html {
 
 .callback-message {
   display: block;               /* Makes margin auto work */
-  width: fit-content;           /* Message width matches content */
-  margin: 4px auto 0;           /* Very small gap above, centered horizontally */
+  width: fit-content;           /* Message width matches content */      
   font-size: 0.9rem;            /* Slightly smaller text than button */
   text-align: center;            /* Centers the text inside */
 }
@@ -966,7 +948,7 @@ html {
 
 html {
   font-size: 18px; /* Increase base scale */
-  scroll-behavior: smooth;
+ 
 }
 
 body {
@@ -1401,17 +1383,38 @@ header {
   cursor: pointer;
 }
 
-.site-header .hamburger,
+/* Base hamburger line (middle line) */
+.site-header .hamburger {
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 1.5px;
+  background: #ffffff;
+  transition: 0.3s;
+}
+
+/* Top and bottom lines */
 .site-header .hamburger::before,
 .site-header .hamburger::after {
   content: "";
-  display: block;
+  position: absolute;
+  left: 0;
   width: 25px;
-  height: 3px;
+  height: 1.5px;
   background: #ffffff;
-  margin: 4px 0;
   transition: 0.3s;
 }
+
+/* Top line */
+.site-header .hamburger::before {
+  top: -7px;
+}
+
+/* Bottom line */
+.site-header .hamburger::after {
+  top: 7px;
+}
+
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
@@ -2984,7 +2987,7 @@ body {
 
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 .fade-up {
@@ -4122,5 +4125,62 @@ html {
 }
 
 
+/* Small screen adjustments */
+@media (max-width: 600px) {
+  .callback-message {
+    font-size: 0.8rem; 
+    margin-top: -1rem;
+   
+  }
+}
 
+/* Base header styles */
+.site-header .nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* default spacing for desktop */
+}
 
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .nav-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 10px;
+  }
+
+  /* Theme button on the left */
+  .theme-toggle {
+    order: 1; /* first item */
+  }
+
+  /* Logo centered */
+  .brand {
+    order: 2; /* second item */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Menu toggle (hamburger) on the right */
+  .nav-toggle {
+    order: 3; /* third item */
+  }
+
+  /* Hide full nav list on mobile */
+  .main-nav {
+    display: none; /* show only when menu toggle is clicked */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    background: #000000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .main-nav.active {
+    display: block;
+  }
+}

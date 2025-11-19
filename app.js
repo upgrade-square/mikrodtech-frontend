@@ -1243,17 +1243,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// -----------------------------
-// Service Worker Registration
-// -----------------------------
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/sw.js")
-      .then(() => console.log("✅ Service Worker registered"))
-      .catch((err) =>
-        console.log("❌ Service Worker registration failed:", err)
-      );
-  });
-}
+// Wait until the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.getElementById('contactForm');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function() {
+      gtag('event', 'contact_form_submission', {
+        'event_category': 'Form',
+        'event_label': 'Contact Form'
+      });
+    });
+  }
+});
+
+
 
