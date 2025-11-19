@@ -4184,3 +4184,51 @@ html {
     display: block;
   }
 }
+
+
+
+@media (max-width: 600px) {
+  .nav-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 4px; /* tiny space from edges */
+  }
+
+  /* Theme button on the far left */
+  .theme-toggle {
+    order: 1;
+    margin-left: 0;
+  }
+
+  /* Logo perfectly centered */
+  .brand {
+    order: 2;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Hamburger menu on the far right */
+  .nav-toggle {
+    order: 3;
+    margin-right: 0;
+  }
+
+  /* Hide full nav list on mobile */
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    background: #000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 10;
+  }
+
+  .main-nav.active {
+    display: block;
+  }
+}
