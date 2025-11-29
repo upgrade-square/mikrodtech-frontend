@@ -143,30 +143,28 @@ We focus exclusively on secure, high-performance, and scalable solutions for bus
      🗣️ MULTI-TURN CONTEXT ENGINE
      ============================ */
   let lastTopic = null;
-  let lastAnswer = "";    
-
+  let lastAnswer = "";   
   function getContextualReply(input) {
     const lower = input.toLowerCase().trim();
 
-    // Handle follow-ups like "tell me more" or "details"
-    if (lastTopic && (lower.includes("more") || lower.includes("details") || lower.includes("tell me more"))) {
-      switch (lastTopic) {
-        case "cctv":
-          return "Our CCTV packages include HD and IP cameras, DVR/NVR setup, and remote mobile viewing configuration.";
-        case "cybersecurity":
-          return "We provide vulnerability scanning, threat monitoring, and secure network configurations for both schools and businesses.";
-        case "network":
-          return "Our network setups include structured cabling, router configuration, access point installations, and Wi-Fi optimization.";
-        case "computers":
-          return "We supply branded and custom-built computers, printers, and accessories with installation, warranty, and maintenance support.";
-        default:
-          return "Sure! Could you specify what you'd like to know more about — for example CCTV, networking, or cybersecurity?";
-      }
-    }
 
-    if (lastTopic && (lower.includes("what else") || lower.includes("other services"))) {
-      return `Besides ${lastTopic}, we also handle computers, printers, CCTV, networking, cybersecurity, and POS systems — basically everything tech under one roof.`;
-    }
+    if (lastTopic && (lower.includes("more") || lower.includes("details") || lower.includes("tell me more"))) {
+  switch (lastTopic) {
+    case "cybersecurity":
+      return "MikrodTech provides advanced cybersecurity services such as audits, penetration testing, secure architecture design, and continuous threat monitoring.";
+    case "software":
+      return "Our software engineering services include custom system development, intelligent automation, digital platforms, and enterprise-grade tools.";
+    case "innovation":
+      return "We innovate through R&D, smart product development, automation tools, and scalable technology solutions for institutions and enterprises.";
+    default:
+      return "Sure! Tell me which area you'd like more details about — software engineering, cybersecurity, or product innovation.";
+  }
+}
+
+
+if (lastTopic && (lower.includes("what else") || lower.includes("other services"))) {
+  return `Besides ${lastTopic}, MikrodTech also specializes in software engineering, cybersecurity, and product innovation — all designed for secure, scalable, high-performance environments.`;
+}
 
 
     if (lower.includes("thanks") || lower.includes("thank you")) {
@@ -178,11 +176,11 @@ We focus exclusively on secure, high-performance, and scalable solutions for bus
     // Check KB
     const kbAnswer = searchKnowledgeBase(lower);
     if (kbAnswer) {
-      if (lower.includes("cctv")) lastTopic = "cctv";
-      else if (lower.includes("cybersecurity") || lower.includes("ethical")) lastTopic = "cybersecurity";
-      else if (lower.includes("network") || lower.includes("wifi") || lower.includes("router")) lastTopic = "network";
-      else if (lower.includes("computer") || lower.includes("printer")) lastTopic = "computers";
-      else lastTopic = null;
+     if (lower.includes("cybersecurity")) lastTopic = "cybersecurity";
+else if (lower.includes("software") || lower.includes("system") || lower.includes("app")) lastTopic = "software";
+else if (lower.includes("innovation") || lower.includes("product")) lastTopic = "innovation";
+else lastTopic = null;
+
       lastAnswer = kbAnswer;
       return kbAnswer;
     }
@@ -462,3 +460,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
