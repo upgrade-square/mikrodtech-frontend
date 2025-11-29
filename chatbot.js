@@ -10,98 +10,70 @@ document.addEventListener("DOMContentLoaded", () => {
     🧠 MIKRODTECH KNOWLEDGE BASE
 -----------------------------*/
 const mikrodTechKB = {
-  // 🏢 Company Info
-  "what is mikrodtech": "MikrodTech is a professional technology solutions provider offering modern, secure, and reliable tech services for individuals, schools, and businesses across Kenya.",
-  
-  "who owns mikrodtech": "MikrodTech was founded by Wabwile Simati Rodney Mike, a cybersecurity specialist and software developer passionate about building secure and innovative technology solutions.",
-  
-  "where is mikrodtech located": "MikrodTech operates in Kenya and serves clients countrywide through onsite and remote service delivery.",
-  
-  "when was mikrodtech founded": "MikrodTech began as a passion for secure and reliable technology, later evolving into a professional brand serving homes, offices, and institutions.",
-  
-  "what does mikrodtech mean": "MikrodTech combines 'Mike' and 'Rod' — the founder’s names — with 'Tech' to form a brand focused on smart, modern, and reliable technology.",
-  
-  "tell me more about mikrodtech": `
-MikrodTech is a technology solutions provider dedicated to delivering innovative, dependable, and secure tech services. 
-Our mission is to simplify technology for clients across Kenya, while our vision is to become a leading tech provider in East Africa — known for excellence, integrity, and trust.
+  //// 🏢 Updated High-End Company Info
+"what is mikrodtech": "MikrodTech is a forward-thinking technology company specializing in software engineering, cybersecurity, and product innovation. We build secure, scalable, and intelligent solutions for enterprises and institutions.",
 
-Our services cover:
-• Computers & Hardware  
-• Networking & Internet  
-• Security & Surveillance  
-• Power & Backup Solutions  
-• Business & POS
+"who owns mikrodtech": "MikrodTech was founded by Wabwile Simati Rodney Mike, a cybersecurity specialist, software engineer, and product developer focused on building secure, intelligent, and future-ready technologies.",
 
-For inquiries, contact us at +254769329029 or email: info@mikrodtech.co.ke.
-  `,
+"where is mikrodtech located": "MikrodTech operates in Kenya and provides advanced technology solutions to clients across East Africa and beyond.",
 
- "mikrodtech ecosystem": `
-🌐 **MikrodTech Ecosystem (Upcoming)**
+"when was mikrodtech founded": "MikrodTech began as a research-driven tech initiative and evolved into a company focused on enterprise-grade software, cybersecurity, and product development.",
 
-The MikrodTech Ecosystem is an integrated technology platform unifying all our products and services into a seamless, intelligent environment. It reflects our mission of simplifying technology, enhancing productivity, and maintaining trust and security in every solution we provide.
+"what does mikrodtech mean": "MikrodTech combines 'Mike' and 'Rod' — the founder’s names — with 'Tech', representing a company built on innovation, security, and intelligent engineering.",
 
-**Key Sub-Ecosystems:**
-• **MikrodAI** – AI-driven solutions for businesses and individuals, including automation, analytics, and intelligent assistants.
-• **MikrodHome** – Smart home solutions integrating security, energy, and convenience for connected living.
-• **MikrodSecure** – Advanced cybersecurity and surveillance tools to protect people, devices, and networks.
-• **MikrodPower** – Reliable power backup, UPS, and smart energy management systems.
-• **MikrodBusiness** – POS, workflow automation, and productivity tools tailored for enterprises.
+"tell me more about mikrodtech": `
+MikrodTech is a modern technology company focused on building secure, scalable, and intelligent solutions.
 
-📌 Keep watching — we will roll out updates and new features soon!
+We specialize in:
+• Software engineering  
+• Cybersecurity & digital protection  
+• Product design, automation, and innovation  
+
+We serve enterprises, institutions, and mission-driven organizations seeking high-performance technology engineered for long-term growth.
 `,
 
 
-  // 🛠️ Services
-  "what services do you offer": `
-**MikrodTech Services**
+// 🛠️ High-End Services
+"what services do you offer": `
+**MikrodTech Core Services**
 
+*Software Engineering*
+• Custom enterprise systems  
+• Intelligent automation solutions  
+• Web applications & digital platforms  
+• Data-driven business tools  
 
+*Cybersecurity*
+• Cybersecurity assessments & audits  
+• Secure architecture & system hardening  
+• Threat detection & vulnerability analysis  
+• Digital risk mitigation  
 
-*Computers & Hardware*
-• Computer sales & installation   
-• Printer setup & troubleshooting  
-• OS installation & optimization  
-• Productivity software setup  
-• Gaming accessories setup  
+*Product Innovation*
+• R&D and prototyping  
+• Smart product development  
+• Automation tools  
+• Institutional and enterprise tech solutions  
 
-*Networking & Internet*
-• Network design & configuration  
-• Device discovery & vulnerability scanning  
-• Wi-Fi setup & optimization  
-• LAN/WAN installations  
-• Network monitoring & troubleshooting  
-
-*Security & Surveillance*
-• CCTV & IP camera installation  
-• Access control systems  
-• Cybersecurity audits & protection  
-• Intrusion detection & prevention (IDS/IPS)  
-
-⚡ *Power & Backup*
-• UPS & inverter installation  
-• Power backup system setup  
-
-*Business & POS*
-• POS system setup & configuration  
-
-Would you like details on a specific service?
+We focus exclusively on secure, high-performance, and scalable solutions for businesses and institutions.
 `,
 
-  "do you install cctv": "Yes! MikrodTech installs high-quality CCTV systems for homes, offices, and institutions — including setup, configuration, and remote monitoring.",
-  
-  "do you fix computers": "Yes, we repair, optimize, and maintain computers, including software installation and performance tuning.",
-  
-  "do you offer networking services": "Absolutely! We design, install, configure, and troubleshoot wired and wireless networks, including routers, switches, servers, and Wi-Fi systems.",
-  
-  "do you sell computers": "Yes, we supply quality computers, printers, accessories, and provide installation and warranty support.",
-  
-  "do you offer cybersecurity services": "Yes, MikrodTech offers cybersecurity audits, threat protection, device security, and network monitoring.",
-  
-  "do you do installations": "Yes, we install computers, networks, CCTV, access control, printers, POS systems, and more.",
-  
-  "do you build websites": "Yes! We design and develop professional, secure, and responsive websites for schools and businesses.",
-  
-  "do you create software": "Yes, we build custom software systems, including school management and business solutions.",
+"do you install cctv": "MikrodTech no longer offers CCTV installation. We are now focused on advanced cybersecurity, software development, and product innovation.",
+
+"do you fix computers": "MikrodTech does not provide computer repair services. We specialize in enterprise-grade technology solutions.",
+
+"do you offer networking services": "We provide secure network architecture and enterprise-level cybersecurity — not basic router or Wi-Fi installations.",
+
+"do you sell computers": "No. MikrodTech focuses on high-level technology solutions, not hardware sales.",
+
+"do you offer cybersecurity services": "Yes — we offer assessments, secure architecture design, vulnerability analysis, and threat detection for organizations.",
+
+"do you do installations": "No. MikrodTech no longer handles hardware installations. Our focus is strategic, high-end digital solutions.",
+
+"do you build websites": "Yes — we build secure, scalable, and professional web platforms for enterprises and institutions.",
+
+"do you create software": "Yes — MikrodTech designs and develops custom enterprise software and intelligent systems tailored to professional needs.",
+
 
 
   // 🧰 Support & Contact
@@ -171,7 +143,7 @@ Would you like details on a specific service?
      🗣️ MULTI-TURN CONTEXT ENGINE
      ============================ */
   let lastTopic = null;
-  let lastAnswer = "";
+  let lastAnswer = "";    
 
   function getContextualReply(input) {
     const lower = input.toLowerCase().trim();
