@@ -775,6 +775,7 @@ function generatePassword(length = 14, userName = "") {
   return finalPassword.slice(0, length);
 }
 
+
   // Attach tool button events
   toolButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
