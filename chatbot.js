@@ -194,16 +194,19 @@ else lastTopic = null;
   const savedMessages = JSON.parse(sessionStorage.getItem("mikrodtech-chat")) || [];
   savedMessages.forEach((msg) => appendMessage(msg.sender, msg.text, false));
 
-  chatbotBtn.addEventListener("click", () => {
-    chatbotBox.style.display = "flex";
-    chatbotBtn.style.display = "none";
-    setTimeout(() => userInput.focus(), 100);
-  });
+chatbotBtn.addEventListener("click", () => {
+  chatbotBox.style.display = "flex";
+  chatbotBtn.style.display = "none";
+  document.body.classList.add("chatbot-open");   // ← ADD THIS
+  setTimeout(() => userInput.focus(), 100);
+});
 
-  closeChat.addEventListener("click", () => {
-    chatbotBox.style.display = "none";
-    chatbotBtn.style.display = "block";
-  });
+ closeChat.addEventListener("click", () => {
+  chatbotBox.style.display = "none";
+  chatbotBtn.style.display = "block";
+  document.body.classList.remove("chatbot-open");  // ← ADD THIS
+});
+
 
   
 

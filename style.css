@@ -4348,4 +4348,9 @@ html {
   }
 }
 
+/* Hide the floating chatbot button when chatbot is open */
+.chatbot-open #chatbot-btn {
+  display: none !important;
+}
+
 
