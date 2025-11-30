@@ -4370,7 +4370,7 @@ html {
   #chatbot-box {
     bottom: 0 !important;
     top: auto !important;
-    max-height: 100vh !important;
-    height: 100vh !important;
+    max-height: 80% !important;
+    height: 80% !important;
   }
 }
