@@ -4323,8 +4323,8 @@ html {
 #chatbot-btn {
   display: flex !important;              
   position: fixed !important;            
-  bottom: 300px !important;               
-  right: 25px !important;                
+  bottom: 200px !important;               
+  right: 20px !important;                
   width: 60px !important;                
   height: 60px !important;
   padding: 0 12px !important;
@@ -4354,3 +4354,23 @@ html {
 }
 
 
+/* Make chatbot button smaller on phones */
+@media (max-width: 600px) {
+  #chatbot-btn {
+    width: 40px !important;
+    height: 40px !important;
+    bottom: 100px !important; /* adjust position if needed */
+    right: 20px !important;
+    font-size: 20px !important;
+  }
+}
+
+/* Fix: Chatbot box moves up when phone keyboard opens */
+@media (max-width: 600px) {
+  #chatbot-box {
+    bottom: 0 !important;
+    top: auto !important;
+    max-height: 100vh !important;
+    height: 100vh !important;
+  }
+}
