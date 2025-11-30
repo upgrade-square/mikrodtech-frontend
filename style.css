@@ -4322,8 +4322,8 @@ html {
 #chatbot-btn {
   display: flex !important;              /* always visible */
   position: fixed !important;            /* stays in viewport */
-  bottom: 20px !important;               /* distance from bottom */
-  right: 20px !important;                /* distance from right */
+  bottom: 300px !important;               /* distance from bottom */
+  right: 25px !important;                /* distance from right */
   width: 60px !important;                
   height: 60px !important;
   padding: 0 12px !important;
