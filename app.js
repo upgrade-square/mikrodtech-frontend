@@ -512,7 +512,82 @@ const articles = [
       </ul>
       <p>With consistent maintenance, your PC will stay fast, efficient, and reliable.</p>
     `
-  }
+  },
+
+  {
+  title: "Advanced Cyber Defense Strategies for Modern Enterprises",
+  content: `
+    <p>Modern organizations face sophisticated cyber threats that require intelligent, layered defenses. Strong cyber defense combines technology, strategy, and continuous improvement.</p>
+    <ul>
+      <li>Adopt Zero-Trust Architecture (ZTA) for identity-based access control.</li>
+      <li>Deploy EDR/XDR solutions for real-time threat detection.</li>
+      <li>Encrypt data across all layers — at rest, in transit, and in use.</li>
+      <li>Implement continuous network monitoring with SIEM and SOC workflows.</li>
+      <li>Conduct routine penetration tests and threat-hunting exercises.</li>
+    </ul>
+    <p>Enterprises that prioritize advanced cyber defense are more resilient, agile, and prepared for next-generation threats.</p>
+  `
+},
+
+{
+  title: "How to Architect Secure and Scalable IT Systems",
+  content: `
+    <p>Building secure and scalable IT systems ensures reliability, performance, and long-term efficiency. Strong architecture is the backbone of every high-performance enterprise.</p>
+    <ul>
+      <li>Use cloud-native architectures to improve scalability and resilience.</li>
+      <li>Implement microservices for modular, maintainable systems.</li>
+      <li>Leverage virtualization and containerization for efficient resource usage.</li>
+      <li>Design secure network topologies with segmentation and redundancy.</li>
+      <li>Integrate CI/CD pipelines for faster, safer deployment cycles.</li>
+    </ul>
+    <p>A well-designed IT architecture reduces downtime, enhances security, and supports future innovation.</p>
+  `
+},
+
+{
+  title: "Why Continuous Security & Compliance Audits Matter",
+  content: `
+    <p>Security and compliance audits help organizations identify vulnerabilities, maintain regulatory alignment, and strengthen digital resilience.</p>
+    <ul>
+      <li>Detect weaknesses before attackers exploit them.</li>
+      <li>Meet international standards such as ISO 27001 and NIST CSF.</li>
+      <li>Reduce operational, financial, and reputational risks.</li>
+      <li>Ensure data protection for customers and internal systems.</li>
+      <li>Maintain governance, risk, and compliance (GRC) frameworks.</li>
+    </ul>
+    <p>Continuous auditing builds confidence and ensures your organization remains protected in a dynamic cyber landscape.</p>
+  `
+},
+
+{
+  title: "Key Signs Your Software System Requires Modernization",
+  content: `
+    <p>Outdated software slows operations, limits innovation, and exposes organizations to security risks. Modernization unlocks efficiency and scalability.</p>
+    <ul>
+      <li>Slow performance and frequent system outages.</li>
+      <li>Difficulty integrating with modern APIs and platforms.</li>
+      <li>High maintenance costs from legacy systems.</li>
+      <li>Security vulnerabilities due to outdated frameworks.</li>
+      <li>Inability to scale with growing business needs.</li>
+    </ul>
+    <p>Upgrading to modern, cloud-ready systems future-proofs your technology ecosystem.</p>
+  `
+},
+
+{
+  title: "Engineering Intelligent Devices with Embedded Systems & IoT",
+  content: `
+    <p>Embedded systems and IoT technologies power the next generation of smart, connected devices for industries, homes, and mission-critical environments.</p>
+    <ul>
+      <li>Use microcontrollers and SoC platforms for optimized hardware design.</li>
+      <li>Implement secure firmware and device-level encryption.</li>
+      <li>Integrate sensors, actuators, and wireless modules for smart functionality.</li>
+      <li>Link devices to cloud dashboards for monitoring and analytics.</li>
+      <li>Prototype and iterate hardware using modern electronics workflows.</li>
+    </ul>
+    <p>IoT and embedded engineering enable innovation across automation, energy, security, and smart-home ecosystems.</p>
+  `
+},
 ];
 document.addEventListener("DOMContentLoaded", () => {
   /* ----------------------------
@@ -557,19 +632,45 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Explore All Articles
-  if (exploreButton) {
-    exploreButton.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      modalTitle.textContent = "More Articles Coming Soon!";
-      modalBody.innerHTML = `
-        <p>We’re working on adding more expert insights, guides, and tutorials.</p>
-        <p><strong>Stay tuned!</strong> New content will be available here soon.</p>
+// Explore All Articles → Show a list of every article
+if (exploreButton) {
+  exploreButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    modalTitle.textContent = "All Articles";
+
+    // Build article list
+    let listHTML = `<div class="article-list">`;
+
+    articles.forEach((article, index) => {
+      listHTML += `
+        <div class="article-list-item">
+          <h4>${article.title}</h4>
+          <button class="open-article" data-index="${index}">Read More →</button>
+        </div>
       `;
-      modal.style.display = "flex";
-      document.body.style.overflow = "hidden";
     });
-  }
+
+    listHTML += `</div>`;
+
+    modalBody.innerHTML = listHTML;
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+
+    // Attach click event to each Read More inside the list
+    document.querySelectorAll(".open-article").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const index = e.target.dataset.index;
+        const article = articles[index];
+
+        modalTitle.textContent = article.title;
+        modalBody.innerHTML = article.content;
+      });
+    });
+  });
+}
+
 
   /* ----------------------------
      TOOLS MODAL INTEGRATION

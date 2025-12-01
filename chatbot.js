@@ -3,9 +3,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatbotBox = document.getElementById("chatbot-box");
   const closeChat = document.getElementById("close-chat");
   const sendBtn = document.getElementById("send-btn");
-  const userInput = document.getElementById("user-input");
   const messages = document.getElementById("chatbot-messages");
+
+
+
+ /* ===========================================
+   AUTO-EXPAND TEXTAREA (WhatsApp Style)
+=========================================== */
+const userInput = document.getElementById("user-input");
+
+if (userInput) {
+  userInput.addEventListener("input", () => {
+    userInput.style.height = "20px";
+    userInput.style.height = userInput.scrollHeight + "px";
+  });
+}
+
   const innerMessages = document.getElementById("chatbot-messages-inner");
+  const chatbotNav = document.getElementById("chatbot-nav");
+
+
+
+
+
+  
 /* ----------------------------
     🧠 MIKRODTECH KNOWLEDGE BASE
 -----------------------------*/
@@ -194,12 +215,7 @@ else lastTopic = null;
   const savedMessages = JSON.parse(sessionStorage.getItem("mikrodtech-chat")) || [];
   savedMessages.forEach((msg) => appendMessage(msg.sender, msg.text, false));
 
-chatbotBtn.addEventListener("click", () => {
-  chatbotBox.style.display = "flex";
-  chatbotBtn.style.display = "none";
-  document.body.classList.add("chatbot-open");   // ← ADD THIS
-  setTimeout(() => userInput.focus(), 100);
-});
+
 
  closeChat.addEventListener("click", () => {
   chatbotBox.style.display = "none";
@@ -282,12 +298,20 @@ userInput.addEventListener("keydown", (e) => {
       📦 STORAGE & UI FUNCTIONS
   -----------------------------*/
   function appendMessage(sender, text) {
-    const msg = document.createElement("div");
-    msg.classList.add("message", sender);
-    msg.innerHTML = sender === "bot" ? formatBotMessage(text) : text;
-    innerMessages.appendChild(msg);
-    messages.scrollTop = messages.scrollHeight;
+  const msg = document.createElement("div");
+  msg.classList.add("message", sender);
+
+  if (sender === "bot") {
+    msg.innerHTML = formatBotMessage(text);
+  } else {
+    // Preserve line breaks exactly as typed
+    msg.textContent = text; // ✅ Use textContent instead of innerHTML
   }
+
+  innerMessages.appendChild(msg);
+  messages.scrollTop = messages.scrollHeight;
+}
+
 
   function saveMessage(sender, text) {
     savedMessages.push({ sender, text });
@@ -358,65 +382,92 @@ async function generateResponse(userInput) {
   return cleanResponse(data.output);
 }
 
+
+
 /* ----------------------------
-    🖱️ MAKE CHATBOT BUTTON DRAGGABLE (pointer events)
+      📟 OPEN & CLOSE CHATBOT
 -----------------------------*/
+function openChatbot() {
+  chatbotBox.style.display = "flex";
+  chatbotBtn.style.display = "none";
+  document.body.classList.add("chatbot-open");
+  setTimeout(() => userInput.focus(), 100);
+}
+
+function closeChatbot() {
+  chatbotBox.style.display = "none";
+  chatbotBtn.style.display = "block";
+  document.body.classList.remove("chatbot-open");
+}
+
+chatbotBtn.addEventListener("click", openChatbot);
+closeChat.addEventListener("click", closeChatbot);
+
+/* Menu click opens it too */
+if (chatbotNav) {
+  chatbotNav.addEventListener("click", (e) => {
+    e.preventDefault();
+    openChatbot();
+  });
+}
+
+});
+
+/* ===========================================
+    🖱️ DRAGGABLE CHATBOT BUTTON (CLICK-SAFE)
+=========================================== */
 (function makeChatbotButtonDraggable() {
   const btn = document.getElementById("chatbot-btn");
   if (!btn) return;
 
-  // Ensure the button can accept pointer events and is above other elements
-  btn.style.touchAction = btn.style.touchAction || "none"; // fallback if CSS missing
+  btn.style.touchAction = btn.style.touchAction || "none";
   btn.style.zIndex = btn.style.zIndex || 10000;
 
-  // If element uses bottom/right in CSS, initialize left/top so pointer dragging works
   const rect = btn.getBoundingClientRect();
   if (!btn.style.left && !btn.style.top) {
-    // set inline left/top from computed position
     btn.style.left = `${rect.left}px`;
     btn.style.top = `${rect.top}px`;
-    // remove bottom/right so inline left/top takes precedence
     btn.style.right = "auto";
     btn.style.bottom = "auto";
     btn.style.position = "fixed";
   }
 
   let dragging = false;
+  let isClick = true;
   let originX = 0, originY = 0;
   let startLeft = 0, startTop = 0;
 
   function onPointerDown(e) {
-    // only left mouse or touch/pen
     if (e.pointerType === "mouse" && e.button !== 0) return;
     e.preventDefault();
     btn.setPointerCapture?.(e.pointerId);
 
     dragging = true;
+    isClick = true;
+
     originX = e.clientX;
     originY = e.clientY;
 
-    // parse current left/top (numbers)
     startLeft = parseFloat(getComputedStyle(btn).left || 0);
     startTop = parseFloat(getComputedStyle(btn).top || 0);
 
-    // disable transitions while dragging
     btn.style.transition = "none";
-
-    // prevent page from selecting text while dragging
     document.body.style.userSelect = "none";
   }
 
   function onPointerMove(e) {
     if (!dragging) return;
-    e.preventDefault();
 
     const dx = e.clientX - originX;
     const dy = e.clientY - originY;
 
+    if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+      isClick = false;
+    }
+
     let newLeft = startLeft + dx;
     let newTop = startTop + dy;
 
-    // keep inside viewport bounds
     const winW = window.innerWidth;
     const winH = window.innerHeight;
     const btnW = btn.offsetWidth;
@@ -427,43 +478,41 @@ async function generateResponse(userInput) {
 
     btn.style.left = `${newLeft}px`;
     btn.style.top = `${newTop}px`;
-    btn.style.right = "auto";
-    btn.style.bottom = "auto";
-    btn.style.position = "fixed";
   }
 
   function onPointerUp(e) {
     if (!dragging) return;
     dragging = false;
+
     btn.releasePointerCapture?.(e.pointerId);
     btn.style.transition = "all 0.25s ease";
-    document.body.style.userSelect = ""; // restore
+    document.body.style.userSelect = "";
+
+    if (isClick) openChatbot();
   }
 
-  // Attach pointer event listeners
   btn.addEventListener("pointerdown", onPointerDown);
   window.addEventListener("pointermove", onPointerMove, { passive: false });
   window.addEventListener("pointerup", onPointerUp);
-
-  // keep dragging working if pointer leaves window (safety)
   window.addEventListener("pointercancel", onPointerUp);
 })();
 
 
+// Prevent click from firing after drag
+let chatbotDragging = false;
+
+document.getElementById("chatbot-btn").addEventListener("pointerdown", () => {
+  chatbotDragging = false;
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const chatbotBtn = document.getElementById("chatbot-btn");
-  const chatbotNav = document.querySelector('a[href="#chatbot-btn"]');
+document.getElementById("chatbot-btn").addEventListener("pointermove", () => {
+  chatbotDragging = true;
+});
 
-  if (chatbotNav && chatbotBtn) {
-    chatbotNav.addEventListener("click", (e) => {
-      e.preventDefault();
-      chatbotBtn.click();
-    });
+document.getElementById("chatbot-btn").addEventListener("click", (e) => {
+  if (chatbotDragging) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    return false; // cancel click completely
   }
 });
-
-
-
-
