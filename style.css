@@ -4535,8 +4535,8 @@ html {
     position: absolute;
     top: 100%;
     right: 0;
-    width: 220px;
-    background: #000;
+    width: 150px;
+    background: rgba(4, 34, 86, 0.9);
     padding: 0;
     z-index: 25;
   }
@@ -4552,7 +4552,7 @@ html {
 
   .main-nav .nav-list li a {
     display: block;
-    padding: 10px 12px;
+    padding: 2px 5px;
     color: #fff;
     text-decoration: none;
     width: 100%;
