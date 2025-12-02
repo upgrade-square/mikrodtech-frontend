@@ -411,8 +411,6 @@ if (chatbotNav) {
   });
 }
 
-});
-
 /* ===========================================
     🖱️ DRAGGABLE CHATBOT BUTTON (CLICK-SAFE)
 =========================================== */
@@ -496,6 +494,9 @@ if (chatbotNav) {
   window.addEventListener("pointerup", onPointerUp);
   window.addEventListener("pointercancel", onPointerUp);
 })();
+
+
+});
 
 
 // Prevent click from firing after drag
