@@ -10,7 +10,7 @@
   text-align: center;      /* centers the text */
   margin: 0 auto 1.5rem;   /* ensures it's centered in container */
   color: #0077cc;          /* MikrodTech blue */
-  display: block;          /* ensures text-align works properly */
+  display: block;          
 }
 
 .section-title::after {
@@ -1304,7 +1304,7 @@ header {
 /* Prefer email text */
 .contact-email {
   text-align: center;
-  font-size: 1.4rem;      /* larger for visibility */
+  font-size: 1.4rem;     
   font-weight: 500;
   color: #333333;
   margin-top: 2rem;
@@ -1312,7 +1312,7 @@ header {
 
 /* Callback form (hidden by default) */
 .callback-form {
-  display: none;          /* hidden until button is clicked */
+  display: none;         
   max-width: 900px;
   margin: 2rem auto;
   padding: 1.5rem;
@@ -1324,19 +1324,19 @@ header {
 
 /* Contact icons at bottom */
 .contact-icons a img {
-  width: 48px;      /* increased from 32px */
-  height: 48px;     /* increased from 32px */
+  width: 48px;      
+  height: 48px;     
   transition: transform 0.3s;
 }
 
 .contact-icons a img:hover {
-  transform: scale(1.15); /* slightly larger on hover */
+  transform: scale(1.15); 
 }
 
 /* ===== Header Styles for your current HTML ===== */
 .site-header {
-  background: #000000;           /* black background */
-  padding: 1rem 2rem;            /* reasonable header padding */
+  background: #000000;           
+  padding: 1rem 2rem;          
 }
 
 
@@ -1365,19 +1365,19 @@ header {
 }
 
 .site-header .main-nav .nav-list li a {
-  font-size: 1.2rem;             /* readable menu text */
+  font-size: 1.2rem;             
   font-weight: 600;
-  color: #ffffff;                /* white text */
+  color: #ffffff;              
   transition: color 0.3s ease;
 }
 
 .site-header .main-nav .nav-list li a:hover {
-  color: #0072ce;                /* MikrodTech blue on hover */
+  color: #0072ce;               
 }
 
 /* Hamburger menu (mobile) */
 .site-header .nav-toggle {
-  display: none;                 /* only show on mobile */
+  display: none;               
   background: none;
   border: none;
   cursor: pointer;
@@ -1424,7 +1424,7 @@ header {
   }
 
   .site-header .brand img {
-    height: 30px;                 /* smaller logo on mobile */
+    height: 30px;                 
   }
 
   .site-header .main-nav .nav-list {
@@ -1433,7 +1433,7 @@ header {
   }
 
   .site-header .main-nav .nav-list li a {
-    font-size: 1rem;             /* smaller menu font on mobile */
+    font-size: 1rem;             
   }
 
   .site-header .nav-toggle {
@@ -1452,17 +1452,17 @@ header {
 }
 
 .testimonial-card {
-  max-width: 90%;       /* allow card to use most of the container width */
-  margin: 0 auto;       /* center each card */
+  max-width: 90%;       
+  margin: 0 auto;      
   padding: 1.5rem;
-  box-sizing: border-box; /* ensures padding doesn't break width */
-  text-align: center;   /* optional, keeps text centered */
+  box-sizing: border-box; 
+  text-align: center; 
   line-height: 1.6;
   font-size: 1.1rem;
 }
 
 .testimonial-card.active {
-  display: block;          /* show only the active one */
+  display: block;        
 }
 
 
@@ -4430,7 +4430,7 @@ html {
   #chatbot-btn {
     width: 40px !important;
     height: 40px !important;
-    bottom: 100px !important; /* adjust position if needed */
+    bottom: 100px !important; 
     right: 20px !important;
     font-size: 20px !important;
   }
