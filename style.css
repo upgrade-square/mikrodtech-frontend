@@ -4614,6 +4614,7 @@ html {
   #user-input {
     font-size: 1rem;
     min-height: 25px;
+    max-height: 80px;
   }
 
   .chatbot-input {
@@ -4621,3 +4622,11 @@ html {
     
   }
 }
+
+.article-coming-soon {
+  text-align: center;
+  padding: 20px 10px;
+  opacity: 0.9;
+}
+
+
