@@ -54,6 +54,23 @@ We serve enterprises, institutions, and mission-driven organizations seeking hig
 `,
 
 
+"best laptop for computer science student": `
+For a computer science student, a laptop should balance performance, reliability, and portability.
+
+**Recommended Specifications**
+• CPU: Intel Core i7 or AMD Ryzen 7 (latest generation)
+• RAM: 16GB minimum (32GB recommended for VMs, Docker, ML)
+• Storage: 512GB NVMe SSD minimum (1TB recommended)
+• Display: 14–15.6 inch Full HD or higher
+• Battery Life: 8+ hours
+• Operating System: Linux, Windows, or macOS depending on tooling
+
+**Notes**
+• Dedicated GPU is optional (mainly for ML or graphics work)
+• Prioritize keyboard quality and thermal performance over gaming features
+`
+,
+
 // 🛠️ High-End Services
 "what services do you offer": `
 **MikrodTech Core Services**
