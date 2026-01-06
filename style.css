@@ -4439,7 +4439,7 @@ html {
 /* Fix: Chatbot box moves up when phone keyboard opens */
 @media (max-width: 600px) {
   #chatbot-box {
-    bottom: 2rem !important;
+    bottom: 0.5rem !important;
     top: auto !important;
     max-height: 80% !important;
     height: 80% !important;
