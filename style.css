@@ -4589,6 +4589,7 @@ html {
   overflow-y: auto;        /* show scroll when max height reached */
   resize: none;            /* prevent manual resize */
   white-space: pre-wrap;   /* allow wrapping */
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Send button */
