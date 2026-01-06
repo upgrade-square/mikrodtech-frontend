@@ -4613,13 +4613,13 @@ html {
   }
 
   #user-input {
-    font-size: 1rem;
+    font-size: 1.2rem;
     min-height: 25px;
     max-height: 80px;
   }
 
   .chatbot-input {
-    padding: 4px 1px;
+    padding: 3px 1px;
     
   }
 }
