@@ -1285,15 +1285,3 @@ document.getElementById("openChatbotMenu").addEventListener("click", () => {
   document.getElementById("chatbot-btn").click();
 });
 
-const userInput = document.getElementById('user-input');
-const chatbotBox = document.getElementById('chatbot-box');
-
-userInput.addEventListener('focus', () => {
-  // Shift the box up just enough so the close button is visible
-  chatbotBox.style.bottom = '120px';  // tweak this value as needed
-});
-
-userInput.addEventListener('blur', () => {
-  // Return to default position
-  chatbotBox.style.bottom = '20px';
-});
