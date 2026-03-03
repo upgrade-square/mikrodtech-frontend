@@ -1281,4 +1281,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-
+document.getElementById("openChatbotMenu").addEventListener("click", () => {
+  document.getElementById("chatbot-btn").click();
+});

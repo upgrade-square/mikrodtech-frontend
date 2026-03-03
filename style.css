@@ -2132,44 +2132,59 @@ body {
   transform: scale(1.1);
 }
 
-/* === Chatbot Box === */
+
 #chatbot-box, .chatbot-box {
   position: fixed;
-  bottom: 300px;         /* just above the button */
-  right: 25px;           /* aligned with button horizontally */
-  width: 700px;
-  height: 800px;
-  background: rgba(79, 126, 227, 0.75); 
-  backdrop-filter: blur(10px);       
+  top: 60px;                  /* always anchored from top */
+  right: 25px;
+
+  width: 650px;
+  max-width: 95vw;
+
+  height: 800px;              /* default height at 100% zoom */
+  max-height: 85vh;           /* ensures it never overflows screen at high zooms */
+  overflow: auto;             /* enables scrolling if content is too tall */
+
+  background: rgba(79, 126, 227, 0.75);
+  backdrop-filter: blur(10px);
+
   border-radius: 15px;
   box-shadow: 1px 5px 25px rgba(36, 24, 206, 0.25);
+
   display: none;
   flex-direction: column;
   z-index: 1000;
-  overflow: hidden;
+
   font-family: 'Poppins', sans-serif;
+
+  transition: all 0.25s ease; /* smooth opening animation */
 }
 
 
 
-/* header */
+
 .chatbot-header {
   display: flex;
-  justify-content: space-between; 
-  align-items: center;            
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;     /* IMPORTANT: prevents overflow at high zoom */
   width: 100%;
-  padding: 0 10px;
+  padding: 10px;       /* Add vertical padding so header can grow */
   background: rgba(1, 25, 65, 0.9);
   color: white;
   box-sizing: border-box;
   font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
 .chatbot-header h4 {
   margin: 0;
   font-weight: 500;
-
+  
 }
+
 
 .chatbot-header .close-btn {
   font-size: 1.5rem;
@@ -2190,6 +2205,20 @@ body {
   color: white;
   font-size: 30px;
   cursor: pointer;
+}
+
+/* unify close button styling */
+.close-btn,
+#close-chat {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+
+  font-size: 26px;     /* consistent size */
+  line-height: 1;
+  flex-shrink: 0;      /* prevent shrinking or disappearing */
+  z-index: 1000;       /* ensure visibility */
 }
 
 #chatbot-messages, .chatbot-messages {
