@@ -4660,3 +4660,21 @@ html {
 }
 
 
+@media (max-width: 600px) {
+  /* Make chatbot box stick to top when keyboard opens */
+  #chatbot-box {
+    bottom: auto !important;      /* remove fixed bottom */
+    top: 20px !important;         /* small margin from top */
+    max-height: 85vh !important;  /* stay visible above keyboard */
+    height: auto !important;      /* allow content to adjust */
+    overflow-y: auto !important;  /* scroll messages if needed */
+  }
+
+  /* Ensure close button is always visible */
+  #close-chat, .close-btn {
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    font-size: 24px;
+  }
+}
