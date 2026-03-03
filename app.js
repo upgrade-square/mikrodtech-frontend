@@ -1284,3 +1284,16 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById("openChatbotMenu").addEventListener("click", () => {
   document.getElementById("chatbot-btn").click();
 });
+
+const userInput = document.getElementById('user-input');
+const chatbotBox = document.getElementById('chatbot-box');
+
+userInput.addEventListener('focus', () => {
+  chatbotBox.style.top = '10px';       // push box near top
+  chatbotBox.style.bottom = 'auto';    // remove bottom spacing
+});
+
+userInput.addEventListener('blur', () => {
+  chatbotBox.style.top = '';            // reset to default
+  chatbotBox.style.bottom = '110px';   // original bottom
+});
