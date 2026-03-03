@@ -2534,70 +2534,70 @@ body {
   }
 }
 
-
 @media (max-width: 480px) {
   .speedtest-container {
-    padding: 1.3rem 1rem;
-    margin: 2rem auto;
-    max-width: 80%; 
-    border-radius: 16px;
-    max-height: 20%;
+    padding: 1rem 0.8rem;        /* slightly smaller padding */
+    margin: 1.5rem auto;         /* reduce top/bottom margin */
+    max-width: 90%;              /* slightly wider to fit screen */
+    border-radius: 14px;
+    max-height: 90vh;            /* relative to viewport height */
+    box-sizing: border-box;
   }
 
   .section-title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;           /* smaller title */
     font-weight: 500;
-    margin-bottom: 1.5rem;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
   }
 
   .speed-display {
-    padding: 1rem 0.7rem;
-    margin-bottom: 6px;
+    padding: 0.7rem 0.5rem;      /* reduce padding */
+    margin-bottom: 4px;
   }
 
   .speed-heading {
-    font-size: 1rem;
+    font-size: 0.9rem;           /* smaller heading */
   }
 
   .speed-value {
-    font-size: 2.1rem;
+    font-size: 1.8rem;           /* slightly smaller number */
     font-weight: 400;
   }
 
   .unit {
-    font-size: 0.95rem;
+    font-size: 0.85rem;          /* smaller unit */
   }
 
   .speed-details {
-    flex-direction: column; 
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.8rem;                 /* smaller gap */
   }
 
   .detail {
     min-width: auto;
-    padding: 0.8rem 1rem;
-    margin-bottom: -4px;
+    padding: 0.6rem 0.8rem;      /* reduce padding */
+    margin-bottom: -2px;
   }
 
   .detail h3 {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 
   .detail p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .speedtest-btn {
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-    margin-top: -20px;
+    padding: 0.7rem 1.5rem;      /* smaller button */
+    font-size: 0.95rem;
+    margin-top: -10px;           /* less negative margin */
   }
 
   .loader {
-    width: 35px;
-    height: 35px;
-    margin: 1rem auto;
+    width: 30px;                 
+    height: 30px;
+    margin: 0.8rem auto;
   }
 }
 
@@ -4472,7 +4472,7 @@ html {
     top: 20px !important;          
     width: 92% !important;
     max-height: 85% !important;
-    height: 50% !important;
+    height: 55% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     overflow: hidden;
