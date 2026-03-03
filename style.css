@@ -4469,10 +4469,10 @@ html {
 @media (max-width: 600px) {
   #chatbot-box {
     bottom: 20px !important;       /* normal bottom spacing */
-    top: auto !important;          
+    top: 20px !important;          
     width: 92% !important;
     max-height: 85% !important;
-    height: 80% !important;
+    height: 40% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     overflow: hidden;
