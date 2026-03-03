@@ -4465,25 +4465,42 @@ html {
   }
 }
 
-
 @media (max-width: 600px) {
   #chatbot-box {
-    bottom: 20px !important;       /* normal bottom spacing */
-    top: auto !important;          
+    bottom: 10vh !important;       /* float above keyboard (~10% of viewport) */
+    top: auto !important;
     width: 92% !important;
-    max-height: 85% !important;
-    height: 80% !important;
+    max-height: 85vh !important;   /* relative to viewport height */
+    height: auto !important;       /* allow content to define height */
     left: 50% !important;
     transform: translateX(-50%) !important;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Make header sticky so close button is always visible */
+  .chatbot-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    padding: 10px 12px !important;  /* add vertical padding */
   }
 
   #close-chat, .close-btn {
     font-size: 20px;
-    z-index: 1000;
+    z-index: 1001; /* above header */
+  }
+
+  #chatbot-messages {
+    flex: 1;             /* take remaining space */
+    overflow-y: auto;    /* scroll messages without moving header */
+  }
+
+  #chatbot-input {
+    flex-shrink: 0;      /* keep input at bottom */
   }
 }
-
 /* FORCE mobile navbar layout at large zoom / laptop screens */
 @media (max-width: 1400px) {
   .nav-wrap {
