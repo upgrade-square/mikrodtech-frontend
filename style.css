@@ -4186,36 +4186,44 @@ html {
   padding-top: calc(var(--header-height) + 1rem);
 }
 
-
 /* Responsive adjustments for hero section on small screens */
 @media (max-width: 600px) {
   .hero {
-    padding: 20px 10px 10px 10px;  /* top 20px, sides 10px, bottom 10px */
+    padding-left: 10px;   /* reduce side padding */
+    padding-right: 10px;
   }
 
   .hero .company-name {
-    font-size: 22px;               /* slightly smaller heading */
+    font-size: 24px;      /* slightly smaller heading */
   }
 
   .hero .tagline {
-    font-size: 13px;               /* reduce tagline font size */
+    font-size: 14px;      /* reduce tagline font size */
     line-height: 1.3;
-    margin-bottom: 6px;            /* slightly less spacing */
+    margin-bottom: 8px;   /* optional spacing */
   }
 
   .hero p.lead {
-    font-size: 13px;               /* slightly smaller for compact lines */
-    line-height: 1.35;
+    font-size: 13.5px;    /* slightly smaller for compact lines */
+    line-height: 1.4;
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
-
   .hero .explore-btn {
     font-size: 0.8rem;
-    padding: 8px 10px;             /* slightly smaller button padding */
+    padding: 10px 10px;
   }
+  .contact-form .btn-secondary {
+    font-size: 1rem;
+  }
+   .contact-actions .btn {
+    font-size: 0.9rem;
+
+   }
+    
 }
+
 
 /* Small screen adjustments */
 @media (max-width: 600px) {
