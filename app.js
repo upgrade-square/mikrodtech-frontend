@@ -1283,6 +1283,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.getElementById("openChatbotMenu").addEventListener("click", () => {
-  document.getElementById("chatbot-btn").click();
+  const btn = document.querySelector("#chatbot-btn"); // always finds the current version
+  if (btn) btn.click();
 });
 
