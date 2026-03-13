@@ -4668,3 +4668,29 @@ html {
   opacity: 0.9;
 }
 
+/* ===== Knowledge Hub Modal Article List ===== */
+
+#article-modal .article-list {
+  display: grid;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+#article-modal .article-item {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#article-modal .article-item:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-2px);
+}
+
+#article-modal .article-item h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #045dbb;
+}

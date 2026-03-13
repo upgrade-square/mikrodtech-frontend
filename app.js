@@ -527,6 +527,90 @@ const articles = [
     </ul>
     <p>Always verify messages and report suspicious activity to your IT or security team.</p>
   `
+},
+
+{
+  title: "Starlink vs Fiber Internet: Which is Better?",
+  content: `
+    <p>Choosing the right internet connection depends on your location and needs.</p>
+    <ul>
+      <li><strong>Fiber Internet:</strong> Very fast and stable but only available in certain areas.</li>
+      <li><strong>Starlink:</strong> Satellite internet that works even in remote locations.</li>
+      <li>Fiber usually has lower latency.</li>
+      <li>Starlink is ideal for rural homes and businesses.</li>
+    </ul>
+    <p>MikrodTech helps businesses and homes choose the best connectivity solution.</p>
+  `
+},
+
+{
+  title: "Why Every Business Needs CCTV Security",
+  content: `
+    <p>CCTV systems protect businesses from theft, vandalism, and security threats.</p>
+    <ul>
+      <li>Deters criminals from targeting your property.</li>
+      <li>Provides video evidence when incidents occur.</li>
+      <li>Allows remote monitoring from smartphones.</li>
+      <li>Improves employee and customer safety.</li>
+    </ul>
+    <p>A properly installed system ensures reliable security coverage.</p>
+  `
+},
+
+{
+  title: "Why UPS Systems Are Critical for Offices",
+  content: `
+    <p>Power outages can cause serious damage to computers and data systems.</p>
+    <ul>
+      <li>Protects equipment from sudden power loss.</li>
+      <li>Prevents data corruption and hardware damage.</li>
+      <li>Allows safe shutdown during outages.</li>
+      <li>Keeps critical devices running temporarily.</li>
+    </ul>
+    <p>UPS systems are essential for businesses that rely on technology.</p>
+  `
+},
+
+{
+  title: "How to Protect Your Business from Ransomware",
+  content: `
+    <p>Ransomware attacks can lock your data and demand payment.</p>
+    <ul>
+      <li>Always keep backups of important data.</li>
+      <li>Use updated antivirus and security tools.</li>
+      <li>Avoid downloading suspicious attachments.</li>
+      <li>Regularly update operating systems and applications.</li>
+    </ul>
+    <p>Strong cybersecurity policies greatly reduce risk.</p>
+  `
+},
+
+{
+  title: "What Makes a Reliable Office Network",
+  content: `
+    <p>A strong office network ensures smooth communication and productivity.</p>
+    <ul>
+      <li>Structured network cabling.</li>
+      <li>Enterprise-grade routers and switches.</li>
+      <li>Secure Wi-Fi configuration.</li>
+      <li>Proper network segmentation.</li>
+    </ul>
+    <p>Professional network design prevents downtime and performance issues.</p>
+  `
+},
+
+{
+  title: "How Smart Homes Are Changing Technology",
+  content: `
+    <p>Smart homes allow users to control devices remotely using smartphones.</p>
+    <ul>
+      <li>Remote CCTV monitoring.</li>
+      <li>Smart lighting and automation.</li>
+      <li>Smart locks and security sensors.</li>
+      <li>Integration with voice assistants.</li>
+    </ul>
+    <p>Smart home technology increases convenience and security.</p>
+  `
 }
 
 ];
@@ -573,23 +657,41 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
  
- // Explore All Articles
-// For now → Just show a simple message
-if (exploreButton) {
+ if (exploreButton) {
   exploreButton.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
 
-    modalTitle.textContent = "Articles";
+    modalTitle.textContent = "All Knowledge Hub Articles";
 
-    modalBody.innerHTML = `
-      <div class="article-list">
-        <p class="article-coming-soon">More articles coming soon.</p>
-      </div>
-    `;
+    let articleList = `<div class="article-list">`;
+
+    articles.slice(4).forEach((article, index) => {
+      articleList += `
+        <div class="article-item" data-index="${index + 4}">
+          <h3>${article.title}</h3>
+        </div>
+      `;
+    });
+
+    articleList += `</div>`;
+
+    modalBody.innerHTML = articleList;
 
     modal.style.display = "flex";
     document.body.style.overflow = "hidden";
+
+    // Click handler for article items
+    document.querySelectorAll(".article-item").forEach(item => {
+      item.addEventListener("click", () => {
+        const index = item.dataset.index;
+        const article = articles[index];
+
+        modalTitle.textContent = article.title;
+        modalBody.innerHTML = article.content;
+      });
+    });
+
   });
 }
 
