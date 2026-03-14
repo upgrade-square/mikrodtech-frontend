@@ -641,6 +641,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalBody = modal.querySelector("#modal-body");
   const closeBtn = modal.querySelector(".close-btn");
 
+
+
+  let articleListState = null;
+
+
+  function attachArticleClicks() {
+
+  document.querySelectorAll(".article-list-item").forEach(item => {
+
+    item.addEventListener("click", () => {
+
+      const index = Number(item.dataset.index);
+      const article = articles[index];
+
+      modalTitle.textContent = article.title;
+      modalBody.innerHTML = article.content;
+
+    });
+
+  });
+
+}
+
   // Open modal for Knowledge Hub
   readMoreButtons.forEach((btn, index) => {
     btn.addEventListener("click", (e) => {
@@ -666,31 +689,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let articleList = `<div class="article-list">`;
 
-    articles.slice(4).forEach((article, index) => {
-      articleList += `
-        <div class="article-item" data-index="${index + 4}">
-          <h3>${article.title}</h3>
-        </div>
-      `;
-    });
+articles.slice(4).forEach((article, index) => {
+  articleList += `
+    <div class="article-list-item" data-index="${index + 4}">
+      <h4>${article.title}</h4>
+    </div>
+  `;
+});
 
     articleList += `</div>`;
 
     modalBody.innerHTML = articleList;
+    articleListState = articleList;
 
     modal.style.display = "flex";
     document.body.style.overflow = "hidden";
 
     // Click handler for article items
-    document.querySelectorAll(".article-item").forEach(item => {
-      item.addEventListener("click", () => {
-        const index = item.dataset.index;
-        const article = articles[index];
-
-        modalTitle.textContent = article.title;
-        modalBody.innerHTML = article.content;
-      });
-    });
+  attachArticleClicks();
 
   });
 }
@@ -1300,10 +1316,25 @@ modalUpdateUI();
   });
 
   // Close modal
-  closeBtn.addEventListener("click", () => {
+ closeBtn.addEventListener("click", () => {
+
+  if (articleListState && modalTitle.textContent !== "All Knowledge Hub Articles") {
+    
+    // Return to article list instead of closing
+    modalTitle.textContent = "All Knowledge Hub Articles";
+    modalBody.innerHTML = articleListState;
+
+    attachArticleClicks(); // reattach click events
+
+  } else {
+
     modal.style.display = "none";
-    document.body.style.overflow = "auto";
-  });
+    document.body.style.overflow = "";
+    articleListState = null;
+
+  }
+
+});
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
       modal.style.display = "none";
