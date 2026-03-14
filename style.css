@@ -2077,7 +2077,7 @@ body {
 /* === Chatbot Button === */
 #chatbot-btn, .chatbot-btn {
   position: fixed;
-  bottom: 300px; /* slightly above bottom for easier access */
+  bottom: 300px;
   right: 25px;
   background: linear-gradient(135deg, #007bff, #004aad);
   color: white;
@@ -2091,7 +2091,10 @@ body {
   transition: all 0.25s ease;
   z-index: 10000;
 
-  touch-action: none; /* ADD THIS for proper mobile dragging */
+  touch-action: none;
+
+  /* ADD THIS */
+  animation: chatbotPulse 2s infinite;
 }
 
 
@@ -4693,4 +4696,24 @@ html {
   margin: 0;
   font-size: 1rem;
   color: #045dbb;
+}
+/* === Chatbot Attention Pulse === */
+@keyframes chatbotPulse {
+
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 16px rgba(0, 123, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+  }
+
+}
+
+body.chatbot-open #chatbot-btn {
+  animation: none;
 }
