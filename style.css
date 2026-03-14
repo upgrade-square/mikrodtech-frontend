@@ -4759,3 +4759,135 @@ body.chatbot-open #chatbot-btn {
   }
 
 }
+/* =============================
+   MDT Products Section (Styled like Cybersecurity Section)
+============================= */
+
+.products-section {
+  background: #e6f0ff;
+  color: #070f23;
+  padding: 6rem 1rem;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(13, 108, 232, 0.15);
+  margin-top: 30px;
+}
+
+.products-section .section-title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #06111a;
+  margin-bottom: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.products-section .section-intro {
+  font-size: 1.2rem;
+  color: #0a0a0a;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  line-height: 1.6;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.product-card {
+  background: #ffffff;
+  border: 2px solid rgba(0,119,255,0.2);
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 74, 173, 0.2);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 74, 173, 0.35);
+}
+
+/* =============================
+   MDT Products Section (Centered, Slightly Bigger Images)
+============================= */
+
+.product-card .img-wrapper {
+  width: 100%;
+  height: 120px; /* slightly taller for bigger images */
+  display: flex;
+  justify-content: center; /* centers the image horizontally */
+  align-items: center;     /* centers the image vertically */
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.product-card img {
+  max-width: 100px;   /* slightly bigger width */
+  max-height: 100%;   /* fit within the wrapper height */
+  object-fit: contain; /* keeps aspect ratio */
+  display: block;      /* ensures proper centering inside flex */
+  margin: 0 auto;      /* extra safety for centering */
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.product-card p {
+  font-size: 1.1rem;
+  color: #0a0a0a;
+  margin-bottom: 1rem;
+}
+
+.product-card .coming-soon {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #ffffff;
+  background: linear-gradient(90deg, #0077ff, #00d1ff);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .products-section .section-title {
+    font-size: 1.5rem;
+  }
+
+  .products-section .section-intro {
+    font-size: 1rem;
+  }
+
+  .product-card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .product-card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Center cards on small screens without shrinking */
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .product-card {
+    width: auto;
+    max-width: none;
+    margin: 0;
+  }
+}

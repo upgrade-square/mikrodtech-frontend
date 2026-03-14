@@ -619,7 +619,7 @@ document.addEventListener("DOMContentLoaded", () => {
      KNOWLEDGE HUB MODAL SETUP
   -----------------------------*/
   const readMoreButtons = document.querySelectorAll(".read-more");
-  const exploreButton = document.querySelector(".btn-secondary");
+  const exploreButton = document.querySelector(".explore-btn");
 
   // Create modal dynamically if missing
   let modal = document.getElementById("article-modal");
