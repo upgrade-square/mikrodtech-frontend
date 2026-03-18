@@ -135,21 +135,31 @@ async function loadReviews() {
     const reviewsList = document.getElementById("reviewsList");
 
     reviewsList.innerHTML = "";
+  
 
-    reviews.forEach(r => {
+    [...reviews].reverse().forEach(r => {
 
-      const review = document.createElement("div");
+  const review = document.createElement("div");
+  review.classList.add("review");
 
-      review.classList.add("review");
+  const timeAgo = getTimeAgo(r.date);
 
-      review.innerHTML = `
-        <p>Rating: ${"⭐".repeat(r.rating)}</p>
-        <p>Comment: ${r.comment}</p>
-      `;
+  review.innerHTML = `
+    <div class="review-header">
+      <span class="review-name">${r.name}</span>
+      <span class="review-date">${timeAgo}</span>
+    </div>
 
-      reviewsList.appendChild(review);
+    <div class="review-rating">
+      ${"⭐".repeat(r.rating)}
+    </div>
 
-    });
+    <p class="review-comment">${r.comment}</p>
+  `;
+
+  reviewsList.appendChild(review);
+
+});
 
   } catch (error) {
 
