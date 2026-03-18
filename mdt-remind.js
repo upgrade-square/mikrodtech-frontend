@@ -171,7 +171,14 @@ const submitReview = document.getElementById("submitReview");
 
 submitReview.addEventListener("click", async () => {
 
+  const name = document.getElementById("reviewName").value.trim();
   const comment = document.getElementById("comment").value.trim();
+
+  if (name === "") {
+    alert("Please enter your name.");
+    return;
+  }
+
 
   if (selectedRating === 0) {
 
@@ -197,10 +204,12 @@ submitReview.addEventListener("click", async () => {
         "Content-Type": "application/json"
       },
 
-      body: JSON.stringify({
-        rating: selectedRating,
-        comment: comment
-      })
+     body: JSON.stringify({
+     name: name,
+     rating: selectedRating,
+     comment: comment
+})
+
 
     });
 

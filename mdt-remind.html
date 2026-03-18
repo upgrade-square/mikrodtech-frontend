@@ -15,7 +15,7 @@
 
   <!-- App Overview Section -->
   <section class="app-overview">
-    <img src="mdt-remind-logo.png" alt="MDT Remind Logo" class="app-logo">
+    <img src="mdt-remind.png" alt="MDT Remind Logo" class="app-logo">
 
     <h2>MDT Remind</h2>
 
@@ -106,9 +106,18 @@
     <!-- Add New Review -->
     <div class="review-form">
 
-      <h3>Leave a Review</h3>
+    <h3>Leave a Review</h3>
 
-      <label>Rating:</label>
+    <label for="reviewName">Your Name:</label>
+    <input
+      id="reviewName"
+      type="text"
+      placeholder="Enter your name"
+      maxlength="30"
+    />
+
+    <label>Rating:</label>
+
 
       <div id="starRating" class="stars">
         <span data-value="1">☆</span>
