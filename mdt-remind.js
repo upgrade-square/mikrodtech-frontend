@@ -122,47 +122,41 @@ function updateRatingStats(reviews) {
 /* ==============================
    LOAD REVIEWS FROM BACKEND
 ============================== */
+
 async function loadReviews() {
+
   try {
+
     const res = await fetch(`${API_URL}/reviews/mdt-remind`);
     const reviews = await res.json();
     updateRatingStats(reviews);
+    
 
     const reviewsList = document.getElementById("reviewsList");
+
     reviewsList.innerHTML = "";
 
-    [...reviews].reverse().forEach(r => {
-      const reviewDiv = document.createElement("div");
-      reviewDiv.classList.add("review");
-      reviewDiv.dataset.timestamp = new Date(r.date).getTime(); // store timestamp for edit window
+    reviews.forEach(r => {
 
-      const timeAgo = getTimeAgo(r.date);
+      const review = document.createElement("div");
 
-      reviewDiv.innerHTML = `
-        <div class="review-header">
-          <span class="review-name">${r.name}</span>
-          <span class="review-date">${timeAgo}</span>
-        </div>
+      review.classList.add("review");
 
-        <div class="review-rating">
-          ${'⭐'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}
-        </div>
-
-        <p class="comment-text">${r.comment}</p>
-        <button class="editReviewBtn">Edit</button>
+      review.innerHTML = `
+        <p>Rating: ${"⭐".repeat(r.rating)}</p>
+        <p>Comment: ${r.comment}</p>
       `;
 
-      // Disable edit if time window expired
-      if (Date.now() - reviewDiv.dataset.timestamp > EDIT_WINDOW_MS) {
-        reviewDiv.querySelector('.editReviewBtn').disabled = true;
-      }
+      reviewsList.appendChild(review);
 
-      reviewsList.appendChild(reviewDiv);
     });
 
   } catch (error) {
+
     console.error("Failed to load reviews", error);
+
   }
+
 }
 
 loadReviews();
@@ -237,96 +231,4 @@ submitReview.addEventListener("click", async () => {
     s.classList.remove("selected");
   });
 
-});
-
-// Handle click on Edit buttons
-document.addEventListener('click', function(e) {
-  if (e.target && e.target.classList.contains('editReviewBtn')) {
-    const reviewDiv = e.target.closest('.review');
-    const commentP = reviewDiv.querySelector('.comment-text');
-
-    // Check if already in edit mode
-    if (commentP.querySelector('textarea')) return;
-
-    const currentText = commentP.textContent;
-    
-    // Replace comment text with a textarea
-    commentP.innerHTML = `<textarea rows="3">${currentText}</textarea>
-                          <button class="saveReviewBtn">Save</button>
-                          <button class="cancelReviewBtn">Cancel</button>`;
-  }
-
-  // Handle save
-  if (e.target && e.target.classList.contains('saveReviewBtn')) {
-    const reviewDiv = e.target.closest('.review');
-    const textarea = reviewDiv.querySelector('textarea');
-    const newText = textarea.value.trim();
-
-    if (newText) {
-      reviewDiv.querySelector('.comment-text').textContent = newText;
-    } else {
-      reviewDiv.querySelector('.comment-text').textContent = "No comment provided";
-    }
-  }
-
-  // Handle cancel
-  if (e.target && e.target.classList.contains('cancelReviewBtn')) {
-    const reviewDiv = e.target.closest('.review');
-    const textarea = reviewDiv.querySelector('textarea');
-    reviewDiv.querySelector('.comment-text').textContent = textarea.defaultValue;
-  }
-});
-
-const EDIT_WINDOW_MS = 5 * 60 * 1000; // 5 minutes in milliseconds
-
-document.addEventListener('click', function(e) {
-  if (e.target && e.target.classList.contains('editReviewBtn')) {
-    const reviewDiv = e.target.closest('.review');
-    const commentP = reviewDiv.querySelector('.comment-text');
-    
-    const timestamp = parseInt(reviewDiv.dataset.timestamp);
-    const now = Date.now();
-
-    if (now - timestamp > EDIT_WINDOW_MS) {
-      alert("You can only edit comments within 5 minutes of posting.");
-      return;
-    }
-
-    // Prevent multiple textareas
-    if (commentP.querySelector('textarea')) return;
-
-    const currentText = commentP.textContent;
-
-    // Replace comment text with a textarea + buttons
-    commentP.innerHTML = `
-      <textarea rows="3">${currentText}</textarea>
-      <button class="saveReviewBtn">Save</button>
-      <button class="cancelReviewBtn">Cancel</button>
-    `;
-  }
-
-  // Save edited comment
-  if (e.target && e.target.classList.contains('saveReviewBtn')) {
-    const reviewDiv = e.target.closest('.review');
-    const textarea = reviewDiv.querySelector('textarea');
-    const newText = textarea.value.trim();
-
-    reviewDiv.querySelector('.comment-text').textContent = newText || "No comment provided";
-  }
-
-  // Cancel editing
-  if (e.target && e.target.classList.contains('cancelReviewBtn')) {
-    const reviewDiv = e.target.closest('.review');
-    const textarea = reviewDiv.querySelector('textarea');
-    reviewDiv.querySelector('.comment-text').textContent = textarea.defaultValue;
-  }
-});
-
-// Optional: disable expired edit buttons on page load
-document.querySelectorAll('.review').forEach(reviewDiv => {
-  const timestamp = parseInt(reviewDiv.dataset.timestamp);
-  if (Date.now() - timestamp > EDIT_WINDOW_MS) {
-    const btn = reviewDiv.querySelector('.editReviewBtn');
-    if (btn) btn.disabled = true;
-  }
 });
