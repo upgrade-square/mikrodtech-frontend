@@ -122,51 +122,47 @@ function updateRatingStats(reviews) {
 /* ==============================
    LOAD REVIEWS FROM BACKEND
 ============================== */
-
 async function loadReviews() {
-
   try {
-
     const res = await fetch(`${API_URL}/reviews/mdt-remind`);
     const reviews = await res.json();
     updateRatingStats(reviews);
-    
 
     const reviewsList = document.getElementById("reviewsList");
-
     reviewsList.innerHTML = "";
-  
 
     [...reviews].reverse().forEach(r => {
+      const reviewDiv = document.createElement("div");
+      reviewDiv.classList.add("review");
+      reviewDiv.dataset.timestamp = new Date(r.date).getTime(); // store timestamp for edit window
 
-  const review = document.createElement("div");
-  review.classList.add("review");
+      const timeAgo = getTimeAgo(r.date);
 
-  const timeAgo = getTimeAgo(r.date);
+      reviewDiv.innerHTML = `
+        <div class="review-header">
+          <span class="review-name">${r.name}</span>
+          <span class="review-date">${timeAgo}</span>
+        </div>
 
-  review.innerHTML = `
-    <div class="review-header">
-      <span class="review-name">${r.name}</span>
-      <span class="review-date">${timeAgo}</span>
-    </div>
+        <div class="review-rating">
+          ${'⭐'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}
+        </div>
 
-    <div class="review-rating">
-      ${"⭐".repeat(r.rating)}
-    </div>
+        <p class="comment-text">${r.comment}</p>
+        <button class="editReviewBtn">Edit</button>
+      `;
 
-    <p class="review-comment">${r.comment}</p>
-  `;
+      // Disable edit if time window expired
+      if (Date.now() - reviewDiv.dataset.timestamp > EDIT_WINDOW_MS) {
+        reviewDiv.querySelector('.editReviewBtn').disabled = true;
+      }
 
-  reviewsList.appendChild(review);
-
-});
+      reviewsList.appendChild(reviewDiv);
+    });
 
   } catch (error) {
-
     console.error("Failed to load reviews", error);
-
   }
-
 }
 
 loadReviews();
