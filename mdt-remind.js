@@ -143,6 +143,7 @@ function renderReviews() {
   updateRatingStats(reviews);
 }
 
+
 // On submitting a review
 submitReviewBtn.addEventListener("click", async () => {
   const name = reviewName.value.trim();
