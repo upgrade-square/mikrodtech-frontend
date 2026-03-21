@@ -98,38 +98,83 @@ function updateRatingStats(reviews) {
 /* ==============================
    RENDER REVIEWS
 ============================== */
-function renderReviews(reviews) {
-  const reviewsList = document.getElementById("reviewsList");
+
+
+let justSubmittedIndex = null; // track the last review this user submitted
+let editTimers = {}; // store timers to auto-remove edit buttons
+
+function renderReviews() {
   reviewsList.innerHTML = "";
-reviews.slice().reverse().forEach((r, index) => {
-  const review = document.createElement("div");
-  review.classList.add("review");
-  review.dataset.index = index;
 
-  const reviewDate = r.date ? new Date(r.date) : new Date();
   const now = new Date();
-  const diffMinutes = (now - reviewDate) / 60000;
 
-  // ✅ Allow edit ONLY within 2 minutes
-  const canEdit = diffMinutes <= 2;
+  reviews.slice().reverse().forEach((r, index) => {
+    const review = document.createElement("div");
+    review.classList.add("review");
+    review.dataset.index = index;
 
-  review.innerHTML = `
-    <p><strong>${r.name}</strong> 
-      <span class="review-meta">• ${timeAgo(r.date)}</span>
-    </p>
-    <p>Rating: 
-      <span class="review-rating">${'⭐'.repeat(r.rating)}</span>
-    </p>
-    <p>Comment: 
-      <span class="review-text">${r.comment}</span>
-    </p>
-    ${canEdit ? `<button class="edit-btn">Edit</button>` : ""}
-  `;
+    // Show edit button only for the user's last review, AND within 2 minutes
+    let canEdit = false;
+    if (index === justSubmittedIndex) {
+      const reviewDate = new Date(r.date);
+      const diffMinutes = (now - reviewDate) / 60000;
+      canEdit = diffMinutes <= 2; // 2-minute limit
 
-  reviewsList.appendChild(review);
-});
+      // If still editable, set a timeout to remove it automatically
+      if (canEdit && !editTimers[index]) {
+        const remainingMs = 2 * 60 * 1000 - (now - reviewDate);
+        editTimers[index] = setTimeout(() => {
+          renderReviews(); // refresh to remove button
+        }, remainingMs);
+      }
+    }
+
+    review.innerHTML = `
+      <p><strong>${r.name}</strong> <span class="review-meta">• ${timeAgo(r.date)}</span></p>
+      <p>Rating: <span class="review-rating">${'⭐'.repeat(r.rating)}</span></p>
+      <p>Comment: <span class="review-text">${r.comment}</span></p>
+      ${canEdit ? `<button class="edit-btn">Edit</button>` : ""}
+    `;
+
+    reviewsList.appendChild(review);
+  });
+
   updateRatingStats(reviews);
 }
+
+// On submitting a review
+submitReviewBtn.addEventListener("click", async () => {
+  const name = reviewName.value.trim();
+  const comment = commentInput.value.trim();
+
+  if (!name || !selectedRating || !comment) return alert("Fill all fields.");
+
+  try {
+    const res = await fetch(`${API_URL}/reviews/mdt-remind`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, rating: selectedRating, comment }),
+    });
+
+    const newReview = await res.json();
+
+    reviews.push({ ...newReview.review, timestamp: newReview.review.date });
+
+    // Mark the last submitted review as editable
+    justSubmittedIndex = reviews.length - 1;
+
+    // Reset form
+    reviewName.value = "";
+    commentInput.value = "";
+    selectedRating = 0;
+    stars.forEach(s => s.textContent = "☆");
+
+    renderReviews();
+  } catch (err) {
+    console.error("Submit failed", err);
+  }
+});
+
 
 /* ==============================
    LOAD REVIEWS (HYBRID)
