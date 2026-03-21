@@ -5,123 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MDT Remind — Download & Reviews</title>
   <link rel="stylesheet" href="mdt-remind.css">
+  <style>
+    .review { border-bottom: 1px solid #ddd; padding: 10px 0; }
+    .review .review-meta { font-size: 0.9em; color: #555; }
+    .stars { cursor: pointer; }
+    .stars span { font-size: 1.5em; margin-right: 3px; }
+    .review-form { margin-top: 20px; }
+    .edit-btn, .save-btn, .cancel-btn { margin-right: 5px; }
+    .rating-summary { display: flex; gap: 20px; margin-bottom: 20px; }
+    .average-rating { text-align: center; }
+    .rating-bars .bar-row { display: flex; align-items: center; margin: 3px 0; }
+    .rating-bars .bar { flex: 1; background: #eee; margin: 0 5px; height: 10px; position: relative; }
+    .rating-bars .bar div { background: gold; height: 100%; width: 0; }
+  </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h1>MDT Remind</h1>
   </header>
 
-  <!-- App Overview Section -->
   <section class="app-overview">
     <img src="mdt-remind.png" alt="MDT Remind Logo" class="app-logo">
-
     <h2>MDT Remind</h2>
-
-    <p>
-      Your personal reminder and productivity assistant, built by MikrodTech.
-      Stay organized and never forget important tasks again!
-    </p>
-
+    <p>Your personal reminder and productivity assistant, built by MikrodTech. Stay organized and never forget important tasks again!</p>
     <div class="download-container">
-      <button id="downloadBtn" class="btn btn-primary">
-        Download MDT Remind
-      </button>
-
-      <p>
-        <span id="downloadCount">1200</span> downloads
-      </p>
+      <button id="downloadBtn" class="btn btn-primary">Download MDT Remind</button>
+      <p><span id="downloadCount">1200</span> downloads</p>
     </div>
   </section>
 
   <!-- Reviews Section -->
   <section class="app-reviews">
-
     <h2>Reviews</h2>
 
-
-    <!-- ⭐ PLAY STORE STYLE RATING SUMMARY -->
+    <!-- ⭐ Play Store Style Rating Summary -->
     <div class="rating-summary">
-
       <div class="average-rating">
         <span id="avgRating">0.0</span>
         <span class="stars-display">★★★★★</span>
         <p><span id="totalReviews">0</span> reviews</p>
       </div>
-
       <div class="rating-bars">
-
-        <div class="bar-row">
-          <span>5★</span>
-          <div class="bar"><div id="bar5"></div></div>
-          <span id="count5">0</span>
-        </div>
-
-        <div class="bar-row">
-          <span>4★</span>
-          <div class="bar"><div id="bar4"></div></div>
-          <span id="count4">0</span>
-        </div>
-
-        <div class="bar-row">
-          <span>3★</span>
-          <div class="bar"><div id="bar3"></div></div>
-          <span id="count3">0</span>
-        </div>
-
-        <div class="bar-row">
-          <span>2★</span>
-          <div class="bar"><div id="bar2"></div></div>
-          <span id="count2">0</span>
-        </div>
-
-        <div class="bar-row">
-          <span>1★</span>
-          <div class="bar"><div id="bar1"></div></div>
-          <span id="count1">0</span>
-        </div>
-
+        <div class="bar-row"><span>5★</span><div class="bar"><div id="bar5"></div></div><span id="count5">0</span></div>
+        <div class="bar-row"><span>4★</span><div class="bar"><div id="bar4"></div></div><span id="count4">0</span></div>
+        <div class="bar-row"><span>3★</span><div class="bar"><div id="bar3"></div></div><span id="count3">0</span></div>
+        <div class="bar-row"><span>2★</span><div class="bar"><div id="bar2"></div></div><span id="count2">0</span></div>
+        <div class="bar-row"><span>1★</span><div class="bar"><div id="bar1"></div></div><span id="count1">0</span></div>
       </div>
-
     </div>
-
 
     <!-- Reviews List -->
-    <div id="reviewsList">
-
-      <div class="review">
-        <p>Rating: ⭐⭐⭐⭐⭐</p>
-        <p>Comment: Love this app! Very helpful for keeping track of my tasks.</p>
-      </div>
-
-      <div class="review">
-        <p>Rating: ⭐⭐⭐⭐</p>
-        <p>Comment: Simple and effective. Could use more features, but works well!</p>
-      </div>
-
-    </div>
-
+    <div id="reviewsList"></div>
 
     <!-- Add New Review -->
     <div class="review-form">
-
-    <h3>Leave a Review</h3>
-
-  <div class="input-group">
-  <input
-    id="reviewName"
-    type="text"
-    required
-    maxlength="30"
-  />
-  <label for="reviewName">Your Name</label>
-  <span class="input-highlight"></span>
-</div>
-
-    <label>Rating:</label>
-
-
+      <h3>Leave a Review</h3>
+      <input id="reviewName" type="text" maxlength="30" placeholder="Your Name">
+      <label>Rating:</label>
       <div id="starRating" class="stars">
         <span data-value="1">☆</span>
         <span data-value="2">☆</span>
@@ -129,24 +70,142 @@
         <span data-value="4">☆</span>
         <span data-value="5">☆</span>
       </div>
-
       <label for="comment">Comment:</label>
-
-      <textarea
-        id="comment"
-        rows="3"
-        placeholder="Your thoughts..."
-      ></textarea>
-
-      <button id="submitReview">
-        Submit Review
-      </button>
-
+      <textarea id="comment" rows="3" placeholder="Your thoughts..."></textarea>
+      <button id="submitReview">Submit Review</button>
     </div>
-
   </section>
 
-  <script src="mdt-remind.js"></script>
+  <script>
+    const reviewsList = document.getElementById('reviewsList');
+    const submitBtn = document.getElementById('submitReview');
+    const nameInput = document.getElementById('reviewName');
+    const commentInput = document.getElementById('comment');
+    const starSpans = document.querySelectorAll('#starRating span');
+
+    // Rating stats elements
+    const avgRatingEl = document.getElementById('avgRating');
+    const totalReviewsEl = document.getElementById('totalReviews');
+    const counts = [null,1,2,3,4,5].map(i => document.getElementById('count'+i));
+    const bars = [null,1,2,3,4,5].map(i => document.getElementById('bar'+i));
+
+    let selectedRating = 0;
+    let reviews = [];
+
+    // STAR SELECTION
+    starSpans.forEach(span => {
+      span.addEventListener('click', () => {
+        selectedRating = parseInt(span.dataset.value);
+        starSpans.forEach(s => s.textContent = s.dataset.value <= selectedRating ? '⭐' : '☆');
+      });
+    });
+
+    // RELATIVE TIME
+    function relativeTime(date) {
+      const now = new Date();
+      const diff = now - new Date(date);
+      const day = 1000*60*60*24;
+      if(diff < day) return 'Today';
+      if(diff < day*2) return 'Yesterday';
+      if(diff < day*30) return Math.floor(diff/day) + ' days ago';
+      if(diff < day*365) return Math.floor(diff/day/30) + ' months ago';
+      return Math.floor(diff/day/365) + ' years ago';
+    }
+
+    // UPDATE RATING SUMMARY
+    function updateRatingSummary() {
+      const total = reviews.length;
+      totalReviewsEl.textContent = total;
+
+      const countsArr = [0,0,0,0,0,0];
+      reviews.forEach(r => countsArr[r.rating]++);
+      for(let i=1;i<=5;i++){
+        counts[i].textContent = countsArr[i];
+        bars[i].style.width = total ? (countsArr[i]/total*100)+'%' : '0';
+      }
+      const avg = total ? (reviews.reduce((sum,r)=>sum+r.rating,0)/total).toFixed(1) : '0.0';
+      avgRatingEl.textContent = avg;
+    }
+
+    // RENDER REVIEWS
+    function renderReviews() {
+      reviewsList.innerHTML = '';
+      reviews.slice().reverse().forEach((rev, index) => {
+        const div = document.createElement('div');
+        div.className = 'review';
+        div.dataset.index = index;
+        div.innerHTML = `
+          <p><strong>${rev.name}</strong> <span class="review-meta">• ${relativeTime(rev.timestamp)}</span></p>
+          <p>Rating: <span class="review-rating">${'⭐'.repeat(rev.rating)}</span></p>
+          <p>Comment: <span class="review-text">${rev.comment}</span></p>
+          <button class="edit-btn">Edit</button>
+        `;
+        reviewsList.appendChild(div);
+      });
+      updateRatingSummary();
+    }
+
+    // LOAD EXISTING REVIEWS FROM BACKEND
+    async function loadReviews() {
+      try {
+        const res = await fetch('https://mikrodtech-backend.onrender.com/reviews/mdt-remind');
+        const data = await res.json();
+        reviews = data.map(r => ({ ...r, timestamp: r.date })); // keep ISO date
+        renderReviews();
+      } catch(e){ console.error(e); }
+    }
+
+    loadReviews();
+
+    // SUBMIT NEW REVIEW
+    submitBtn.addEventListener('click', async () => {
+      const name = nameInput.value.trim();
+      const comment = commentInput.value.trim();
+      if(!name || selectedRating===0 || !comment) return alert('Please fill all fields.');
+      try {
+        const res = await fetch('https://mikrodtech-backend.onrender.com/reviews/mdt-remind', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ name, rating: selectedRating, comment })
+        });
+        const newReview = await res.json();
+        reviews.push({ ...newReview.review, timestamp: newReview.review.date });
+        nameInput.value = '';
+        commentInput.value = '';
+        selectedRating = 0;
+        starSpans.forEach(s=>s.textContent='☆');
+        renderReviews();
+      } catch(e){ console.error(e); }
+    });
+
+    // EDIT / SAVE / CANCEL
+    reviewsList.addEventListener('click', e=>{
+      const parentDiv = e.target.closest('.review');
+      if(!parentDiv) return;
+      const idx = parentDiv.dataset.index;
+      if(e.target.classList.contains('edit-btn')){
+        const rev = reviews[reviews.length-1-idx]; // reverse index
+        parentDiv.innerHTML = `
+          <label>Rating:</label>
+          <input type="number" min="1" max="5" value="${rev.rating}" id="editRating">
+          <label>Comment:</label>
+          <textarea id="editComment">${rev.comment}</textarea>
+          <button class="save-btn">Save</button>
+          <button class="cancel-btn">Cancel</button>
+        `;
+      }
+      if(e.target.classList.contains('save-btn')){
+        const newRating = parseInt(document.getElementById('editRating').value);
+        const newComment = document.getElementById('editComment').value;
+        const rev = reviews[reviews.length-1-idx];
+        rev.rating = newRating;
+        rev.comment = newComment;
+        rev.timestamp = new Date().toISOString();
+        renderReviews();
+      }
+      if(e.target.classList.contains('cancel-btn')) renderReviews();
+    });
+  </script>
 
 </body>
 </html>
