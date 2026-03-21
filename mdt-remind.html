@@ -11,7 +11,6 @@
     .stars { cursor: pointer; }
     .stars span { font-size: 1.5em; margin-right: 3px; }
     .review-form { margin-top: 20px; }
-    .edit-btn, .save-btn, .cancel-btn { margin-right: 5px; }
     .rating-summary { display: flex; gap: 20px; margin-bottom: 20px; }
     .average-rating { text-align: center; }
     .rating-bars .bar-row { display: flex; align-items: center; margin: 3px 0; }
@@ -31,15 +30,14 @@
     <p>Your personal reminder and productivity assistant, built by MikrodTech. Stay organized and never forget important tasks again!</p>
     <div class="download-container">
       <button id="downloadBtn" class="btn btn-primary">Download MDT Remind</button>
-      <p><span id="downloadCount">1254</span> downloads</p>
+      <p><span id="downloadCount">0</span> downloads</p>
     </div>
   </section>
 
-  <!-- Reviews Section -->
   <section class="app-reviews">
     <h2>Reviews</h2>
 
-    <!-- ⭐ Play Store Style Rating Summary -->
+    <!-- Rating summary -->
     <div class="rating-summary">
       <div class="average-rating">
         <span id="avgRating">0.0</span>
@@ -58,7 +56,7 @@
     <!-- Reviews List -->
     <div id="reviewsList"></div>
 
-    <!-- Add New Review -->
+    <!-- Add Review Form -->
     <div class="review-form">
       <h3>Leave a Review</h3>
       <input id="reviewName" type="text" maxlength="30" placeholder="Your Name">
@@ -77,13 +75,13 @@
   </section>
 
   <script>
+    const API_URL = 'https://mikrodtech-backend.onrender.com';
     const reviewsList = document.getElementById('reviewsList');
     const submitBtn = document.getElementById('submitReview');
     const nameInput = document.getElementById('reviewName');
     const commentInput = document.getElementById('comment');
     const starSpans = document.querySelectorAll('#starRating span');
 
-    // Rating stats elements
     const avgRatingEl = document.getElementById('avgRating');
     const totalReviewsEl = document.getElementById('totalReviews');
     const counts = [null,1,2,3,4,5].map(i => document.getElementById('count'+i));
@@ -116,7 +114,6 @@
     function updateRatingSummary() {
       const total = reviews.length;
       totalReviewsEl.textContent = total;
-
       const countsArr = [0,0,0,0,0,0];
       reviews.forEach(r => countsArr[r.rating]++);
       for(let i=1;i<=5;i++){
@@ -130,81 +127,51 @@
     // RENDER REVIEWS
     function renderReviews() {
       reviewsList.innerHTML = '';
-      reviews.slice().reverse().forEach((rev, index) => {
+      reviews.slice().reverse().forEach((rev) => {
         const div = document.createElement('div');
         div.className = 'review';
-        div.dataset.index = index;
         div.innerHTML = `
-          <p><strong>${rev.name}</strong> <span class="review-meta">• ${relativeTime(rev.timestamp)}</span></p>
+          <p><strong>${rev.name}</strong> <span class="review-meta">• ${relativeTime(rev.date)}</span></p>
           <p>Rating: <span class="review-rating">${'⭐'.repeat(rev.rating)}</span></p>
           <p>Comment: <span class="review-text">${rev.comment}</span></p>
-          <button class="edit-btn">Edit</button>
         `;
         reviewsList.appendChild(div);
       });
       updateRatingSummary();
     }
 
-    // LOAD EXISTING REVIEWS FROM BACKEND
+    // LOAD REVIEWS FROM BACKEND
     async function loadReviews() {
       try {
-        const res = await fetch('https://mikrodtech-backend.onrender.com/reviews/mdt-remind');
+        const res = await fetch(`${API_URL}/reviews/mdt-remind`);
         const data = await res.json();
-        reviews = data.map(r => ({ ...r, timestamp: r.date })); // keep ISO date
+        reviews = data; // backend should return [{name,rating,comment,date}, ...]
         renderReviews();
-      } catch(e){ console.error(e); }
+      } catch(e){ console.error('Failed to load reviews', e); }
     }
-
-    loadReviews();
 
     // SUBMIT NEW REVIEW
     submitBtn.addEventListener('click', async () => {
       const name = nameInput.value.trim();
       const comment = commentInput.value.trim();
-      if(!name || selectedRating===0 || !comment) return alert('Please fill all fields.');
+      if(!name || selectedRating === 0 || !comment) return alert('Please fill all fields.');
       try {
-        const res = await fetch('https://mikrodtech-backend.onrender.com/reviews/mdt-remind', {
+        const res = await fetch(`${API_URL}/reviews/mdt-remind`, {
           method:'POST',
           headers:{'Content-Type':'application/json'},
           body: JSON.stringify({ name, rating: selectedRating, comment })
         });
-        const newReview = await res.json();
-        reviews.push({ ...newReview.review, timestamp: newReview.review.date });
+        const newReview = await res.json(); // backend should return saved review
+        reviews.push(newReview);
         nameInput.value = '';
         commentInput.value = '';
         selectedRating = 0;
-        starSpans.forEach(s=>s.textContent='☆');
+        starSpans.forEach(s => s.textContent='☆');
         renderReviews();
-      } catch(e){ console.error(e); }
+      } catch(e){ console.error('Submit failed', e); }
     });
 
-    // EDIT / SAVE / CANCEL
-    reviewsList.addEventListener('click', e=>{
-      const parentDiv = e.target.closest('.review');
-      if(!parentDiv) return;
-      const idx = parentDiv.dataset.index;
-      if(e.target.classList.contains('edit-btn')){
-        const rev = reviews[reviews.length-1-idx]; // reverse index
-        parentDiv.innerHTML = `
-          <label>Rating:</label>
-          <input type="number" min="1" max="5" value="${rev.rating}" id="editRating">
-          <label>Comment:</label>
-          <textarea id="editComment">${rev.comment}</textarea>
-          <button class="save-btn">Save</button>
-          <button class="cancel-btn">Cancel</button>
-        `;
-      }
-      if(e.target.classList.contains('save-btn')){
-        const newRating = parseInt(document.getElementById('editRating').value);
-        const newComment = document.getElementById('editComment').value;
-        const rev = reviews[reviews.length-1-idx];
-        rev.rating = newRating;
-        rev.comment = newComment;
-        rev.timestamp = new Date().toISOString();
-        renderReviews();
-      }
-      if(e.target.classList.contains('cancel-btn')) renderReviews();
-    });
+    loadReviews();
   </script>
 
 </body>

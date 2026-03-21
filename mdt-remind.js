@@ -1,5 +1,4 @@
 const API_URL = "https://mikrodtech-backend.onrender.com";
-
 const LOCAL_KEY = "mdt_reviews_cache";
 
 function saveLocalReviews(reviews) {
@@ -14,7 +13,6 @@ function getLocalReviews() {
 /* ==============================
    DOWNLOAD SYSTEM
 ============================== */
-
 async function loadDownloads() {
   try {
     const res = await fetch(`${API_URL}/downloads/mdt-remind`);
@@ -32,15 +30,13 @@ const downloadCountEl = document.getElementById("downloadCount");
 
 downloadBtn.addEventListener("click", async () => {
   try {
-    // 1️⃣ Trigger the download
     const a = document.createElement("a");
-    a.href = `${API_URL}/download/mdt-remind`; // backend serves APK & increments count
+    a.href = `${API_URL}/download/mdt-remind`;
     a.download = "MDT-Remind.apk";
     document.body.appendChild(a);
     a.click();
     a.remove();
 
-    // 2️⃣ Fetch the updated download count
     const res = await fetch(`${API_URL}/downloads/mdt-remind`);
     const data = await res.json();
     downloadCountEl.textContent = data.count;
@@ -96,109 +92,42 @@ function updateRatingStats(reviews) {
 }
 
 /* ==============================
-   RENDER REVIEWS
+   RENDER REVIEWS (READ-ONLY)
 ============================== */
-
-
-let justSubmittedIndex = null; // track the last review this user submitted
-let editTimers = {}; // store timers to auto-remove edit buttons
-
-const editTimers = {}; // keeps track of setTimeouts for each review
-
-function renderReviews() {
+function renderReviews(reviews) {
+  const reviewsList = document.getElementById('reviewsList');
   reviewsList.innerHTML = "";
-  const now = new Date();
 
-  reviews.slice().reverse().forEach((r, index) => {
-    const review = document.createElement("div");
-    review.classList.add("review");
-    review.dataset.index = index;
-
-    // Only show edit for the logged-in user's own review within 2 minutes
-    let canEdit = false;
-    if (typeof currentUserName !== "undefined" && r.name === currentUserName) {
-      const reviewDate = new Date(r.date || r.timestamp);
-      const diffMinutes = (now - reviewDate) / 60000;
-      canEdit = diffMinutes <= 2; // 2-minute limit
-
-      // Automatically remove edit button after 2 minutes
-      if (canEdit && !editTimers[index]) {
-        const remainingMs = 2 * 60 * 1000 - (now - reviewDate);
-        editTimers[index] = setTimeout(() => {
-          renderReviews(); // refresh to remove button
-        }, remainingMs);
-      }
-    }
-
-    review.innerHTML = `
+  reviews.slice().reverse().forEach(r => {
+    const div = document.createElement("div");
+    div.classList.add("review");
+    div.innerHTML = `
       <p><strong>${r.name}</strong> <span class="review-meta">• ${timeAgo(r.date || r.timestamp)}</span></p>
       <p>Rating: <span class="review-rating">${'⭐'.repeat(r.rating)}</span></p>
       <p>Comment: <span class="review-text">${r.comment}</span></p>
-      ${canEdit ? `<button class="edit-btn">Edit</button>` : ""}
     `;
-
-    reviewsList.appendChild(review);
+    reviewsList.appendChild(div);
   });
 
   updateRatingStats(reviews);
 }
 
-
-// On submitting a review
-submitReviewBtn.addEventListener("click", async () => {
-  const name = reviewName.value.trim();
-  const comment = commentInput.value.trim();
-
-  if (!name || !selectedRating || !comment) return alert("Fill all fields.");
-
-  try {
-    const res = await fetch(`${API_URL}/reviews/mdt-remind`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, rating: selectedRating, comment }),
-    });
-
-    const newReview = await res.json();
-
-    reviews.push({ ...newReview.review, timestamp: newReview.review.date });
-
-    // Mark the last submitted review as editable
-    justSubmittedIndex = reviews.length - 1;
-
-    // Reset form
-    reviewName.value = "";
-    commentInput.value = "";
-    selectedRating = 0;
-    stars.forEach(s => s.textContent = "☆");
-
-    renderReviews();
-  } catch (err) {
-    console.error("Submit failed", err);
-  }
-});
-
-
 /* ==============================
-   LOAD REVIEWS (HYBRID)
+   LOAD REVIEWS
 ============================== */
 async function loadReviews() {
-
-  // ✅ 1. Load from localStorage first (instant)
+  // Load from localStorage first
   const cached = getLocalReviews();
-  if (cached.length) {
-    renderReviews(cached);
-  }
+  if (cached.length) renderReviews(cached);
 
-  // ✅ 2. Then fetch from backend
+  // Then fetch from backend
   try {
     const res = await fetch(`${API_URL}/reviews/mdt-remind`);
     const reviews = await res.json();
-
-    saveLocalReviews(reviews); // sync cache
+    saveLocalReviews(reviews);
     renderReviews(reviews);
-
-  } catch (error) {
-    console.error("Failed to load reviews", error);
+  } catch (err) {
+    console.error("Failed to load reviews", err);
   }
 }
 
@@ -235,14 +164,9 @@ document.getElementById("submitReview").addEventListener("click", async () => {
       body: JSON.stringify({ name, rating: selectedRating, comment })
     });
 
-    // ✅ Update local instantly
+    // Update local cache
     const cached = getLocalReviews();
-    cached.push({
-      name,
-      rating: selectedRating,
-      comment,
-      date: new Date().toISOString()
-    });
+    cached.push({ name, rating: selectedRating, comment, date: new Date().toISOString() });
     saveLocalReviews(cached);
 
     // Reset form
@@ -255,63 +179,6 @@ document.getElementById("submitReview").addEventListener("click", async () => {
 
   } catch (err) {
     console.error("Submit failed", err);
-  }
-});
-
-/* ==============================
-   EDIT SYSTEM
-============================== */
-document.getElementById("reviewsList").addEventListener("click", async (e) => {
-  const parent = e.target.closest(".review");
-  if(!parent) return;
-
-  const idx = parent.dataset.index;
-
- if(e.target.classList.contains("edit-btn")){
-  const cached = getLocalReviews();
-  const rev = cached[cached.length-1-idx];
-
-  const reviewDate = new Date(rev.date);
-  const now = new Date();
-  const diffMinutes = (now - reviewDate) / 60000;
-
-  // 🚫 Block edit after 2 minutes
-  if (diffMinutes > 2) {
-    alert("Edit time expired (2 minutes).");
-    return;
-  }
-
-  // continue edit...
-}
-
-  if(e.target.classList.contains("save-btn")){
-    const newRating = parseInt(document.getElementById("editRating").value);
-    const newComment = document.getElementById("editComment").value;
-
-    // Update backend
-    try {
-      await fetch(`${API_URL}/reviews/mdt-remind`, {
-        method: "POST",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify({ rating: newRating, comment: newComment })
-      });
-    } catch(err){ console.error(err); }
-
-    // ✅ Update local
-    const cached = getLocalReviews();
-    const rev = cached[cached.length-1-idx];
-    if (rev) {
-      rev.rating = newRating;
-      rev.comment = newComment;
-      rev.date = new Date().toISOString();
-    }
-    saveLocalReviews(cached);
-
-    loadReviews();
-  }
-
-  if(e.target.classList.contains("cancel-btn")){
-    loadReviews();
   }
 });
 
