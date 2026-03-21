@@ -103,9 +103,10 @@ function updateRatingStats(reviews) {
 let justSubmittedIndex = null; // track the last review this user submitted
 let editTimers = {}; // store timers to auto-remove edit buttons
 
+const editTimers = {}; // keeps track of setTimeouts for each review
+
 function renderReviews() {
   reviewsList.innerHTML = "";
-
   const now = new Date();
 
   reviews.slice().reverse().forEach((r, index) => {
@@ -113,14 +114,14 @@ function renderReviews() {
     review.classList.add("review");
     review.dataset.index = index;
 
-    // Show edit button only for the user's last review, AND within 2 minutes
+    // Only show edit for the logged-in user's own review within 2 minutes
     let canEdit = false;
-    if (index === justSubmittedIndex) {
-      const reviewDate = new Date(r.date);
+    if (typeof currentUserName !== "undefined" && r.name === currentUserName) {
+      const reviewDate = new Date(r.date || r.timestamp);
       const diffMinutes = (now - reviewDate) / 60000;
       canEdit = diffMinutes <= 2; // 2-minute limit
 
-      // If still editable, set a timeout to remove it automatically
+      // Automatically remove edit button after 2 minutes
       if (canEdit && !editTimers[index]) {
         const remainingMs = 2 * 60 * 1000 - (now - reviewDate);
         editTimers[index] = setTimeout(() => {
@@ -130,7 +131,7 @@ function renderReviews() {
     }
 
     review.innerHTML = `
-      <p><strong>${r.name}</strong> <span class="review-meta">• ${timeAgo(r.date)}</span></p>
+      <p><strong>${r.name}</strong> <span class="review-meta">• ${timeAgo(r.date || r.timestamp)}</span></p>
       <p>Rating: <span class="review-rating">${'⭐'.repeat(r.rating)}</span></p>
       <p>Comment: <span class="review-text">${r.comment}</span></p>
       ${canEdit ? `<button class="edit-btn">Edit</button>` : ""}
