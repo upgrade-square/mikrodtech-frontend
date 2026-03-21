@@ -1,6 +1,9 @@
 const API_URL = "https://mikrodtech-backend.onrender.com";
 const LOCAL_KEY = "mdt_reviews_cache";
 
+/* ==============================
+   LOCAL STORAGE HELPERS
+============================== */
 function saveLocalReviews(reviews) {
   localStorage.setItem(LOCAL_KEY, JSON.stringify(reviews));
 }
@@ -13,11 +16,15 @@ function getLocalReviews() {
 /* ==============================
    DOWNLOAD SYSTEM
 ============================== */
+const downloadBtn = document.getElementById("downloadBtn");
+const downloadCountEl = document.getElementById("downloadCount");
+
+// Load current download count
 async function loadDownloads() {
   try {
     const res = await fetch(`${API_URL}/downloads/mdt-remind`);
     const data = await res.json();
-    document.getElementById("downloadCount").textContent = data.count;
+    downloadCountEl.textContent = data.count;
   } catch (err) {
     console.error("Failed to load downloads", err);
   }
@@ -25,18 +32,18 @@ async function loadDownloads() {
 
 loadDownloads();
 
-const downloadBtn = document.getElementById("downloadBtn");
-const downloadCountEl = document.getElementById("downloadCount");
-
+// Handle APK download & increment count
 downloadBtn.addEventListener("click", async () => {
   try {
+    // Trigger APK download
     const a = document.createElement("a");
-    a.href = `${API_URL}/download/mdt-remind`;
+    a.href = `${API_URL}/download/mdt-remind`; // backend serves APK & increments count
     a.download = "MDT-Remind.apk";
     document.body.appendChild(a);
     a.click();
     a.remove();
 
+    // Refresh download count from backend
     const res = await fetch(`${API_URL}/downloads/mdt-remind`);
     const data = await res.json();
     downloadCountEl.textContent = data.count;
@@ -47,7 +54,7 @@ downloadBtn.addEventListener("click", async () => {
 });
 
 /* ==============================
-   TIME AGO
+   TIME AGO / RELATIVE DATE
 ============================== */
 function timeAgo(dateString) {
   const date = new Date(dateString);
@@ -113,14 +120,14 @@ function renderReviews(reviews) {
 }
 
 /* ==============================
-   LOAD REVIEWS
+   LOAD REVIEWS FROM BACKEND
 ============================== */
 async function loadReviews() {
-  // Load from localStorage first
+  // Load from localStorage first for instant display
   const cached = getLocalReviews();
   if (cached.length) renderReviews(cached);
 
-  // Then fetch from backend
+  // Fetch from backend
   try {
     const res = await fetch(`${API_URL}/reviews/mdt-remind`);
     const reviews = await res.json();
@@ -147,7 +154,7 @@ stars.forEach((star, index) => {
 });
 
 /* ==============================
-   SUBMIT REVIEW
+   SUBMIT NEW REVIEW
 ============================== */
 document.getElementById("submitReview").addEventListener("click", async () => {
   const name = document.getElementById("reviewName").value.trim();
@@ -158,15 +165,16 @@ document.getElementById("submitReview").addEventListener("click", async () => {
   }
 
   try {
-    await fetch(`${API_URL}/reviews/mdt-remind`, {
+    const res = await fetch(`${API_URL}/reviews/mdt-remind`, {
       method: "POST",
       headers: {"Content-Type":"application/json"},
       body: JSON.stringify({ name, rating: selectedRating, comment })
     });
+    const newReview = await res.json();
 
     // Update local cache
     const cached = getLocalReviews();
-    cached.push({ name, rating: selectedRating, comment, date: new Date().toISOString() });
+    cached.push({ ...newReview.review, date: newReview.review.date });
     saveLocalReviews(cached);
 
     // Reset form
@@ -175,6 +183,7 @@ document.getElementById("submitReview").addEventListener("click", async () => {
     selectedRating = 0;
     stars.forEach(s => s.textContent = "☆");
 
+    // Reload all reviews
     loadReviews();
 
   } catch (err) {
@@ -184,3 +193,4 @@ document.getElementById("submitReview").addEventListener("click", async () => {
 
 // INITIAL LOAD
 loadReviews();
+loadDownloads();
