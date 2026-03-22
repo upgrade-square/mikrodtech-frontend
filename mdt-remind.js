@@ -99,29 +99,36 @@ const submitBtn = document.getElementById("submitReview");
 const nameInput = document.getElementById("reviewName");
 const commentInput = document.getElementById("comment");
 
+
 submitBtn.addEventListener("click", async () => {
   const name = nameInput.value.trim();
   const comment = commentInput.value.trim();
   if (!name || !selectedRating || !comment) return alert("Please fill all fields.");
 
+  const reviewToPush = {
+    name,
+    comment,
+    rating: selectedRating,
+    date: new Date().toISOString() // ← current timestamp
+  };
+
   try {
-    const res = await fetch(`${API_URL}/reviews/mdt-remind`, {
+    // send to backend
+    await fetch(`${API_URL}/reviews/mdt-remind`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, rating: selectedRating, comment }),
+      body: JSON.stringify(reviewToPush),
     });
 
-    const data = await res.json();
-    if (data.success) {
-      reviews.push(data.review); // push the saved review
-      renderReviews();
+    // immediately show review
+    reviews.push(reviewToPush);
+    renderReviews();
 
-      // Reset form
-      nameInput.value = "";
-      commentInput.value = "";
-      selectedRating = 0;
-      stars.forEach((s) => (s.textContent = "☆"));
-    }
+    // Reset form
+    nameInput.value = "";
+    commentInput.value = "";
+    selectedRating = 0;
+    stars.forEach((s) => (s.textContent = "☆"));
   } catch (err) {
     console.error("Submit review failed", err);
   }
