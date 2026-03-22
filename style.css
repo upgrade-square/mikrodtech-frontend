@@ -2334,7 +2334,7 @@ body {
     height: 80%;
     position: fixed;
     left: 50%;
-    bottom: 80px;
+    bottom: 0px;
     top: auto;
     transform: translateX(-50%); 
     right: auto; 
