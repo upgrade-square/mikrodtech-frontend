@@ -367,3 +367,53 @@ header h1 {
     margin-right: 2px;
   }
 }
+/* ===== Mobile adjustments for reviews and rating summary ===== */
+@media (max-width: 480px) {
+  /* Star selection & display */
+  .stars span {
+    font-size: 1em;
+    margin-right: 2px;
+  }
+
+  /* Review names & meta */
+  #reviewsList .review .review-name {
+    font-size: 0.9em;
+  }
+  #reviewsList .review .review-date {
+    font-size: 0.75em;
+  }
+
+  /* Stars in individual reviews */
+  #reviewsList .review .review-rating {
+    font-size: 1em;
+  }
+
+  /* Comment text */
+  #reviewsList .review .review-comment {
+    font-size: 0.85em;
+  }
+
+  /* Rating summary: average rating number (e.g., 5.0) */
+  .average-rating span {
+    font-size: 1.4em; /* smaller than desktop 2rem */
+  }
+
+  /* Stars next to average rating */
+  .stars-display {
+    font-size: 1em;
+  }
+
+  /* Total reviews count */
+  #totalReviews {
+    font-size: 0.85em;
+  }
+
+  /* Optional: reduce gaps in rating summary bars */
+  .rating-summary {
+    gap: 15px;
+  }
+
+  .bar-row {
+    gap: 5px;
+  }
+}
