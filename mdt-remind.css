@@ -417,3 +417,36 @@ header h1 {
     gap: 5px;
   }
 }
+/* ===== Coming Soon Box ===== */
+.coming-soon-box {
+  background: #ffffff;
+  border: 1px solid #0072ce;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,114,206,0.15);
+}
+
+.coming-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0072ce;
+  margin-bottom: 8px;
+}
+
+.coming-text {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Mobile adjustment */
+@media (max-width: 480px) {
+  .coming-title {
+    font-size: 1rem;
+  }
+
+  .coming-text {
+    font-size: 0.85rem;
+  }
+}

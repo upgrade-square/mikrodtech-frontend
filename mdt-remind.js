@@ -100,39 +100,5 @@ const nameInput = document.getElementById("reviewName");
 const commentInput = document.getElementById("comment");
 
 
-submitBtn.addEventListener("click", async () => {
-  const name = nameInput.value.trim();
-  const comment = commentInput.value.trim();
-  if (!name || !selectedRating || !comment) return alert("Please fill all fields.");
-
-  const reviewToPush = {
-    name,
-    comment,
-    rating: selectedRating,
-    date: new Date().toISOString() // ← current timestamp
-  };
-
-  try {
-    // send to backend
-    await fetch(`${API_URL}/reviews/mdt-remind`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(reviewToPush),
-    });
-
-    // immediately show review
-    reviews.push(reviewToPush);
-    renderReviews();
-
-    // Reset form
-    nameInput.value = "";
-    commentInput.value = "";
-    selectedRating = 0;
-    stars.forEach((s) => (s.textContent = "☆"));
-  } catch (err) {
-    console.error("Submit review failed", err);
-  }
-});
-
 // ---------- INITIAL LOAD ----------
-loadReviews();
+//loadReviews();
