@@ -349,3 +349,21 @@ header h1 {
     width: 100%;
   }
 }
+
+/* Default star size */
+.stars span {
+  font-size: 1.2em; /* slightly smaller for desktop too */
+  margin-right: 3px;
+}
+
+/* Make stars smaller on small screens */
+@media (max-width: 480px) {
+  .stars span {
+    font-size: 1em; /* smaller on mobile */
+  }
+
+  /* Optional: reduce spacing a bit */
+  .stars span {
+    margin-right: 2px;
+  }
+}
