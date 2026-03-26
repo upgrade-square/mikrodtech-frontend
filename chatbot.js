@@ -26,23 +26,22 @@ if (userInput) {
 
 
 
-  
-/* ----------------------------
+ /* ----------------------------
     🧠 MIKRODTECH KNOWLEDGE BASE
 -----------------------------*/
 const mikrodTechKB = {
   //// 🏢 Updated High-End Company Info
-"what is mikrodtech": "MikrodTech is a forward-thinking technology company specializing in software engineering, cybersecurity, and product innovation. We build secure, scalable, and intelligent solutions for enterprises and institutions.",
+  "what is mikrodtech": "MikrodTech is a forward-thinking technology company specializing in software engineering, cybersecurity, and product innovation. We build secure, scalable, and intelligent solutions for enterprises and institutions.",
 
-"who owns mikrodtech": "MikrodTech was founded by Wabwile Simati Rodney Mike, a cybersecurity specialist, software engineer, and product developer focused on building secure, intelligent, and future-ready technologies.",
+  "who owns mikrodtech": "MikrodTech was founded by Wabwile Simati Rodney Mike, a cybersecurity specialist, software engineer, and product developer focused on building secure, intelligent, and future-ready technologies.",
 
-"where is mikrodtech located": "MikrodTech operates in Kenya and provides advanced technology solutions to clients across East Africa and beyond.",
+  "where is mikrodtech located": "MikrodTech operates in Kenya and provides advanced technology solutions to clients across East Africa and beyond.",
 
-"when was mikrodtech founded": "MikrodTech began as a research-driven tech initiative and evolved into a company focused on enterprise-grade software, cybersecurity, and product development.",
+  "when was mikrodtech founded": "MikrodTech began as a research-driven tech initiative and evolved into a company focused on enterprise-grade software, cybersecurity, and product development.",
 
-"what does mikrodtech mean": "MikrodTech combines 'Mike' and 'Rod' — the founder’s names — with 'Tech', representing a company built on innovation, security, and intelligent engineering.",
+  "what does mikrodtech mean": "MikrodTech combines 'Mike' and 'Rod' — the founder’s names — with 'Tech', representing a company built on innovation, security, and intelligent engineering.",
 
-"tell me more about mikrodtech": `
+  "tell me more about mikrodtech": `
 MikrodTech is a modern technology company focused on building secure, scalable, and intelligent solutions.
 
 We specialize in:
@@ -53,8 +52,7 @@ We specialize in:
 We serve enterprises, institutions, and mission-driven organizations seeking high-performance technology engineered for long-term growth.
 `,
 
-
-"best laptop for computer science student": `
+  "best laptop for computer science student": `
 For a computer science student, a laptop should balance performance, reliability, and portability.
 
 **Recommended Specifications**
@@ -68,11 +66,10 @@ For a computer science student, a laptop should balance performance, reliability
 **Notes**
 • Dedicated GPU is optional (mainly for ML or graphics work)
 • Prioritize keyboard quality and thermal performance over gaming features
-`
-,
+`,
 
-// 🛠️ High-End Services
-"what services do you offer": `
+  // 🛠️ High-End Services
+  "what services do you offer": `
 **MikrodTech Core Services**
 
 *Software Engineering*
@@ -93,26 +90,91 @@ For a computer science student, a laptop should balance performance, reliability
 • Automation tools  
 • Institutional and enterprise tech solutions  
 
+*Business Systems*
+• POS (Point of Sale) systems for sales, inventory, and operations  
+• Custom business automation solutions  
+
+*Applications & Platforms*
+• MDT Remind App — smart task and productivity management system  
+
+*IoT & Smart Solutions*
+• IoT (Internet of Things) systems for automation, monitoring, and control  
+• Intelligent device integration for businesses and institutions  
+
+*Consultation & Strategy*
+• Technology consultation and advisory  
+• System architecture planning  
+• Digital transformation strategy  
+
 We focus exclusively on secure, high-performance, and scalable solutions for businesses and institutions.
 `,
 
-"do you install cctv": "MikrodTech no longer offers CCTV installation. We are now focused on advanced cybersecurity, software development, and product innovation.",
+  "do you install cctv": "MikrodTech no longer offers CCTV installation. We are now focused on advanced cybersecurity, software development, and product innovation.",
 
-"do you fix computers": "MikrodTech does not provide computer repair services. We specialize in enterprise-grade technology solutions.",
+  "do you fix computers": "MikrodTech does not provide computer repair services. We specialize in enterprise-grade technology solutions.",
 
-"do you offer networking services": "We provide secure network architecture and enterprise-level cybersecurity — not basic router or Wi-Fi installations.",
+  "do you offer networking services": "We provide secure network architecture and enterprise-level cybersecurity — not basic router or Wi-Fi installations.",
 
-"do you sell computers": "No. MikrodTech focuses on high-level technology solutions, not hardware sales.",
+  "do you sell computers": "No. MikrodTech focuses on high-level technology solutions, not hardware sales.",
 
-"do you offer cybersecurity services": "Yes — we offer assessments, secure architecture design, vulnerability analysis, and threat detection for organizations.",
+  "do you offer cybersecurity services": "Yes — we offer assessments, secure architecture design, vulnerability analysis, and threat detection for organizations.",
 
-"do you do installations": "No. MikrodTech no longer handles hardware installations. Our focus is strategic, high-end digital solutions.",
+  "do you do installations": "No. MikrodTech no longer handles hardware installations. Our focus is strategic, high-end digital solutions.",
 
-"do you build websites": "Yes — we build secure, scalable, and professional web platforms for enterprises and institutions.",
+  "do you build websites": "Yes — we build secure, scalable, and professional web platforms for enterprises and institutions.",
 
-"do you create software": "Yes — MikrodTech designs and develops custom enterprise software and intelligent systems tailored to professional needs.",
+  "do you create software": "Yes — MikrodTech designs and develops custom enterprise software and intelligent systems tailored to professional needs.",
 
+  // 🆕 Products & Solutions
+  "what is mdt remind": "MDT Remind is a smart productivity and reminder application developed by MikrodTech to help users manage tasks, schedules, and important activities efficiently.",
 
+  "tell me about mdt remind": `
+**MDT Remind App**
+
+A smart productivity solution designed to help users stay organized and efficient.
+
+• Task and schedule management  
+• Intelligent reminders and notifications  
+• Clean and user-friendly interface  
+• Designed for students, professionals, and organizations  
+`,
+
+  "do you offer pos": "Yes — MikrodTech provides smart POS systems for efficient sales processing, inventory management, and business operations.",
+
+  "what is pos": "A POS (Point of Sale) system is a business solution used to manage sales, track inventory, and handle transactions efficiently.",
+
+  "tell me about your pos systems": `
+**MikrodTech POS Systems**
+
+• Sales and transaction management  
+• Inventory tracking and stock control  
+• Reporting and business insights  
+• Scalable for growing businesses  
+`,
+
+  "do you offer iot": "Yes — MikrodTech provides IoT solutions for automation, monitoring, and intelligent system control.",
+
+  "what is iot": "IoT (Internet of Things) refers to connected devices that communicate and share data to enable automation and smart control.",
+
+  "tell me about iot": `
+**MikrodTech IoT Solutions**
+
+• Smart monitoring systems  
+• Automated device control  
+• Data-driven insights from connected systems  
+• Scalable intelligent environments  
+`,
+
+  "do you offer consultation": "Yes — MikrodTech offers professional technology consultation to help businesses design and implement secure, scalable systems.",
+
+  "what is your consultation service": `
+**MikrodTech Consultation Services**
+
+• System planning and architecture design  
+• Cybersecurity advisory  
+• Digital transformation strategy  
+• Technology optimization and scaling  
+`,
 
   // 🧰 Support & Contact
   "how can i contact mikrodtech": "You can reach us through our website, LinkedIn page, or by email at info@mikrodtech.co.ke.",
@@ -125,18 +187,15 @@ We focus exclusively on secure, high-performance, and scalable solutions for bus
   
   "do you offer remote support": "Yes, MikrodTech provides fast remote troubleshooting and system support across Kenya.",
 
-
   // 🏗️ Projects
-  "what projects have you done": "We have built school websites, developed a student progress tracking system for orphan programs, and installed secure networks and systems for institutions.",
+  "what projects have you done": "We have built school websites, developed a student progress tracking system for orphan programs, and implemented secure systems for institutions.",
   
   "do you make school systems": "Yes, we develop flexible school systems that help sponsors and institutions track student performance, records, and progress.",
-
 
   // 🌐 Social Media
   "do you have social media": "Yes — we are active on LinkedIn. Search for 'MikrodTech'. We do not use Facebook.",
   
   "where can i find mikrodtech online": "Visit our website at mikrodtech.co.ke or follow us on LinkedIn for updates and projects.",
-
 
   // 💡 Brand & Vision
   "what is your tagline": "Our tagline is 'Smart Solutions. Trusted Tech.'",
@@ -145,28 +204,46 @@ We focus exclusively on secure, high-performance, and scalable solutions for bus
   
   "what makes mikrodtech different": "We focus on security, precision, and innovation — not just fixing problems, but preventing them with long-term, reliable solutions.",
 
+  // 🧠 MDT Alias
+  "what is mdt": "MDT is the short form of MikrodTech — a forward-thinking technology company specializing in software engineering, cybersecurity, and product innovation.",
+
+  "who is mdt": "MDT refers to MikrodTech, a technology company focused on building secure, scalable, and intelligent solutions for enterprises and institutions.",
+
+  "mdt": "MDT stands for MikrodTech — a company focused on secure, scalable, and intelligent technology solutions.",
 
   // 💬 Friendly / Small Talk
   "hello": "Hello! How can MikrodTech assist you today?",
-  "hi": "Hi! How can we help you with computers, networking, or tech services?",
+  "hi": "Hi! How can we help you with technology solutions today?",
   "how are you": "I'm doing great and ready to assist! What can MikrodTech help you with?",
   "thanks": "You're welcome! MikrodTech is always happy to serve.",
   "bye": "Goodbye! Have a great day — from MikrodTech.",
-  "who are you": "I'm the MikrodTech Assistant 🤖 — here to help you explore our services, projects, and solutions."
+  "who are you": "I'm the MikrodTech Assistant 🤖 — here to help you explore our services, products, and solutions."
 };
-
   /* ----------------------------
       🔎 LOCAL KNOWLEDGE SEARCH
   -----------------------------*/
-  function searchKnowledgeBase(input) {
-    const lowerInput = input.toLowerCase();
-    for (const [question, answer] of Object.entries(mikrodTechKB)) {
-      if (lowerInput.includes(question) || question.includes(lowerInput)) {
-        return answer;
-      }
+function normalizeInput(input) {
+  let text = input.toLowerCase();
+
+  // Map aliases → canonical name
+   text = text.replace(/\bmdt\b/gi, "mikrodtech");
+
+  return text;
+}
+
+function searchKnowledgeBase(input) {
+  const normalizedInput = normalizeInput(input);
+
+  for (const [question, answer] of Object.entries(mikrodTechKB)) {
+    if (
+      normalizedInput.includes(question) ||
+      question.includes(normalizedInput)
+    ) {
+      return answer;
     }
-    return null;
   }
+  return null;
+}
 
   function removeIrrelevantWords(text) {
   // Remove "Student" if it appears on its own line
