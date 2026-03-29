@@ -2144,8 +2144,8 @@ body {
   width: 650px;
   max-width: 95vw;
 
-  height: 85dvh;   /* dynamic height */
-  max-height: 95dvh;          /* ensures it never overflows screen at high zooms */
+  height: 800px;              /* default height at 100% zoom */
+  max-height: 85vh;           /* ensures it never overflows screen at high zooms */
   overflow: auto;             /* enables scrolling if content is too tall */
 
   background: rgba(79, 126, 227, 0.75);
