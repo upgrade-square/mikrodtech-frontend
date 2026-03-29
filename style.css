@@ -2144,8 +2144,8 @@ body {
   width: 650px;
   max-width: 95vw;
 
-  height: 800px;              /* default height at 100% zoom */
-  max-height: 85vh;           /* ensures it never overflows screen at high zooms */
+  height: 85dvh;   /* dynamic height */
+  max-height: 95dvh;          /* ensures it never overflows screen at high zooms */
   overflow: auto;             /* enables scrolling if content is too tall */
 
   background: rgba(79, 126, 227, 0.75);
@@ -2331,14 +2331,19 @@ body {
 @media (max-width: 480px) {
   #chatbot-box, .chatbot-box {
     width: 92%;
-    height: 80%;
+    
+    height: 85dvh;   /* 🔥 dynamic height */
+    max-height: 95dvh;
+
     position: fixed;
     left: 50%;
-    bottom: 0px;
+    bottom: 0;
     top: auto;
-    transform: translateX(-50%); 
-    right: auto; 
+
+    transform: translateX(-50%);
+    right: auto;
   }
+}
 
   #chatbot-btn, .chatbot-btn {
     width: 40px;
