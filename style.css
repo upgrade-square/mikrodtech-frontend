@@ -2331,19 +2331,14 @@ body {
 @media (max-width: 480px) {
   #chatbot-box, .chatbot-box {
     width: 92%;
-    
-    height: 85dvh;   /* 🔥 dynamic height */
-    max-height: 95dvh;
-
+    height: 80%;
     position: fixed;
     left: 50%;
-    bottom: 0;
+    bottom: 0px;
     top: auto;
-
-    transform: translateX(-50%);
-    right: auto;
+    transform: translateX(-50%); 
+    right: auto; 
   }
-}
 
   #chatbot-btn, .chatbot-btn {
     width: 40px;
