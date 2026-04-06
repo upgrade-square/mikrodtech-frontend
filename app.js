@@ -632,7 +632,7 @@ const articles = [
       <li>Always request an SLA (Service Level Agreement) for business connections.</li>
       <li>Test customer support responsiveness before signing a long contract.</li>
     </ul>
-    <p>MikrodTech can help you assess your connectivity needs and recommend the right provider for your home or business. <a href="#contact">Contact us</a> for a free consultation.</p>
+   
   `
 },
 {
@@ -654,7 +654,7 @@ const articles = [
       <li>If you suspect a SIM swap, call 100 immediately and visit a Safaricom shop with your original ID.</li>
       <li>Enable transaction notifications and review them daily.</li>
     </ul>
-    <p>If you've been defrauded, report to <strong>DCI Kenya</strong> via their website or call the cybercrime hotline at <strong>0800 722 203</strong>.</p>
+   
   `
 },
 {
@@ -682,7 +682,7 @@ const articles = [
       <li>Upgrade to an SSD if still on a hard drive — it's one of the best value upgrades available.</li>
       <li>Reinstall the OS every 2–3 years to remove software bloat.</li>
     </ul>
-    <p>MikrodTech offers laptop diagnostics, repairs, and upgrades in Nairobi. <a href="#contact">Book a checkup</a> today.</p>
+   
   `
 },
 {
@@ -712,7 +712,7 @@ const articles = [
       <li>Urban Nairobi residents — fibre is cheaper and faster for the price.</li>
       <li>Budget-conscious users — the upfront hardware cost is significant.</li>
     </ul>
-    <p>MikrodTech is an experienced Starlink installer in Kenya. We handle procurement, installation, and configuration. <a href="#contact">Get a quote</a>.</p>
+   
   `
 },
 {
@@ -735,7 +735,7 @@ const articles = [
       <li>Social media accounts (Facebook, Instagram, Twitter/X).</li>
       <li>Any platform storing business or financial data.</li>
     </ul>
-    <p>If you're a business, MikrodTech can help implement organisation-wide 2FA policies. <a href="#contact">Talk to our team</a>.</p>
+   
   `
 },
 {
@@ -763,7 +763,7 @@ const articles = [
       <li>Employee records and HR documents.</li>
       <li>Website files and databases.</li>
     </ul>
-    <p>MikrodTech designs and implements backup systems for businesses in Kenya. <a href="#contact">Contact us</a> to protect your data today.</p>
+   
   `
 },
 {
@@ -792,7 +792,7 @@ const articles = [
       <li><strong>Small businesses:</strong> Invest in a paid solution like Bitdefender, ESET, or Kaspersky Small Office Security.</li>
       <li><strong>Enterprises:</strong> Enterprise endpoint protection with centralised management (e.g. Microsoft Defender for Business, CrowdStrike).</li>
     </ul>
-    <p>MikrodTech can assess your security posture and recommend the right tools for your budget. <a href="#contact">Get in touch</a>.</p>
+
   `
 },
 {
@@ -819,7 +819,7 @@ const articles = [
       <li>Keep your home router firmware updated.</li>
       <li>Use a separate network for work devices if possible.</li>
     </ul>
-    <p>MikrodTech supplies and installs complete home office setups in Nairobi. <a href="#contact">Contact us</a> for a package quote.</p>
+  
   `
 },
 {
@@ -842,7 +842,7 @@ const articles = [
       <li>Data being exfiltrated from your network.</li>
       <li>Denial of service (DoS) attacks disrupting your operations.</li>
     </ul>
-    <p>MikrodTech designs and installs firewall solutions for businesses of all sizes in Kenya. <a href="#contact">Talk to our security team</a> for a free assessment.</p>
+ 
   `
 },
 {
@@ -868,7 +868,6 @@ const articles = [
     </ul>
     <h4>Our Pick</h4>
     <p>For any new laptop or PC build in 2025, an SSD should be the default choice. A 512GB SSD is sufficient for most users and delivers a dramatically better experience than any HDD.</p>
-    <p>MikrodTech supplies and installs SSDs and storage solutions for individuals and businesses. <a href="#contact">Get in touch</a> for pricing.</p>
   `
 }
 
@@ -948,12 +947,22 @@ document.addEventListener("DOMContentLoaded", () => {
     let articleList = `<div class="article-list">`;
 
     articles.slice(4).forEach((article, index) => {
-      articleList += `
-        <div class="article-list-item" data-index="${index + 4}">
-          <h4>${article.title}</h4>
-        </div>
-      `;
+
+articleList += `
+  <div class="article-list-item" data-index="${index + 4}">
+    <h4>${article.title}</h4>
+    <p class="article-meta">📘 ${calculateReadTime(article.content)}</p>
+  </div>
+`;
     });
+
+
+    function calculateReadTime(content) {
+  const text = content.replace(/<[^>]*>/g, ""); // remove HTML tags
+  const words = text.split(/\s+/).length;
+  const minutes = Math.ceil(words / 200); // avg reading speed
+  return `${minutes} min read`;
+}
 
     articleList += `</div>`;
 
