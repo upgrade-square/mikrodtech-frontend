@@ -4873,6 +4873,73 @@ body.chatbot-open #chatbot-btn {
   }
 }
 
+/* =============================
+   Dark Mode - MDT Products Section
+============================= */
+.dark-mode .products-section {
+  background: #12152a; /* dark background similar to Cybersecurity section */
+  color: #e0e0ff;      /* light text */
+  box-shadow: 0 10px 25px rgba(0, 74, 173, 0.5);
+}
+
+.dark-mode .products-section .section-title {
+  color: #00d8ff; /* bright blue title */
+}
+
+.dark-mode .products-section .section-intro {
+  color: #d0d0ff;
+}
+
+.dark-mode .product-card {
+  background: #1a1d35; /* dark card background */
+  border: 2px solid #004aad; /* subtle blue border */
+  color: #e0e0ff;
+  box-shadow: 0 6px 20px rgba(0, 74, 173, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 74, 173, 0.55);
+}
+
+.dark-mode .product-card h3 {
+  color: #00d8ff; /* bright blue titles */
+}
+
+.dark-mode .product-card p {
+  color: #d0d0ff;
+}
+
+.dark-mode .product-card .coming-soon {
+  background: linear-gradient(90deg, #004aad, #00d8ff);
+  color: #ffffff;
+}
+
+/* Images remain the same; they will stand out against dark background */
+.dark-mode .product-card .img-wrapper {
+  background: transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dark-mode .products-section .section-title {
+    font-size: 1.5rem;
+  }
+
+  .dark-mode .products-section .section-intro {
+    font-size: 1rem;
+  }
+
+  .dark-mode .product-card h3 {
+    font-size: 1rem;
+  }
+
+  .dark-mode .product-card p {
+    font-size: 0.95rem;
+  }
+}
+
 .article-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -5158,4 +5225,19 @@ body.chatbot-open #chatbot-btn {
     margin-top: 10px;
     margin-bottom: 4px;
   }
+}
+
+/* Full-height layout with footer at the bottom */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1; /* takes all available space */
+}
+
+.site-footer {
+  margin-top: 0;
 }
