@@ -5039,24 +5039,26 @@ body.chatbot-open #chatbot-btn {
     padding: 12px 30px;
   }
 }
-
 @media (max-width: 540px) {
-  /* Footer inner container */
+  /* Footer inner container: two columns */
   .footer-inner {
-    grid-template-columns: 1fr;
-    padding: 12px 16px; /* tighter padding */
-    gap: 10px; /* smaller vertical spacing */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two equal columns */
+    padding: 12px 16px;
+    gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* Footer column headings */
   .footer-col h4 {
     margin-bottom: 5px;
-    font-size: 0.75rem; /* smaller for mobile */
+    font-size: 0.75rem;
   }
 
   /* Footer links */
   .footer-col ul li {
-    margin-bottom: 3px;
+    margin-bottom: 4px;
   }
 
   .footer-col ul li a {
@@ -5064,14 +5066,20 @@ body.chatbot-open #chatbot-btn {
     line-height: 1.2;
   }
 
-  /* Hide extra sections if needed */
-  .footer-col:nth-child(3) {
-    display: none; /* hides "Support" */
-  }
+  /* Hide less important columns */
+  .footer-col:nth-child(3),
+/* Keep the fourth column visible and merge social icons */
+.footer-col:nth-child(4) {
+  display: block !important; /* force it visible */
+}
 
-  /* Social icons */
+  /* Move Follow Us under Contact column */
   .footer-social-icons {
-    gap: 6px;
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* align to start of right column */
   }
 
   .footer-social-icons a img {
@@ -5079,24 +5087,75 @@ body.chatbot-open #chatbot-btn {
     height: 20px;
   }
 
-/* Mobile-specific footer bottom */
-.footer-bottom p {
-    font-size: 0.8rem !important;  /* smaller, readable on phones */
-    padding: 6px 8px !important;     /* tight vertical + horizontal padding */
-    text-align: center !important;   /* keep text centered */
+  /* Footer bottom bar */
+  .footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 6px 8px;
   }
 
   .footer-bottom p {
-    margin: 0 !important;
-    line-height: 1.3 !important;     /* compact line spacing */
+    font-size: 0.8rem !important;
+    margin: 0;
+    line-height: 1.3;
   }
 
   .footer-bottom .footer-accent {
     font-weight: 600;
     color: #0072ce;
   }
-
-  
-
 }
+@media (max-width: 540px) {
+  /* Only two columns: Contact + one other */
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 12px 16px;
+  }
 
+  /* Hide unnecessary columns */
+  .footer-col:nth-child(3),
+  .footer-col:nth-child(4) {
+    display: none;
+  }
+
+  /* Ensure contact column is the right one */
+  .footer-col.contact-col { 
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Move social icons below contact info */
+  .footer-social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+    justify-content: flex-start;
+    order: 2; /* ensures it comes after contact info */
+  }
+
+  /* Make icons stay on same row */
+  .footer-social-icons a {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .footer-social-icons a img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Optional: "Follow Us" heading */
+  .footer-col.contact-col .follow-us {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0072ce;
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+}
