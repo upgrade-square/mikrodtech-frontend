@@ -2,7 +2,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Updated Content Security Policy allowing formsubmit.co -->
+
+<!-- ================= SECURITY POLICY ================= -->
 <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
@@ -12,626 +13,254 @@
   font-src 'self';
 ">
 
-
-<!-- Google Analytics -->
+<!-- ================= GOOGLE ANALYTICS ================= -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-30TVN0F0Y1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-30TVN0F0Y1'); /* Replace with your GA4 Measurement ID */
+  gtag('config', 'G-30TVN0F0Y1');
 </script>
 
+<!-- ================= SEO CORE ================= -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MikrodTech — Smart Solutions. Trusted Tech.</title>
+<title>MikrodTech | Software Engineering, Cybersecurity & Cloud Solutions in Kenya</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MikrodTech delivers software engineering, cybersecurity, cloud computing, DevOps, data systems, and enterprise IT solutions in Kenya for businesses, schools, and organizations.">
 
+<meta name="keywords" content="MikrodTech, software engineering Kenya, cybersecurity Kenya, cloud computing Kenya, DevOps Kenya, IT solutions Kenya, enterprise systems Kenya">
 
-  <!-- Link to external stylesheet and JS (will create next) -->
-  <link rel="stylesheet" href="style.css" />
+<meta name="author" content="MikrodTech">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
 
-  <!-- Standard favicon -->
+<link rel="canonical" href="https://www.mikrodtech.com/">
+
+<!-- ================= OPEN GRAPH ================= -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="MikrodTech | Smart Software & Cybersecurity Solutions">
+<meta property="og:description" content="Software engineering, cybersecurity, cloud computing, DevOps and enterprise IT solutions in Kenya.">
+<meta property="og:url" content="https://www.mikrodtech.com/">
+<meta property="og:image" content="https://www.mikrodtech.com/logo.png">
+
+<!-- ================= TWITTER ================= -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MikrodTech | Technology Solutions Kenya">
+<meta name="twitter:description" content="Software engineering, cybersecurity, cloud and enterprise IT solutions in Kenya.">
+<meta name="twitter:image" content="https://www.mikrodtech.com/logo.png">
+
+<!-- ================= THEME ================= -->
+<meta name="theme-color" content="#1c2541">
+
+<!-- ================= FAVICON ================= -->
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
-
-<!-- Apple devices -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<!-- Android / Chrome -->
-<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+<!-- ================= STYLES ================= -->
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../css/chatbot.css">
 
-<!-- Manifest for PWA -->
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/icon.png" type="image/png">
-<meta name="theme-color" content="#1c2541">
 
- 
+<!-- ================= SCHEMA ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MikrodTech",
+  "url": "https://www.mikrodtech.com/",
+  "logo": "https://www.mikrodtech.com/logo.png",
+  "description": "Software engineering, cybersecurity, cloud computing, DevOps and enterprise IT solutions in Kenya.",
+  "sameAs": [
+    "https://www.linkedin.com/company/mikrodtech",
+    "https://www.instagram.com/mikrodtech",
+    "https://www.facebook.com/mikrodtech"
+  ]
+}
+</script>
 
-  <script defer src="app.js"></script>
 </head>
+
 <body>
-  <!-- Header / Navigation -->
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#home">
 
-        <!-- Logo: place logo.png in the same folder as this index.html -->
-        <img id="logo" src="logo.png" alt="MikrodTech logo" />
-      </a>
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container nav-wrap">
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="hamburger"></span>
-      </button>
+    <a class="brand" href="#home">
+      <img id="logo" src="logo.png" alt="MikrodTech logo">
+    </a>
 
-<nav class="main-nav">
-  <ul class="nav-list">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#products">MDT Products</a></li> <!-- NEW -->
-    <li><a href="#knowledge">Knowledge Hub</a></li>
-    <li><a href="#tools">Free Tools</a></li>
-    <li><a href="#cybersecurity">Cybersecurity</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#" id="openChatbotMenu">Chatbot</a></li>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
 
-  </ul>
-</nav>
+    <nav class="main-nav">
+      <ul class="nav-list">
 
+        <li><a href="../index.html" class="active">Home</a></li>
+        <li><a href="../about/about.html">About</a></li>
+        <li><a href="../services/">Services</a></li>
+        <li><a href="../products/">MDT Products</a></li>
+        <li><a href="../tools/">Free Tools</a></li>
+        <li><a href="../cybersecurity/">Cybersecurity</a></li>
+        <li><a href="../contact/contact.html">Contact</a></li>
+        <li><a href="#" id="openChatbotMenu">Chatbot</a></li>
 
-<!-- 🌙 Dark Mode Toggle Button -->
-<button id="theme-toggle" class="theme-toggle">🌙</button>      
-    
-    </div>
-  </header>
+      </ul>
+    </nav>
 
-   <!-- Floating chatbot button -->
-  <button id="chatbot-btn" class="chatbot-btn">💬<span ></span></button>
+  </div>
+</header>
 
+<!-- ================= CHAT BUTTON ================= -->
+<button id="chatbot-btn" class="chatbot-btn" aria-label="Open Chat">💬</button>
 
-<!-- ===== Hero Section ===== -->
+<!-- ================= HERO (CLEAN + SEO FOCUSED) ================= -->
 <section id="home" class="hero">
   <div class="container">
+
     <h1 class="company-name">MikrodTech</h1>
-    <p class="tagline">Smart Solutions. Trusted Tech.</p>
-    <p class="lead">
-      Building Intelligent Technology for a Smarter, Secure Future.
+
+    <p class="tagline">
+      Software Engineering • Cybersecurity • Cloud Solutions
     </p>
 
-    <a href="#services" class="btn btn-primary explore-btn">Explore Solutions</a>
+    <p class="lead">
+      We design and build secure, scalable digital systems for businesses, schools, and organizations in Kenya.
+    </p>
+
+    <a href="services/" class="btn btn-primary">Explore Services</a>
 
   </div>
 </section>
 
+<!-- ================= WHY CHOOSE ================= -->
+<section class="why-us">
+  <div class="container">
+    <h2 class="section-title">Why Choose MikrodTech</h2>
 
-<section id="speedtest" class="speedtest-container">
-  <h2 class="section-title">Internet Speed Test</h2>
+    <div class="why-grid">
 
-  <div class="speed-display">
-    <p class="speed-heading">Your Internet speed is</p>
-    <p id="download-speed" class="speed-value"><div id="loader" class="loader" style="display:none;"></div></p>
-    <p class="unit">Mbps</p>
-  </div>
+      <div class="why-card">
+        <h3>Reliable Support</h3>
+        <p>Fast and professional technical assistance.</p>
+      </div>
 
-  <div class="speed-details">
-    <div class="detail">
-      <h3>Upload</h3>
-      <p><span id="upload-speed">--</span> Mbps</p>
+      <div class="why-card">
+        <h3>Smart Systems</h3>
+        <p>Modern software solutions for real business needs.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Secure Architecture</h3>
+        <p>Security-first systems that protect your data.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Trusted Partner</h3>
+        <p>Long-term reliable technology solutions.</p>
+      </div>
+
     </div>
-
-    <div class="detail">
-      <h3>Ping</h3>
-      <p><span id="ping-speed">--</span> ms</p>
-    </div>
-  </div>
-
-  <button id="start-speedtest" class="speedtest-btn">Start Test</button>
-</section>
-
-    <!-- About -->
-    <section id="about" class="about container">
-      <h2>About Us</h2>
-      <p>
-        MikrodTech is a forward-thinking technology company specializing in software engineering, cybersecurity, and product innovation.
-        We design and build intelligent systems, develop secure digital platforms, and create high-performance solutions for enterprise clients, learning institutions, and ambitious organizations.
-
-        From advanced software products to robust cybersecurity frameworks and data-driven business tools, MikrodTech delivers technology engineered for stability, scalability, and long-term growth.
-      </p>
-    </section>
-
-    <!-- Services -->
-<section id="services" class="services container">
- <h2 class="section-title">Services & Products</h2>
-  <div class="service-grid">
-    
-    <article class="service-card">
-      <h3>
-        <button class="service-toggle" data-target="network-detail">
-        <span class="service-title">Software Engineering </span>
-        </button>
-      </h3>
-      <p>
-        Custom enterprise software, automation systems, and scalable digital platforms built for performance and growth.
-      </p>
-      
-      <!-- Chevron centered below description -->
-      <button class="service-toggle" data-target="network-detail">
-        <span class="chevron">▼</span>
-      </button>
-    
-      <div id="network-detail" class="service-detail hidden">
-        <p>
-          MikrodTech develops high-performance software solutions tailored for business and institutional needs.
-          Our capabilities include enterprise systems, automation tools, API integrations, cloud applications, management dashboards, and mobile platforms.
-
-          Every solution is designed for security, scalability, and seamless integration with existing infrastructure.
-        </p>
-      </div>
-    </article>
-        
-    <article class="service-card">
-      <h3>
-        <button class="service-toggle" data-target="computers-detail">
-        <span class="service-title">Cybersecurity & Risk Management </span>
-        </button>
-      </h3>
-      <p>Advanced security testing, threat protection, and defense strategies for modern organizations.</p>
-      <button class="service-toggle" data-target="computers-detail">
-        <span class="chevron">▼</span>
-      </button>
-
-      <div id="computers-detail" class="service-detail hidden">
-        <p>
-         We deliver end-to-end cybersecurity services including penetration testing, security audits, network and endpoint protection, identity & access management, incident response planning, and compliance consulting (ISO, NIST, data protection policies).
-
-         Our cybersecurity frameworks ensure your business operates confidently in a secure digital environment.
-        </p>
-      </div>
-    </article>
-
-    <article class="service-card">
-      <h3>
-        <button class="service-toggle" data-target="cctv-detail">
-        <span class="service-title">Product Engineering & Innovation  </span>
-        </button>
-      </h3>
-      <p>Design and development of smart devices, embedded systems, and custom hardware products.</p>
-
-      <button class="service-toggle" data-target="cctv-detail">
-        <span class="chevron">▼</span>
-      </button>
-      <div id="cctv-detail" class="service-detail hidden">
-        <p>
-         MikrodTech engineers intelligent technology products — from IoT devices and embedded systems to specialized hardware solutions.
-
-         We support full-cycle product creation: concept design, prototyping, electronics development, firmware engineering, and performance testing.
-
-         Designed for reliability, built for innovation.
-        </p>
-      </div>
-    </article>
-
-    <article class="service-card">
-      <h3>
-        <button class="service-toggle" data-target="printers-detail">
-        <span class="service-title">Enterprise IT Architecture </span>
-        </button>
-      </h3>
-      <p>High-level IT infrastructure design, cloud systems, virtualization, and secure network environments.</p>
-
-      <button class="service-toggle" data-target="printers-detail">
-        <span class="chevron">▼</span>
-      </button>
-      <div id="printers-detail" class="service-detail hidden">
-        <p>
-          We architect modern enterprise technology environments tailored for institutions and businesses.
-          Services include cloud deployment, virtualization, data center planning, secure network topology, high-availability systems, and integration of advanced enterprise tools.
-
-          Our solutions help organizations modernize and operate efficiently at scale.
-        </p>
-      </div>
-    </article>
-
-    <article class="service-card">
-      <h3>
-        <button class="service-toggle" data-target="power-detail">
-        <span class="service-title">Data Systems & Business Intelligence </span>
-        </button>
-      </h3>
-      <p>Data-driven tools, analytics platforms, and business intelligence systems built for smart decision-making.</p>
-
-      <button class="service-toggle" data-target="power-detail">
-        <span class="chevron">▼</span>
-      </button>
-      <div id="power-detail" class="service-detail hidden">
-        <p>
-          MikrodTech designs and deploys data systems that help organizations collect, analyze, and use information effectively.
-          This includes database engineering, reporting dashboards, analytics platforms, automation flows, and data integration systems.
-
-          We turn data into actionable insights to support strategic growth.
-        </p>
-      </div>
-    </article>
-
-    <article class="service-card">
-      <h3>
-        <button class="service-toggle" data-target="gaming-detail">
-          <span class="service-title">Cloud, DevOps & Automation</span>
-        </button>
-      </h3>
-      <p>Cloud-native solutions, CI/CD pipelines, server automation, and digital workflow optimization.</p>
-
-      <button class="service-toggle" data-target="gaming-detail">
-        <span class="chevron">▼</span>
-      </button>
-      <div id="gaming-detail" class="service-detail hidden">
-        <p>
-         Our DevOps and automation services help businesses streamline operations, improve deployment speed, and increase system reliability.
-         We build CI/CD pipelines, automate infrastructure, deploy cloud-native tools, and optimize digital workflows for development and operations teams.
-
-         Built for speed, resilience, and modern software delivery.
-        </p>
-      </div>
-    </article>
-
-  </div>
-
-
-
-<!-- ===== MDT Products ===== -->
-<section id="products" class="products-section container">
-
-  <h2 class="section-title">MDT Products</h2>
-
-  <p class="section-intro">
-    Explore the suite of technology products from MDT — designed to simplify your workflows, improve productivity, 
-    and deliver secure, intelligent digital experiences.
-  </p>
-
-  <div class="products-grid">
-
-    <article class="product-card">
-      <img src="mdt-remind.png" alt="MDT Remind App">
-      <h3>MDT Remind</h3>
-      <p>
-        A smart reminder and productivity assistant designed to help users organize tasks, schedules, and important events efficiently.
-      </p>
-     <a href="mdt-remind.html" class="btn btn-secondary">Download & Reviews</a>
-    </article>
-
-    <article class="product-card">
-      <img src="products.png" alt="MDT Cybersecurity Platform">
-      <h3>MDT Cybersecurity</h3>
-      <p>
-        Next-generation cybersecurity tools built to protect networks, devices, and digital infrastructure from evolving threats.
-      </p>
-      <span class="coming-soon">Coming Soon</span>
-    </article>
-
-    <article class="product-card">
-      <img src="products.png" alt="MDT Analytics">
-      <h3>MDT Analytics</h3>
-      <p>
-        Business intelligence and analytics tools designed to transform raw data into actionable insights for strategic decision-making.
-      </p>
-      <span class="coming-soon">Coming Soon</span>
-    </article>
-
-  </div>
-
-</section>
-
-
-<!-- Knowledge Hub -->
-<section id="knowledge" class="cybersecurity-section container">
-  <h2 class="section-title">Knowledge Hub</h2>
-  <p class="section-intro">
-    Learn, explore, and stay ahead with MikrodTech — your go-to hub for tech guides, cybersecurity insights, and software tips.
-  </p>
-
-  <div class="knowledge-grid">
-    <article class="cyber-card">
-      <img src="networking-guide.jpg" alt="Networking Guide">
-      <h3>How to Secure Your Wi-Fi</h3>
-      <p>Simple steps to protect your home or office network from cyber threats.</p>
-      <a href="#" class="read-more">Read More →</a>
-    </article>
-
-    <article class="cyber-card">
-      <img src="cyber-tools.jpg" alt="Cybersecurity Tools">
-      <h3>Top Free Tools for Network Analysis</h3>
-      <p>Discover open-source tools that help analyze and secure your network.</p>
-      <a href="#" class="read-more">Read More →</a>
-    </article>
-
-    <article class="cyber-card">
-      <img src="pc-tips.jpg" alt="PC Maintenance Tips">
-      <h3>5 Ways to Speed Up Your PC</h3>
-      <p>Boost performance with simple maintenance and configuration steps.</p>
-      <a href="#" class="read-more">Read More →</a>
-    </article>
-
-    <article class="cyber-card">
-      <img src="phishing.jpeg" alt="Phishing Awareness">
-      <h3>How to Identify Phishing Attacks</h3>
-      <p>Learn common signs attackers use to trick users into giving sensitive data.</p>
-      <a href="#" class="read-more">Read More →</a>
-    </article>
-
-  </div>
-
-  <div class="center-btn">
-    <a href="#" class="btn-secondary explore-btn">Explore All Articles</a>
   </div>
 </section>
 
+<!-- ================= CORE SERVICES (CLICKABLE CARDS) ================= -->
+<section class="services-preview">
+  <div class="container">
 
-<!-- ===== Free Tools & Resources ===== -->
-<section id="tools" class="cybersecurity-section container">
-  <h2 class="section-title">Free Tools & Resources</h2>
-  <p class="section-intro">
-    Explore free, trusted tools and resources by MikrodTech — built to make your tech life easier.
-  </p>
+    <h2 class="section-title">Our Core Services</h2>
 
-  <div class="tools-grid">
-    <article class="cyber-card">
-      <img src="tool-iplookup.png" alt="IP Lookup Tool">
-      <h3>IP Address Lookup</h3>
-      <p>Find your public IP and location details instantly.</p>
-      <a href="#" class="btn btn-secondary tool-btn" data-tool="iplookup">Open Tool</a>
-    </article>
+    <div class="service-grid">
 
-    <article class="cyber-card">
-      <img src="tool-password.png" alt="Password Strength Checker">
-      <h3>Password Strength Checker</h3>
-      <p>Check your password strength, get resilience tips, and generate super secure passwords.</p>
-      <a href="#" class="btn btn-secondary tool-btn" data-tool="password">Try Now</a>
-    </article>
+      <a href="services/software-engineering.html" class="service-card">
+        <h3>Software Engineering</h3>
+        <p>Web apps, systems & custom software development.</p>
+      </a>
 
-    <article class="cyber-card">
-      <img src="tool-ping.png" alt="Ping & Network Test">
-      <h3>Ping & Network Test</h3>
-      <p>Check your connection latency and server response times.</p>
-      <a href="#" class="btn btn-secondary tool-btn" data-tool="ping">Start Test</a>
-    </article>
+      <a href="services/cybersecurity.html" class="service-card">
+        <h3>Cybersecurity</h3>
+        <p>Threat protection, audits & secure infrastructure.</p>
+      </a>
 
-    <article class="cyber-card">
-      <img src="tool-downloads.png" alt="Software Downloads">
-      <h3>Free Software Downloads</h3>
-      <p>Access curated tools for security, networking, and productivity.</p>
-      <a href="#" class="btn btn-secondary tool-btn" data-tool="downloads">View List</a>
-    </article>
+      <a href="services/cloud-devops.html" class="service-card">
+        <h3>Cloud & DevOps</h3>
+        <p>Cloud hosting, CI/CD & automation pipelines.</p>
+      </a>
+
+      <a href="services/data-systems.html" class="service-card">
+        <h3>Data Systems</h3>
+        <p>Analytics, dashboards & business intelligence.</p>
+      </a>
+
+      <a href="services/enterprise-it.html" class="service-card">
+        <h3>Enterprise IT</h3>
+        <p>Infrastructure design & IT consulting.</p>
+      </a>
+
+      <a href="services/" class="service-card highlight">
+        <h3>View All Services →</h3>
+        <p>Explore complete technology solutions</p>
+      </a>
+
+    </div>
+
   </div>
 </section>
 
+<!-- ================= ABOUT ================= -->
+<section class="about-home">
+  <div class="container">
+    <h2 class="section-title">About MikrodTech</h2>
 
-<!-- ===== Cybersecurity Section ===== -->
-<section id="cybersecurity" class="cybersecurity-section container">
-  <h2 class="section-title">MDT Cybersecurity</h2>
-  <p class="section-intro">
-    One of the backbones of MikrodTech — our next-generation cybersecurity solutions will ensure your networks, devices, and data are fully protected. Stay tuned for what's coming!
-  </p>
+    <p>
+      MikrodTech is a technology company specializing in software engineering,
+      cybersecurity, cloud computing, DevOps, and enterprise IT systems in Kenya.
+    </p>
 
-  <div class="cyber-grid">
-    <div class="cyber-card">
-      <div class="cyber-card-inner">
-        <h3>Network Defense</h3>
-        <p>Advanced protection for wired & wireless networks to prevent breaches and ensure uptime.</p>
-        <span class="coming-soon">Coming Soon</span>
-      </div>
-    </div>
+    <a href="../about/about.html" class="btn-about">Learn More About Us</a>
 
-    <div class="cyber-card">
-      <div class="cyber-card-inner">
-        <h3>Endpoint Security</h3>
-        <p>Protect devices against malware, ransomware, and unauthorized access.</p>
-        <span class="coming-soon">Coming Soon</span>
-      </div>
-    </div>
-
-    <div class="cyber-card">
-      <div class="cyber-card-inner">
-        <h3>Cloud Security</h3>
-        <p>Secure cloud applications and storage with MDT’s upcoming advanced monitoring.</p>
-        <span class="coming-soon">Coming Soon</span>
-      </div>
-    </div>
-
-    <div class="cyber-card">
-      <div class="cyber-card-inner">
-        <h3>Threat Intelligence</h3>
-        <p>Real-time threat detection and alerts to proactively defend your organization.</p>
-        <span class="coming-soon">Coming Soon</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="cyber-footer">
-    <p>MDT Cybersecurity is coming soon — stay tuned for exclusive previews and early access!</p>
-    <a href="#contact" class="btn">Notify Me</a>
   </div>
 </section>
 
-
-
-
-</section><section id="testimonials" class="testimonials">
-  <h2 class="section-title">What Our Clients Say</h2>
-
-  <!-- Testimonial slider -->
-  <div class="testimonial-slider">
-    <div class="testimonial-card active">
-      <p class="testimonial-text">
-        “MikrodTech expertly handled our computer installation, networking setup, technology consultations, and CCTV installation with professionalism and efficiency.”
-      </p>
-      <p class="testimonial-author">— Val Mutua, Eastfield Security Services</p>
-    </div>
-
-    <div class="testimonial-card">
-      <p class="testimonial-text">
-        “Their team delivered structured computer planning, organized networking, remote CCTV access, and high-performance Wi-Fi installation seamlessly.”
-      </p>
-      <p class="testimonial-author">— Lyzz Cheryl, Riverbend Academy</p>
-    </div>
-
-    <div class="testimonial-card">
-      <p class="testimonial-text">
-        “From consultation to purchase and installation of Starlink internet, MikrodTech integrated smart devices flawlessly for complete remote control at home.”
-      </p>
-      <p class="testimonial-author">— Bishop Michael Simati</p>
-    </div>
-
-    <div class="testimonial-card">
-      <p class="testimonial-text">
-        “We needed a full network upgrade for our campus. MikrodTech’s team was efficient, knowledgeable, and very reliable.”
-      </p>
-      <p class="testimonial-author">— John Mbugua, Greenwood Academy</p>
-    </div>
-
-    <div class="testimonial-card">
-      <p class="testimonial-text">
-        “Installation of UPS systems and CCTV by MikrodTech went smoothly. Their team explained everything clearly and ensured our systems work perfectly.”
-      </p>
-      <p class="testimonial-author">— Emmanuel Kirt, Wiphan School</p>
-    </div>
-
-    <div class="testimonial-card">
-      <p class="testimonial-text">
-        “MikrodTech supplied and configured our computers and networking gear for the new office. Everything was delivered on time and works flawlessly.”
-      </p>
-      <p class="testimonial-author">— Marygorety Achieng, Hillcrest Learning Center</p>
-    </div>
-
-    <div class="testimonial-card">
-      <p class="testimonial-text">
-        “They helped set up our home office with high-speed Wi-Fi, smart devices, and proper networking. Very professional and patient throughout.”
-      </p>
-      <p class="testimonial-author">— Isaac Juma, Private Residence</p>
-    </div>
-
-    <div class="testimonial-card">
-      <p class="testimonial-text">
-        “MikrodTech’s installation of POS systems and printers was smooth and well-organized. Support has been excellent ever since.”
-      </p>
-      <p class="testimonial-author">— Leroy James , Sunrise Learning Hub</p>
-    </div>
+<!-- ================= TRUST ================= -->
+<section class="trust-strip">
+  <div class="container">
+    <p>Trusted by businesses, schools, and professionals across Kenya.</p>
   </div>
-
-  <!-- Dot indicators -->
-  <div class="testimonial-dots">
-    <span class="dot active" data-index="0"></span>
-    <span class="dot" data-index="1"></span>
-    <span class="dot" data-index="2"></span>
-    <span class="dot" data-index="3"></span>
-    <span class="dot" data-index="4"></span>
-    <span class="dot" data-index="5"></span>
-    <span class="dot" data-index="6"></span>
-    <span class="dot" data-index="7"></span>
-  </div>
-
-    <!-- Slider controls -->
-  <div class="testimonial-controls">
-    <button id="prevTestimonial" aria-label="Previous testimonial">❮</button>
-    <button id="nextTestimonial" aria-label="Next testimonial">❯</button>
-  </div>
-
 </section>
 
+<!-- ================= CTA ================= -->
+<section class="contact-cta">
+  <div class="container">
+    <h2>Need a Custom Solution?</h2>
+    <p>Talk to MikrodTech for professional software and IT services.</p>
 
-<!-- Contact -->
-<section id="contact" class="contact container">
-  <h2 class="section-title">Contact Us</h2>
-
-  <p class="contact-intro">
-    The fastest way to get started is by phone. Call us now or request a callback.
-  </p>
-
-  <!-- Call to Action -->
-  <div class="contact-actions">
-    <a href="tel:0769329029" class="btn btn-primary">Call Us Now</a>
-    <button id="callbackBtn" class="btn btn-secondary">📲 Request a Callback</button>
+    <div class="cta-buttons">
+      <a href="tel:0769329029" class="btn btn-primary">Call Now</a>
+      <a href="contact/contact.html" class="btn btn-secondary">Contact Us</a>
+    </div>
   </div>
-
-<!-- Request a Callback Form (hidden by default) -->
-<div id="callbackForm" class="callback-form hidden">
-  <form id="requestCallback" method="POST" novalidate>
-    <!-- Hidden fields for FormSubmit -->
-    <input type="hidden" name="_subject" value="New Callback Request from MikrodTech Website">
-    <input type="hidden" name="_captcha" value="false">
-
-    <div class="form-row">
-      <div>
-        <input id="callback-firstname" name="firstname" type="text" placeholder="First name" required>
-        <span class="error hidden" id="fnameError">⚠️ First name is required</span>
-      </div>
-      <div>
-        <input id="callback-surname" name="surname" type="text" placeholder="Surname" required>
-        <span class="error hidden" id="snameError">⚠️ Surname is required</span>
-      </div>
-    </div>
-
-    <div>
-      <input id="callback-altphone" name="altphone" type="tel" placeholder="Phone number">
-      <span class="error hidden" id="altPhoneError">⚠️ Enter a valid phone number</span>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Request Callback</button>
-  </form>
-
-  <!-- Success / error message -->
-  <p id="callbackMessage" class="hidden"></p>
-</div>
-
 </section>
 
-<p class="contact-email">Prefer email for follow-ups?</p>
-
-<div class="contact-container">
-<form name="contact" method="POST" action="https://formsubmit.co/info@mikrodtech.co.ke" class="contact-form">
-  <input type="hidden" name="_subject" value="New Contact Form Submission from Website">
-  <input type="hidden" name="_captcha" value="false">
-
-  <label for="name">Name</label>
-  <input id="name" name="name" type="text" placeholder="Your name" />
-  <span class="input-error-message hidden" id="nameError">⚠️ Name is required</span>
-
-  <label for="email">Email</label>
-  <input id="email" name="email" type="email" placeholder="you@example.com" />
-  <span class="input-error-message hidden" id="emailError"> Enter a valid email</span>
-
-  <label for="message">Message</label>
-  <textarea id="message" name="message" rows="5" placeholder="Tell us about your project"></textarea>
-  <span class="input-error-message hidden" id="messageError"> Message is required</span>
-
-  <button type="submit" class="btn btn-secondary">Send Message</button>
-
-  <p id="contactMessage" class="contact-feedback hidden"></p>
-</form>
-
-</section>
-
-
-<!-- Footer -->
+<!-- ================= FOOTER ================= -->
 <footer class="site-footer">
 
   <div class="footer-inner">
 
-    <!-- Quick Links -->
+    <!-- Company -->
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#products">MDT Products</a></li>
-        <li><a href="#knowledge">Knowledge Hub</a></li>
-        <li><a href="#cybersecurity">Cybersecurity</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="../about/about.html">About Us</a></li>
+        <li><a href="../services/">Services</a></li>
+        <li><a href="../products/">MDT Products</a></li>
+        <li><a href="../cybersecurity/">Cybersecurity</a></li>
+        <li><a href="../contact/contact.html">Contact</a></li>
       </ul>
     </div>
 
@@ -646,13 +275,12 @@
       </ul>
     </div>
 
-    <!-- FAQs / Support -->
+    <!-- Support -->
     <div class="footer-col">
       <h4>Support</h4>
       <ul>
-        <li><a href="#contact">Request a Callback</a></li>
-        <li><a href="#tools">Free Tools</a></li>
-        <li><a href="#knowledge">Tech Guides</a></li>
+        <li><a href="../contact/contact.html">Request a Callback</a></li>
+        <li><a href="../tools/">Free Tools</a></li>
         <li><a href="mailto:support@mikrodtech.co.ke">Get Support</a></li>
       </ul>
     </div>
@@ -660,58 +288,76 @@
     <!-- Social -->
     <div class="footer-col">
       <h4>Follow Us</h4>
+
       <div class="footer-social-icons">
-        <a href="https://www.linkedin.com/company/mikrodtech" target="_blank"><img src="linkedin.png" alt="LinkedIn" /></a>
-        <a href="https://www.instagram.com/mikrodtech" target="_blank"><img src="instagram.png" alt="Instagram" /></a>
-        <a href="https://www.facebook.com/mikrodtech" target="_blank"><img src="facebook.png" alt="Facebook" /></a>
-        <a href="https://www.tiktok.com/@mikrodtech" target="_blank"><img src="tiktok.png" alt="TikTok" /></a>
-        <a href="https://www.x.com/mikrodtech" target="_blank"><img src="x.png" alt="X" /></a>
-        <a href="https://www.youtube.com/@mikrodtech" target="_blank"><img src="youtube.png" alt="YouTube" /></a>
+
+        <a href="https://www.linkedin.com/company/mikrodtech" target="_blank" rel="noopener noreferrer">
+          <img src="linkedin.png" alt="LinkedIn">
+        </a>
+
+        <a href="https://www.instagram.com/mikrodtech" target="_blank" rel="noopener noreferrer">
+          <img src="instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://www.tiktok.com/@mikrodtech" target="_blank" rel="noopener noreferrer">
+          <img src="tiktok.png" alt="TikTok">
+        </a>
+
+        <a href="https://www.x.com/mikrodtech" target="_blank" rel="noopener noreferrer">
+          <img src="x.png" alt="X">
+        </a>
+
+        <a href="https://www.youtube.com/@mikrodtech" target="_blank" rel="noopener noreferrer">
+          <img src="youtube.png" alt="YouTube">
+        </a>
+
       </div>
     </div>
 
   </div>
 
-  <!-- Bottom Bar -->
+  <!-- Bottom -->
   <div class="footer-bottom">
-    <p>© <span id="year"></span> <span class="footer-accent">MikrodTech</span>. All rights reserved.</p>
+    <p>
+      © <span id="year"></span>
+      <span class="footer-accent">MikrodTech</span>.
+      All rights reserved.
+    </p>
   </div>
 
 </footer>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 
-
-<!-- Chatbot Section -->
+<!-- ================= CHATBOT ================= -->
 <div id="chatbot-container">
-  
 
-  <div id="chatbot-box" class="chatbot-box">
-    <div class="chatbot-header">
-      <h4>MikrodTech Assistant</h4>
-      <button id="close-chat" class="close-btn">&times;</button>
-    </div>
-    <div class="chatbot-messages" id="chatbot-messages">
-       <div id="chatbot-messages-inner">
-      <div class="message bot">Hello, how can I assist you today?</div>
-       </div>
-    </div>
+<div id="chatbot-box" class="chatbot-box">
+
+<div class="chatbot-header">
+<h4>MikrodTech Assistant</h4>
+<button id="close-chat" class="close-btn">&times;</button>
+</div>
+
+<div class="chatbot-messages" id="chatbot-messages">
+<div id="chatbot-messages-inner">
+<div class="message bot">Hello, how can I assist you today?</div>
+</div>
+</div>
+
 <div class="chatbot-input">
-  <textarea id="user-input" placeholder="Type your message..."></textarea>
-  <button id="send-btn" type="button">➤</button>
+<textarea id="user-input" placeholder="Type your message..."></textarea>
+<button id="send-btn" type="button">➤</button>
 </div>
 
-  </div>
+</div>
 </div>
 
-<!-- Chatbot Script -->
 <script src="chatbot.js" defer></script>
- 
+<script src="app.js"></script>
 
-  <script src="app.js"></script>
- 
 </body>
 </html>

@@ -1,0 +1,1441 @@
+
+/* ===== Free Tools & Resources Section ===== */
+.nav-list a.active{
+  color:#0072ce;
+  font-weight:700;
+}
+
+
+/* ================= HERO ================= */
+/* TOOLS PAGE - CLEAN + REDUCED */
+.hero{
+  background:
+  radial-gradient(circle at top right, rgba(0,114,206,.25), transparent 30%),
+  linear-gradient(135deg, #000000 0%, #050505 45%, #0072ce 100%);
+  
+  color:#fff;
+  text-align:center;
+  padding:100px 20px 80px;
+}
+
+.hero h1{
+  font-size:clamp(2rem,5vw,3.5rem);
+  font-weight:400;
+  line-height:1.15;
+  margin-bottom:16px;
+  color:#ffffff;
+}
+
+.hero .tagline{
+  font-size:.85rem;
+  font-weight:500;
+  letter-spacing:3px;
+  margin-bottom:14px;
+  color:#dbeafe;
+  text-transform:uppercase;
+}
+
+.hero .lead{
+  max-width:760px;
+  margin:auto;
+  font-size:1.3rem;
+  line-height:1.7;
+  color:#f3f4f6;
+}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero{
+    padding:90px 20px 70px;
+  }
+}
+
+@media (max-width:640px){
+  .hero .tagline{
+    letter-spacing:1px;
+  }
+
+  .hero .lead{
+    font-size:1rem;
+  }
+}
+
+
+.tools {
+  padding: 60px 20px;
+  background: #fff; /* White background */
+  color: #333;
+  text-align: center;
+}
+
+.tools .section-title {
+  color: #101010;
+  font-weight: 450;
+}
+
+.tools .section-intro {
+  color: #262626;
+  max-width: 650px;
+  margin: 10px auto 30px;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+
+.tools .btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.tools .btn:hover {
+  background-color: #0056b3;
+}
+
+
+.tool-card {
+  background: #f8f9fa; /* Light gray card background */
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tool-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.tool-card h3 {
+  color: #045dbb;
+  margin-top: 15px;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.tool-card p {
+  color: #333232;
+  font-size: 1.3rem;
+  margin: 10px 0 20px;
+  line-height: 1.5;
+}
+
+
+/* ====== Base Layout ====== */
+.speedtest-container {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  max-width: 600px;
+  margin: 2rem auto 2rem;
+  background: linear-gradient(135deg, rgba(0,119,255,0.05), rgba(0,209,255,0.08));
+  border: 1px solid rgba(0,119,255,0.2);
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(0,119,255,0.1);
+  backdrop-filter: blur(10px);
+  margin-bottom: -3rem;
+}
+
+
+/* ====== Start Button ====== */
+.speedtest-btn {
+  background: linear-gradient(90deg, #0077ff, #00d1ff);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 25px rgba(0,119,255,0.3);
+}
+
+.speedtest-btn:hover {
+  background: linear-gradient(90deg, #00d1ff, #0077ff);
+  box-shadow: 0 0 40px rgba(0,119,255,0.5);
+  transform: translateY(-3px);
+}
+
+/* ====== Loader ====== */
+.loader {
+  width: 45px;
+  height: 45px;
+  border: 4px solid rgba(0,119,255,0.2);
+  border-top-color: #0077ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 1.5rem auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* ====== Speedtest Hint Popup ====== */
+.speedtest-hint {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #0077ff, #00d1ff);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,119,255,0.3);
+  z-index: 9999;
+  display: none;
+  max-width: 260px;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.speedtest-hint p {
+  margin: 0 0 0.7rem;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.speedtest-hint button {
+  background: #fff;
+  color: #0077ff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.speedtest-hint button:hover {
+  background: #f0f8ff;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+/* Animation */
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* ====== Speed Display ====== */
+.speed-display {
+  background: linear-gradient(135deg, rgba(0,119,255,0.12), rgba(0,209,255,0.15));
+  border: 1px solid rgba(0,119,255,0.25);
+  border-radius: 24px;
+  padding: 2.5rem 1rem;
+  margin-bottom: 2rem;
+  box-shadow: inset 0 0 20px rgba(0,119,255,0.15);
+}
+
+.speed-heading {
+  font-size: 1.3rem;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.speed-value {
+  font-size: 3.7rem;
+  font-weight: 500;
+  color: #0077ff;
+  text-shadow: 0 0 20px rgba(0,119,255,0.4);
+}
+
+/* ====== Details Section ====== */
+.speed-details {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.unit {
+  font-size: 1.3rem;
+  color: #6b7280;
+}
+
+
+
+.detail {
+  background: rgba(0,119,255,0.06);
+  border: 1px solid rgba(0,119,255,0.15);
+  border-radius: 18px;
+  padding: 1rem 1.5rem;
+  min-width: 160px;
+  transition: all 0.3s ease;
+}
+
+.detail:hover {
+  border-color: rgba(0,119,255,0.4);
+  background: rgba(0,119,255,0.1);
+  transform: translateY(-4px);
+}
+
+.detail h3 {
+  color: #0077ff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.detail p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+
+
+#speedtest-hint {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.4s ease;
+  z-index: 9999;
+  max-width: 300px;
+}
+
+/* Fade-in animation when visible */
+#speedtest-hint.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+#speedtest-hint {
+  transform: translateY(20px);
+}
+
+#speedtest-hint.show {
+  transform: translateY(0);    
+}
+
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#pwInput, #pwName {
+  font-size: 1.3rem; 
+}
+
+
+/* Optional input default */
+.pw-optional-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 1.3rem; 
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+
+
+/* Password input default */
+.pw-input {
+  width: 100%;
+  padding: 10px 50px 10px 10px;
+  font-size: 1.3rem; 
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.install-btn {
+  background-color: var(--primary-color, #0078ff);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: background 0.3s ease;
+}
+
+.install-btn:hover {
+  background-color: #005fcc;
+}
+
+.main-content {
+  flex: 1; /* takes all available space */
+}
+
+/* ===============================
+   TOOL MODAL POPUP
+================================= */
+
+.tool-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.72);
+  z-index:99999;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  animation: fadeModal .25s ease;
+}
+
+.tool-modal-content{
+  width:100%;
+  max-width:620px;
+  max-height:90vh;
+  overflow-y:auto;
+  background:#ffffff;
+  border-radius:18px;
+  padding:28px;
+  position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,.22);
+  animation: popModal .28s ease;
+}
+
+.tool-modal-content h2{
+  margin:0 0 18px;
+  font-size:1.5rem;
+  color:#004aad;
+  font-weight:600;
+}
+
+#modalBody{
+  color:#222;
+  line-height:1.6;
+}
+
+.tool-close{
+  position:absolute;
+  top:10px;
+  right:14px;
+  border:none;
+  background:none;
+  font-size:2rem;
+  color:#555;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.tool-close:hover{
+  color:#0078ff;
+  transform:scale(1.08);
+}
+
+/* nice scrollbar */
+.tool-modal-content::-webkit-scrollbar{
+  width:8px;
+}
+
+.tool-modal-content::-webkit-scrollbar-thumb{
+  background:#d5d5d5;
+  border-radius:10px;
+}
+
+/* animations */
+@keyframes fadeModal{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+@keyframes popModal{
+  from{
+    transform:translateY(18px) scale(.96);
+    opacity:0;
+  }
+  to{
+    transform:translateY(0) scale(1);
+    opacity:1;
+  }
+}
+
+/* mobile */
+@media (max-width:768px){
+
+  .tool-modal{
+    padding:12px;
+    align-items:flex-end;
+  }
+
+  .tool-modal-content{
+    max-width:100%;
+    max-height:92vh;
+    border-radius:20px 20px 0 0;
+    padding:22px;
+  }
+
+  .tool-modal-content h2{
+    font-size:1.3rem;
+  }
+
+  .tool-close{
+    font-size:1.8rem;
+  }
+
+}
+
+/* ===== TOOL DISPLAY SECTION ===== */
+.tool-display{
+  display:none;
+  padding:80px 20px;
+  background:
+    radial-gradient(circle at top left, rgba(0,114,206,.08), transparent 40%),
+    #f8fafc;
+}
+
+/* ===== WRAPPER ===== */
+.tool-wrapper{
+  max-width:900px;
+  margin:auto;
+  animation: fadeUpPremium .6s ease;
+}
+
+/* ===== HEADER ===== */
+.tool-header{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:25px;
+}
+
+.tool-header h2{
+  font-size:1.8rem;
+  font-weight:600;
+  color:#0f172a;
+  margin:0;
+}
+
+.tool-subtitle{
+  font-size:1.3rem;
+  color:#64748b;
+}
+
+/* Icon bubble */
+.tool-icon{
+  width:55px;
+  height:55px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.4rem;
+  border-radius:14px;
+  background:linear-gradient(135deg,#0077ff,#00d1ff);
+  color:#fff;
+  box-shadow:0 8px 20px rgba(0,119,255,.3);
+}
+
+/* ===== MAIN PANEL ===== */
+.tool-panel{
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,0.4);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* ===== CONTENT INSIDE TOOL ===== */
+.tool-panel p{
+  font-size:1.3rem;
+  color:#1e293b;
+}
+
+.tool-panel strong{
+  color:#004aad;
+}
+
+/* ===== SMOOTH ENTRY ===== */
+@keyframes fadeUpPremium{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.tool-btn{
+  position:relative;
+  overflow:hidden;
+}
+
+.tool-btn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
+  transform:translateX(-100%);
+  transition:.6s;
+}
+
+.tool-btn:hover::after{
+  transform:translateX(100%);
+}
+
+.tools-wrapper{
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #f8fafc, #eef2f7);
+}
+
+.section-subtitle{
+  text-align:center;
+  max-width:700px;
+  margin:10px auto 50px;
+  color:#000000;
+  font-size:1.3rem;
+}
+
+.tool-category{
+  margin-bottom:60px;
+}
+
+.category-title{
+  font-size:1.8rem;
+  margin-bottom:20px;
+  color:#111827;
+  font-weight:500;
+}
+
+/* GRID */
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+
+/* PREMIUM CARD */
+.tool-card.premium{
+  position:relative;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  border-radius:20px;
+  padding:25px;
+  border:1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: all 0.35s ease;
+  overflow:hidden;
+}
+
+/* glow border */
+.tool-card.premium::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  padding:1px;
+  background:linear-gradient(120deg, #0077ff, #00d1ff);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* hover */
+.tool-card.premium:hover{
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 50px rgba(0,119,255,0.15);
+}
+
+/* ICON */
+.tool-icon{
+  font-size:2rem;
+  margin-bottom:10px;
+}
+
+/* TEXT */
+.tool-card h3{
+  font-size:1.3rem;
+  margin-bottom:8px;
+  color:#0f172a;
+}
+
+.tool-card p{
+  font-size:1.3rem;
+  color:#6b7280;
+  margin-bottom:18px;
+}
+
+/* BUTTON */
+.tool-card .tool-btn{
+  border:none;
+  background: linear-gradient(90deg,#0077ff,#00d1ff);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:50px;
+  font-size:1.1rem;
+  font-weight: 400;
+  cursor:pointer;
+  transition: all 0.3s ease;
+}
+
+.tool-card .tool-btn:hover{
+  transform:translateX(4px);
+  box-shadow:0 0 20px rgba(0,119,255,0.4);
+}
+
+.tool-inline {
+  margin-top: 15px;
+  display: none;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f5f7fb;
+  border: 1px solid #e0e6f0;
+  animation: fadeIn 0.3s ease;
+}
+
+.tool-inline.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#genPwBtn,
+#usePwBtn,
+#togglePw {
+  cursor: pointer !important;
+}
+
+
+/* Hover effect */
+.copy-pw-btn:hover {
+  background: linear-gradient(135deg, #0077ff, #00d1ff);
+  color: #fff;
+
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 0 18px rgba(0,119,255,0.35);
+}
+
+/* Active/click feedback */
+.copy-pw-btn:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+/* Visible state animation (optional enhancement) */
+.copy-pw-btn.show {
+  display: inline-block;
+  animation: fadePop 0.25s ease;
+}
+
+@keyframes fadePop {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+/* Container */
+.pw-generator {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Input */
+.pw-optional-input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1.3rem;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pw-optional-input:focus {
+  border-color: #0078ff;
+  box-shadow: 0 0 0 2px rgba(0, 120, 255, 0.15);
+}
+
+/* Button */
+.pw-generate-btn {
+  width: 100%;
+  padding: 10px;
+  background: #0078ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: background 0.25s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.pw-generate-btn:hover {
+  background: #0062cc;
+}
+
+.pw-generate-btn:active {
+  transform: scale(0.98);
+}
+
+/* Optional success feedback */
+.pw-generate-btn.generated {
+  background: #00b37e;
+  box-shadow: 0 0 10px rgba(0, 179, 126, 0.4);
+}
+#genPwBtn {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 9999;
+  cursor: pointer;
+}
+.pw-name-input {
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 1.3rem;
+}
+
+.pw-name-input:focus {
+  border-color: #004aad;
+  box-shadow: 0 0 5px rgba(0, 74, 173, 0.3);
+}
+.pw-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* container for password + buttons */
+.pw-field {
+  position: relative;
+  width: 100%;
+}
+
+/* input takes full width */
+.pw-field .pw-input {
+  width: 100%;
+  padding-right: 120px; /* 🔥 space for buttons */
+}
+
+
+.pw-field {
+  position: relative;
+}
+
+/* give enough room for BOTH buttons */
+.pw-input {
+  width: 100%;
+  padding-right: 140px; /* 🔥 IMPORTANT */
+}
+
+/* keep buttons together */
+.pw-actions {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+/* default state: copy hidden but space preserved */
+.copy-pw-btn {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+}
+
+/* when active */
+.copy-pw-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pw-input {
+  width: 100%;
+  padding-right: 160px; /* 🔥 increase this */
+}
+
+.pw-actions {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  display: flex;
+  flex-direction: row; /* ✅ force horizontal */
+  align-items: center;
+  gap: 8px;
+
+  z-index: 2; /* stay above input */
+}
+
+.pw-actions {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  display: flex;
+  flex-direction: row; /* ✅ force horizontal */
+  align-items: center;
+  gap: 8px;
+
+  z-index: 2; /* stay above input */
+}
+
+.copy-pw-btn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.copy-pw-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pw-field {
+  position: relative;
+  width: 100%;
+}
+
+/* input */
+.pw-input {
+  width: 100%;
+  padding-right: 150px; /* space for buttons */
+}
+
+/* button container */
+.pw-actions {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  z-index: 2;
+}
+
+/* buttons RESET (no absolute here) */
+.pw-toggle,
+.copy-pw-btn {
+  position: static; /* 🔥 VERY IMPORTANT */
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* copy hidden but space kept */
+.copy-pw-btn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+/* when visible */
+.copy-pw-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 🔷 MikrodTech button base style */
+.pw-toggle,
+.copy-pw-btn {
+  background: linear-gradient(135deg, rgba(0,119,255,0.12), rgba(0,209,255,0.12));
+  color: #0077ff;
+
+  border: 1px solid rgba(0,119,255,0.25);
+  border-radius: 999px;
+
+  padding: 6px 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+
+  backdrop-filter: blur(10px);
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  box-shadow: 0 4px 12px rgba(0,119,255,0.12);
+}
+
+.pw-toggle:hover,
+.copy-pw-btn:hover {
+  background: linear-gradient(135deg, #0077ff, #00d1ff);
+  color: #fff;
+
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(0,119,255,0.35);
+}
+
+.pw-toggle:active,
+.copy-pw-btn:active {
+  transform: scale(0.96);
+}
+
+.pw-name-input {
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
+}
+
+.pw-actions {
+  pointer-events: auto;
+  z-index: 2;
+}
+
+/* =========================
+   PASSWORD TOOL STYLES
+========================= */
+
+.btn-primary {
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px;
+  background: #0078ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.btn-success {
+  display: none;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #00b37e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.strength-bar-container {
+  width: 100%;
+  height: 10px;
+  background: #eee;
+  border-radius: 6px;
+  margin-top: 12px;
+}
+
+.strength-bar {
+  height: 100%;
+  width: 0%;
+  background: #f44336;
+  border-radius: 6px;
+  transition: width 0.3s, background 0.3s;
+}
+
+.pw-meta {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.pw-suggestions {
+  margin-top: 8px;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.tool-divider {
+  margin: 20px 0;
+}
+
+.resilience-tips {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.resilience-tips h3 {
+  margin-bottom: 8px;
+  color: #004aad;
+}
+
+.resilience-tips ul {
+  margin-left: 18px;
+  list-style: disc;
+}
+
+.resilience-tips li span {
+  color: black;
+  font-weight: 500;
+}
+
+.tool-btn[data-tool="password"] {
+  background: #004aad;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+/* stronger hover for the only active tool */
+.tool-btn[data-tool="password"]:hover {
+  background: #002f6c;
+  box-shadow: 0 8px 20px rgba(0, 74, 173, 0.5);
+  transform: scale(1.03);
+}
+
+/* =========================
+   NAV ACTIVE STATE
+========================= */
+.nav-list a.active{
+  color:#0072ce;
+  font-weight:700;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero{
+  background:
+    radial-gradient(circle at top right, rgba(0,114,206,.25), transparent 30%),
+    linear-gradient(135deg, #000000 0%, #050505 45%, #0072ce 100%);
+  color:#fff;
+  text-align:center;
+  padding:100px 20px 80px;
+}
+
+.hero h1{
+  font-size:clamp(2rem,5vw,3.5rem);
+  font-weight:400;
+  line-height:1.15;
+  margin-bottom:16px;
+}
+
+.hero .tagline{
+  font-size:.85rem;
+  font-weight:500;
+  letter-spacing:3px;
+  margin-bottom:14px;
+  color:#dbeafe;
+  text-transform:uppercase;
+}
+
+.hero .lead{
+  max-width:760px;
+  margin:auto;
+  font-size:1.3rem;
+  line-height:1.7;
+  color:#f3f4f6;
+}
+
+/* =========================
+   TOOLS SECTION
+========================= */
+.tools{
+  padding:60px 20px;
+  background:#fff;
+  text-align:center;
+}
+
+.tools .section-title{
+  color:#101010;
+  font-weight:500;
+}
+
+.tools .section-intro{
+  max-width:650px;
+  margin:10px auto 30px;
+  font-size:1.4rem;
+  line-height:1.6;
+}
+
+/* GRID */
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+/* TOOL CARD */
+.tool-card{
+  background:#f8f9fa;
+  border-radius:12px;
+  padding:25px;
+  box-shadow:0 3px 10px rgba(0,0,0,.06);
+  transition:.3s ease;
+}
+
+.tool-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 6px 20px rgba(0,0,0,.1);
+}
+
+.tool-card img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+.tool-card h3{
+  color:#045dbb;
+  margin-top:15px;
+  font-size:1.3rem;
+}
+
+.tool-card p{
+  font-size:1.3rem;
+  margin:10px 0 20px;
+  line-height:1.5;
+}
+
+/* BUTTON */
+.tools .btn{
+  background:#007bff;
+  color:#fff;
+  border:none;
+  padding:8px 18px;
+  border-radius:6px;
+  transition:.3s ease;
+}
+
+.tools .btn:hover{
+  background:#0056b3;
+}
+
+/* =========================
+   SPEED TEST
+========================= */
+.speedtest-container{
+  max-width:600px;
+  margin:2rem auto;
+  padding:3rem 1.5rem;
+  border-radius:28px;
+  background:linear-gradient(135deg, rgba(0,119,255,0.05), rgba(0,209,255,0.08));
+  border:1px solid rgba(0,119,255,0.2);
+}
+
+.speedtest-btn{
+  background:linear-gradient(90deg,#0077ff,#00d1ff);
+  color:#fff;
+  border:none;
+  padding:1rem 3rem;
+  border-radius:50px;
+  font-size:1.2rem;
+}
+
+/* =========================
+   SPEED DISPLAY
+========================= */
+.speed-display{
+  padding:2.5rem 1rem;
+  border-radius:24px;
+  background:rgba(0,119,255,0.12);
+}
+
+.speed-value{
+  font-size:3.7rem;
+  color:#0077ff;
+}
+
+/* =========================
+   DETAILS
+========================= */
+.speed-details{
+  display:flex;
+  gap:2rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.detail{
+  padding:1rem 1.5rem;
+  border-radius:18px;
+  background:rgba(0,119,255,0.06);
+}
+
+/* =========================
+   HINT POPUP (FIXED DUPLICATES)
+========================= */
+#speedtest-hint{
+  position:fixed;
+  bottom:40px;
+  right:40px;
+  background:#007bff;
+  color:#fff;
+  padding:15px 25px;
+  border-radius:8px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:.4s ease;
+  z-index:9999;
+}
+
+#speedtest-hint.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* =========================
+   TOOL MODAL
+========================= */
+.tool-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.72);
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+}
+
+.tool-modal-content{
+  max-width:620px;
+  width:100%;
+  max-height:90vh;
+  overflow:auto;
+  background:#fff;
+  border-radius:18px;
+  padding:28px;
+}
+
+/* =========================
+   TOOL DISPLAY
+========================= */
+.tool-display{
+  display:none;
+  padding:80px 20px;
+  background:#f8fafc;
+}
+
+/* =========================
+   TOOL CARD PREMIUM
+========================= */
+.tool-card.premium{
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(12px);
+  border-radius:20px;
+  padding:25px;
+  transition:.35s ease;
+}
+
+.tool-card.premium:hover{
+  transform:translateY(-8px);
+}
+
+/* =========================
+   PASSWORD TOOL (FIXED - REMOVED DUPLICATES)
+========================= */
+
+.pw-field{
+  position:relative;
+  width:100%;
+}
+
+.pw-input{
+  width:100%;
+  padding-right:160px;
+  font-size:1.3rem;
+}
+
+.pw-actions{
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  display:flex;
+  gap:8px;
+}
+
+.pw-toggle,
+.copy-pw-btn{
+  background:rgba(0,119,255,0.12);
+  color:#0077ff;
+  border:1px solid rgba(0,119,255,0.25);
+  border-radius:999px;
+  padding:6px 12px;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+.copy-pw-btn{
+  opacity:0;
+  pointer-events:none;
+}
+
+.copy-pw-btn.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* hover */
+.pw-toggle:hover,
+.copy-pw-btn:hover{
+  background:#0077ff;
+  color:#fff;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}

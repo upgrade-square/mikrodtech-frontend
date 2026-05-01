@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Free IT Tools Kenya | Speed Test, IP Lookup & Cyber Tools | MikrodTech</title>
+
+<!-- SEO -->
+<meta name="description" content="Use free online IT tools by MikrodTech including internet speed test, IP address lookup, password strength checker, ping test and networking utilities in Kenya.">
+<meta name="keywords" content="free IT tools Kenya, speed test Kenya, IP lookup tool, password checker, ping test, MikrodTech tools, networking tools Kenya, cybersecurity tools">
+<meta name="author" content="MikrodTech">
+<link rel="canonical" href="https://mikrodtech.co.ke/tools/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free IT Tools Kenya | MikrodTech">
+<meta property="og:description" content="Test internet speed, check IP address, analyze passwords and use free networking tools by MikrodTech.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mikrodtech.co.ke/tools/">
+<meta property="og:image" content="https://mikrodtech.co.ke/logo.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free IT Tools Kenya | MikrodTech">
+<meta name="twitter:description" content="Free networking and cybersecurity tools including speed test, IP lookup and more.">
+<meta name="twitter:image" content="https://mikrodtech.co.ke/logo.png">
+
+<!-- Favicon -->
+<link rel="icon" href="../favicon.ico">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="tools.css">
+<link rel="stylesheet" href="../css/chatbot.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+<div class="container nav-wrap">
+
+<a class="brand" href="../index.html">
+<img id="logo" src="../logo.png" alt="MikrodTech Logo">
+</a>
+
+<!-- Mobile Menu -->
+<button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+<span class="hamburger"></span>
+</button>
+
+<!-- Navigation -->
+<nav class="main-nav">
+  <ul class="nav-list">
+
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../about/about.html">About</a></li>
+    <li><a href="../services/">Services</a></li>
+    <li><a href="../products/">MDT Products</a></li>
+    <li><a href="../tools/" class="active">Free Tools</a></li>
+    <li><a href="../cybersecurity/">Cybersecurity</a></li>
+    <li><a href="../contact/contact.html">Contact</a></li>
+    <li><a href="#" id="openChatbotMenu">Chatbot</a></li>
+
+  </ul>
+</nav>
+
+</div>
+</header>
+
+<!-- ================= CHAT BUTTON ================= -->
+<button id="chatbot-btn" class="chatbot-btn" aria-label="Open Chat">💬</button>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+<div class="container">
+
+<h1>Free IT Tools & Cybersecurity Utilities</h1>
+
+<p class="tagline">Built by MikrodTech</p>
+
+<p class="lead">
+Access powerful free tools for internet testing, networking, cybersecurity analysis, and productivity.
+</p>
+
+</div>
+</section>
+
+<!-- ================= SPEED TEST ================= -->
+<section id="speedtest" class="speedtest-container">
+
+<h2 class="section-title">Internet Speed Test</h2>
+
+<div class="speed-display">
+<p class="speed-heading">Your Internet Speed Is</p>
+
+<div id="loader" class="loader" style="display:none;"></div>
+
+<p id="download-speed" class="speed-value">--</p>
+<p class="unit">Mbps</p>
+</div>
+
+<div class="speed-details">
+
+<div class="detail">
+<h3>Upload Speed</h3>
+<p><span id="upload-speed">--</span> Mbps</p>
+</div>
+
+<div class="detail">
+<h3>Ping</h3>
+<p><span id="ping-speed">--</span> ms</p>
+</div>
+
+</div>
+
+<button id="start-speedtest" class="speedtest-btn">Start Test</button>
+
+</section>
+
+<section class="tools-wrapper">
+
+<div class="container">
+
+<h2 class="section-title">Cybersecurity & Networking Tools</h2>
+<p class="section-subtitle">Professional-grade utilities built for performance and security</p>
+
+<!-- CATEGORY 1 -->
+<div class="tool-category">
+<h3 class="category-title">🌐 Network Tools</h3>
+
+<div class="tools-grid">
+
+<!-- IP TOOL -->
+<article class="tool-card premium">
+  <div class="tool-icon">🌍</div>
+  <h3>IP Address Lookup</h3>
+  <p>Detect your public IP, ISP, and approximate geolocation instantly.</p>
+
+  <button class="tool-btn" data-tool="iplookup" disabled>Coming Soon </button>
+
+  <!-- INLINE DISPLAY -->
+  <div class="tool-inline" id="tool-iplookup"></div>
+</article>
+
+<!-- PING TOOL -->
+<article class="tool-card premium">
+  <div class="tool-icon">📡</div>
+  <h3>Ping & Latency Test</h3>
+  <p>Measure server response time and diagnose network delays.</p>
+
+ <button class="tool-btn" disabled>Coming Soon</button>
+
+  <div class="tool-inline" id="tool-ping"></div>
+</article>
+
+</div>
+</div>
+
+<!-- CATEGORY 2 -->
+<div class="tool-category">
+<h3 class="category-title">🔐 Security Tools</h3>
+
+<div class="tools-grid">
+
+<!-- PASSWORD TOOL -->
+<article class="tool-card premium">
+  <div class="tool-icon">🔑</div>
+  <h3>Password Strength Checker & Generator</h3>
+  <p>Analyze password entropy and generate ultra-secure credentials.</p>
+
+  <button class="tool-btn" data-tool="password">Check Now</button>
+
+    <!-- INLINE DISPLAY AREA -->
+  <div id="tool-password" class="tool-inline"></div>
+</article>
+
+</div>
+</div>
+
+<!-- CATEGORY 3 -->
+<div class="tool-category">
+<h3 class="category-title">📦 Resources</h3>
+
+<div class="tools-grid">
+
+<!-- DOWNLOADS TOOL -->
+<article class="tool-card premium">
+  <div class="tool-icon">⬇️</div>
+  <h3>Software Downloads</h3>
+  <p>Curated cybersecurity and productivity tools for professionals.</p>
+
+  <button class="tool-btn" disabled>Coming Soon</button>
+
+  <div class="tool-inline" id="tool-downloads"></div>
+</article>
+
+</div>
+</div>
+
+</div>
+</section>
+<!-- ================= CHATBOT ================= -->
+<div id="chatbot-container">
+
+<div id="chatbot-box" class="chatbot-box">
+
+<div class="chatbot-header">
+<h4>MikrodTech Assistant</h4>
+<button id="close-chat" class="close-btn">&times;</button>
+</div>
+
+<div class="chatbot-messages" id="chatbot-messages">
+<div id="chatbot-messages-inner">
+<div class="message bot">Hello, how can I assist you today?</div>
+</div>
+</div>
+
+<div class="chatbot-input">
+<textarea id="user-input" placeholder="Type your message..."></textarea>
+<button id="send-btn" type="button">➤</button>
+</div>
+
+</div>
+</div>
+
+<!-- ================= TOOL MODAL ================= -->
+<div id="toolModal" class="tool-modal">
+
+  <div class="tool-modal-content">
+
+    <button id="closeModal" class="tool-close">&times;</button>
+
+    <h2 id="modalTitle">Tool</h2>
+
+    <div id="modalBody"></div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <!-- Company -->
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="../about/about.html">About Us</a></li>
+        <li><a href="../services/">Services</a></li>
+        <li><a href="../products/">MDT Products</a></li>
+        <li><a href="../cybersecurity/">Cybersecurity</a></li>
+        <li><a href="../contact/contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:0769329029">📞 0769 329 029</a></li>
+        <li><a href="mailto:info@mikrodtech.co.ke">info@mikrodtech.co.ke</a></li>
+        <li><a href="mailto:sales@mikrodtech.co.ke">sales@mikrodtech.co.ke</a></li>
+        <li><a href="mailto:support@mikrodtech.co.ke">support@mikrodtech.co.ke</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="../contact/contact.html">Request a Callback</a></li>
+        <li><a href="../tools/">Free Tools</a></li>
+        <li><a href="mailto:support@mikrodtech.co.ke">Get Support</a></li>
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+
+      <div class="footer-social-icons">
+
+        <a href="https://www.linkedin.com/company/mikrodtech" target="_blank" rel="noopener noreferrer">
+          <img src="../linkedin.png" alt="LinkedIn">
+        </a>
+
+        <a href="https://www.instagram.com/mikrodtech" target="_blank" rel="noopener noreferrer">
+          <img src="../instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://www.tiktok.com/@mikrodtech" target="_blank" rel="noopener noreferrer">
+          <img src="../tiktok.png" alt="TikTok">
+        </a>
+
+        <a href="https://www.x.com/mikrodtech" target="_blank" rel="noopener noreferrer">
+          <img src="../x.png" alt="X">
+        </a>
+
+        <a href="https://www.youtube.com/@mikrodtech" target="_blank" rel="noopener noreferrer">
+          <img src="../youtube.png" alt="YouTube">
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <p>
+      © <span id="year"></span>
+      <span class="footer-accent">MikrodTech</span>.
+      All rights reserved.
+    </p>
+  </div>
+
+</footer>
+
+
+<!-- JS -->
+<script src="../chatbot.js" defer></script>
+<script src="tools.js"></script>
+<script src="../app.js"></script>
+
+
+</body>
+</html>

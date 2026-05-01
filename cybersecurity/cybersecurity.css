@@ -1,0 +1,309 @@
+/* ==================================================
+   CYBERSECURITY PAGE CSS
+   Updated Full Code
+================================================== */
+
+/* ==========================================
+   ACTIVE NAV LINK
+========================================== */
+.nav-list a.active{
+  color:#0072ce;
+  font-weight:700;
+}
+
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+.cyber-hero{
+  background:
+  radial-gradient(circle at top right, rgba(0,114,206,.25), transparent 30%),
+  linear-gradient(135deg, #000000 0%, #050505 45%, #0072ce 100%);
+
+  color:#fff;
+  text-align:center;
+  padding:95px 20px 72px;
+}
+
+.cyber-hero .container{
+  max-width:900px;
+  margin:auto;
+}
+
+.cyber-hero h1{
+  font-size:clamp(2rem,5vw,3.5rem);
+  font-weight:400;
+  letter-spacing:.4px;
+  margin-bottom:10px;
+  line-height:1.15;
+}
+
+.cyber-hero .tagline{
+  font-size:1.05rem;
+  font-weight:500;
+  color:#d9ecff;
+  margin-bottom:14px;
+}
+
+.cyber-hero .lead{
+  max-width:760px;
+  margin:auto;
+  font-size:1.3rem;
+  line-height:1.75;
+  color:#f1f5f9;
+  margin-bottom:24px;
+}
+
+
+/* ==========================================
+   CYBERSECURITY SOLUTIONS SECTION
+========================================== */
+.services-preview{
+  background:#ffffff;
+  padding:85px 0;
+}
+
+.services-preview .section-title{
+  text-align:center;
+  color:#111;
+  margin-bottom:38px;
+  font-size:2.1rem;
+  font-weight:700;
+}
+
+.services-preview .section-title::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:4px;
+  background:#0072ce;
+  border-radius:20px;
+  margin:12px auto 0;
+}
+
+.services-preview .service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+  margin-bottom:35px;
+}
+
+/* Individual solution boxes */
+.services-preview .service-grid div{
+  background:#0072ce;
+  color:#fff;
+  padding:20px 18px;
+  border-radius:14px;
+  text-align:center;
+  font-weight:400;
+  font-size:1.1rem;
+  box-shadow:0 10px 24px rgba(0,0,0,.10);
+  transition:all .30s ease;
+}
+
+.services-preview .service-grid div:hover{
+  transform:translateY(-6px);
+  background:#005fb0;
+  box-shadow:0 16px 30px rgba(0,0,0,.14);
+}
+
+.services-preview .btn-secondary{
+  display:table;
+  margin:0 auto;
+}
+
+
+/* ==========================================
+   PREMIUM CARDS
+========================================== */
+.why-card,
+.cyber-card{
+  transition:all .35s ease;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.why-card:hover,
+.cyber-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 18px 38px rgba(0,0,0,.12);
+}
+
+.cyber-card{
+  background:#fff;
+  padding:2rem;
+  border:1px solid rgba(0,114,206,.08);
+}
+
+
+/* ==========================================
+   SECTION TITLES
+========================================== */
+.cyber-section h2,
+.section-title{
+  font-size:2.1rem;
+  margin-bottom:1rem;
+  color:#111;
+  font-weight:700;
+}
+
+.cyber-section h2::after,
+.section-title::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:4px;
+  background:#0072ce;
+  border-radius:20px;
+  margin:12px auto 0;
+}
+
+
+/* ==========================================
+   CONTENT TEXT
+========================================== */
+.cyber-section p,
+.cyber-card p{
+  color:#444;
+  line-height:1.8;
+  font-size:1.3rem;
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+.cyber-hero .btn-primary,
+.cyber-section .btn-primary{
+  display:inline-block;
+  background:#0072ce;
+  color:#fff;
+  padding:14px 28px;
+  border-radius:50px;
+  font-weight:700;
+  transition:.3s ease;
+}
+
+.cyber-hero .btn-primary:hover,
+.cyber-section .btn-primary:hover{
+  background:#fff;
+  color:#000;
+  transform:translateY(-3px);
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+@media(max-width:768px){
+
+  .cyber-hero{
+    padding:82px 18px 60px;
+  }
+
+  .cyber-hero h1{
+    font-size:1.7rem;
+    font-weight:400;
+  }
+
+  .cyber-hero .tagline{
+    font-size:.95rem;
+  }
+
+  .cyber-hero .lead{
+    font-size:.96rem;
+  }
+
+  .cyber-section h2,
+  .section-title,
+  .services-preview .section-title{
+    font-size:1.65rem;
+  }
+
+  .services-preview{
+    padding:70px 0;
+  }
+
+  .services-preview .service-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .services-preview .service-grid div{
+    padding:18px 16px;
+    font-size:.96rem;
+  }
+
+}
+
+/* ==========================================
+   MOBILE IMPROVEMENTS (CYBERSECURITY PAGE)
+========================================== */
+@media (max-width: 768px){
+
+  .cyber-hero{
+    padding: 75px 16px 55px;
+  }
+
+  .cyber-hero h1{
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .cyber-hero .tagline{
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .cyber-hero .lead{
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    padding: 0 8px;
+  }
+
+  /* Sections spacing */
+  .services-preview{
+    padding: 65px 0;
+  }
+
+  .services-preview .section-title,
+  .cyber-section h2,
+  .section-title{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  /* Cards/grid fixes */
+  .services-preview .service-grid{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .services-preview .service-grid div{
+    font-size: 0.95rem;
+    padding: 16px 14px;
+  }
+
+  /* Cards */
+  .cyber-card{
+    padding: 1.3rem;
+  }
+
+  .cyber-section p,
+  .cyber-card p{
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Buttons */
+  .cyber-hero .btn-primary,
+  .cyber-section .btn-primary{
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+
+}

@@ -1,0 +1,280 @@
+/* ===================================
+   CONTACT PAGE ONLY CSS
+   Uses global style.css
+=================================== */
+
+/* HERO */
+
+.nav-list a.active{
+  color:#0072ce;
+  font-weight:700;
+}
+
+.contact-hero{
+   background:
+  radial-gradient(circle at top right, rgba(0,114,206,.25), transparent 30%),
+  linear-gradient(135deg, #000000 0%, #050505 45%, #0072ce 100%);
+
+  color:#fff;
+  text-align:center;
+  padding:130px 20px 110px;
+}
+
+.contact-hero h1{
+  font-size:clamp(2rem,5vw,3.5rem);
+  font-weight:400;
+  line-height:1.15;
+  margin-bottom:16px;
+  color:#ffffff;
+}
+
+.contact-hero .tagline{
+  color:#dbeafe;
+  font-size:0.85rem;
+  margin-bottom:14px;
+}
+
+.hero-subtext{
+  display:block;
+  max-width:800px;
+  margin:auto;
+  color:#f3f4f6;
+  font-size:1.3rem;
+}
+
+/* QUICK CONTACT */
+.quick-contact{
+  background:#fff;
+}
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+}
+
+.quick-card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:18px;
+  padding:32px 24px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,.06);
+  transition:.3s ease;
+}
+
+.quick-card:hover{
+  transform:translateY(-8px);
+  border-color:#0072ce;
+}
+
+.quick-card h3{
+  color:#0072ce;
+  margin-bottom:12px;
+}
+
+.quick-card p{
+  font-size: 1.3rem;
+}
+
+/* CONTACT SECTION */
+.contact-section{
+  background:#f8fafc;
+}
+
+.contact-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:start;
+}
+
+.contact-info h2{
+  font-size:2rem;
+  color:#111;
+  margin-bottom:18px;
+}
+
+.contact-info p{
+  color:#555;
+  margin-bottom:20px;
+  font-size: 1.3rem;
+}
+
+.contact-info ul li{
+  margin-bottom:12px;
+  font-weight:600;
+  color:#222;
+  font-size: 1.3rem;
+}
+
+/* FORM */
+.contact-form-wrap{
+  background:#fff;
+  padding:32px;
+  border-radius:20px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.contact-form-wrap input,
+.contact-form-wrap select,
+.contact-form-wrap textarea{
+  width:100%;
+  padding:14px 16px;
+  margin-bottom:16px;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  font-size:1.3rem;
+}
+
+.contact-form-wrap input:focus,
+.contact-form-wrap select:focus,
+.contact-form-wrap textarea:focus{
+  outline:none;
+  border-color:#0072ce;
+}
+
+.contact-form-wrap button{
+  width:100%;
+}
+
+/* BUSINESS INFO */
+.business-info{
+  background:#fff;
+  text-align:center;
+}
+
+.info-grid{
+  margin-top:45px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+}
+
+.info-card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:18px;
+  padding:30px;
+  box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.info-card h3{
+  color:#0072ce;
+  margin-bottom:12px;
+}
+
+.info-card p{
+  font-size: 1.3rem;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+.contact-box{
+  grid-template-columns:1fr;
+}
+
+.contact-hero{
+  padding:110px 20px 90px;
+}
+
+}
+
+@media(max-width:600px){
+
+.quick-card,
+.info-card,
+.contact-form-wrap{
+  padding:22px;
+}
+
+}
+
+/* =========================
+CONTACT PAGE MOBILE TIGHTENING
+========================= */
+@media (max-width:600px){
+
+  /* HERO becomes compact */
+  .contact-hero{
+    padding:80px 16px 65px;
+  }
+
+  .contact-hero h1{
+    font-size:1.7rem;
+  }
+
+  .hero-subtext{
+    font-size:1rem;
+    line-height:1.6;
+  }
+
+  .contact-hero .tagline{
+    font-size:.75rem;
+  }
+
+  /* Section spacing reduction */
+  .contact-section,
+  .quick-contact,
+  .business-info{
+    padding:55px 16px;
+  }
+
+  /* QUICK CARDS tighter */
+  .quick-card{
+    padding:20px;
+    border-radius:14px;
+  }
+
+  .quick-card h3{
+    font-size:1.05rem;
+  }
+
+  .quick-card p{
+    font-size:1rem;
+  }
+
+  /* CONTACT GRID spacing */
+  .contact-box{
+    gap:22px;
+  }
+
+  /* FORM compact */
+  .contact-form-wrap{
+    padding:20px;
+    border-radius:14px;
+  }
+
+  .contact-form-wrap input,
+  .contact-form-wrap select,
+  .contact-form-wrap textarea{
+    padding:11px 12px;
+    font-size:1rem;
+    margin-bottom:12px;
+  }
+
+  /* INFO CARDS compact */
+  .info-card{
+    padding:20px;
+    border-radius:14px;
+  }
+
+  .info-card h3{
+    font-size:1.05rem;
+  }
+
+  .info-card p{
+    font-size:1rem;
+  }
+
+  /* Headings smaller */
+  .contact-info h2{
+    font-size:1.5rem;
+  }
+
+  .contact-info p,
+  .contact-info ul li{
+    font-size:1rem;
+  }
+}

@@ -1,0 +1,609 @@
+
+  /* Contact */
+  .contact {
+    padding: 3rem 0;
+  }
+  
+  .contact h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #0066cc;
+  }
+  
+  .contact-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 1rem auto 2rem auto;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .contact-form button {
+    border: none;
+  }
+  
+  .contact-details {
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+
+  
+  .contact-actions {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+
+/* Section heading */
+.contact h2.section-title {
+  font-size: 2rem;           
+  font-weight: 400;             /* slightly bold */
+  color: #0077cc;               /* accent color */
+  text-align: top;           /* center heading */
+  margin-bottom: 1.5rem;
+}
+
+/* Intro text centered & professional */
+.contact-intro {
+  font-size: 0.8rem;              
+  font-weight: 300;             
+  text-align: center;           /* center */
+  margin-bottom: 1.5rem;
+  color: #333333;               /* dark gray for readability */
+}
+
+/* Call-to-action buttons */
+.contact-actions {
+  display: flex;
+  justify-content: center;      /* center buttons horizontally */
+  gap: 1rem;                    /* space between buttons */
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.contact-actions .btn {
+  font-size: 1rem;              
+  padding: 0.6rem 1.2rem;       /* proportional to text */
+}
+
+/* Callback form */
+.callback-form {
+  max-width: 400px;             /* smaller width for alignment */
+  margin: 1rem auto 2rem auto;  /* centered */
+  padding: 1rem;
+  background: #f9f9f9;
+  border-left: 3px solid #0077cc;
+  border-radius: 6px;
+}
+
+/* Form elements */
+.callback-form input,
+.callback-form button {
+  font-size: 0.95rem;           /* smaller and consistent */
+  padding: 0.5rem 0.75rem;
+}
+
+.callback-form button {
+  width: 100%;                  /* full width button for consistency */
+  margin-top: 0.75rem;
+}
+
+.contact-email {
+  text-align: center;          /* center the text */
+  font-size: 1rem;             /* matches intro text */
+  font-weight: 400;            /* normal weight */
+  color: #333333;              /* professional dark gray */
+  margin-top: 1rem;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center; /* centers icons horizontally */
+  gap: 20px; /* spacing between icons */
+  margin-top: 1rem; /* space above the icons */
+}
+
+.contact-icons a img {
+  width: 32px; /* uniform icon size */
+  height: 32px;
+  transition: transform 0.3s;
+}
+
+.contact-icons a img:hover {
+  transform: scale(1.1); /* subtle hover effect */
+}
+
+.callback-form {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-left: 3px solid #0077cc;
+  border-radius: 6px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.95rem; /* slightly smaller font */
+}
+
+.callback-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #333333;
+}
+
+.callback-form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+
+.callback-form button {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+}
+
+/* Style for the success/error message inside the callback form */
+.callback-message {
+  font-size: 0.85rem;       
+  color: green;             
+  text-align: center;       /* centered below the form */
+}
+
+/* Optional: red for error */
+.callback-message.error {
+  color: red;
+}
+
+.callback-message {
+  font-size: 0.85rem; 
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.callback-message.success {
+  color: green;
+}
+
+.callback-message.error {
+  color: red;
+}
+
+.callback-message {
+  font-size: 0.85rem; 
+  text-align: center;
+}
+
+.callback-message.success {
+  color: green;
+}
+
+.callback-message.error {
+  color: red;
+}
+.name-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.name-row input {
+  flex: 1;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+  display: block;
+}
+
+.success {
+  color: green;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.callback-message {
+  display: block;               /* Makes margin auto work */
+  width: fit-content;           /* Message width matches content */      
+  font-size: 0.9rem;            /* Slightly smaller text than button */
+  text-align: center;            /* Centers the text inside */
+}
+
+.callback-message.success {
+  color: #28a745;               /* Green for success */
+}
+
+.callback-message.error {
+  color: #dc3545;               /* Red for errors */
+}
+
+.input-error {
+  border: 1px solid red;
+  color: red;
+}
+
+
+
+/* Contact form labels & inputs */
+.contact-form label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 1rem;
+  padding: 0.6rem;
+}
+
+
+
+/* ===== Section Titles ===== */
+.section-title,
+.about h2,
+.contact h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 3rem 0 2rem;
+  color: #111;
+}
+
+
+/* ===== Contact Section ===== */
+.contact form {
+  max-width: 800px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact label {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.contact input,
+.contact textarea {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: border 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #0077b6;
+  outline: none;
+}
+
+
+/* ===== Contact Section ===== */
+.contact {
+  padding: 5rem 2rem;
+  background: #f9f9f9;
+}
+
+.contact-intro {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.contact-form,
+.callback-form {
+  max-width: 900px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  font-size: 1.3rem;
+}
+
+/* Labels */
+.contact-form label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Inputs & Textareas */
+.contact-form input,
+.contact-form textarea,
+.callback-form input {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.2rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.callback-form input:focus {
+  border-color: #0072ce;
+  box-shadow: 0 0 4px rgba(0, 114, 206, 0.4);
+  outline: none;
+}
+
+/* Buttons */
+.contact-form button,
+.callback-form button,
+.contact-actions .btn {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.6rem 2.2rem;
+  border-radius: 8px;
+  background: #0072ce;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover,
+.callback-form button:hover,
+.contact-actions .btn:hover {
+  background: #005fa3;
+}
+
+/* Contact icons */
+.contact-icons {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.contact-icons img:hover {
+  transform: scale(1.15);
+}
+
+/* Contact feedback & error messages */
+.contact-feedback,
+.error,
+.input-error-message {
+  font-size: 1.1rem;
+  color: red;
+}
+
+/* Prefer email text */
+.contact-email {
+  text-align: center;
+  font-size: 1.4rem;     
+  font-weight: 500;
+  color: #333333;
+  margin-top: 2rem;
+}
+
+/* Callback form (hidden by default) */
+.callback-form {
+  display: none;         
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-left: 4px solid #0072ce;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+/* Contact icons at bottom */
+.contact-icons a img {
+  width: 48px;      
+  height: 48px;     
+  transition: transform 0.3s;
+}
+
+.contact-icons a img:hover {
+  transform: scale(1.15); 
+}
+
+
+
+.contact-container {
+  max-width: 500px;  /* Limits the width on larger screens */
+  margin: 0 auto;    /* Centers the container */
+  padding: 0 15px;   /* Adds space from the edges on small screens */
+  box-sizing: border-box;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;       /* Inputs fill container but not full screen */
+  box-sizing: border-box;
+}
+
+
+
+.contact-icons {
+  display: flex;
+  justify-content: center;   /* Center the icons */
+  gap: 15px;                 /* Space between icons */
+  margin-top: 20px;
+  flex-wrap: wrap;           /* Wrap if screen is too small */
+}
+
+.contact-icons a img {
+  width: 40px;               /* Base size for desktop */
+  height: 40px;
+  transition: transform 0.2s;
+}
+
+.contact-icons a img:hover {
+  transform: scale(1.1);     /* Slight enlarge on hover */
+}
+
+
+
+
+.contact-emails-small {
+  text-align: center;            /* centers the text inside */
+  margin: 1rem auto 2rem auto;   /* auto left/right to center the block */
+  padding: 1rem 1.2rem;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  display: inline-block;         /* shrink to content width but still center via margin auto */
+}
+
+.contact-emails-small h1 {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+  color: #0072ce;
+}
+
+.contact-emails-small p {
+  font-size: 18px;
+  margin: 0.3rem 0;
+  color: #333;
+}
+
+
+
+.contact-emails-small {
+  display: block;          /* ensure it's treated as a block */
+  text-align: center;      /* center the text inside */
+  width: fit-content;      /* shrink-wrap to content */
+  margin: 1rem auto 2rem;  /* top auto bottom spacing, auto centers horizontally */
+  padding: 1rem 1.2rem;    /* optional padding */
+  background-color: #f9f9f9; /* optional light background */
+  border-radius: 6px;
+}
+
+
+
+/* General error message style */
+.error {
+  color: #dc2626;       /* red text */
+  font-weight: normal;  /* not bold */
+  font-size: clamp(0.85rem, 2.5vw, 1rem); /* scales with screen */
+  line-height: 1.4;
+}
+
+/* Only target the callback form message */
+#callbackMessage.error {
+  text-align: left;     /* or center if you prefer */
+  margin-top: 0.5rem;
+}
+
+
+  
+  .hidden {
+    display: none;
+  }
+  
+  .callback-form {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-left: 3px solid #0077cc;
+    border-radius: 6px;
+  }
+
+  #callbackMessage {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  #callbackMessage.success { color: green; }
+  #callbackMessage.error { color: red; }
+  
+
+/* ===================================
+   MOBILE OPTIMIZATION (CONTACT PAGE)
+=================================== */
+@media (max-width: 768px){
+
+  .contact{
+    padding: 3rem 1rem;
+  }
+
+  .contact h2,
+  .section-title{
+    font-size: 1.6rem;
+    margin: 2rem 0 1.2rem;
+  }
+
+  .contact-intro,
+  .hero-subtext{
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  /* Forms */
+  .contact-form,
+  .callback-form{
+    max-width: 100%;
+    padding: 0 10px;
+    gap: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .callback-form input{
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .contact-form button,
+  .callback-form button{
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  /* Contact buttons */
+  .contact-actions{
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-actions .btn{
+    width: 100%;
+  }
+
+  /* Contact icons */
+  .contact-icons{
+    gap: 1rem;
+  }
+
+  .contact-icons img{
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Email box */
+  .contact-email,
+  .contact-emails-small{
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+
+}

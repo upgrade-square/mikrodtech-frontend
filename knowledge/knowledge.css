@@ -1,0 +1,603 @@
+/* ==========================================
+   KNOWLEDGE ARTICLES / CATEGORIES ONLY
+   Replace old article section styles only
+========================================== */
+
+/* MAIN SECTION */
+.knowledge-main{
+  padding:5rem 1rem;
+  background:linear-gradient(to bottom,#f8fbff,#ffffff);
+}
+
+.knowledge-main .container{
+  max-width:1450px;
+  margin:auto;
+}
+
+/* TITLE */
+.section-title{
+  text-align:center;
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:800;
+  color:#111827;
+  margin-bottom:.8rem;
+  letter-spacing:-0.5px;
+}
+
+.section-subtitle{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 3rem;
+  color:#64748b;
+  font-size:1.05rem;
+  line-height:1.8;
+}
+
+/* GRID */
+.knowledge-categories{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:1.6rem;
+  align-items:stretch;
+}
+
+/* CARD */
+.knowledge-category{
+  background:rgba(255,255,255,.95);
+  border:1px solid rgba(0,114,206,.08);
+  border-radius:22px;
+  padding:2rem;
+  box-shadow:0 18px 40px rgba(15,23,42,.06);
+  transition:.35s ease;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  overflow:hidden;
+}
+
+.knowledge-category::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:linear-gradient(90deg,#0072ce,#00a3ff);
+}
+
+.knowledge-category:hover{
+  transform:translateY(-8px);
+  box-shadow:0 28px 55px rgba(15,23,42,.10);
+}
+
+/* CARD HEADINGS */
+.knowledge-category h2{
+  font-size:1.45rem;
+  font-weight:800;
+  color:#0072ce;
+  margin-bottom:.75rem;
+  line-height:1.3;
+}
+
+.knowledge-category p{
+  color:#64748b;
+  line-height:1.75;
+  margin-bottom:1.25rem;
+  font-size:.98rem;
+}
+
+/* ARTICLE LINKS */
+.knowledge-category ul{
+  list-style:none;
+  padding:0;
+  margin:0 0 1.6rem;
+}
+
+.knowledge-category li{
+  margin-bottom:.65rem;
+}
+
+.knowledge-category li:last-child{
+  margin-bottom:0;
+}
+
+.knowledge-category li a{
+  display:block;
+  text-decoration:none;
+  color:#1e293b;
+  font-weight:600;
+  padding:.8rem .95rem;
+  border-radius:12px;
+  background:#f8fafc;
+  transition:.25s ease;
+  border:1px solid transparent;
+}
+
+.knowledge-category li a:hover{
+  background:#eef6ff;
+  color:#0072ce;
+  border-color:rgba(0,114,206,.12);
+  transform:translateX(4px);
+}
+
+/* BUTTON */
+.mini-btn{
+  margin-top:auto;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
+  font-weight:700;
+  color:#fff;
+  background:linear-gradient(135deg,#0072ce,#005fa8);
+  padding:14px 18px;
+  border-radius:999px;
+  transition:.3s ease;
+  box-shadow:0 14px 28px rgba(0,114,206,.18);
+}
+
+.mini-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 20px 35px rgba(0,114,206,.24);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  .knowledge-main{
+    padding:4rem 1rem;
+  }
+
+  .knowledge-categories{
+    grid-template-columns:1fr;
+    gap:1.2rem;
+  }
+
+  .knowledge-category{
+    padding:1.5rem;
+    border-radius:18px;
+  }
+
+  .knowledge-category h2{
+    font-size:1.25rem;
+  }
+
+  .section-subtitle{
+    font-size:1rem;
+    margin-bottom:2rem;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .knowledge-category{
+    padding:1.25rem;
+  }
+
+  .mini-btn{
+    width:100%;
+  }
+
+}
+
+/* =====================================================
+PREMIUM ARTICLE READER CSS
+ADD TO knowledge.css
+===================================================== */
+
+.knowledge-reader{
+margin-top:50px;
+background:#ffffff;
+border-radius:24px;
+padding:0;
+box-shadow:0 25px 60px rgba(0,0,0,.08);
+border:1px solid rgba(0,114,206,.08);
+overflow:hidden;
+display:none;
+}
+
+.knowledge-reader.active{
+display:block;
+animation:fadeUp .45s ease;
+}
+
+.reader-topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 28px;
+background:linear-gradient(135deg,#0072ce,#003d99);
+color:#fff;
+}
+
+.reader-badge{
+font-size:.85rem;
+font-weight:700;
+letter-spacing:1px;
+text-transform:uppercase;
+}
+
+.close-reader-btn{
+background:rgba(255,255,255,.15);
+border:none;
+color:#fff;
+width:42px;
+height:42px;
+border-radius:50%;
+font-size:1rem;
+cursor:pointer;
+transition:.3s;
+}
+
+.close-reader-btn:hover{
+background:#fff;
+color:#003d99;
+}
+
+.reader-content{
+padding:45px;
+}
+
+.reader-content h2{
+font-size:2rem;
+color:#111;
+margin-bottom:10px;
+line-height:1.25;
+}
+
+#readerMeta{
+color:#0072ce;
+font-weight:700;
+margin-bottom:28px;
+}
+
+#readerBody{
+font-size:1.08rem;
+line-height:1.9;
+color:#333;
+}
+
+#readerBody h3{
+margin-top:28px;
+margin-bottom:10px;
+color:#003d99;
+font-size:1.25rem;
+}
+
+#readerBody p{
+margin-bottom:16px;
+}
+
+.open-article{
+cursor:pointer;
+transition:.25s;
+}
+
+.open-article:hover{
+color:#0072ce;
+padding-left:6px;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:768px){
+
+.reader-content{
+padding:28px;
+}
+
+.reader-content h2{
+font-size:1.5rem;
+}
+
+#readerBody{
+font-size:1rem;
+line-height:1.8;
+}
+
+}
+
+/* =====================================================
+MICRODTECH BRAND SYSTEM (STRICT COLORS ONLY)
+Black | White | #0072ce
+===================================================== */
+
+.knowledge-layout{
+  display:flex;
+  gap:20px;
+  margin-top:30px;
+  align-items:flex-start;
+  background:#fff;
+}
+
+/* =======================
+LEFT PANEL (TOPICS)
+======================= */
+.left-panel{
+  width:18%;
+  background:#fff;
+  color:#000;
+  padding:18px;
+  border-radius:18px;
+  position:sticky;
+  top:100px;
+  height:fit-content;
+  border:1px solid #0072ce;
+}
+
+.left-panel h3{
+  font-size:1rem;
+  margin-bottom:15px;
+  color:#0072ce;
+  font-weight:700;
+}
+
+/* =======================
+MIDDLE PANEL (ARTICLES)
+======================= */
+.middle-panel{
+  width:32%;
+  background:#fff;
+  color:#000;
+  padding:18px;
+  border-radius:18px;
+  position:sticky;
+  top:100px;
+  height:fit-content;
+  border:1px solid #0072ce;
+}
+
+.middle-panel h3{
+  font-size:1rem;
+  margin-bottom:15px;
+  color:#0072ce;
+  font-weight:700;
+}
+
+/* =======================
+RIGHT PANEL (READER)
+======================= */
+.right-panel{
+  width:50%;
+  background:#fff;
+  border-radius:18px;
+  padding:30px;
+  min-height:650px;
+  border:1px solid #000;
+  color:#000;
+}
+
+/* =======================
+TOPIC BUTTONS
+======================= */
+.topic-btn{
+  display:block;
+  width:100%;
+  padding:12px;
+  margin-bottom:10px;
+  background:#fff;
+  color:#000;
+  border:1px solid #0072ce;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  transition:.2s ease;
+  text-align:left;
+}
+
+.topic-btn:hover{
+  background:#0072ce;
+  color:#fff;
+}
+
+/* ACTIVE TOPIC */
+.topic-btn.active{
+  background:#0072ce;
+  color:#fff;
+}
+
+/* =======================
+ARTICLE ITEMS
+======================= */
+.article-item{
+  padding:12px;
+  margin-bottom:10px;
+  background:#fff;
+  color:#000;
+  border:1px solid #0072ce;
+  border-radius:10px;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.article-item:hover{
+  background:#0072ce;
+  color:#fff;
+  transform:translateX(4px);
+}
+
+/* ACTIVE ARTICLE */
+.article-item.active{
+  background:#0072ce;
+  color:#fff;
+}
+
+/* =======================
+READER CONTENT
+======================= */
+.reader-image{
+  width:100%;
+  border-radius:14px;
+  margin-bottom:20px;
+  border:1px solid #000;
+}
+
+.reader-text{
+  font-size:1.08rem;
+  line-height:1.9;
+  color:#000;
+}
+
+/* =======================
+CONTROLS
+======================= */
+.reader-controls{
+  margin-top:30px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.reader-controls button{
+  padding:10px 14px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  background:#0072ce;
+  color:#fff;
+  transition:.2s;
+}
+
+.reader-controls button:hover{
+  opacity:.9;
+}
+
+/* SERVICE BUTTON */
+.service-btn{
+  padding:10px 14px;
+  border-radius:10px;
+  text-decoration:none;
+  background:#fff;
+  color:#000;
+  border:1px solid #0072ce;
+  font-weight:600;
+  transition:.2s;
+}
+
+.service-btn:hover{
+  background:#0072ce;
+  color:#fff;
+}
+
+/* =======================
+RESPONSIVE
+======================= */
+@media(max-width:1024px){
+  .knowledge-layout{
+    flex-direction:column;
+  }
+
+  .left-panel,
+  .middle-panel,
+  .right-panel{
+    width:100%;
+    position:relative;
+    top:auto;
+  }
+} 
+
+/* =======================
+ACTIVE TOPIC STATE
+======================= */
+.topic-btn.active{
+  background:#0072ce;
+  color:#fff;
+  border-color:#0072ce;
+}
+
+/* =======================
+ACTIVE ARTICLE STATE
+======================= */
+.article-item.active{
+  background:#0072ce;
+  color:#fff;
+  border-color:#0072ce;
+}
+
+@media (max-width: 768px){
+
+  .knowledge-main{
+    padding:3rem 1rem;
+  }
+
+  .section-title{
+    font-size:1.5rem;
+  }
+
+  .section-subtitle{
+    font-size:0.95rem;
+    margin-bottom:2rem;
+  }
+
+  .knowledge-categories{
+    grid-template-columns:1fr;
+    gap:1rem;
+  }
+
+  .knowledge-category{
+    padding:1.2rem;
+    border-radius:16px;
+  }
+
+  .knowledge-category h2{
+    font-size:1.1rem;
+  }
+
+  .knowledge-category p{
+    font-size:0.9rem;
+  }
+
+  .knowledge-category li a{
+    font-size:0.9rem;
+    padding:0.6rem 0.75rem;
+  }
+
+  .mini-btn{
+    width:100%;
+    padding:12px;
+    font-size:0.95rem;
+  }
+
+  /* Reader */
+  .reader-content{
+    padding:20px;
+  }
+
+  .reader-content h2{
+    font-size:1.3rem;
+  }
+
+  #readerBody{
+    font-size:0.95rem;
+    line-height:1.7;
+  }
+
+  /* Layout panels */
+  .left-panel,
+  .middle-panel,
+  .right-panel{
+    padding:14px;
+  }
+
+  .topic-btn,
+  .article-item{
+    padding:10px;
+    font-size:0.95rem;
+  }
+
+  .reader-controls button{
+    padding:8px 12px;
+    font-size:0.9rem;
+  }
+}

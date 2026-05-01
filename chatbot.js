@@ -20,7 +20,7 @@ if (userInput) {
 }
 
   const innerMessages = document.getElementById("chatbot-messages-inner");
-  const chatbotNav = document.getElementById("chatbot-nav");
+  const chatbotNav = document.getElementById("openChatbotMenu");
 
 
 
@@ -308,16 +308,6 @@ else lastTopic = null;
   -----------------------------*/
   const savedMessages = JSON.parse(sessionStorage.getItem("mikrodtech-chat")) || [];
   savedMessages.forEach((msg) => appendMessage(msg.sender, msg.text, false));
-
-
-
- closeChat.addEventListener("click", () => {
-  chatbotBox.style.display = "none";
-  chatbotBtn.style.display = "block";
-  document.body.classList.remove("chatbot-open");  // ← ADD THIS
-});
-
-
   
 
 // --- Keep keyboard open on mobile after sending ---
@@ -350,43 +340,53 @@ userInput.addEventListener("keydown", (e) => {
   }
 });
 
-  function sendMessage() {
-    const text = userInput.value.trim();
-    if (!text) return;
+function sendMessage() {
+  const text = userInput.value.trim();
+  if (!text) return;
 
-    appendMessage("user", text);
-    saveMessage("user", text);
-    userInput.value = "";
-    showTyping();
+  appendMessage("user", text);
+  saveMessage("user", text);
+  userInput.value = "";
+  userInput.style.height = "20px";
 
+  showTyping();
 
-    const isLocalhost =
-      window.location.hostname === "localhost" ||
-      window.location.hostname === "127.0.0.1" ||
-      window.location.hostname.startsWith("192.168.") ||
-      window.location.hostname.startsWith("10.") ||
-      window.location.hostname.startsWith("172.");
+  /* LOCAL BRAIN FIRST */
+  const localReply = getContextualReply(text);
 
-    const API_BASE = isLocalhost
-      ? "http://localhost:3000"
-      : "https://mikrodtech-backend.onrender.com";
-
-    fetch(`${API_BASE}/chat`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: text }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        hideTyping();
-        appendMessage("bot", data.reply);
-        saveMessage("bot", data.reply);
-      })
-      .catch(() => {
-        hideTyping();
-        appendMessage("bot", "⚠️ Sorry, I’m having trouble connecting to MikrodTech servers right now.");
-      });
+  if (localReply) {
+    setTimeout(() => {
+      hideTyping();
+      appendMessage("bot", localReply);
+      saveMessage("bot", localReply);
+    }, 600);
+    return;
   }
+
+  const isLocalhost =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1";
+
+  const API_BASE = isLocalhost
+    ? "http://localhost:3000"
+    : "https://mikrodtech-backend.onrender.com";
+
+  fetch(`${API_BASE}/chat`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: text }),
+  })
+    .then(res => res.json())
+    .then(data => {
+      hideTyping();
+      appendMessage("bot", data.reply);
+      saveMessage("bot", data.reply);
+    })
+    .catch(() => {
+      hideTyping();
+      appendMessage("bot", "⚠️ Server connection problem.");
+    });
+}
 
   /* ----------------------------
       📦 STORAGE & UI FUNCTIONS
@@ -485,6 +485,13 @@ function openChatbot() {
   chatbotBox.style.display = "flex";
   chatbotBtn.style.display = "none";
   document.body.classList.add("chatbot-open");
+
+   // ✅ ADD THIS (make menu active)
+  if (chatbotNav) {
+    chatbotNav.classList.add("active-chatbot");
+  }
+
+
   setTimeout(() => userInput.focus(), 100);
 }
 
@@ -492,6 +499,12 @@ function closeChatbot() {
   chatbotBox.style.display = "none";
   chatbotBtn.style.display = "block";
   document.body.classList.remove("chatbot-open");
+
+    // ✅ REMOVE ACTIVE STATE
+  if (chatbotNav) {
+    chatbotNav.classList.remove("active-chatbot");
+  }
+
 }
 
 chatbotBtn.addEventListener("click", openChatbot);
@@ -501,7 +514,14 @@ closeChat.addEventListener("click", closeChatbot);
 if (chatbotNav) {
   chatbotNav.addEventListener("click", (e) => {
     e.preventDefault();
-    openChatbot();
+
+    const isOpen = chatbotBox.style.display === "flex";
+
+    if (isOpen) {
+      closeChatbot();
+    } else {
+      openChatbot();
+    }
   });
 }
 
