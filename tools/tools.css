@@ -6,61 +6,6 @@
 }
 
 
-/* ================= HERO ================= */
-/* TOOLS PAGE - CLEAN + REDUCED */
-.hero{
-  background:
-  radial-gradient(circle at top right, rgba(0,114,206,.25), transparent 30%),
-  linear-gradient(135deg, #000000 0%, #050505 45%, #0072ce 100%);
-  
-  color:#fff;
-  text-align:center;
-  padding:100px 20px 80px;
-}
-
-.hero h1{
-  font-size:clamp(2rem,5vw,3.5rem);
-  font-weight:400;
-  line-height:1.15;
-  margin-bottom:16px;
-  color:#ffffff;
-}
-
-.hero .tagline{
-  font-size:.85rem;
-  font-weight:500;
-  letter-spacing:3px;
-  margin-bottom:14px;
-  color:#dbeafe;
-  text-transform:uppercase;
-}
-
-.hero .lead{
-  max-width:760px;
-  margin:auto;
-  font-size:1.3rem;
-  line-height:1.7;
-  color:#f3f4f6;
-}
-
-/* Responsive */
-@media (max-width:980px){
-  .hero{
-    padding:90px 20px 70px;
-  }
-}
-
-@media (max-width:640px){
-  .hero .tagline{
-    letter-spacing:1px;
-  }
-
-  .hero .lead{
-    font-size:1rem;
-  }
-}
-
-
 .tools {
   padding: 60px 20px;
   background: #fff; /* White background */
@@ -1150,39 +1095,47 @@
 }
 
 /* =========================
-   HERO SECTION
+   HERO BASE (GLOBAL SYSTEM)
 ========================= */
 .hero{
-  background:
-    radial-gradient(circle at top right, rgba(0,114,206,.25), transparent 30%),
-    linear-gradient(135deg, #000000 0%, #050505 45%, #0072ce 100%);
-  color:#fff;
+  background: #eef6ff; /* soft blue tint */
   text-align:center;
   padding:100px 20px 80px;
+  position:relative;
 }
 
+
+/* Keep content above overlay */
+.hero > *{
+  position:relative;
+  z-index:1;
+}
+
+/* Heading */
 .hero h1{
-  font-size:clamp(2rem,5vw,3.5rem);
-  font-weight:400;
+  font-size: 3rem;
+  font-weight:500;
   line-height:1.15;
   margin-bottom:16px;
+  color:var(--primary);
 }
 
+/* Tagline */
 .hero .tagline{
   font-size:.85rem;
-  font-weight:500;
   letter-spacing:3px;
   margin-bottom:14px;
-  color:#dbeafe;
+  color:#4b5563;
   text-transform:uppercase;
 }
 
+/* Description */
 .hero .lead{
   max-width:760px;
   margin:auto;
-  font-size:1.3rem;
+  font-size:1.2rem;
   line-height:1.7;
-  color:#f3f4f6;
+  color:#374151;
 }
 
 /* =========================
@@ -1438,4 +1391,460 @@
 @keyframes fadeUp{
   from{opacity:0;transform:translateY(20px);}
   to{opacity:1;transform:translateY(0);}
+}
+
+/* ==================================================
+   TOOLS PAGE MOBILE RESPONSIVENESS FIX
+   ADD AT VERY END
+================================================== */
+
+/* Prevent horizontal scroll */
+html,
+body{
+  overflow-x:hidden;
+}
+
+/* =========================
+   GLOBAL MOBILE TYPOGRAPHY
+========================= */
+@media (max-width:768px){
+
+  h1{
+    font-size:2rem !important;
+    line-height:1.2;
+  }
+
+  h2{
+    font-size:1.5rem !important;
+    line-height:1.3;
+  }
+
+  h3{
+    font-size:1.15rem !important;
+  }
+
+  p,
+  li,
+  span,
+  input,
+  button{
+    font-size:1rem !important;
+    line-height:1.6;
+  }
+
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+@media (max-width:768px){
+
+  .hero{
+    padding:85px 16px 60px !important;
+  }
+
+  .hero h1{
+    font-size:1.9rem !important;
+  }
+
+  .hero .lead{
+    font-size:1rem !important;
+    line-height:1.7;
+  }
+
+  .hero .tagline{
+    font-size:.75rem !important;
+    letter-spacing:2px;
+  }
+
+}
+
+/* =========================
+   TOOLS SECTION
+========================= */
+@media (max-width:768px){
+
+  .tools,
+  .tools-wrapper{
+    padding:50px 16px !important;
+  }
+
+  .tools .section-title{
+    font-size:1.7rem !important;
+  }
+
+  .tools .section-intro,
+  .section-subtitle{
+    font-size:1rem !important;
+    line-height:1.7;
+    margin-bottom:30px;
+  }
+
+}
+
+/* =========================
+   GRID FIX
+========================= */
+@media (max-width:768px){
+
+  .tools-grid{
+    grid-template-columns:1fr !important;
+    gap:18px;
+  }
+
+}
+
+/* =========================
+   TOOL CARDS
+========================= */
+@media (max-width:768px){
+
+  .tool-card,
+  .tool-card.premium{
+    padding:20px !important;
+    border-radius:18px;
+  }
+
+  .tool-card img{
+    height:120px;
+  }
+
+  .tool-card h3{
+    font-size:1.1rem !important;
+    margin-top:12px;
+  }
+
+  .tool-card p{
+    font-size:.97rem !important;
+    line-height:1.6;
+    margin-bottom:16px;
+  }
+
+}
+
+/* =========================
+   BUTTONS
+========================= */
+@media (max-width:768px){
+
+  .tools .btn,
+  .tool-btn,
+  .install-btn,
+  .pw-generate-btn,
+  .btn-primary{
+    width:100%;
+    max-width:280px;
+    margin:auto;
+    display:block;
+
+    padding:.9rem 1rem !important;
+    font-size:.95rem !important;
+    text-align:center;
+  }
+
+}
+
+/* =========================
+   SPEED TEST
+========================= */
+@media (max-width:768px){
+
+  .speedtest-container{
+    padding:2rem 1rem;
+    border-radius:22px;
+    margin:1.5rem auto;
+  }
+
+  .speedtest-btn{
+    width:100%;
+    max-width:260px;
+    padding:.95rem 1rem;
+    font-size:1rem !important;
+  }
+
+  .speed-heading{
+    font-size:1rem !important;
+  }
+
+  .speed-value{
+    font-size:2.3rem !important;
+  }
+
+  .unit{
+    font-size:.95rem !important;
+  }
+
+}
+
+/* =========================
+   SPEED DETAILS
+========================= */
+@media (max-width:768px){
+
+  .speed-details{
+    gap:12px;
+  }
+
+  .detail{
+    width:100%;
+    min-width:auto;
+    padding:14px;
+  }
+
+  .detail h3{
+    font-size:1rem !important;
+  }
+
+  .detail p{
+    font-size:1rem !important;
+  }
+
+}
+
+/* =========================
+   TOOL DISPLAY PANEL
+========================= */
+@media (max-width:768px){
+
+  .tool-display{
+    padding:50px 16px;
+  }
+
+  .tool-panel{
+    padding:20px;
+    border-radius:18px;
+  }
+
+  .tool-header{
+    gap:12px;
+    margin-bottom:18px;
+  }
+
+  .tool-header h2{
+    font-size:1.3rem !important;
+  }
+
+  .tool-subtitle{
+    font-size:.95rem !important;
+  }
+
+  .tool-icon{
+    width:48px;
+    height:48px;
+    font-size:1.2rem;
+  }
+
+}
+
+/* =========================
+   PASSWORD TOOL
+========================= */
+@media (max-width:768px){
+
+  .pw-input,
+  .pw-name-input,
+  .pw-optional-input{
+    font-size:1rem !important;
+  }
+
+  .pw-input{
+    padding-right:120px;
+  }
+
+  .pw-actions{
+    gap:6px;
+    right:8px;
+  }
+
+  .pw-toggle,
+  .copy-pw-btn{
+    padding:5px 10px;
+    font-size:.8rem !important;
+  }
+
+  .pw-suggestions,
+  .resilience-tips,
+  .pw-meta{
+    font-size:.95rem !important;
+  }
+
+}
+
+/* =========================
+   MODAL FIX
+========================= */
+@media (max-width:768px){
+
+  .tool-modal{
+    padding:10px;
+    align-items:flex-end;
+  }
+
+  .tool-modal-content{
+    width:100%;
+    max-height:92vh;
+    border-radius:20px 20px 0 0;
+    padding:20px;
+  }
+
+  .tool-modal-content h2{
+    font-size:1.25rem !important;
+  }
+
+  #modalBody{
+    font-size:.98rem !important;
+  }
+
+}
+
+/* =========================
+   SPEEDTEST POPUP
+========================= */
+@media (max-width:768px){
+
+  #speedtest-hint,
+  .speedtest-hint{
+    right:14px;
+    left:14px;
+    bottom:18px;
+
+    max-width:none;
+
+    padding:14px;
+    border-radius:14px;
+  }
+
+  #speedtest-hint p,
+  .speedtest-hint p{
+    font-size:.95rem !important;
+  }
+
+}
+
+/* =========================
+   EXTRA SMALL PHONES
+========================= */
+@media (max-width:420px){
+
+  .hero h1{
+    font-size:1.55rem !important;
+  }
+
+  .tools .section-title{
+    font-size:1.4rem !important;
+  }
+
+  .tool-card h3{
+    font-size:1rem !important;
+  }
+
+  .tool-card p{
+    font-size:.92rem !important;
+  }
+
+  .speed-value{
+    font-size:2rem !important;
+  }
+
+}
+
+/* =========================
+   SMALLER SPEEDTEST WINDOW
+========================= */
+
+.speedtest-container{
+  max-width: 480px;   /* smaller width */
+  width: calc(100% - 30px); /* small left & right spacing */
+  margin: 2rem auto;
+  padding: 2rem 1.2rem;
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+  .speedtest-container{
+    max-width: 100%;
+    width: calc(100% - 24px); /* side padding on phones */
+    padding: 1.8rem 1rem;
+    border-radius: 20px;
+  }
+
+}
+
+/* =========================
+   SMALLER & SHORTER SPEEDTEST
+========================= */
+
+.speedtest-container{
+  max-width: 480px;
+  width: calc(100% - 30px);
+  margin: 2rem auto;
+
+  /* reduced height */
+  padding: 1.4rem 1rem;
+
+  border-radius: 24px;
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+  .speedtest-container{
+    width: calc(100% - 28px); /* left & right spacing */
+    
+    /* shorter height on phones */
+    padding: 1.2rem 0.9rem;
+
+    border-radius: 18px;
+  }
+
+  /* reduce internal spacing */
+  .speed-display{
+    padding: 1.5rem 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .speed-details{
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+
+}
+
+/* =========================
+   PASSWORD BUTTON MOBILE FIX
+========================= */
+
+.pw-field{
+  position: relative;
+}
+
+.pw-actions{
+  position: absolute;
+  right: 6px; /* move closer to edge */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 4px; /* smaller spacing between Show & Copy */
+}
+
+/* Mobile adjustments */
+@media (max-width:768px){
+
+  .pw-input{
+    padding-right: 95px; /* create room for buttons */
+    font-size: 0.95rem;
+  }
+
+  .pw-actions{
+    right: 4px;
+    gap: 2px;
+  }
+
+  .pw-toggle,
+  .copy-pw-btn{
+    padding: 5px 8px;
+    font-size: 0.78rem;
+  }
+
 }

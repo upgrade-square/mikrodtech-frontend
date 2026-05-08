@@ -14,55 +14,6 @@ body{
 }
 
 /* ==========================================
-   HERO SECTION (UPDATED CLEAN + REDUCED)
-========================================== */
-.services-hero,
-.service-page-hero{
-  background:
-  radial-gradient(circle at top right, rgba(0,114,206,.25), transparent 30%),
-  linear-gradient(135deg, #000000 0%, #050505 45%, #0072ce 100%);
-  
-  color:#ffffff;
-  text-align:center;
-  padding:100px 20px 80px;
-}
-
-/* HERO TITLE */
-.services-hero h1,
-.service-page-hero h1{
-  font-size:clamp(2rem,5vw,3.5rem);
-  font-weight:400;
-  line-height:1.15;
-  margin-bottom:16px;
-  color:#ffffff;
-}
-
-/* HERO TEXT */
-.services-hero p,
-.service-page-hero p{
-  max-width:800px;
-  margin:auto;
-  font-size:1.3rem;
-  line-height:1.7;
-  color:#f3f4f6;
-}
-
-/* Responsive */
-@media (max-width:980px){
-  .services-hero,
-  .service-page-hero{
-    padding:90px 20px 70px;
-  }
-}
-
-@media (max-width:640px){
-  .services-hero p,
-  .service-page-hero p{
-    font-size:1rem;
-  }
-}
-
-/* ==========================================
    SERVICES GRID
 ========================================== */
 .services-grid{
@@ -89,15 +40,6 @@ body{
   overflow:hidden;
 }
 
-.service-card::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:4px;
-  background:linear-gradient(90deg,#0072ce,#00bfff);
-}
 
 .service-card:hover{
   transform:translateY(-8px);
@@ -108,7 +50,7 @@ body{
   font-size:1.5rem;
   color:#0072ce;
   margin-bottom:.8rem;
-  font-weight:700;
+  font-weight:500;
 }
 
 .service-card p{
@@ -123,7 +65,7 @@ body{
 ========================================== */
 .services-cta,
 .explore-services{
-  background:#0f172a;
+  background:#000;
   color:#fff;
   text-align:center;
   padding:5rem 1rem;
@@ -180,42 +122,6 @@ body{
   font-weight:700;
 }
 
-
-/* ==========================================
-   SERVICE CONTENT
-========================================== */
-.service-content{
-  padding:5rem 1rem;
-  max-width:1100px;
-  margin:auto;
-}
-
-.service-content h2{
-  color:#0072ce;
-  margin:2rem 0 1rem;
-  font-size:1.9rem;
-  line-height:1.3;
-}
-
-.service-content p{
-  color:#333;
-  line-height:1.85;
-  margin-bottom:1rem;
-  font-size:1.3rem;
-}
-
-.service-content ul li{
-  padding-left:1rem;
-  margin-bottom:1rem;
-  font-size:1.4rem;
-}
-
-.service-content li{
-  margin-bottom:.9rem;
-  color:#444;
-  font-size:1.05rem;
-  line-height:1.7;
-}
 
 
 /* ==========================================
@@ -314,33 +220,48 @@ body{
 }
 
 /* =========================
-   HERO SECTION
+   SERVICES HERO (MODERN SYSTEM)
 ========================= */
 .services-hero,
 .service-page-hero{
-  background:
-    radial-gradient(circle at top right, rgba(0,114,206,.25), transparent 30%),
-    linear-gradient(135deg, #000000 0%, #050505 45%, #0072ce 100%);
-  color:#fff;
+  background: linear-gradient(
+    180deg,
+    rgba(0,114,206,0.08) 0%,
+    rgba(0,114,206,0.03) 100%
+  );
   text-align:center;
-  padding:100px 20px 80px;
+
+  /* 👇 THIS CONTROLS TOP SPACE */
+  padding: 180px 20px 120px;
+
+  position:relative;
 }
 
+
+.services-hero > *,
+.service-page-hero > *{
+  position:relative;
+  z-index:1;
+}
+
+/* Heading */
 .services-hero h1,
 .service-page-hero h1{
-  font-size:clamp(2rem,5vw,3.5rem);
-  font-weight:400;
+  font-size:3rem;
+  font-weight:590;
   line-height:1.15;
   margin-bottom:16px;
+  color:var(--primary);
 }
 
+/* Description */
 .services-hero p,
 .service-page-hero p{
-  max-width:800px;
+  max-width:760px;
   margin:auto;
-  font-size:1.3rem;
+  font-size:1.2rem;
   line-height:1.7;
-  color:#f3f4f6;
+  color:#374151;
 }
 
 /* =========================
@@ -369,15 +290,6 @@ body{
   overflow:hidden;
 }
 
-.service-card::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:4px;
-  background:linear-gradient(90deg,#0072ce,#00bfff);
-}
 
 .service-card:hover{
   transform:translateY(-8px);
@@ -407,8 +319,9 @@ body{
 
 .service-content h2{
   color:#0072ce;
-  font-size:1.9rem;
+  font-size:1.5rem;
   margin:2rem 0 1rem;
+  font-weight: 450;
 }
 
 .service-content p{
@@ -464,7 +377,7 @@ body{
   padding:1rem 2.2rem;
   border-radius:10px;
   font-size:1.3rem;
-  font-weight:500;
+  font-weight:400;
   text-decoration:none;
   transition:.25s ease;
 }
@@ -567,8 +480,9 @@ img, video {
   width: 92%;
   max-width: 1200px;
   margin: auto;
-}
 
+}
+ 
 /* Prevent horizontal scroll issues */
 html, body {
   overflow-x: hidden;
@@ -821,6 +735,10 @@ img {
   }
 }
 
+
+
+
+
 /* ================= CTA ================= */
 @media (max-width: 768px) {
 
@@ -1047,7 +965,7 @@ body {
   }
 
   .service-hero h1 {
-    font-size: 2rem;
+    
     line-height: 1.2;
   }
 
@@ -1232,20 +1150,536 @@ header,
   box-shadow: 0 8px 25px rgba(0,0,0,0.35);
 }
 
-.services-hero,
-.service-page-hero {
-  padding-top: 130px; /* key fix for fixed header */
-}
 
 /* =========================
    MATCH ABOUT HERO HEIGHT
 ========================= */
 .services-hero,
 .service-page-hero{
-  padding:140px 20px 120px !important;
+  padding: 170px 20px 120px !important; /* increase top space */
 }
+
 
 .services-hero h1,
 .service-page-hero h1{
   margin-bottom:18px;
+}
+
+/* ==================================================
+   PREMIUM MOBILE SERVICE CARDS
+   ADD AT VERY END OF CSS
+================================================== */
+
+@media screen and (max-width: 768px){
+
+  .services-grid{
+    gap:20px;
+    padding:35px 16px;
+  }
+
+  .service-card{
+    position:relative;
+
+    padding:22px 20px;
+    border-radius:20px;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255,255,255,0.96),
+        rgba(255,255,255,1)
+      );
+
+    border:1px solid rgba(0,114,206,.10);
+
+    box-shadow:
+      0 10px 25px rgba(0,0,0,.05),
+      0 4px 10px rgba(0,114,206,.04);
+
+    transition:
+      transform .25s ease,
+      box-shadow .25s ease;
+
+    overflow:hidden;
+  }
+
+
+
+  /* SOFT BACKGROUND GLOW */
+  .service-card::after{
+    content:"";
+    position:absolute;
+    inset:auto -40px -40px auto;
+
+    width:120px;
+    height:120px;
+
+    background:rgba(0,114,206,.05);
+
+    border-radius:50%;
+
+    filter:blur(10px);
+  }
+
+  /* TOUCH EFFECT */
+  .service-card:active{
+    transform:scale(.98);
+  }
+
+  .service-card:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+      0 18px 40px rgba(0,0,0,.08),
+      0 8px 20px rgba(0,114,206,.08);
+  }
+
+  /* TITLE */
+  .service-card h2{
+    font-size:1.25rem !important;
+    line-height:1.35;
+    margin-bottom:12px;
+
+    color:#0066c2;
+    font-weight:400;
+
+    letter-spacing:-0.3px;
+  }
+
+  /* DESCRIPTION */
+  .service-card p{
+    font-size:0.98rem !important;
+    line-height:1.75;
+
+    color:#4b5563;
+
+    margin:0;
+  }
+
+  /* OPTIONAL ICON STYLE */
+  .service-card i,
+  .service-card svg{
+    font-size:1.8rem;
+    margin-bottom:14px;
+    color:#0072ce;
+  }
+
+}
+/* ==========================================
+   SERVICE CARD LINK
+========================================== */
+
+.card-link{
+  margin-top:1.5rem;
+
+  display:inline-flex;
+  align-items:center;
+  gap:.55rem;
+
+  font-size:1rem;
+  font-weight:600;
+
+  color:#0072ce;
+
+  transition:all .25s ease;
+}
+
+/* Arrow animation */
+.card-link span{
+  transition:transform .25s ease;
+}
+
+/* Hover effect */
+.service-card:hover .card-link{
+  color:#004aad;
+  letter-spacing:.2px;
+}
+
+.service-card:hover .card-link span{
+  transform:translateX(6px);
+}
+
+/* Mobile optimization */
+@media(max-width:768px){
+
+  .card-link{
+    margin-top:1.2rem;
+    font-size:.95rem;
+  }
+
+}
+
+/* ==========================================
+   SERVICE CARD BUTTON LINK
+========================================== */
+
+.card-link{
+  margin-top:1.5rem;
+
+  display:inline-flex;
+  align-items:center;
+  gap:.55rem;
+
+  padding:.75rem 1.2rem;
+
+  background:rgba(0,114,206,.08);
+
+  border:1px solid rgba(0,114,206,.15);
+
+  border-radius:999px;
+
+  color:#0072ce;
+
+  font-size:.95rem;
+  font-weight:600;
+
+  transition:all .28s ease;
+}
+
+/* Arrow animation */
+.card-link span{
+  transition:transform .28s ease;
+}
+
+/* Hover effect */
+.service-card:hover .card-link{
+  background:#0072ce;
+  color:#fff;
+
+  box-shadow:
+    0 10px 25px rgba(0,114,206,.20);
+}
+
+.service-card:hover .card-link span{
+  transform:translateX(5px);
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+  .card-link{
+    padding:.7rem 1.1rem;
+    font-size:.9rem;
+  }
+
+}
+/* ==========================================
+   MOBILE SIZE REDUCTION
+========================================== */
+
+@media(max-width:768px){
+
+  /* SEO section heading */
+  section.container h2{
+    font-size:1.35rem !important;
+    line-height:1.35;
+  }
+
+  /* CTA section smaller */
+  .services-cta{
+    padding:45px 16px !important;
+  }
+
+  .services-cta h2{
+    font-size:1.4rem !important;
+    line-height:1.3;
+    margin-bottom:18px;
+  }
+
+  /* Smaller CTA button */
+  .services-cta .btn-primary{
+    max-width:220px;
+
+    padding:.8rem 1.2rem;
+
+    font-size:.95rem;
+
+    margin:auto;
+  }
+
+}
+
+/* Extra small phones */
+@media(max-width:420px){
+
+  section.container h2{
+    font-size:1.2rem !important;
+  }
+
+  .services-cta h2{
+    font-size:1.2rem !important;
+  }
+
+  .services-cta .btn-primary{
+    padding:.75rem 1rem;
+    font-size:.9rem;
+    max-width:200px;
+  }
+
+}
+
+/* ==========================================
+   SEO SECTION + CTA BUTTON FIX
+========================================== */
+
+/* Extra spacing for that heading section */
+section.container[style]{
+  padding:40px 20px 60px !important; /* added bottom padding */
+}
+
+/* Optional: spacing under heading */
+section.container[style] h2{
+  margin-bottom:20px;
+}
+
+/* CTA button theme override */
+.services-cta .btn-primary{
+  background:#0072ce !important; /* solid brand blue */
+  box-shadow:0 10px 25px rgba(0,114,206,.25);
+}
+
+/* Button spacing (bottom breathing room) */
+.services-cta .btn-primary{
+  margin-bottom:10px;
+}
+
+/* Mobile fine-tune */
+@media(max-width:768px){
+
+  section.container[style]{
+    padding:30px 16px 70px !important;
+  }
+
+  .services-cta .btn-primary{
+    margin-bottom:14px;
+  }
+
+}
+/* ==========================================
+   SERVICES HERO TITLE MOBILE SIZE FIX
+========================================== */
+
+@media (max-width:768px){
+
+  .services-hero h1,
+  .service-page-hero h1{
+    font-size:1.8rem !important;
+    line-height:1.2;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .services-hero h1,
+  .service-page-hero h1{
+    font-size:1.5rem !important;
+    line-height:1.2;
+  }
+
+}
+
+html,
+body{
+  background:#ffffff !important;
+}
+
+/* ==================================================
+   PHONE SIZE REDUCTION FIX
+   Add at VERY END of services.css
+================================================== */
+
+@media screen and (max-width:768px){
+
+  /* ================= HEADER ================= */
+
+
+  .nav-wrap{
+    min-height: 58px;
+  }
+
+  /* Smaller logo */
+  .brand img{
+    width: auto;
+    height: 40px;
+  }
+
+  /* Smaller hamburger */
+  .nav-toggle{
+    transform: scale(.82);
+    padding: 4px;
+  }
+
+  /* Mobile dropdown */
+  .main-nav{
+    top: 58px;
+    min-width: 170px;
+    max-width: 220px;
+
+    padding: 6px 0;
+    border-radius: 10px;
+  }
+
+  .nav-list a{
+    padding: 10px 14px;
+    font-size: .92rem;
+  }
+
+  /* ================= HERO ================= */
+
+  .service-hero{
+    padding: 85px 12px 40px !important;
+  }
+
+  .service-hero h1{
+    font-size: 1.55rem !important;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .service-hero p{
+    font-size: .95rem !important;
+    line-height: 1.6;
+  }
+
+  /* ================= CONTENT ================= */
+
+  .service-content{
+    padding: 30px 12px !important;
+  }
+
+  .service-content h2{
+    font-size: 1.15rem !important;
+    margin-bottom: 10px;
+  }
+
+  .service-content p,
+  .service-content li{
+    font-size: .95rem !important;
+    line-height: 1.65;
+  }
+
+  .service-content ul{
+    padding-left: 18px;
+  }
+
+  /* ================= BUTTONS ================= */
+
+  .btn,
+  .btn-primary,
+  .btn-secondary{
+    font-size: .92rem !important;
+
+    padding: .8rem 1rem !important;
+
+    max-width: 230px;
+
+    margin-top: 18px;
+  }
+
+  /* ================= EXPLORE SECTION ================= */
+
+  .explore-services{
+    padding: 38px 14px !important;
+  }
+
+  .explore-services h2{
+    font-size: 1.2rem !important;
+    margin-bottom: 8px;
+  }
+
+  .explore-services p{
+    font-size: .92rem !important;
+    margin-bottom: 18px;
+  }
+
+  /* ================= CHATBOT ================= */
+
+  .chatbot-btn{
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .chatbot-box{
+    width: 92%;
+    left: 4%;
+    right: 4%;
+    bottom: 68px;
+  }
+
+}
+
+/* ================= EXTRA SMALL PHONES ================= */
+
+@media screen and (max-width:480px){
+
+  .brand img{
+    width: auto;
+  }
+
+  .service-hero h1{
+    font-size: 1.35rem !important;
+  }
+
+  .service-hero p{
+    font-size: .9rem !important;
+  }
+
+  .service-content h2{
+    font-size: 1rem !important;
+  }
+
+  .service-content p,
+  .service-content li{
+    font-size: .9rem !important;
+  }
+
+  .explore-services h2{
+    font-size: 1.05rem !important;
+  }
+
+}
+
+/* Mobile spacing */
+@media (max-width:768px){
+
+  .service-hero{
+    padding-top:160px !important;
+  }
+
+}
+/* ==========================================
+   SPACE BELOW FIXED HEADER
+========================================== */
+
+.service-hero{
+  padding-top:140px !important;
+}
+
+/* ==========================================
+   RESTORE BULLET POINTS
+========================================== */
+
+.service-content ul{
+  list-style-type: disc;
+  padding-left: 25px;
+  margin-top: 12px;
+}
+
+.service-content ul li{
+  display: list-item;
+  list-style-position: outside;
+  margin-bottom: 10px;
+}
+.service-content ul li::marker{
+  color:#0072ce;
+}
+
+/* Smaller / lighter hero title weight */
+.service-hero h1{
+  font-weight:400;
 }

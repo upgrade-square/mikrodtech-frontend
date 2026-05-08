@@ -11,16 +11,11 @@
   font-weight:700;
 }
 
-
 /* ==========================================
-   HERO SECTION
+   CYBER HERO (MODERN TRANSLUCENT STYLE)
 ========================================== */
 .cyber-hero{
-  background:
-  radial-gradient(circle at top right, rgba(0,114,206,.25), transparent 30%),
-  linear-gradient(135deg, #000000 0%, #050505 45%, #0072ce 100%);
-
-  color:#fff;
+  background: #eef6ff; /* soft blue tint */
   text-align:center;
   padding:95px 20px 72px;
 }
@@ -30,30 +25,34 @@
   margin:auto;
 }
 
+/* Heading */
 .cyber-hero h1{
-  font-size:clamp(2rem,5vw,3.5rem);
-  font-weight:400;
+  font-size: 3rem;
+  font-weight:500;
   letter-spacing:.4px;
   margin-bottom:10px;
   line-height:1.15;
+  color:var(--primary);
 }
 
+/* Tagline */
 .cyber-hero .tagline{
-  font-size:1.05rem;
+  font-size:1rem;
   font-weight:500;
-  color:#d9ecff;
+  color:#4b5563;
   margin-bottom:14px;
+  letter-spacing:1px;
 }
 
+/* Description */
 .cyber-hero .lead{
   max-width:760px;
   margin:auto;
-  font-size:1.3rem;
-  line-height:1.75;
-  color:#f1f5f9;
+  font-size:1.2rem;
+  line-height:1.7;
+  color:#374151;
   margin-bottom:24px;
 }
-
 
 /* ==========================================
    CYBERSECURITY SOLUTIONS SECTION
@@ -304,6 +303,124 @@
     max-width: 280px;
     padding: 12px 18px;
     font-size: 0.95rem;
+  }
+
+}
+
+/* ==========================================
+   FINAL CYBERSECURITY MOBILE SCALE FIX
+   (PROPORTIONAL & CLEAN)
+========================================== */
+
+@media (max-width: 768px){
+
+  /* Reduce overall vertical spacing */
+  .cyber-hero{
+    padding: 65px 16px 50px !important;
+  }
+
+  /* Make hero text more compact */
+  .cyber-hero h1{
+    font-size: 1.5rem !important;
+    line-height: 1.25;
+  }
+
+  .cyber-hero .tagline{
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+  }
+
+  .cyber-hero .lead{
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  /* Section spacing reduction (important for "smaller page feel") */
+  .services-preview{
+    padding: 50px 0 !important;
+  }
+
+  /* Titles scale down better */
+  .services-preview .section-title,
+  .cyber-section h2,
+  .section-title{
+    font-size: 1.35rem !important;
+    margin-bottom: 16px;
+  }
+
+  /* Reduce card density */
+  .cyber-card{
+    padding: 1.1rem;
+  }
+
+  .why-card{
+    padding: 1.1rem;
+  }
+
+  /* Paragraphs tighter */
+  .cyber-section p,
+  .cyber-card p{
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Grid spacing tighter */
+  .services-preview .service-grid{
+    gap: 10px;
+  }
+
+  .services-preview .service-grid div{
+    padding: 14px 12px;
+    font-size: 0.9rem;
+    border-radius: 12px;
+  }
+
+  /* Button smaller + tighter */
+  .cyber-hero .btn-primary,
+  .cyber-section .btn-primary{
+    max-width: 260px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    border-radius: 40px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 420px){
+
+  .cyber-hero h1{
+    font-size: 1.3rem !important;
+  }
+
+  .cyber-hero .lead{
+    font-size: 0.9rem;
+  }
+
+  .services-preview .section-title{
+    font-size: 1.2rem !important;
+  }
+}
+
+/* ==========================================
+   HERO H1 MOBILE SIZE FIX
+   ADD AT VERY BOTTOM OF CSS
+========================================== */
+
+@media (max-width: 768px){
+
+  .cyber-hero h1{
+    font-size: 1.8rem !important;
+    line-height: 1.25;
+  }
+
+}
+
+@media (max-width: 420px){
+
+  .cyber-hero h1{
+    font-size: 1.5rem !important;
+    line-height: 1.3;
   }
 
 }

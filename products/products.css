@@ -7,40 +7,39 @@
 }
 
 /* =============================
-   HERO SECTION
+   HERO SECTION (MODERN WHITE STYLE)
 ============================= */
 .hero{
-  background:
-  radial-gradient(circle at top right, rgba(0,114,206,.25), transparent 30%),
-  linear-gradient(135deg, #000000 0%, #050505 45%, #0072ce 100%);
-
-  color:#ffffff;
+  background: #eef6ff; /* soft blue tint */
   text-align:center;
   padding:100px 20px 80px;
 }
 
+/* Tagline */
 .hero .tagline{
   font-size:.85rem;
-  font-weight:500;
   letter-spacing:3px;
   margin-bottom:14px;
-  color:#dbeafe;
+  color:#4b5563;
   text-transform:uppercase;
 }
 
+/* Main heading */
 .hero h1{
-  font-size:clamp(2rem,5vw,3.5rem);
-  font-weight:400;
+  font-size:3rem;
+  font-weight:500;
   line-height:1.15;
   margin-bottom:16px;
+  color:var(--primary);
 }
 
+/* Description */
 .hero .lead{
   max-width:760px;
   margin:auto;
-  font-size:1.3rem;
+  font-size:1.2rem;
   line-height:1.7;
-  color:#f3f4f6;
+  color:#374151;
 }
 
 /* Responsive */
@@ -346,4 +345,72 @@
   .nav-list a:hover{
     background:rgba(255,255,255,.08);
   }
+}
+
+/* =========================
+   MOBILE COMPACT LAYOUT FIX
+========================= */
+@media (max-width: 768px){
+
+  /* Reduce overall vertical spacing */
+  .hero,
+  .products-section,
+  .contact{
+    padding:60px 16px !important;
+  }
+
+  /* Make headings more proportional */
+  .hero h1{
+    font-size:1.6rem !important;
+    line-height:1.2;
+  }
+
+  .products-section .section-title,
+  .contact .section-title{
+    font-size:1.5rem !important;
+    line-height:1.3;
+  }
+
+  /* Paragraph consistency */
+  .hero .lead,
+  .products-section .section-intro,
+  .contact p{
+    font-size:0.98rem !important;
+    line-height:1.6;
+  }
+
+}
+
+/* =========================
+   CONTACT CTA MOBILE FIX
+========================= */
+@media (max-width: 768px){
+
+  .contact{
+    padding:55px 16px !important;
+  }
+
+  .contact .section-title{
+    font-size:1.35rem !important;
+    line-height:1.25;
+    margin-bottom:12px;
+  }
+
+  .contact p{
+    font-size:0.95rem !important;
+    line-height:1.6;
+    margin-bottom:18px;
+    padding:0 6px;
+  }
+
+  /* Button compact + consistent */
+  .contact .btn,
+  .contact .btn-primary{
+    width:100%;
+    max-width:260px;
+    padding:11px 18px;
+    font-size:0.95rem;
+    border-radius:8px;
+  }
+
 }

@@ -31,8 +31,8 @@ html{
 /* ================= BASE ================= */
 body{
   font-family:Arial, Helvetica, sans-serif;
-  background:#fff;
-  color:var(--text);
+  background:#ffffff;
+  color:#111;
   line-height:1.6;
 }
 
@@ -102,12 +102,8 @@ ul{
 /* ================= HERO ================= */
 /* CLEAN + REDUCED PREMIUM LOOK */
 .hero{
-  background:
-  radial-gradient(circle at top right, rgba(0,114,206,.25), transparent 30%),
-  linear-gradient(135deg, #000000 0%, #050505 45%, #0072ce 100%);
-  
-  color:#fff;
-  text-align:center;
+  background: #eef6ff; /* soft blue tint */
+  text-align: center;
   padding:100px 20px 80px;
 }
 
@@ -116,29 +112,27 @@ ul{
 }
 
 .company-name{
-  font-size:clamp(2rem,5vw,3.5rem);
-  font-weight:400;
+  font-size: 3rem;
+  font-weight:500;
   line-height:1.15;
-  letter-spacing:0;
   margin-bottom:16px;
-  color:#0072ce;
+    color: var(--primary);
 }
 
 .tagline{
   font-size:.85rem;
-  font-weight:500;
   letter-spacing:3px;
   margin-bottom:14px;
-  color:#dbeafe;
+   color: #4b5563;
   text-transform:uppercase;
 }
 
 .lead{
   max-width:760px;
   margin:auto;
-  font-size:1.3rem;
+  font-size:1.2rem;
   line-height:1.7;
-  color:#f3f4f6;
+  color: #374151;
   margin-bottom:24px;
 }
 
@@ -323,7 +317,7 @@ section{
   color:#fff;
   padding:14px 28px;
   border-radius:50px;
-  font-weight:700;
+  font-weight:500;
   transition:.3s ease;
 }
 
@@ -649,45 +643,6 @@ ul{
   font-weight:700;
 }
 
-/* ================= HERO ================= */
-.hero{
-  background:
-  radial-gradient(circle at top right, rgba(0,114,206,.25), transparent 30%),
-  linear-gradient(135deg,#000 0%,#050505 45%,#0072ce 100%);
-  color:#fff;
-  text-align:center;
-  padding:100px 20px 80px;
-}
-
-.hero .container{
-  max-width:900px;
-}
-
-.company-name{
-  font-size:clamp(2rem,5vw,3.5rem);
-  font-weight:400;
-  line-height:1.15;
-  margin-bottom:16px;
-  color:#0072ce;
-}
-
-.tagline{
-  font-size:.85rem;
-  letter-spacing:3px;
-  margin-bottom:14px;
-  color:#dbeafe;
-  text-transform:uppercase;
-}
-
-.lead{
-  max-width:760px;
-  margin:auto;
-  font-size:1.2rem;
-  line-height:1.7;
-  color:#f3f4f6;
-  margin-bottom:24px;
-}
-
 /* ================= BUTTONS ================= */
 .btn,
 .btn-primary,
@@ -761,7 +716,7 @@ section{
 
 /* ================= SERVICES ================= */
 .services-preview{
-  background:#0a0a0a;
+  background:#ffffff;
   color:#fff;
 }
 
@@ -1157,4 +1112,124 @@ section{
   .nav-list a:hover{
     background:rgba(255,255,255,.08);
   }
+}
+
+/* ==========================================
+   FINAL MOBILE SIZE OPTIMIZATION
+   (Makes everything feel smaller & tighter)
+========================================== */
+
+@media (max-width: 480px){
+
+  body{
+    font-size:14px;
+  }
+
+  .company-name{
+    font-size:1.8rem;
+    line-height:1.2;
+  }
+
+  .tagline{
+    font-size:0.75rem;
+    letter-spacing:1px;
+  }
+
+  .lead{
+    font-size:0.95rem;
+    line-height:1.5;
+  }
+
+  .section-title{
+    font-size:1.4rem;
+  }
+
+  section{
+    padding:55px 0;
+  }
+
+  .why-card,
+  .service-card{
+    padding:16px 14px;
+  }
+
+  .why-card h3,
+  .service-card h3{
+    font-size:1rem;
+  }
+
+  .why-card p,
+  .service-card p{
+    font-size:0.9rem;
+  }
+
+  .contact-cta h2{
+    font-size:1.3rem;
+  }
+
+  .contact-cta p{
+    font-size:0.9rem;
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-secondary{
+    padding:12px 18px;
+    font-size:0.9rem;
+  }
+
+  .chatbot-btn{
+    width:50px;
+    height:50px;
+    font-size:1.2rem;
+  }
+}
+
+/* ==========================================
+   FOOTER MOBILE 2-COLUMN FIX
+========================================== */
+
+@media (max-width: 600px){
+
+  .site-footer{
+    padding-top:40px;
+  }
+
+  .footer-inner{
+    display:grid;
+    grid-template-columns:1fr 1fr; /* two columns */
+    gap:20px;
+    align-items:start;
+  }
+
+  .footer-col h4{
+    font-size:1rem;
+    margin-bottom:10px;
+  }
+
+  .footer-col li{
+    margin-bottom:8px;
+  }
+
+  .footer-col a,
+  .footer-col p{
+    font-size:0.9rem;
+    line-height:1.5;
+  }
+
+  .footer-social-icons{
+    gap:8px;
+  }
+
+  .footer-social-icons img{
+    width:28px;
+    height:28px;
+  }
+
+  .footer-bottom{
+    margin-top:30px;
+    padding:18px 10px;
+    font-size:0.85rem;
+  }
+
 }
