@@ -374,17 +374,17 @@ MOBILE TIGHTENING (OPTIMIZED)
   }
 
   .about-hero h1{
-    font-size:1.5rem;
+    font-size:1.2rem;
     line-height:1.2;
   }
 
   .hero-text{
-    font-size:0.9rem;
+    font-size:0.8rem;
     line-height:1.5;
   }
 
   .small-title{
-    font-size:0.7rem;
+    font-size:0.6rem;
     letter-spacing:1px;
   }
 
@@ -399,13 +399,13 @@ MOBILE TIGHTENING (OPTIMIZED)
 
   /* HEADINGS */
   h2{
-    font-size:1.3rem;
+    font-size:1rem;
     margin-bottom:12px;
   }
 
   /* PARAGRAPHS */
   p{
-    font-size:0.9rem;
+    font-size:0.8rem;
     line-height:1.6;
   }
 
@@ -418,7 +418,7 @@ MOBILE TIGHTENING (OPTIMIZED)
 
   .info-card h3,
   .mini-card h3{
-    font-size:0.95rem;
+    font-size:0.85rem;
   }
 
   /* GRID SPACING */
@@ -446,7 +446,7 @@ MOBILE TIGHTENING (OPTIMIZED)
 
   /* TAGS */
   .section-tag{
-    font-size:0.7rem;
+    font-size:0.8rem;
     letter-spacing:1px;
   }
 }
@@ -462,21 +462,21 @@ MOBILE TIGHTENING (OPTIMIZED)
   }
 
   .cta-section h2{
-    font-size:1.35rem !important;
+    font-size:0.9rem !important;
     line-height:1.3;
     margin-bottom:12px;
   }
 
   .cta-section p{
-    font-size:0.95rem !important;
-    line-height:1.6;
+    font-size:0.85rem !important;
+    line-height:1.1;
     max-width:95%;
     margin:0 auto 18px auto;
   }
 
   .cta-section .main-btn{
     padding:10px 18px;
-    font-size:0.9rem;
+    font-size:0.8rem;
     max-width:240px;
     border-radius:40px;
     margin-top:14px;
@@ -491,11 +491,11 @@ MOBILE TIGHTENING (OPTIMIZED)
   }
 
   .cta-section h2{
-    font-size:1.2rem !important;
+    font-size:1rem !important;
   }
 
   .cta-section p{
-    font-size:0.88rem !important;
+    font-size:0.75rem !important;
   }
 
   .cta-section .main-btn{
@@ -516,5 +516,5 @@ MOBILE TIGHTENING (OPTIMIZED)
 
 .cta-section .main-btn{
   padding:10px 22px;
-  font-size:0.95rem;
-}g
+  font-size:0.85rem;
+}
