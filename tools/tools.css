@@ -5,6 +5,22 @@
   font-weight:700;
 }
 
+/* =============================
+   FIXED HEADER
+============================= */
+.site-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background: rgba(0,0,0,.94);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
 
 .tools {
   padding: 60px 20px;
@@ -1845,6 +1861,16 @@ body{
   .copy-pw-btn{
     padding: 5px 8px;
     font-size: 0.78rem;
+  }
+
+}
+/* =========================
+   FIX HEADER OVERLAP ON MOBILE
+========================= */
+@media (max-width:768px){
+
+  .hero{
+    padding-top: 160px !important;
   }
 
 }
