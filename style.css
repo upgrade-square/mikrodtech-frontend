@@ -257,7 +257,7 @@ section{
 }
 
 .services-preview .section-title{
-  color:#fff;
+  color:#000;
 }
 
 .service-grid{
@@ -497,7 +497,8 @@ section{
 }
 
 .section-title{
-  font-size:1.2rem;
+  font-size:1.1rem;
+  font-weight: 300;
 }
 
 .btn,
@@ -843,7 +844,8 @@ section{
   }
 
   .section-title{
-    font-size:1.2rem;
+    font-size:1.1rem;
+    font-weight: 400;
   }
 
   .why-grid,
@@ -917,7 +919,7 @@ section{
 @media (max-width: 420px) {
 
   .services-preview .section-title {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .service-card {
@@ -931,6 +933,9 @@ section{
   .service-card p {
     font-size: 0.8rem;
   }
+  
+
+  
 }
 
 /* ==================================================
@@ -959,6 +964,7 @@ section{
   .why-card h3 {
     font-size: 1rem;
     margin-bottom: 8px;
+    font-weight: 450;
   }
 
   .why-card p {
@@ -1142,7 +1148,7 @@ section{
 
 
   .about-home p{
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .section-title{

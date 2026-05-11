@@ -594,21 +594,6 @@ html, body {
   }
 }
 
-/* ================= ULTRA SMALL PHONES ================= */
-@media (max-width: 420px) {
-
-  .service-hero h1 {
-    font-size: 1.5rem;
-  }
-
-  .service-hero p {
-    font-size: 0.95rem;
-  }
-
-  .service-content h2 {
-    font-size: 1rem;
-  }
-}
 
 /* ==================================================
    EXPLORE SERVICES MOBILE FIX (MICRODTECH)
@@ -755,7 +740,7 @@ img {
 @media (max-width: 420px) {
 
   .services-hero h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .services-hero p {
@@ -763,16 +748,28 @@ img {
   }
 
   .service-card h2 {
-    font-size: 1rem;
-  }
-
-  .service-card p {
     font-size: 0.95rem;
   }
 
-  section.container h2 {
-    font-size: 1.2rem;
+  .card-link{
+    font-size: 0.7rem;
   }
+
+  .service-card p {
+    font-size: 0.8rem;
+  }
+
+  section.container h2 {
+    font-size: 1rem;
+    color: #0072ce;
+    font-weight: 450;
+  }
+
+    section.container p {
+      font-size: 0.8rem;
+    }
+
+    
 }
 
 /* ==================================================
