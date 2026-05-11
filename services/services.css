@@ -166,7 +166,7 @@ body{
 
   .services-hero,
   .service-page-hero{
-    padding:120px 20px 90px;
+    padding:100px 20px 90px;
   }
 
   .services-hero h1,
@@ -715,7 +715,7 @@ img {
   }
 
   section.container h2 {
-    font-size: 1rem;
+    font-size: 1.rem;
     line-height: 1.3;
   }
 
@@ -771,12 +771,7 @@ img {
   }
 
   section.container h2 {
-    font-size: 1rem;
-  }
-  .container h2{
-    font-size: 1rem;
-    font-weight: 500;
-    color: #0072ce;
+    font-size: 1.2rem;
   }
 }
 
@@ -1146,13 +1141,7 @@ header,
 }
 
 
-/* =========================
-   MATCH ABOUT HERO HEIGHT
-========================= */
-.services-hero,
-.service-page-hero{
-  padding: 170px 20px 120px !important; /* increase top space */
-}
+
 
 
 .services-hero h1,
@@ -1489,15 +1478,6 @@ body{
   /* ================= HEADER ================= */
 
 
-  .nav-wrap{
-    min-height: 58px;
-  }
-
-  /* Smaller logo */
-  .brand img{
-    width: auto;
-    height: 40px;
-  }
 
   /* Smaller hamburger */
   .nav-toggle{
@@ -1679,45 +1659,98 @@ body{
   font-weight:400;
 }
 
+/* ==================================================
+   SERVICES PAGE HEADER
+   MATCH HOMEPAGE EXACTLY
+================================================== */
 
-/* ==========================================
-   BRAND LOGO MOBILE SIZE FIX
-========================================== */
-
-@media (max-width: 768px){
-
-  .brand img{
-    height: 28px;   /* smaller logo */
-    margin: 4px;    /* reduced spacing */
-  }
-
-  .nav-wrap{
-    padding: 6px 0; /* smaller header height */
-  }
-
+/* ================= HEADER ================= */
+.site-header{
+  position:fixed;
+  top:0;
+  z-index:999;
+  background:rgba(0,0,0,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-/* Extra small phones */
-@media (max-width: 480px){
-
-  .brand img{
-    height: 25px;
-    margin: 2px;
-  }
-
-  .nav-wrap{
-    padding: 4px 0;
-  }
-
+.nav-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:50px;
 }
 
-@media (max-width: 992px){
+.brand img{
+  height:40px;
+  width:auto;
+  margin:1rem;
+}
+
+.main-nav .nav-list{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+
+.nav-list a{
+  color:#fff;
+  font-size:.95rem;
+  font-weight:600;
+  padding:.45rem .75rem;
+  border-radius:8px;
+  transition:.3s ease;
+}
+
+.nav-list a.active{
+  color:#0072ce;
+  font-weight:700;
+}
+
+/* ================= MOBILE NAV ================= */
+.nav-toggle{
+  display:none;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+  width:26px;
+  height:3px;
+  background:#fff;
+  display:block;
+  border-radius:5px;
+  position:relative;
+}
+
+.hamburger::before,
+.hamburger::after{
+  content:"";
+  position:absolute;
+  left:0;
+}
+
+.hamburger::before{
+  top:-8px;
+}
+
+.hamburger::after{
+  top:8px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:992px){
 
   .nav-wrap{
     position:relative;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    gap:20px;
+    padding:6px 0;
   }
 
   .nav-toggle{
@@ -1727,10 +1760,8 @@ body{
 
   .main-nav{
     position:absolute;
-
-    /* makes dropdown attach directly below header */
     top:100%;
-    right:0;
+    right:-4%;
 
     width:max-content;
     min-width:180px;
@@ -1740,12 +1771,9 @@ body{
     backdrop-filter:blur(10px);
 
     border:1px solid rgba(255,255,255,.08);
-
-    /* smoother connection to header */
     border-radius:0 0 12px 12px;
 
     display:none;
-
     padding:6px 0;
 
     box-shadow:0 12px 25px rgba(0,0,0,.28);
@@ -1776,24 +1804,28 @@ body{
   }
 }
 
-@media (max-width: 992px){
+/* Extra small phones */
+@media (max-width: 480px){
 
-  .nav-wrap{
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding-right:0; /* removes right spacing */
+  .brand img{
+    height: 25px;
+    margin: 2px;
   }
 
-  .main-nav{
-    position:absolute;
-    top:100%;
-    right:-4%;
-
-    margin-right:0; /* ensures no right gap */
+  .nav-wrap{
+    padding: 4px 0;
   }
 
 }
 
+/* ==========================================
+   MOBILE HEADER SPACING FIX
+========================================== */
+@media (max-width:768px){
+
+  .services-hero,
+  .service-page-hero{
+    padding-top:100px !important;
+  }
+
+}

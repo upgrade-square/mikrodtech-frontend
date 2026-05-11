@@ -417,7 +417,7 @@
 
   /* HERO spacing below fixed navbar */
   .hero{
-    padding:160px 16px 60px !important;
+    padding:100px 16px 60px !important;
   }
 
   /* Other sections */
@@ -444,6 +444,18 @@
   .contact p{
     font-size:0.98rem !important;
     line-height:1.6;
+  }
+
+}
+
+/* ==========================================
+   MOBILE HEADER SPACING FIX
+========================================== */
+@media (max-width:768px){
+
+  .services-hero,
+  .service-page-hero{
+    padding-top:100px !important;
   }
 
 }
