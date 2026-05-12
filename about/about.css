@@ -380,12 +380,12 @@ MOBILE TIGHTENING (OPTIMIZED)
   }
 
   .hero-text{
-    font-size:1rem;
+    font-size:0.8rem;
     line-height:1.5;
   }
 
   .small-title{
-    font-size:1rem;
+    font-size:0.9rem;
     letter-spacing:1px;
   }
 
@@ -406,7 +406,7 @@ MOBILE TIGHTENING (OPTIMIZED)
 
   /* PARAGRAPHS */
   p{
-    font-size:1rem;
+    font-size:0.8rem;
     line-height:1.6;
   }
 
@@ -447,7 +447,7 @@ MOBILE TIGHTENING (OPTIMIZED)
 
   /* TAGS */
   .section-tag{
-    font-size:1rem;
+    font-size:0.9rem;
     letter-spacing:1px;
   }
 }
@@ -517,7 +517,7 @@ MOBILE TIGHTENING (OPTIMIZED)
 
 .cta-section .main-btn{
   padding:10px 22px;
-  font-size:0.85rem;
+  font-size:0.65rem;
 }
 
 /* ==========================================
