@@ -107,10 +107,15 @@
 }
 
 .services-preview .btn-secondary{
-  display:table;
-  margin:0 auto;
-}
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
+  margin:0 auto;
+
+  background-color:#0072ce;
+  color: #fff;
+}
 
 /* ==========================================
    PREMIUM CARDS
@@ -407,14 +412,7 @@
    ADD AT VERY BOTTOM OF CSS
 ========================================== */
 
-@media (max-width: 768px){
 
-  .cyber-hero h1{
-    font-size: 1.5rem !important;
-    line-height: 1.25;
-  }
-
-}
 
 @media (max-width: 420px){
 
@@ -424,11 +422,11 @@
   }
 
    .cyber-hero .tagline{
-    font-size: 0.8rem;
+    font-size: 0.65rem;
    }
 
     .cyber-hero .btn-primary{
-     font-size: 0.9rem;
+     font-size: 0.8rem;
      font-weight: 300;
     }
 }
