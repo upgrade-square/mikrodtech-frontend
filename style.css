@@ -130,7 +130,7 @@ ul{
 .lead{
   max-width:760px;
   margin:auto;
-  font-size:1rem;
+  font-size:1.3rem;
   line-height:1.7;
   color: #374151;
   margin-bottom:24px;
@@ -304,12 +304,7 @@ section{
   max-width:920px;
 }
 
-.about-home p{
-  font-size:1.3rem;
-  color:#444;
-  line-height:1.8;
-  margin-bottom:28px;
-}
+
 
 .about-home .btn-about{
   display:inline-block;
@@ -734,7 +729,7 @@ section{
 }
 
 .about-home p{
-  font-size:1.1rem;
+  font-size:1.3rem;
   line-height:1.8;
   margin-bottom:20px;
 }
@@ -1171,7 +1166,7 @@ section{
 
   .why-card p,
   .service-card p{
-    font-size:1rem;
+    font-size:0.8rem;
   }
 
   .contact-cta h2{

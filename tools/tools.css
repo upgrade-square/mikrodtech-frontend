@@ -1116,7 +1116,7 @@
 .hero{
   background: #eef6ff; /* soft blue tint */
   text-align:center;
-  padding:100px 20px 80px;
+  padding:160px 20px 80px;
   position:relative;
 }
 
@@ -1875,14 +1875,3 @@ body{
 
 }
 
-/* ==========================================
-   MOBILE HEADER SPACING FIX
-========================================== */
-@media (max-width:768px){
-
-  .services-hero,
-  .service-page-hero{
-    padding-top:100px !important;
-  }
-
-}
