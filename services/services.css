@@ -703,41 +703,6 @@ img {
   }
 }
 
-/* ================= VERY SMALL PHONES ================= */
-@media (max-width: 420px) {
-
-  .services-hero h1 {
-    font-size: 1.4rem;
-  }
-
-  .services-hero p {
-    font-size: 0.65rem;
-  }
-
-  .service-card h2 {
-    font-size: 0.9rem;
-  }
-
-  .card-link{
-    font-size: 0.7rem;
-  }
-
-  .service-card p {
-    font-size: 0.65rem;
-  }
-
-  section.container h2 {
-    font-size: 1rem;
-    color: #0072ce;
-    font-weight: 450;
-  }
-
-    section.container p {
-      font-size: 0.65rem;
-    }
-
-    
-}
 
 /* ==================================================
    GLOBAL MOBILE FIX PATCH
@@ -1340,15 +1305,23 @@ body {
   }
 
   .services-cta h2{
-    font-size:1.2rem !important;
+    font-size:0.9rem !important;
   }
 
   .services-cta .btn-primary{
     padding:.75rem 1rem;
-    font-size:.9rem;
+    font-size:0.65rem;
     max-width:200px;
   }
 
+   .card-link{
+    margin-top:1rem;
+    font-size:.65rem;
+  }
+
+  .services-hero p{
+    font-size: 0.8rem;
+  }
 }
 
 /* ==========================================
@@ -1544,7 +1517,7 @@ body{
   }
 
   .explore-services h2{
-    font-size: 1rem !important;
+    font-size: 0.65rem !important;
   }
 
 }
@@ -1679,3 +1652,4 @@ body{
     background: rgba(255,255,255,.08);
   }
 }
+
