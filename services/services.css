@@ -1653,3 +1653,135 @@ body{
   }
 }
 
+/* ==========================================
+   SEO CONTENT SECTION
+========================================== */
+/* ==========================================
+   SEO SECTION
+========================================== */
+
+.seo-section{
+  padding:40px 20px;
+}
+
+.seo-section h2{
+  font-size:1.8rem;
+  font-weight:450;
+  color:#0072ce;
+  margin-bottom:20px;
+  line-height:1.3;
+}
+
+.seo-section p{
+  font-size:1.3rem;
+  line-height:1.8;
+  color:#444;
+  margin-bottom:18px;
+}
+
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width:768px){
+
+  .seo-section{
+    padding:35px 16px;
+  }
+
+  .seo-section h2{
+    font-size:1.5rem;
+    line-height:1.35;
+    margin-bottom:16px;
+  }
+
+  .seo-section p{
+    font-size:1rem;
+    line-height:1.7;
+    margin-bottom:16px;
+  }
+
+}
+
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media (max-width:480px){
+
+  .seo-section{
+    padding:30px 14px;
+  }
+
+  .seo-section h2{
+    font-size:1.3rem;
+  }
+
+  .seo-section p{
+    font-size:0.9rem;
+    line-height:1.65;
+  }
+
+}
+
+/* ==========================================
+   SERVICES INTRO
+========================================== */
+
+.services-intro{
+  text-align:center;
+  padding:70px 20px 20px;
+}
+
+.services-tag{
+  display:inline-block;
+
+  background:rgba(0,114,206,.08);
+  color:#0072ce;
+
+  padding:.55rem 1rem;
+  border-radius:999px;
+
+  font-size:.9rem;
+  font-weight:600;
+
+  margin-bottom:18px;
+}
+
+.services-intro h2{
+  font-size:1.8rem;
+  line-height:1.2;
+  margin-bottom:18px;
+
+  color:#111;
+  font-weight:500;
+}
+
+.services-intro p{
+  max-width:760px;
+  margin:auto;
+
+  font-size:1.3rem;
+  line-height:1.8;
+
+  color:#555;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+  .services-intro{
+    padding:50px 16px 10px;
+  }
+
+  .services-intro h2{
+    font-size:1.1rem;
+  }
+
+  .services-intro p{
+    font-size:0.9rem;
+  }
+
+}
