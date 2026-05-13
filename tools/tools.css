@@ -1744,6 +1744,7 @@ body{
 
   .hero h1{
     font-size:1.55rem !important;
+
   }
 
   .tools .section-title{
@@ -1755,7 +1756,12 @@ body{
   }
 
   .tool-card p{
-    font-size:.92rem !important;
+    font-size:0.9rem !important;
+  }
+
+  .hero .lead{
+    font-size:0.9rem !important;
+   
   }
 
   .speed-value{
@@ -1780,7 +1786,7 @@ body{
 
   .speedtest-container{
     max-width: 100%;
-    width: calc(100% - 24px); /* side padding on phones */
+    width: calc(100% - 24px); 
     padding: 1.8rem 1rem;
     border-radius: 20px;
   }
@@ -1795,8 +1801,6 @@ body{
   max-width: 480px;
   width: calc(100% - 30px);
   margin: 2rem auto;
-
-  /* reduced height */
   padding: 1.4rem 1rem;
 
   border-radius: 24px;
@@ -1875,3 +1879,92 @@ body{
 
 }
 
+
+@media (max-width:420px){
+
+  .hero{
+    padding: 95px 14px 50px !important;
+  }
+
+  .hero h1{
+    font-size:1.55rem !important;
+  }
+
+}
+
+/* =========================
+   EXTRA SMALL PHONES
+========================= */
+@media (max-width:420px){
+
+  /* Smaller speedtest container */
+  .speedtest-container{
+    width: calc(100% - 40px) !important;
+    max-width: 340px;
+    
+    padding: 1rem 0.8rem !important;
+    border-radius: 16px;
+  }
+
+  /* Smaller internal display */
+  .speed-display{
+    padding: 1.2rem 0.7rem !important;
+  }
+
+  /* Smaller Start Test button */
+  .speedtest-btn{
+    width: 140px !important;
+    max-width: 140px !important;
+
+    padding: 0.6rem 0.7rem !important;
+
+    font-size: 0.7rem !important;
+    border-radius: 40px;
+  }
+
+}
+
+/* =========================
+   EXTRA SMALL PHONES
+========================= */
+@media (max-width:420px){
+
+  /* Smaller speedtest container */
+  .speedtest-container{
+    width: calc(100% - 40px) !important;
+    max-width: 340px;
+    
+    padding: 1rem 0.8rem !important;
+    border-radius: 16px;
+  }
+
+  /* Smaller internal display */
+  .speed-display{
+    padding: 1.2rem 0.7rem !important;
+  }
+
+  /* Smaller Start Test button */
+  .speedtest-btn{
+    width: 140px !important;
+    max-width: 140px !important;
+
+    padding: 0.6rem 0.7rem !important;
+
+    font-size: 0.7rem !important;
+    border-radius: 40px;
+  }
+
+  /* Smaller tool buttons */
+  .tool-card .tool-btn{
+    width: auto !important;
+    max-width: none !important;
+
+    padding: 0.55rem 0.9rem !important;
+
+    font-size: 0.75rem !important;
+    border-radius: 30px;
+
+    min-height: auto;
+  }
+
+}
