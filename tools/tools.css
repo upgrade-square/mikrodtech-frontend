@@ -2167,32 +2167,3 @@ body{
   }
 
 }
-
-.pw-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.pw-input {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.pw-name-input {
-  width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-}
-
-/* IMPORTANT for small screens */
-@media (max-width: 480px) {
-  .pw-input {
-    font-size: 14px; /* optional readability tweak */
-  }
-
-  .pw-name-input {
-    font-size: 14px;
-  }
-}
-
