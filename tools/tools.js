@@ -494,7 +494,7 @@ case "password": {
 </div>
 
   <input type="text" id="pwName"
-    placeholder="Optional name (max 6 chars)"
+   placeholder=" Add Name"
     maxlength="6"
     class="pw-input pw-name-input">
 

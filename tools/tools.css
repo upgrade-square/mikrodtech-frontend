@@ -2129,3 +2129,70 @@ body{
 
 }
 
+/* =========================
+   SMALL PHONE ENTROPY BAR
+========================= */
+@media (max-width: 420px){
+
+  .strength-bar-container{
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 999px;
+  }
+
+  .strength-bar{
+    height: 4px;
+    border-radius: 999px;
+  }
+
+}
+
+@media (max-width: 420px){
+
+  .pw-wrapper,
+  .pw-field,
+  .pw-name-input{
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+}
+@media (max-width: 420px){
+
+  .pw-name-input{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+}
+
+.pw-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.pw-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pw-name-input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* IMPORTANT for small screens */
+@media (max-width: 480px) {
+  .pw-input {
+    font-size: 14px; /* optional readability tweak */
+  }
+
+  .pw-name-input {
+    font-size: 14px;
+  }
+}
+
