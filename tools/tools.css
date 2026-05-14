@@ -31,7 +31,7 @@
 
 .tools .section-title {
   color: #101010;
-  font-weight: 450;
+  font-weight: 400;
 }
 
 .tools .section-intro {
@@ -1165,7 +1165,7 @@
 
 .tools .section-title{
   color:#101010;
-  font-weight:500;
+  font-weight:450;
 }
 
 .tools .section-intro{
@@ -1748,7 +1748,7 @@ body{
   }
 
   .tools .section-title{
-    font-size:1.4rem !important;
+    font-size:1.rem !important;
   }
 
   .tool-card h3{
@@ -1968,3 +1968,164 @@ body{
   }
 
 }
+
+/* =========================
+   EXTRA SMALL PHONES
+========================= */
+@media (max-width:420px){
+
+  /* Speedtest title */
+  .speedtest-container .section-title{
+    font-size: 1.15rem !important;
+    margin-bottom: 0.9rem;
+  }
+
+  /* "Your Internet Speed Is" */
+  .speed-heading{
+    font-size: 0.82rem !important;
+    margin-bottom: 0.3rem;
+  }
+
+  /* Main speed number */
+  .speed-value{
+    font-size: 1.7rem !important;
+    line-height: 1.1;
+  }
+
+  /* Mbps text */
+  .unit{
+    font-size: 0.75rem !important;
+  }
+
+  /* Upload + Ping cards titles */
+  .detail h3{
+    font-size: 0.82rem !important;
+    margin-bottom: 0.2rem;
+  }
+
+  /* Upload + Ping values */
+  .detail p{
+    font-size: 0.78rem !important;
+  }
+
+}
+
+/* =========================
+   PASSWORD BUTTON MOBILE FIX
+========================= */
+@media (max-width:768px){
+
+  .pw-input{
+    padding-right: 120px; /* enough room for buttons */
+    font-size: 0.95rem;
+  }
+
+  .pw-actions{
+    right: 10px; /* better spacing from edge */
+    gap: 6px;   /* cleaner spacing between buttons */
+  }
+
+  .pw-toggle,
+  .copy-pw-btn{
+    padding: 5px 10px;
+    font-size: 0.78rem;
+    min-width: 48px; /* keeps shape balanced */
+  }
+
+}
+
+/* =========================
+   PASSWORD BUTTONS - 420px FIX
+========================= */
+@media (max-width:420px){
+
+  .pw-input{
+    padding-right: 112px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .pw-actions{
+    right: 8px;
+    gap: 5px;
+  }
+
+  .pw-toggle,
+  .copy-pw-btn{
+    padding: 4px 9px;
+    font-size: 0.72rem !important;
+    min-width: 44px;
+    border-radius: 20px;
+  }
+
+}
+
+/* =========================
+   420px PASSWORD TOOL FIX
+========================= */
+@media (max-width:420px){
+
+  /* Password input */
+  .pw-input{
+    padding-right: 95px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Show + Copy container */
+  .pw-actions{
+    right: 6px !important;
+    gap: 4px !important;
+  }
+
+  /* Smaller Show + Copy buttons */
+  .pw-toggle,
+  .copy-pw-btn{
+    padding: 2px 4px !important;
+    font-size: 0.55rem !important;
+
+    min-width: 30px;
+    height: 26px;
+
+    border-radius: 18px;
+  }
+
+  /* Generate password button */
+  #genPwBtn{
+    width: 100% !important;
+    max-width: 180px !important;
+
+    padding: 0.7rem 0.8rem !important;
+
+    font-size: 0.75rem !important;
+
+    border-radius: 12px;
+
+    margin: 12px auto 0;
+    display: block;
+  }
+
+  /* =========================
+   RESILIENCE TIPS - SMALL PHONES
+========================= */
+
+.resilience-tips h3{
+  font-size: 0.8rem !important;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.resilience-tips ul{
+  margin-left: 14px;
+}
+
+.resilience-tips li{
+  font-size: 0.78rem !important;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.resilience-tips li span{
+  font-size: 0.8rem !important;
+}
+
+}
+

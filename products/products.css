@@ -524,3 +524,12 @@
     background:rgba(255,255,255,.08);
   }
 }
+
+
+@media (max-width: 420px){
+
+  .product-card .coming-soon {
+  font-size:0.8rem;
+  font-weight: 450;
+  }
+}
