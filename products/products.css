@@ -525,11 +525,9 @@
   }
 }
 
-
-@media (max-width: 420px){
-
-  .product-card .coming-soon {
-  font-size:0.8rem;
-  font-weight: 300;
+@media (max-width: 480px) {
+  .coming-soon {
+    font-size: 0.75rem;
+    font-weight: 450;
   }
 }
