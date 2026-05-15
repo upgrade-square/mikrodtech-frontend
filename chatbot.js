@@ -680,8 +680,8 @@ function handleKeyboardResize() {
 const chatbotBox = document.getElementById("chatbot-box");
 
 if (chatbotBox) {
-  chatbotBox.style.bottom = "120px";
-  chatbotBox.style.top = "auto";
+ chatbotBox.style.bottom = "0px";
+chatbotBox.style.top = "auto";
 }
 
   } else {

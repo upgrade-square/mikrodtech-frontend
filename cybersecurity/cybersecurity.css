@@ -429,6 +429,11 @@
      font-size: 0.8rem;
      font-weight: 300;
     }
+
+     .nav-list a{
+    font-size: 1rem;
+    font-weight: 350;
+  }
 }
 
 /* ==========================================

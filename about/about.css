@@ -532,3 +532,11 @@ MOBILE TIGHTENING (OPTIMIZED)
   }
 
 }
+
+@media (max-width: 420px){
+
+     .nav-list a{
+    font-size: 1rem;
+    font-weight: 350;
+  }
+}
