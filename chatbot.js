@@ -631,3 +631,17 @@ document.getElementById("chatbot-btn").addEventListener("click", (e) => {
     return false; // cancel click completely
   }
 });
+
+const userInput = document.getElementById("user-input");
+
+if (userInput) {
+
+  userInput.addEventListener("focus", () => {
+    document.body.classList.add("chatbot-keyboard-open");
+  });
+
+  userInput.addEventListener("blur", () => {
+    document.body.classList.remove("chatbot-keyboard-open");
+  });
+
+}

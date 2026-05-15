@@ -943,16 +943,3 @@ document.getElementById("openChatbotMenu").addEventListener("click", () => {
 });
 });
 
-const userInput = document.getElementById("user-input");
-
-if (userInput) {
-
-  userInput.addEventListener("focus", () => {
-    document.body.classList.add("chatbot-keyboard-open");
-  });
-
-  userInput.addEventListener("blur", () => {
-    document.body.classList.remove("chatbot-keyboard-open");
-  });
-
-}

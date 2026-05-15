@@ -618,4 +618,8 @@ CHATBOT MOBILE OPTIMIZATION
     z-index:50;
   }
 
+  .chatbot-header h4{
+ font-size: 0.9rem;
+  }
+
 }
