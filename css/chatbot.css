@@ -644,3 +644,35 @@ CHATBOT MOBILE OPTIMIZATION
 
 }
 
+@media (max-width:420px){
+
+  .chatbot-keyboard-open #chatbot-box,
+  .chatbot-keyboard-open .chatbot-box{
+
+    height:55vh !important;
+    top:10px !important;
+    bottom:auto !important;
+
+    transform:translateX(-50%) !important;
+
+    transition:
+      height 0.25s ease,
+      top 0.25s ease;
+
+  }
+
+}
+
+@media (max-width:420px){
+
+  #chatbot-box,
+  .chatbot-box{
+
+    height:75vh !important;
+    bottom:10px !important;
+    top:auto !important;
+
+  }
+
+}
+
