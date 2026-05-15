@@ -676,3 +676,37 @@ CHATBOT MOBILE OPTIMIZATION
 
 }
 
+/* =========================
+   CHATBOT KEYBOARD MODE
+========================= */
+@media (max-width:420px){
+
+  .chatbot-keyboard-open #chatbot-box,
+  .chatbot-keyboard-open .chatbot-box{
+
+    height:58vh !important;
+
+    top:auto !important;
+    bottom:120px !important;
+
+    left:50% !important;
+    transform:translateX(-50%) !important;
+
+    transition:
+      height 0.25s ease,
+      bottom 0.25s ease;
+
+  }
+
+  /* Keep header ALWAYS visible */
+  .chatbot-keyboard-open .chatbot-header{
+    position:sticky;
+    top:0;
+    z-index:999;
+  }
+
+  .chatbot-header h4{
+    font-size:0.85rem;
+  }
+
+}
