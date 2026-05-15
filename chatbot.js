@@ -610,7 +610,7 @@ if (chatbotNav) {
 })();
 
 
-});
+
 
 
 // Prevent click from firing after drag
@@ -722,3 +722,5 @@ if (window.visualViewport) {
   );
 
 }
+
+});
