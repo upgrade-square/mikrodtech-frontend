@@ -623,3 +623,23 @@ CHATBOT MOBILE OPTIMIZATION
   }
 
 }
+
+@media (max-width:420px){
+
+  #chatbot-box,
+  .chatbot-box{
+    width:94% !important;
+    height:75vh !important;
+
+    top:auto !important;
+    bottom:10px !important;
+
+    right:auto !important;
+    left:50% !important;
+
+    transform:translateX(-50%) !important;
+
+    border-radius:14px;
+  }
+
+}

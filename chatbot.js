@@ -633,15 +633,40 @@ document.getElementById("chatbot-btn").addEventListener("click", (e) => {
 });
 
 const userInput = document.getElementById("user-input");
+const chatbotBox = document.getElementById("chatbot-box");
 
-if (userInput) {
+if (userInput && chatbotBox) {
 
+  // Keyboard opened
   userInput.addEventListener("focus", () => {
+
     document.body.classList.add("chatbot-keyboard-open");
+
+    // shrink chatbot slightly
+    if (window.innerWidth <= 600) {
+      chatbotBox.style.height = "58vh";
+      chatbotBox.style.top = "10px";
+      chatbotBox.style.bottom = "auto";
+    }
+
   });
 
+  // Keyboard closed
   userInput.addEventListener("blur", () => {
+
     document.body.classList.remove("chatbot-keyboard-open");
+
+    // restore original size
+    if (window.innerWidth <= 600) {
+
+      setTimeout(() => {
+        chatbotBox.style.height = "75vh";
+        chatbotBox.style.bottom = "10px";
+        chatbotBox.style.top = "auto";
+      }, 250);
+
+    }
+
   });
 
 }
