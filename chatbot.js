@@ -674,36 +674,45 @@ function handleKeyboardResize() {
 
   if (keyboardOpen) {
 
-    // Keyboard OPEN
-   document.body.classList.add("chatbot-keyboard-open");
+  // Keyboard OPEN
+  document.body.classList.add("chatbot-keyboard-open");
 
-const chatbotBox = document.getElementById("chatbot-box");
+  const chatbotBox = document.getElementById("chatbot-box");
 
-if (chatbotBox) {
- chatbotBox.style.bottom = "0px";
-chatbotBox.style.top = "auto";
-}
+  if (chatbotBox) {
 
-  } else {
+    // Keep header visible
+    chatbotBox.style.top = "10px";
 
-    // Keyboard CLOSED
-    document.body.classList.remove("chatbot-keyboard-open");
+    // Leave space above keyboard
+    chatbotBox.style.bottom = "10px";
 
-    // Force chatbot to fully stretch again
-    const chatbotBox = document.getElementById("chatbot-box");
-
-    if (chatbotBox) {
-
-      chatbotBox.style.height = "75vh";
-chatbotBox.style.bottom = "10px";
-chatbotBox.style.top = "auto";
-
-      // force browser repaint
-      chatbotBox.offsetHeight;
-
-    }
+    // Fit between top and keyboard
+    chatbotBox.style.height = "auto";
 
   }
+
+} else {
+
+  // Keyboard CLOSED
+  document.body.classList.remove("chatbot-keyboard-open");
+
+  const chatbotBox = document.getElementById("chatbot-box");
+
+  if (chatbotBox) {
+
+    // Restore normal layout
+    chatbotBox.style.height = "75vh";
+    chatbotBox.style.bottom = "10px";
+    chatbotBox.style.top = "auto";
+
+    // force repaint
+    chatbotBox.offsetHeight;
+
+  }
+
+}
+ 
 }
 
 /* Detect keyboard open/close */

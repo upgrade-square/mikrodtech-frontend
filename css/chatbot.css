@@ -710,3 +710,17 @@ CHATBOT MOBILE OPTIMIZATION
   }
 
 }
+
+.chatbot-keyboard-open #chatbot-box,
+.chatbot-keyboard-open .chatbot-box{
+
+    top:auto !important;
+    bottom:0 !important;
+
+    left:50% !important;
+    transform:translateX(-50%) !important;
+
+    transition:
+      height 0.25s ease;
+
+}
