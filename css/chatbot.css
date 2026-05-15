@@ -576,3 +576,46 @@ CHATBOT MOBILE OPTIMIZATION
   }
 }
 
+/* =========================
+   CHATBOT TEXT - 420px SCREENS
+========================= */
+@media (max-width:420px){
+
+  .message,
+  .message.user,
+  .message.bot,
+  .bot-reply{
+    font-size:0.9rem !important;
+    line-height:1.5;
+  }
+
+}
+
+/* =========================
+   CHATBOT KEYBOARD MODE
+========================= */
+@media (max-width:420px){
+
+  .chatbot-keyboard-open #chatbot-box,
+  .chatbot-keyboard-open .chatbot-box{
+
+    height:55vh !important;
+    top:10px !important;
+    bottom:auto !important;
+
+    transform:translateX(-50%) !important;
+
+    transition:
+      height 0.25s ease,
+      top 0.25s ease;
+
+  }
+
+  /* Keep header visible */
+  .chatbot-keyboard-open .chatbot-header{
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+
+}

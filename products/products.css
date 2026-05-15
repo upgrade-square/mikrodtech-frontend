@@ -531,3 +531,13 @@
     font-weight: 450;
   }
 }
+
+@media (max-width: 420px){
+
+  .product-card .coming-soon{
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    font-weight: 350;
+  }
+
+}
