@@ -632,24 +632,7 @@ document.getElementById("chatbot-btn").addEventListener("click", (e) => {
   }
 });
 
-const userInput = document.getElementById("user-input");
-const chatbotBox = document.getElementById("chatbot-box");
 
-if (userInput && chatbotBox) {
-
-  // Keyboard opened
-  userInput.addEventListener("focus", () => {
-
-    document.body.classList.add("chatbot-keyboard-open");
-
-    // shrink chatbot slightly
-    if (window.innerWidth <= 600) {
-      chatbotBox.style.height = "58vh";
-      chatbotBox.style.top = "10px";
-      chatbotBox.style.bottom = "auto";
-    }
-
-  });
 
   // Keyboard closed
   userInput.addEventListener("blur", () => {
@@ -668,5 +651,65 @@ if (userInput && chatbotBox) {
     }
 
   });
+
+
+
+/* ===========================================
+   📱 MOBILE KEYBOARD DETECTION FIX
+=========================================== */
+
+const initialViewportHeight = window.visualViewport
+  ? window.visualViewport.height
+  : window.innerHeight;
+
+function handleKeyboardResize() {
+
+  if (window.innerWidth > 420) return;
+
+  const currentHeight = window.visualViewport
+    ? window.visualViewport.height
+    : window.innerHeight;
+
+  const keyboardOpen = currentHeight < initialViewportHeight - 120;
+
+  if (keyboardOpen) {
+
+    // Keyboard OPEN
+    document.body.classList.add("chatbot-keyboard-open");
+
+  } else {
+
+    // Keyboard CLOSED
+    document.body.classList.remove("chatbot-keyboard-open");
+
+    // Force chatbot to fully stretch again
+    const chatbotBox = document.getElementById("chatbot-box");
+
+    if (chatbotBox) {
+
+      chatbotBox.style.height = "75vh";
+
+      // force browser repaint
+      chatbotBox.offsetHeight;
+
+    }
+
+  }
+}
+
+/* Detect keyboard open/close */
+if (window.visualViewport) {
+
+  window.visualViewport.addEventListener(
+    "resize",
+    handleKeyboardResize
+  );
+
+} else {
+
+  window.addEventListener(
+    "resize",
+    handleKeyboardResize
+  );
 
 }
