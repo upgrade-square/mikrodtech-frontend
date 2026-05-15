@@ -2166,4 +2166,9 @@ body{
     padding-right: 10px;
   }
 
+ .nav-list a{
+    font-size: 1rem;
+    font-weight: 350;
+  }
+
 }

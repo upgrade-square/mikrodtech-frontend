@@ -540,4 +540,9 @@
     font-weight: 350;
   }
 
+   .nav-list a{
+    font-size: 1rem;
+    font-weight: 350;
+  }
+
 }

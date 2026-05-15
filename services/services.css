@@ -1322,6 +1322,11 @@ body {
   .services-hero p{
     font-size: 0.8rem;
   }
+
+   .nav-list a{
+    font-size: 1rem;
+    font-weight: 350;
+  }
 }
 
 /* ==========================================
