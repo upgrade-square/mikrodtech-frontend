@@ -668,7 +668,8 @@ function handleKeyboardResize() {
     ? window.visualViewport.height
     : window.innerHeight;
 
-  const keyboardOpen = currentHeight < initialViewportHeight - 120;
+ const keyboardOpen =
+  currentHeight < initialViewportHeight * 0.75;
 
 if (keyboardOpen) {
 

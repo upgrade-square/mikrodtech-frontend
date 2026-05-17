@@ -684,7 +684,6 @@ CHATBOT MOBILE OPTIMIZATION
 .chatbot-keyboard-open #chatbot-box,
 .chatbot-keyboard-open .chatbot-box{
 
-  height:75vh !important;
 
   top:auto !important;
   bottom:0 !important;
@@ -742,9 +741,7 @@ CHATBOT MOBILE OPTIMIZATION
 
     width: 94% !important;
 
-    /* THIS IS THE IMPORTANT FIX */
-    height: calc(100dvh - 20px) !important;
-    max-height: calc(100dvh - 20px) !important;
+    
 
     border-radius: 14px !important;
 
@@ -752,6 +749,44 @@ CHATBOT MOBILE OPTIMIZATION
   }
 
   /* Header always visible */
+  body.chatbot-keyboard-open .chatbot-header{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: rgba(1,25,65,0.96);
+  }
+
+}
+
+/* =========================
+   CHATBOT KEYBOARD MODE
+========================= */
+@media (max-width:420px){
+
+  body.chatbot-keyboard-open #chatbot-box{
+
+    position: fixed !important;
+
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    width: 94% !important;
+
+    top: 10px !important;
+    bottom: auto !important;
+
+    /* SHRINK CHATBOT */
+    height: 55vh !important;
+    max-height: 55vh !important;
+
+    border-radius: 14px !important;
+
+    transition:
+      height 0.25s ease,
+      top 0.25s ease;
+  }
+
+  /* Keep header visible */
   body.chatbot-keyboard-open .chatbot-header{
     position: sticky;
     top: 0;
