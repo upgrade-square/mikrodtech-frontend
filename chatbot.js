@@ -13,10 +13,21 @@ document.addEventListener("DOMContentLoaded", () => {
 const userInput = document.getElementById("user-input");
 
 if (userInput) {
-  userInput.addEventListener("input", () => {
-    userInput.style.height = "20px";
-    userInput.style.height = userInput.scrollHeight + "px";
-  });
+
+  const autoResize = () => {
+
+    // reset first
+    userInput.style.height = "44px";
+
+    // expand only if needed
+    userInput.style.height =
+      Math.min(userInput.scrollHeight, 120) + "px";
+  };
+
+  userInput.addEventListener("input", autoResize);
+
+  // force proper initial size
+  autoResize();
 }
 
   const innerMessages = document.getElementById("chatbot-messages-inner");

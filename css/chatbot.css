@@ -800,3 +800,33 @@ CHATBOT MOBILE OPTIMIZATION
   }
 
 }
+
+#user-input {
+  flex: 1;
+
+  height: 44px;          /* fixed single-line start */
+  min-height: 44px;
+
+  max-height: 120px;
+
+  padding: 10px 12px;
+
+  line-height: 1.4;
+
+  font-size: 20px;
+
+  color: white;
+  background: transparent;
+
+  border: none;
+  outline: none;
+
+  overflow-y: auto;
+  resize: none;
+
+  white-space: pre-wrap;
+
+  font-family: 'Poppins', sans-serif;
+
+  box-sizing: border-box;   /* VERY IMPORTANT */
+}
