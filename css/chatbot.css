@@ -629,7 +629,7 @@ CHATBOT MOBILE OPTIMIZATION
   #chatbot-box,
   .chatbot-box{
     width:94% !important;
-    height:85vh !important;
+    height:80vh !important;
 
     top:auto !important;
     bottom:10px !important;
@@ -663,18 +663,6 @@ CHATBOT MOBILE OPTIMIZATION
 
 }
 
-@media (max-width:420px){
-
-  #chatbot-box,
-  .chatbot-box{
-
-    height:85vh !important;
-    bottom:10px !important;
-    top:auto !important;
-
-  }
-
-}
 
 /* =========================
    CHATBOT KEYBOARD MODE
@@ -804,10 +792,10 @@ CHATBOT MOBILE OPTIMIZATION
 #user-input {
   flex: 1;
 
-  height: 32px;          /* fixed single-line start */
-  min-height: 32px;
+  height: 20px;          /* fixed single-line start */
+  min-height: 20px;
 
-  max-height: 120px;
+  max-height: 100px;
 
   padding: 10px 12px;
 

@@ -17,11 +17,11 @@ if (userInput) {
   const autoResize = () => {
 
     // reset first
-    userInput.style.height = "32px";
+    userInput.style.height = "20px";
 
     // expand only if needed
     userInput.style.height =
-      Math.min(userInput.scrollHeight, 120) + "px";
+      Math.min(userInput.scrollHeight, 100) + "px";
   };
 
   userInput.addEventListener("input", autoResize);
