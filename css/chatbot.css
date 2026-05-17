@@ -591,39 +591,6 @@ CHATBOT MOBILE OPTIMIZATION
 
 }
 
-/* =========================
-   CHATBOT KEYBOARD MODE
-========================= */
-@media (max-width:420px){
-
-  .chatbot-keyboard-open #chatbot-box,
-  .chatbot-keyboard-open .chatbot-box{
-
-    height:55vh !important;
-    top:10px !important;
-    bottom:auto !important;
-
-    transform:translateX(-50%) !important;
-
-    transition:
-      height 0.25s ease,
-      top 0.25s ease;
-
-  }
-
-  /* Keep header visible */
-  .chatbot-keyboard-open .chatbot-header{
-    position:sticky;
-    top:0;
-    z-index:50;
-  }
-
-  .chatbot-header h4{
-   font-size: 0.8rem;
-  }
-
-}
-
 @media (max-width:420px){
 
   #chatbot-box,
@@ -644,75 +611,38 @@ CHATBOT MOBILE OPTIMIZATION
 
 }
 
-@media (max-width:420px){
-
-  .chatbot-keyboard-open #chatbot-box,
-  .chatbot-keyboard-open .chatbot-box{
-
-    height:55vh !important;
-    top:10px !important;
-    bottom:auto !important;
-
-    transform:translateX(-50%) !important;
-
-    transition:
-      height 0.25s ease,
-      top 0.25s ease;
-
-  }
-
-}
-
-@media (max-width:420px){
-
-  #chatbot-box,
-  .chatbot-box{
-
-    height:75vh !important;
-    bottom:10px !important;
-    top:auto !important;
-
-  }
-
-}
-
 /* =========================
    CHATBOT KEYBOARD MODE
 ========================= */
 @media (max-width:420px){
 
-  .chatbot-keyboard-open #chatbot-box,
-  .chatbot-keyboard-open .chatbot-box{
+  body.chatbot-keyboard-open #chatbot-box{
 
-    width:94% !important;
+    position: fixed !important;
 
-    /* IMPORTANT */
-    top:10px !important;
-    bottom:10px !important;
+    top: 10px !important;
+    bottom: 10px !important;
 
-    /* Let browser calculate height automatically */
-    height:auto !important;
-    max-height:none !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
 
-    left:50% !important;
-    transform:translateX(-50%) !important;
+    width: 94% !important;
 
-    transition:
-      top 0.25s ease,
-      bottom 0.25s ease;
+    /* THIS IS THE IMPORTANT FIX */
+    height: calc(100dvh - 20px) !important;
+    max-height: calc(100dvh - 20px) !important;
 
+    border-radius: 14px !important;
+
+    transition: all 0.25s ease;
   }
 
   /* Header always visible */
-  .chatbot-keyboard-open .chatbot-header{
-    position:sticky;
-    top:0;
-    z-index:9999;
-    background:rgba(1,25,65,0.95);
-  }
-
-  .chatbot-header h4{
-    font-size:0.85rem;
+  body.chatbot-keyboard-open .chatbot-header{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: rgba(1,25,65,0.96);
   }
 
 }

@@ -643,9 +643,7 @@ document.getElementById("chatbot-btn").addEventListener("click", (e) => {
     if (window.innerWidth <= 600) {
 
       setTimeout(() => {
-        chatbotBox.style.height = "75vh";
-        chatbotBox.style.bottom = "10px";
-        chatbotBox.style.top = "auto";
+      
       }, 250);
 
     }
@@ -672,21 +670,9 @@ function handleKeyboardResize() {
 
   const keyboardOpen = currentHeight < initialViewportHeight - 120;
 
-  if (keyboardOpen) {
+if (keyboardOpen) {
 
-  // Keyboard OPEN
   document.body.classList.add("chatbot-keyboard-open");
-
-  const chatbotBox = document.getElementById("chatbot-box");
-
-  if (chatbotBox) {
-
-  chatbotBox.style.top = "10px";
-chatbotBox.style.bottom = "10px";
-chatbotBox.style.height = "auto";
-chatbotBox.style.maxHeight = "none";
-
-  }
 
 } else {
 
@@ -697,10 +683,7 @@ chatbotBox.style.maxHeight = "none";
 
   if (chatbotBox) {
 
-    // Restore normal layout
-    chatbotBox.style.height = "75vh";
-    chatbotBox.style.bottom = "10px";
-    chatbotBox.style.top = "auto";
+
 
     // force repaint
     chatbotBox.offsetHeight;
