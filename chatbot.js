@@ -681,14 +681,10 @@ function handleKeyboardResize() {
 
   if (chatbotBox) {
 
-    // Keep header visible
-    chatbotBox.style.top = "10px";
-
-    // Leave space above keyboard
-    chatbotBox.style.bottom = "10px";
-
-    // Fit between top and keyboard
-    chatbotBox.style.height = "auto";
+  chatbotBox.style.top = "10px";
+chatbotBox.style.bottom = "10px";
+chatbotBox.style.height = "auto";
+chatbotBox.style.maxHeight = "none";
 
   }
 
