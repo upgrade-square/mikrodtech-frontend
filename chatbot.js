@@ -17,7 +17,7 @@ if (userInput) {
   const autoResize = () => {
 
     // reset first
-    userInput.style.height = "44px";
+    userInput.style.height = "32px";
 
     // expand only if needed
     userInput.style.height =

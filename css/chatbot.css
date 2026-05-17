@@ -804,8 +804,8 @@ CHATBOT MOBILE OPTIMIZATION
 #user-input {
   flex: 1;
 
-  height: 44px;          /* fixed single-line start */
-  min-height: 44px;
+  height: 32px;          /* fixed single-line start */
+  min-height: 32px;
 
   max-height: 120px;
 
