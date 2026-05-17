@@ -794,4 +794,9 @@ CHATBOT MOBILE OPTIMIZATION
     background: rgba(1,25,65,0.96);
   }
 
+  .chatbot-header .close-btn {
+    font-size: 1.4;
+    font-weight: 450;
+  }
+
 }
