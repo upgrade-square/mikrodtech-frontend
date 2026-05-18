@@ -498,6 +498,13 @@ function openChatbot() {
 
   document.body.classList.add("chatbot-open");
 
+  // HIDE LABEL COMPLETELY
+  const label = document.getElementById("chatbot-label");
+
+  if (label) {
+    label.style.display = "none";
+  }
+
   // overlay
   const overlay = document.getElementById("chatbot-overlay");
   if (overlay) {
@@ -743,18 +750,3 @@ if (window.visualViewport) {
 
 });
 
-setTimeout(() => {
-  const label = document.getElementById("chatbot-label");
-  if (label) {
-    label.style.opacity = "0";
-    setTimeout(() => label.remove(), 500);
-  }
-}, 8000);
-
-setTimeout(() => {
-  const label = document.getElementById("chatbot-label");
-  if (label && window.innerWidth <= 420) {
-    label.style.opacity = "0";
-    setTimeout(() => label.remove(), 500);
-  }
-}, 7000);
