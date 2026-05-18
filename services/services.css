@@ -7,7 +7,7 @@
 html,
 body{
   background:#ffffff !important;
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
 /* Mobile header spacing reduction */
@@ -23,11 +23,6 @@ body{
 
   body{
     padding-top: 0;
-  }
-
-    .services-hero,
-  .service-page-hero{
-    padding:50px 20px 50px;
   }
 
 }
@@ -2203,6 +2198,33 @@ SMALL PHONES
   .hamburger::before,
   .hamburger::after{
    height: 1.2px;
+  }
+
+}
+
+/* ==========================================
+   FINAL HERO TOP SPACING FIX
+========================================== */
+
+.services-hero,
+.service-page-hero{
+  padding: 120px 20px 90px;
+}
+
+@media (max-width:768px){
+
+  .services-hero,
+  .service-page-hero{
+    padding: 65px 16px 55px !important;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .services-hero,
+  .service-page-hero{
+    padding: 65px 14px 45px !important;
   }
 
 }

@@ -495,13 +495,18 @@ async function generateResponse(userInput) {
 function openChatbot() {
   chatbotBox.style.display = "flex";
   chatbotBtn.style.display = "none";
+
   document.body.classList.add("chatbot-open");
 
-   // ✅ ADD THIS (make menu active)
+  // overlay
+  const overlay = document.getElementById("chatbot-overlay");
+  if (overlay) {
+    overlay.classList.add("active");
+  }
+
   if (chatbotNav) {
     chatbotNav.classList.add("active-chatbot");
   }
-
 
   setTimeout(() => userInput.focus(), 100);
 }
@@ -509,17 +514,30 @@ function openChatbot() {
 function closeChatbot() {
   chatbotBox.style.display = "none";
   chatbotBtn.style.display = "block";
+
   document.body.classList.remove("chatbot-open");
 
-    // ✅ REMOVE ACTIVE STATE
+  // overlay
+  const overlay = document.getElementById("chatbot-overlay");
+  if (overlay) {
+    overlay.classList.remove("active");
+  }
+
   if (chatbotNav) {
     chatbotNav.classList.remove("active-chatbot");
   }
-
 }
+
 
 chatbotBtn.addEventListener("click", openChatbot);
 closeChat.addEventListener("click", closeChatbot);
+
+const overlay = document.getElementById("chatbot-overlay");
+
+if (overlay) {
+  overlay.addEventListener("click", closeChatbot);
+}
+
 
 /* Menu click opens it too */
 if (chatbotNav) {
@@ -724,3 +742,19 @@ if (window.visualViewport) {
 }
 
 });
+
+setTimeout(() => {
+  const label = document.getElementById("chatbot-label");
+  if (label) {
+    label.style.opacity = "0";
+    setTimeout(() => label.remove(), 500);
+  }
+}, 8000);
+
+setTimeout(() => {
+  const label = document.getElementById("chatbot-label");
+  if (label && window.innerWidth <= 420) {
+    label.style.opacity = "0";
+    setTimeout(() => label.remove(), 500);
+  }
+}, 7000);

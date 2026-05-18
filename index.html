@@ -105,7 +105,7 @@
         <li><a href="../about/about.html">About</a></li>
         <li><a href="../services/">Services</a></li>
         <li><a href="../products/">MDT Products</a></li>
-        <li><a href="../tools/">Free Tools</a></li>
+        <li><a href="../tools/">MDT Tools</a></li>
         <li><a href="../cybersecurity/">Cybersecurity</a></li>
         <li><a href="../contact/contact.html">Contact</a></li>
         <li><a href="#" id="openChatbotMenu">MDT Assistant</a></li>
@@ -118,6 +118,10 @@
 
 <!-- ================= CHAT BUTTON ================= -->
 <button id="chatbot-btn" class="chatbot-btn" aria-label="Open Chat">💬</button>
+
+<div class="chatbot-label">
+  Need Help? Talk to Our MDT Assistant
+</div>
 
 <!-- ================= HERO (CLEAN + SEO FOCUSED) ================= -->
 <section id="home" class="hero">
@@ -279,7 +283,7 @@
     <div class="footer-col">
       <h4>Support</h4>
       <ul>
-        <li><a href="../tools/">Free Tools</a></li>
+        <li><a href="../tools/">MDT Tools</a></li>
         <li><a href="mailto:support@mikrodtech.co.ke">Get Support</a></li>
       </ul>
     </div>
@@ -330,9 +334,11 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
+<div id="chatbot-overlay" class="chatbot-overlay"></div>
 
 <!-- ================= CHATBOT ================= -->
 <div id="chatbot-container">
+
 
 <div id="chatbot-box" class="chatbot-box">
 
@@ -357,6 +363,8 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 <script src="chatbot.js" defer></script>
 <script src="app.js"></script>
+
+
 
 </body>
 </html>
