@@ -2261,8 +2261,52 @@ SMALL PHONES
     margin-top: -7px !important;
 
     /* RIGHT SPACING */
-    right: -9px !important;
+    right: -10px !important;
 
+  }
+
+}
+
+/* ==========================================
+   MOBILE NAV BEHIND HEADER
+========================================== */
+
+@media (max-width:420px){
+
+  .site-header{
+    position: fixed;
+    z-index: 9999; /* header stays on top */
+  }
+
+  .nav-wrap{
+    position: relative;
+  }
+
+  .main-nav{
+    position: absolute;
+
+    top: 40px;
+    right: -9px;
+
+    width: max-content;
+    min-width: 180px;
+
+    background: rgba(0,0,0,.96);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+
+    display: none;
+    padding: 10px 0;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.35);
+
+    z-index: 1; /* LOWER than header */
+  }
+
+  .main-nav.active{
+    display: block;
   }
 
 }
