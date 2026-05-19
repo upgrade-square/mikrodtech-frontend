@@ -153,32 +153,45 @@
           <li>✔ Business & Home Support</li>
         </ul>
       </div>
-
+     
       <div class="contact-form-wrap">
-        <form action="https://formsubmit.co/info@mikrodtech.co.ke" method="POST">
 
-          <input type="hidden" name="_subject" value="New MikrodTech Contact Request">
-          <input type="hidden" name="_captcha" value="false">
+  <div class="email-support-box">
 
-          <input type="text" name="name" placeholder="Full Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <input type="tel" name="phone" placeholder="Phone Number">
+    <h3>Select a Service</h3>
 
-          <select name="service">
-            <option value="">Select Service</option>
-            <option>Data Systems</option>
-            <option>Cloud & DevOps</option>
-            <option>Cybersecurity</option>
-            <option>Software Development</option>
-            <option>Enterprise IT</option>
-          </select>
+    <select id="serviceSelect">
+      <option value="">Choose a Service</option>
 
-          <textarea name="message" rows="6" placeholder="Describe your project or issue..." required></textarea>
+      <option value="Data Systems Support Request">
+        Data Systems
+      </option>
 
-          <button type="submit" class="btn-primary">Send Message</button>
+      <option value="Cloud & DevOps Support Request">
+        Cloud & DevOps
+      </option>
 
-        </form>
-      </div>
+      <option value="Cybersecurity Consultation Request">
+        Cybersecurity
+      </option>
+
+      <option value="Software Development Project Inquiry">
+        Software Development
+      </option>
+
+      <option value="Enterprise IT Support Request">
+        Enterprise IT
+      </option>
+
+    </select>
+
+    <button id="emailBtn" class="btn-primary">
+      Continue via Email
+    </button>
+
+  </div>
+
+</div>
 
     </div>
 
