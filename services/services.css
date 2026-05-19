@@ -2249,3 +2249,20 @@ SMALL PHONES
   }
 }
 
+/* ==========================================
+   NAV DROPDOWN POSITION CONTROL
+========================================== */
+
+@media (max-width:420px){
+
+  .main-nav{
+    
+    /* TOP SPACING */
+    margin-top: -7px !important;
+
+    /* RIGHT SPACING */
+    right: -8px !important;
+
+  }
+
+}
