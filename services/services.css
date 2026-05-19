@@ -2111,7 +2111,7 @@ SMALL PHONES
   width: 100%;
 
   z-index: 9999;
-  background:rgba(0,0,0,.94);
+  background: #000;
   backdrop-filter:blur(10px);
 
   box-shadow: 0 2px 10px rgba(0,0,0,.05);
@@ -2261,7 +2261,7 @@ SMALL PHONES
     margin-top: -7px !important;
 
     /* RIGHT SPACING */
-    right: -8px !important;
+    right: -9px !important;
 
   }
 
