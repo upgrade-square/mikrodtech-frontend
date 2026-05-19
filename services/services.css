@@ -1408,12 +1408,6 @@ section.container[style] h2{
 
 
 
-  /* Smaller hamburger */
-  .nav-toggle{
-    transform: scale(.82);
-    padding: 4px;
-  }
-
   /* Mobile dropdown */
   .main-nav{
     top: 58px;
@@ -2193,12 +2187,6 @@ SMALL PHONES
     padding: 4px 14px 4px 4px; /* extra right spacing */
   }
 
-  /* Main line */
-  .hamburger,
-  .hamburger::before,
-  .hamburger::after{
-   height: 1.2px;
-  }
 
 }
 
@@ -2225,6 +2213,51 @@ SMALL PHONES
   .services-hero,
   .service-page-hero{
     padding: 65px 14px 45px !important;
+  }
+
+}
+
+
+/* ================= MOBILE NAV ================= */
+.nav-toggle{
+  display:none;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+  width:26px;
+  height:3px;
+  background:#fff;
+  display:block;
+  border-radius:5px;
+  position:relative;
+}
+
+.hamburger::before,
+.hamburger::after{
+  content:"";
+  position:absolute;
+  left:0;
+}
+
+.hamburger::before{ top:-8px; }
+.hamburger::after{ top:8px; }
+
+
+/* Extra small phones */
+@media (max-width: 480px){
+
+  .brand img{
+    height: 25px;
+    margin: 2px;
+  }
+
+  .nav-wrap{
+    padding: 4px 0;
   }
 
 }
