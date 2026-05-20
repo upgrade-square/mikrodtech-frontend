@@ -10,15 +10,7 @@ body{
   padding-top: 30px;
 }
 
-/* Mobile header spacing reduction */
-@media (max-width:768px){
 
-  body{
-    padding-top: 15px;
-  }
-
-
-}
 @media (max-width:420px){
 
   body{
@@ -431,13 +423,6 @@ body{
   line-height:1.7;
 }
 
-/* =========================
-   NAV ACTIVE (KEEP GLOBAL SAFE)
-========================= */
-.nav-list a.active{
-  color:#0072ce;
-  font-weight:700;
-}
 
 /* =========================
    MOBILE FIXES
@@ -610,10 +595,7 @@ html, body {
   overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
+
 
 /* ================= HERO ================= */
 @media (max-width: 768px) {
@@ -838,17 +820,7 @@ html, body {
   }
 }
 
-/* ================= NAV FIX ================= */
-@media (max-width: 768px) {
-  .nav-wrap {
-    justify-content: space-between;
-    gap: 10px;
-  }
 
-  .main-nav {
-    width: 100%;
-  }
-}
 
 /* ================= FOOTER FIX ================= */
 @media (max-width: 768px) {
@@ -1242,37 +1214,6 @@ body {
 
 }
 
-/* Extra small phones */
-@media(max-width:420px){
-
-  section.container h2{
-    font-size:1.2rem !important;
-  }
-
-  .services-cta h2{
-    font-size:0.9rem !important;
-  }
-
-  .services-cta .btn-primary{
-    padding:.75rem 1rem;
-    font-size:0.65rem;
-    max-width:200px;
-  }
-
-   .card-link{
-    margin-top:1rem;
-    font-size:.65rem;
-  }
-
-  .services-hero p{
-    font-size: 0.8rem;
-  }
-
-   .nav-list a{
-    font-size: 0.9rem;
-    font-weight: 350;
-  }
-}
 
 /* ==========================================
    SEO SECTION + CTA BUTTON FIX
@@ -1290,7 +1231,7 @@ section.container[style] h2{
 
 /* CTA button theme override */
 .services-cta .btn-primary{
-  background:#0072ce !important; /* solid brand blue */
+  background:#0072ce !important;
   box-shadow:0 10px 25px rgba(0,114,206,.25);
 }
 
@@ -1345,24 +1286,8 @@ section.container[style] h2{
 
 @media screen and (max-width:768px){
 
-  /* ================= HEADER ================= */
+ 
 
-
-
-  /* Mobile dropdown */
-  .main-nav{
-    top: 58px;
-    min-width: 170px;
-    max-width: 220px;
-
-    padding: 6px 0;
-    border-radius: 10px;
-  }
-
-  .nav-list a{
-    padding: 10px 14px;
-    font-size: .92rem;
-  }
 
 
   /* ================= CONTENT ================= */
@@ -1519,77 +1444,8 @@ section.container[style] h2{
   margin-top: 30px;
 }
 
-/* ==================================================
-   FINAL NAV DROPDOWN FIX (SERVICES PAGE PATCH)
-   Fixes: spacing + right alignment on mobile
-================================================== */
-
-@media (max-width: 992px){
-
-
-
-  /* IMPORTANT: anchor dropdown to right edge of screen */
-  .nav-wrap{
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  /* FORCE PERFECT ALIGNMENT */
-  .main-nav{
-    position: absolute !important;
-    top: 100% !important;   /* attaches directly under header */
-    right: 0 !important;    /* flush to right edge */
-    left: auto !important;
-
-    margin-top: 0 !important;  /* removes unwanted gap */
-
-    width: 220px !important;
-    min-width: 200px;
-    max-width: 260px;
-
-    background: rgba(0,0,0,.96);
-    backdrop-filter: blur(10px);
-
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,.08);
-
-    box-shadow: 0 15px 35px rgba(0,0,0,.35);
-
-    padding: 8px 0;
-    z-index: 2000;
-  }
-
-  /* REMOVE EXTRA SPACING INSIDE LIST */
-  .main-nav .nav-list{
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-list li{
-    width: 100%;
-    margin: 0;
-  }
-
-  .nav-list a{
-    display: block;
-    padding: 12px 16px;
-    white-space: nowrap;
-  }
-
-  .nav-list a:hover{
-    background: rgba(255,255,255,.08);
-  }
-}
-
 /* ==========================================
    SEO CONTENT SECTION
-========================================== */
-/* ==========================================
-   SEO SECTION
 ========================================== */
 
 .seo-section{
@@ -2099,26 +1955,6 @@ SMALL PHONES
 }
 
 
-
-/* ==========================================
-   FIXED HEADER (ALL DEVICES)
-========================================== */
-
-.site-header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-
-  z-index: 9999;
-  background: #000;
-  backdrop-filter:blur(10px);
-
-  box-shadow: 0 2px 10px rgba(0,0,0,.05);
-}
-
-
-
 /* ==========================================
    FINAL HERO TOP SPACING FIX
 ========================================== */
@@ -2137,134 +1973,4 @@ SMALL PHONES
 
 }
 
-@media (max-width:480px){
-
-  .services-hero,
-  .service-page-hero{
-    padding: 65px 14px 45px !important;
-  }
-
-    /* Brand (logo) left spacing */
-  .brand {
-    padding-left: 4px;
-  }
-
-  .brand img {
-    display: block;
-  }
-
-  /* Hamburger right spacing */
-  .nav-toggle {
-    margin-right: 4px;
-  }
-}
-
-
-/* ==========================================
-   MOBILE NAV RIGHT EDGE FIX
-========================================== */
-
-@media (max-width: 420px){
-
-  .nav-wrap{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding-right: 0;
-  }
-
-  .main-nav{
-    position: absolute !important;
-
-    top: 100% !important;
-
-    right: -4% !important; /* 👈 pushes menu to edge */
-
-    margin-right: 0 !important;
-
-    border-radius: 0 0 12px 12px;
-
-    z-index: 9999;
-  }
-
-}
-
-
-@media (max-width: 420px){
-
-  .nav-toggle{
-    display:block;
-    margin-left:auto;
-  }
-
-  /* IMPORTANT: parent must anchor dropdown */
-  .nav-wrap{
-    position:relative;
-  }
-
-  .main-nav{
-    position:absolute;
-    top:40px;
-    right:1px;
-
-    width:max-content;        /* 👈 key: fits content */
-    min-width:180px;          /* keeps it usable */
-    max-width:130px;
-
-    background:rgba(0,0,0,.96);
-    backdrop-filter:blur(10px);
-
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:12px;
-
-    display:none;
-    padding:10px 0;
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
-  }
-
-  .main-nav.active{
-    display:block;
-  }
-
-  .main-nav .nav-list{
-    display:flex;
-    flex-direction:column;
-    gap:0;
-  }
-
-  .nav-list li{
-    width:100%;
-  }
-
-  .nav-list a{
-    display:block;
-    padding:12px 16px;
-    white-space:nowrap; /* prevents wrapping */
-  }
-
-  .nav-list a:hover{
-    background:rgba(255,255,255,.08);
-  }
-}
-
-/* ==========================================
-   NAV DROPDOWN POSITION CONTROL
-========================================== */
-
-@media (max-width:420px){
-
-  .main-nav{
-    
-    /* TOP SPACING */
-    margin-top: -6px !important;
-
-    /* RIGHT SPACING */
-    right: -10px !important;
-
-  }
-  
-
-}
 
