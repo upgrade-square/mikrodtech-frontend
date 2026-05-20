@@ -1363,3 +1363,37 @@ section{
   }
 
 }
+
+/* ==========================================
+   MOBILE NAV FONT + GAP REDUCTION
+========================================== */
+
+@media (max-width: 768px){
+
+  /* reduce spacing between nav items */
+  .main-nav .nav-list{
+    gap:2px;
+  }
+
+  /* reduce font size + padding */
+  .nav-list a{
+    font-size:0.78rem;
+    padding:8px 12px;
+    font-weight:500;
+  }
+
+}
+
+/* Extra small phones */
+@media (max-width: 480px){
+
+  .nav-list a{
+    font-size:0.7rem;
+    padding:6px 9px;
+  }
+
+  .main-nav{
+    min-width:150px;
+  }
+
+}
