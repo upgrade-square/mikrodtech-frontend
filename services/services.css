@@ -2047,3 +2047,79 @@ SMALL PHONES
   }
 
 }
+
+/* =========================
+FINAL H2 MOBILE SIZE FIX
+========================= */
+
+@media (max-width:768px){
+
+  h2{
+    font-size:1.1rem !important;
+    line-height:1.3 !important;
+  }
+
+}
+
+@media (max-width:480px){
+
+  h2{
+    font-size:1rem !important;
+    line-height:1.25 !important;
+  }
+
+}
+
+/* =========================
+   MOBILE FIX: SERVICE CARD H2
+========================= */
+
+@media (max-width:768px){
+  .service-card h2{
+    font-size:1rem !important;
+    line-height:1.3 !important;
+  }
+}
+
+@media (max-width:480px){
+  .service-card h2{
+    font-size:0.95rem !important;
+    line-height:1.25 !important;
+  }
+}
+
+/* =========================
+   MOBILE FIX: SEO SECTION H2
+========================= */
+
+@media (max-width:768px){
+  .seo-section h2{
+    font-size:1rem !important;
+    line-height:1.3 !important;
+  }
+}
+
+@media (max-width:480px){
+  .seo-section h2{
+    font-size:0.95rem !important;
+    line-height:1.25 !important;
+  }
+}
+
+/* =========================
+   MOBILE FIX: SERVICES INTRO H2
+========================= */
+
+@media (max-width:768px){
+  .services-intro h2{
+    font-size:1rem !important;
+    line-height:1.3 !important;
+  }
+}
+
+@media (max-width:480px){
+  .services-intro h2{
+    font-size:0.95rem !important;
+    line-height:1.25 !important;
+  }
+}
