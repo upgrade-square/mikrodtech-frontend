@@ -1994,3 +1994,56 @@ SMALL PHONES
 }
 
 
+/* ==========================================
+   FINAL PHONE TYPOGRAPHY FIX
+   ADD THIS AT THE VERY END
+========================================== */
+
+@media screen and (max-width:420px){
+
+  /* Main hero heading */
+  .service-hero h1{
+    font-size:1rem !important;
+    line-height:1.2 !important;
+    padding-bottom:12px !important;
+  }
+
+  /* Hero paragraph */
+  .service-hero p{
+    font-size:0.78rem !important;
+    line-height:1.55 !important;
+  }
+
+  /* Content headings */
+  .service-content h2{
+    font-size:0.9rem !important;
+    line-height:1.3 !important;
+  }
+
+  /* Paragraphs + list items */
+  .service-content p,
+  .service-content li{
+    font-size:0.78rem !important;
+    line-height:1.6 !important;
+  }
+
+  /* Explore section heading */
+  .explore-services h2{
+    font-size:0.9rem !important;
+    line-height:1.3 !important;
+  }
+
+  /* Explore section paragraph */
+  .explore-services p{
+    font-size:0.78rem !important;
+    line-height:1.5 !important;
+  }
+
+  /* Buttons */
+  .btn-primary,
+  .btn-secondary{
+    font-size:0.72rem !important;
+    padding:10px 14px !important;
+  }
+
+}
