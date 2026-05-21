@@ -859,10 +859,7 @@ body {
     text-align: center;
   }
 
-  .service-hero h1 {
-    
-    line-height: 1.2;
-  }
+
 
   .service-hero p {
     font-size: 1rem;
@@ -1423,7 +1420,6 @@ section.container[style] h2{
 .service-hero h1{
   font-weight:400;
   color: #0072ce;
-  padding-bottom: 20px;
   font-size: 2.2rem;
 }
 
@@ -1843,9 +1839,7 @@ SMALL PHONES
     text-align:center;
   }
 
-  .service-hero h1{
-    margin-bottom:16px;
-  }
+
 
   .service-hero p{
     max-width:100%;
@@ -2004,7 +1998,7 @@ SMALL PHONES
   .service-hero h1{
     font-size:1rem !important;
     line-height:1.2 !important;
-    padding-bottom:12px !important;
+    padding-bottom:8px !important;
   }
 
   /* Hero paragraph */
@@ -2215,3 +2209,4 @@ FINAL H2 MOBILE SIZE FIX
   }
 
 }
+
