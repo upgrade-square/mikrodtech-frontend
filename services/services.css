@@ -2145,6 +2145,7 @@ FINAL H2 MOBILE SIZE FIX
     font-size:1rem !important;
     line-height:1.3 !important;
     color: #0072ce;
+    font-weight: 400;
   }
 
   body .services-intro p{
@@ -2187,7 +2188,7 @@ FINAL H2 MOBILE SIZE FIX
 
   /* FORCE ALL TYPOGRAPHY IN THIS PAGE SCOPE */
   body .service-hero h1{
-    font-size:1.2rem !important;
+    font-size:1.15rem !important;
     line-height:1.25 !important;
     font-weight:500 !important;
     text-align:center !important;
@@ -2210,3 +2211,45 @@ FINAL H2 MOBILE SIZE FIX
 
 }
 
+/* ==========================================
+   MOBILE HERO → CONTENT GAP FIX (420px)
+========================================== */
+
+@media screen and (max-width:420px){
+
+  /* Reduce space under hero section */
+  .service-hero{
+    padding-bottom:20px !important;
+  }
+
+  /* Reduce space above content section */
+  .service-content{
+    padding-top:20px !important;
+  }
+
+  /* Remove default paragraph spacing inside hero */
+  .service-hero p{
+    margin-bottom:8px !important;
+  }
+
+  /* Remove extra spacing above first heading */
+  .service-content h2:first-child{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+
+}
+
+@media (max-width: 420px){
+
+
+ .nav-list a{
+    font-size: 0.9rem;
+    font-weight: 350;
+  }
+
+}
+
+.services-intro h2{
+  color: #0072ce;
+}

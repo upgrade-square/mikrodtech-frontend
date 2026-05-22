@@ -430,3 +430,13 @@ CONTACT PAGE MOBILE TIGHTENING
 .form-success-message.show{
   display:block;
 }
+
+@media (max-width: 420px){
+
+
+ .nav-list a{
+    font-size: 0.9rem;
+    font-weight: 350;
+  }
+
+}

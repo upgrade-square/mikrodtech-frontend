@@ -2161,10 +2161,6 @@ body{
 }
 @media (max-width: 420px){
 
-  .pw-name-input{
-    padding-left: 10px;
-    padding-right: 10px;
-  }
 
  .nav-list a{
     font-size: 0.9rem;
