@@ -456,4 +456,9 @@
     font-weight: 350;
   }
 
+    .cyber-hero .lead{
+    font-size: 0.8rem;
+    max-width: fit-content;
+  }
+
 }

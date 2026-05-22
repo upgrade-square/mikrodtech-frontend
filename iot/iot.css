@@ -395,11 +395,12 @@
 @media (max-width: 420px){
 
   .cyber-hero h1{
-    font-size: 1.3rem !important;
+    font-size: 1.2rem !important;
   }
 
   .cyber-hero .lead{
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    max-width: fit-content;
   }
 
   .services-preview .section-title{
