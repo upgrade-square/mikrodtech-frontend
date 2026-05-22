@@ -544,6 +544,19 @@
     font-size: 0.9rem;
     font-weight: 350;
   }
+  .lead{
+    font-size: 0.8rem;
+  }
+
+    .product-card h3{
+    font-size:0.9rem;
+    font-weight: 400;
+  }
+
+   .contact p{
+    font-size:0.8rem;
+  }
+
 
 }
 
