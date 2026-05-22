@@ -442,7 +442,7 @@
 }
 
 .contact p{
-  font-size:0.75rem !important;
+  font-size:0.8rem !important;
   line-height:1.6 !important;
 }
 
@@ -547,8 +547,8 @@
     font-size: 0.9rem;
     font-weight: 350;
   }
-  .hero .lead{
-    font-size: 0.8rem;
+   .lead{
+    font-size: 0.4rem;
   }
 
     .product-card h3{
@@ -563,3 +563,10 @@ body .contact p{
 
 }
 
+@media (max-width: 420px){
+
+  .hero .lead{
+    font-size:0.8rem !important;
+  }
+
+}
