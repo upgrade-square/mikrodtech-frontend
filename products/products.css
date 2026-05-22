@@ -544,18 +544,18 @@
     font-size: 0.9rem;
     font-weight: 350;
   }
-  .lead{
+  .hero .lead{
     font-size: 0.8rem;
   }
 
     .product-card h3{
     font-size:0.9rem;
-    font-weight: 400;
+    font-weight: 500;
   }
 
-   .contact p{
-    font-size:0.8rem;
-  }
+  .contact.container p{
+  font-size:0.8rem;
+}
 
 
 }
