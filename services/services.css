@@ -821,15 +821,6 @@ html, body {
 }
 
 
-
-/* ================= FOOTER FIX ================= */
-@media (max-width: 768px) {
-  .footer-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-}
-
 /* ================= CHAT BUTTON FIX ================= */
 @media (max-width: 768px) {
   .chatbot-btn {
