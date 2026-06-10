@@ -244,7 +244,7 @@ body{
 .services-hero h1,
 .service-page-hero h1{
   font-size:3rem;
-  font-weight:590;
+  font-weight:500;
   line-height:1.15;
   margin-bottom:16px;
   color:var(--primary);
@@ -963,10 +963,7 @@ body {
 
 
 
-.services-hero h1,
-.service-page-hero h1{
-  margin-bottom:18px;
-}
+
 
 /* ==================================================
    PREMIUM MOBILE SERVICE CARDS
@@ -1407,12 +1404,6 @@ section.container[style] h2{
   color:#0072ce;
 }
 
-/* Smaller / lighter hero title weight */
-.service-hero h1{
-  font-weight:400;
-  color: #0072ce;
-  font-size: 2.2rem;
-}
 
 
 /* ==========================================
