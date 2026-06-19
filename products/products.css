@@ -183,6 +183,42 @@
   font-weight: 500;
 }
 
+
+/* =============================
+   ACCESS PLATFORM BUTTON
+============================= */
+.product-card .access-platform{
+  display:inline-block;
+  font-size:1rem;
+  color:#fff;
+  background:linear-gradient(135deg,#0057b8,#0072ce);
+  padding:0.5rem 1rem;
+  border-radius:8px;
+  font-weight:600;
+  letter-spacing:0.3px;
+  box-shadow:0 4px 12px rgba(0,114,206,0.25);
+  transition:all .3s ease;
+}
+
+.product-card:hover .access-platform{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,114,206,0.35);
+}
+
+.product-card img{
+  display:block;
+  margin:0 auto;
+  max-width:120px;
+  max-height:100%;
+  object-fit:contain;
+
+  background:#fff;
+  padding:12px;
+  border-radius:10px;
+}
+
+
+
 /* =============================
    CTA SECTION (FIXED CENTERING)
 ============================= */
