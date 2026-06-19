@@ -106,6 +106,82 @@
 }
 
 /* =============================
+   MIKRODCAP SETUP GUIDE
+============================= */
+
+.setup-guide{
+  padding: 5rem 1rem;
+}
+
+.setup-content{
+  text-align: center;
+}
+
+.setup-guide .section-title{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #06111a;
+}
+
+.setup-guide .section-intro{
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.setup-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.setup-card{
+  background: #ffffff;
+  border: 1px solid rgba(0,114,206,0.15);
+  border-radius: 14px;
+  padding: 2rem;
+  text-align: left;
+  box-shadow: 0 4px 14px rgba(0,74,173,0.1);
+}
+
+.setup-card h3{
+  color: #0072ce;
+  margin-bottom: 1rem;
+}
+
+.setup-card ul,
+.setup-card ol{
+  padding-left: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.setup-card .btn{
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px){
+
+  .setup-guide{
+    padding: 3rem 1rem;
+  }
+
+  .setup-guide .section-title{
+    font-size: 1.4rem;
+  }
+
+  .setup-guide .section-intro{
+    font-size: 0.95rem;
+  }
+
+  .setup-card{
+    padding: 1.5rem;
+  }
+}
+
+/* =============================
    GRID
 ============================= */
 .products-grid {
