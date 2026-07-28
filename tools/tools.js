@@ -300,180 +300,41 @@ toolButtons.forEach((btn) => {
 
     switch (tool) {
 
-case "iplookup": {
-      toolLoading = true; 
 
 
-      function render(html) {
-  const target = document.getElementById("tool-iplookup");
-  if (!target) return;
+      case "iplookup": {
 
-  target.innerHTML = html;
-  target.classList.add("active");
+    showTool(
+        "iplookup",
+        `<p>Looking up your public IP...</p>`,
+        btn
+    );
+
+    fetch("https://api.ipify.org?format=json")
+        .then(response => response.json())
+        .then(data => {
+
+            const html = `
+                <h3>Your Public IP</h3>
+                <p><strong>${data.ip}</strong></p>
+            `;
+
+            const target = document.getElementById("tool-iplookup");
+            target.innerHTML = html;
+
+        })
+        .catch(err => {
+
+            document.getElementById("tool-iplookup").innerHTML = `
+                <p>Unable to retrieve your IP address.</p>
+            `;
+
+            console.error(err);
+
+        });
+
+    break;
 }
-
-showTool("iplookup", `<p>Looking up your public IP and location…</p>`, btn);
-
-const currentTool = "iplookup";
-toolLoading = true;
-activeTool = currentTool;
-activeBtn = btn;
-  (async function fetchIpInfo() {
-
-    // helper to detect private/local hostnames
-    function isPrivateHostname(hostname) {
-      return (
-        !hostname ||
-        hostname === "localhost" ||
-        hostname === "127.0.0.1" ||
-        hostname.startsWith("192.168.") ||
-        hostname.startsWith("10.") ||
-        hostname.startsWith("172.")
-      );
-    }
-    
-
-    try {
-      // If the page is served from a local host, still attempt to fetch public IP.
-      // First try a simple service to get the public IP.
-     const ipPromise = fetch("https://api.ipify.org?format=json").then(r => r.json());
-
-const ipJson = await fetch("https://api.ipify.org?format=json").then(r => r.json());
-const ip = ipJson.ip;
-
-// 🚀 Show IP instantly (fast feedback)
-render(`
-  <p><strong>Public IP:</strong> ${ip}</p>
-  <p><em>Fetching location...</em></p>
-`);
-
-fetch(`https://ipapi.co/${ip}/json/`)
-  .then(r => r.json())
-  .then(geo => {
-
-    let lat = geo.latitude;
-    let lon = geo.longitude;
-
-    render(`
-      <div>
-        <p><strong>Public IP:</strong> ${ip}</p>
-        <p><strong>Location:</strong> ${geo.city || ""} ${geo.country_name || ""}</p>
-      </div>
-    `);
-
-    toolLoading = false; // ✅ unlock tool
-  })
-  .catch(() => {
-    render(`<p><strong>Public IP:</strong> ${ip}</p><p>Location unavailable</p>`);
-    toolLoading = false;
-  });
-
-     // after fetching ip and geo
-let lat = geo.latitude ?? geo.lat ?? geo.latitude;
-let lon = geo.longitude ?? geo.lon ?? geo.longitude;
-
-const privateNote = isPrivateHostname(window.location.hostname)
-  ? `<p style="font-size:0.9em;color:#666">Note: Your browser is loaded from <code>${window.location.hostname}</code>. The public IP shown below belongs to the network your browser is using (your router / ISP), not necessarily your local machine.</p>`
-  : "";
-
-// first render a base modal (fast)
-render(`
-  <div style="line-height:1.4">
-    <p><strong>Public IP:</strong> <span id="ip-address">${ip}</span>
-      <button id="copy-ip" style="margin-left:8px;padding:4px 8px;cursor:pointer">Copy</button>
-    </p>
-    ${geo.city || geo.region || geo.country_name ? `
-      <p><strong>Location:</strong> ${(geo.city ?? "") + (geo.region ? ", " + geo.region : "") + (geo.country_name ? " — " + geo.country_name : "")}</p>
-    ` : `<p><strong>Location:</strong> Not available</p>`}
-    <p id="local-ips-placeholder"><em>Detecting device local IP(s)…</em></p>
-    ${privateNote}
-    <p style="font-size:0.9em;color:#666;margin-top:8px">Data from <a href="https://ipify.org" target="_blank" rel="noopener">ipify</a> and <a href="https://ipapi.co" target="_blank" rel="noopener">ipapi.co</a>.</p>
-  </div>
-`);
-
-// now fetch local IPs and update the modal
-getLocalIPs(1200).then((localIps) => {
-  let localHtml;
-  if (!localIps || localIps.length === 0) {
-    localHtml = `<p><strong>Device local IPs:</strong> Not available (browser blocked or none found)</p>`;
-  } else {
-    // Format each entry nicely
-    const list = localIps.map((it) => {
-      if (it.type === "mDNS/obfuscated") {
-        return `<li>${it.ip} <small>(mDNS / obfuscated - browser protected)</small></li>`;
-      } else {
-        return `<li>${it.ip} <small>(${it.type})</small></li>`;
-      }
-    }).join("");
-    localHtml = `<p><strong>Device local IP(s):</strong></p><ul style="margin-top:6px">${list}</ul>`;
-  }
-
-  // Replace the placeholder
-  const updated = `
-    <div style="line-height:1.4">
-      <p><strong>Public IP:</strong> <span id="ip-address">${ip}</span>
-        <button id="copy-ip" style="margin-left:8px;padding:4px 8px;cursor:pointer">Copy</button>
-      </p>
-      ${geo.city || geo.region || geo.country_name ? `
-        <p><strong>Location:</strong> ${(geo.city ?? "") + (geo.region ? ", " + geo.region : "") + (geo.country_name ? " — " + geo.country_name : "")}</p>
-      ` : `<p><strong>Location:</strong> Not available</p>`}
-      ${lat && lon ? `<p><strong>Coordinates (IP-based):</strong> ${lat}, ${lon} ${lat && lon ? `(<a href="https://www.google.com/maps/@${lat},${lon},10z" target="_blank">Open map</a>)` : ""}</p>` : ""}
-      ${localHtml}
-      ${geo.org ? `<p><strong>ISP / Org:</strong> ${geo.org}</p>` : ""}
-      ${geo.timezone ? `<p><strong>Timezone:</strong> ${geo.timezone}</p>` : ""}
-      ${privateNote}
-      <p style="font-size:0.9em;color:#666;margin-top:8px">Data from <a href="https://ipify.org" target="_blank" rel="noopener">ipify</a> and <a href="https://ipapi.co" target="_blank" rel="noopener">ipapi.co</a>. Device local IPs discovered via WebRTC (may be obfuscated by browser privacy features).</p>
-    </div>
-  `;
- showTool("iplookup", updated, btn);
-
-  // hook the copy button
-  const copyBtn = document.getElementById("copy-ip");
-  if (copyBtn) {
-    copyBtn.onclick = () => {
-      navigator.clipboard?.writeText(ip).then(() => {
-        copyBtn.textContent = "Copied!";
-        setTimeout(() => (copyBtn.textContent = "Copy"), 1200);
-      }).catch(() => alert("Copy failed — try manually."));
-    };
-  }
-});
-
-
-
-    } catch (err) {
-      // fallback: try ipapi.co/json (it returns caller info and may work if ipify fails)
-      try {
-        let fallback = await fetch("https://ipapi.co/json/", { cache: "no-store" });
-        if (fallback.ok) {
-          let geo = await fallback.json();
-          const ip = geo.ip || "Unknown";
-          const html = `
-            <div>
-              <p><strong>Public IP:</strong> ${ip}</p>
-              <p><strong>Approximate Location:</strong> ${(geo.city ?? "") + (geo.region ? ", " + geo.region : "") + (geo.country_name ? " — " + geo.country_name : "")}</p>
-            </div>
-          `;
-         render(html);
-          return;
-        }
-      } catch (e) {
-        // ignore fallback error
-      }
-
-      // final error message
-   render(`
-  <p>Sorry — could not retrieve IP information.</p>
-  <p style="font-size:0.9em;color:#666">Check your connection or try again.</p>
-`);
-toolLoading = false;
-      console.error("IP lookup error:", err);
-    }
-  })();
-
-  break;
-}
-
 
 
 case "password": {
