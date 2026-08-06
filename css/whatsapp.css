@@ -1,0 +1,148 @@
+/* ==========================================
+   MikrodTech Floating WhatsApp Button
+   ========================================== */
+
+.whatsapp-btn{
+    position: fixed;
+    right: 20px;
+    bottom: 95px;          /* Position below chatbot */
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.20);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+    z-index: 9998;
+}
+
+.whatsapp-btn:hover{
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 14px 35px rgba(0,0,0,.30);
+}
+
+.whatsapp-btn img{
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+/* Optional notification pulse */
+
+.whatsapp-btn::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    animation: whatsappPulse 2s infinite;
+    border: 3px solid rgba(37,211,102,.35);
+}
+
+@keyframes whatsappPulse{
+
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    70%{
+        transform: scale(1.45);
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 0;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .whatsapp-btn{
+        width:54px;
+        height:54px;
+        right:15px;
+        bottom:90px;
+    }
+
+    .whatsapp-btn img{
+        width:28px;
+        height:28px;
+    }
+
+}
+
+/* ==========================================
+   WhatsApp Label
+========================================== */
+
+.whatsapp-label{
+    position: fixed;
+    right: 90px;
+    bottom: 105px;
+
+    background: #ffffff;
+    color: #222;
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    font-size: .9rem;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateX(10px);
+
+    transition: all .3s ease;
+
+    z-index: 9997;
+}
+
+/* Small arrow */
+
+.whatsapp-label::after{
+
+    content: "";
+
+    position: absolute;
+
+    right: -8px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-width: 8px 0 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent transparent #ffffff;
+
+}
+
+/* Show when hovering */
+
+.whatsapp-btn:hover + .whatsapp-label{
+
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+
+}
