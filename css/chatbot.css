@@ -1045,3 +1045,20 @@ CHATBOT MOBILE OPTIMIZATION
     transform:translateY(0);
   }
 }
+
+/* ==========================================
+   MOBILE FLOATING BUTTON POSITION
+   Keep MDT Assistant ABOVE WhatsApp
+========================================== */
+
+@media (max-width:600px){
+
+    #chatbot-btn,
+    .chatbot-btn{
+        bottom:145px !important;
+        right:14px !important;
+        width:44px !important;
+        height:44px !important;
+    }
+
+}

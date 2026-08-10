@@ -69,18 +69,23 @@
 
 /* Mobile */
 
-@media (max-width:768px){
+/* ==========================================
+   MOBILE FLOATING BUTTON POSITION
+   WhatsApp stays BELOW MDT Assistant
+========================================== */
+
+@media (max-width:600px){
 
     .whatsapp-btn{
-        width:54px;
-        height:54px;
-        right:15px;
-        bottom:90px;
+        width:44px;
+        height:44px;
+        right:14px;
+        bottom:80px;
     }
 
     .whatsapp-btn img{
-        width:28px;
-        height:28px;
+        width:24px;
+        height:24px;
     }
 
 }
