@@ -1062,3 +1062,32 @@ CHATBOT MOBILE OPTIMIZATION
     }
 
 }
+
+/* ==========================================
+   MOBILE CHATBOT LABEL
+   Keep label ABOVE MDT Assistant button
+========================================== */
+
+@media (max-width:600px){
+
+    .chatbot-label{
+        bottom: 200px !important;
+        right: 12px !important;
+        max-width: 180px;
+        font-size: 11px;
+    }
+
+}
+
+/* Extra-small phones */
+
+@media (max-width:420px){
+
+    .chatbot-label{
+        bottom: 195px !important;
+        right: 10px !important;
+        max-width: 160px;
+        font-size: 10px;
+    }
+
+}
