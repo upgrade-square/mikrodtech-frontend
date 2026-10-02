@@ -80,6 +80,7 @@ ABOUT HERO (MATCHED STYLE)
   border-radius:50px;
   font-weight:700;
   transition:.3s ease;
+  
 }
 
 .main-btn:hover{
@@ -184,9 +185,11 @@ FOUNDER SECTION
 .founder-grid{
   display:grid;
   grid-template-columns:1fr 1.3fr;
-  gap:40px;
+  column-gap:40px;
+  row-gap:75px;
   align-items:center;
 }
+
 
 .founder-image img{
   width:100%;
@@ -222,6 +225,7 @@ CTA SECTION
 .cta-section .main-btn{
   background:#0072ce;
   color:#ffffff;
+  
 }
 
 /* =========================
@@ -518,7 +522,7 @@ MOBILE TIGHTENING (OPTIMIZED)
 
 .cta-section .main-btn{
   padding:10px 22px;
-  font-size:0.65rem;
+  font-size:1rem;
 }
 
 /* ==========================================
