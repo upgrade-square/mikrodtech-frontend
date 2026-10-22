@@ -211,3 +211,97 @@ Thank you.`
   });
 
 });
+
+
+/* ================= MASHUJAA CONSULTATION TABS ================= */
+
+(() => {
+  const section = document.getElementById('mashujaa-consultation');
+
+  if (!section) return;
+
+  const services = {
+    software: {
+      name: 'Software Engineering',
+      description:
+        "Have an idea for a website, mobile app, business system or custom software? Let's explore how to bring it to life."
+    },
+    cyber: {
+      name: 'Cybersecurity',
+      description:
+        'Discuss securing your website, applications, business data, devices or organization against digital threats.'
+    },
+    iot: {
+      name: 'IoT & Smart Systems',
+      description:
+        'Explore smart homes, connected devices, automation, intelligent monitoring or a custom IoT solution.'
+    }
+  };
+
+  const tabs = section.querySelectorAll('.mashujaa-tab');
+  const title = document.getElementById('mashujaa-service-title');
+  const description = document.getElementById(
+    'mashujaa-service-description'
+  );
+  const whatsapp = document.getElementById('mashujaa-whatsapp');
+  const panel = document.getElementById('panel-software');
+
+  function selectService(key) {
+    const service = services[key];
+
+    if (!service) return;
+
+    tabs.forEach(tab => {
+      const selected = tab.dataset.service === key;
+
+      tab.classList.toggle('active', selected);
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+    });
+
+    title.textContent = service.name;
+    description.textContent = service.description;
+    panel.setAttribute('aria-labelledby',
+      document.getElementById(
+        key === 'software' ? 'tab-software' :
+        key === 'cyber' ? 'tab-cyber' : 'tab-iot'
+      ).id
+    );
+
+    const message =
+      `Hello MikrodTech, I would like to book a free consultation ` +
+      `under the Mashujaa Weekend Free Consultation Offer for ` +
+      `${service.name}. Please guide me on the next steps.`;
+
+    whatsapp.href =
+      'https://wa.me/254769329029?text=' +
+      encodeURIComponent(message);
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      selectService(tab.dataset.service);
+    });
+
+    tab.addEventListener('keydown', event => {
+      let nextIndex = index;
+
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+        nextIndex = (index + 1) % tabs.length;
+      } else if (
+        event.key === 'ArrowLeft' ||
+        event.key === 'ArrowUp'
+      ) {
+        nextIndex = (index - 1 + tabs.length) % tabs.length;
+      } else {
+        return;
+      }
+
+      event.preventDefault();
+      tabs[nextIndex].focus();
+      selectService(tabs[nextIndex].dataset.service);
+    });
+  });
+
+  selectService('software');
+})();
