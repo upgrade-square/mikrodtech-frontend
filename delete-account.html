@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supavyza - Account Deletion Request</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #171717;
+      margin: 0;
+      padding: 30px 15px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: auto;
+      padding: 25px;
+    }
+
+    h1, h2 {
+      color: #0072ce;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0 18px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background: #0072ce;
+      color: white;
+      padding: 13px 22px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #005da8;
+    }
+
+    a {
+      color: #0072ce;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <h1>Supavyza Account Deletion</h1>
+
+  <p>
+    Supavyza users can use this page to request permanent
+    deletion of their accounts and associated personal data.
+  </p>
+
+  <h2>How to Request Account Deletion</h2>
+
+  <p>
+    Enter the email address registered to your Supavyza account
+    and submit your deletion request.
+  </p>
+
+  <form id="deletionForm">
+
+    <label for="email">Registered Account Email</label>
+    <input type="email" id="email" required
+      placeholder="Enter your Supavyza account email">
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name"
+      placeholder="Enter your name">
+
+    <label for="reason">Additional Information (Optional)</label>
+    <textarea id="reason" rows="4"
+      placeholder="Additional information"></textarea>
+
+    <button type="submit">Send Deletion Request</button>
+
+  </form>
+
+  <h2>What Happens After Your Request?</h2>
+
+  <p>
+    MikrodTech will review your request and may contact you
+    to verify ownership of the account.
+  </p>
+
+  <p>
+    Once verified, your Supavyza account and associated
+    personal data will be permanently deleted, subject to
+    applicable legal and security retention requirements.
+  </p>
+
+  <h2>Data Retention</h2>
+
+  <p>
+    Certain information may be retained where legally required
+    or necessary for legitimate security, fraud prevention,
+    or dispute resolution purposes.
+  </p>
+
+  <h2>Contact Support</h2>
+
+  <p>
+    For assistance, contact:
+    <a href="mailto:support@mikrodtech.co.ke">
+      support@mikrodtech.co.ke
+    </a>
+  </p>
+
+  <p>
+    <a href="privacy-policy.html">View Privacy Policy</a>
+  </p>
+
+  <p>Supavyza | Developed by MikrodTech</p>
+
+</div>
+
+<script>
+document.getElementById("deletionForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const name = document.getElementById("name").value;
+  const reason = document.getElementById("reason").value;
+
+  const subject = encodeURIComponent("Supavyza Account Deletion Request");
+
+  const body = encodeURIComponent(
+    "I request permanent deletion of my Supavyza account.\n\n" +
+    "Account Email: " + email + "\n" +
+    "Name: " + name + "\n" +
+    "Additional Information: " + reason
+  );
+
+  window.location.href =
+    "mailto:support@mikrodtech.co.ke?subject=" +
+    subject + "&body=" + body;
+});
+</script>
+
+</body>
+</html>
